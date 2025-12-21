@@ -33,28 +33,100 @@ EXTRACTION_PROMPTS = {
 {
   "name": "Monster Name",
   "monster_id": "monster_name_lowercase",  // lowercase, underscores for spaces
-  "hd": "2+1",  // Hit Dice as string (e.g., "1", "2+1", "3*", "4**")
-  "hp": null,  // Average HP if given, otherwise null
-  "ac": 7,  // Armor Class as integer (descending AC)
-  "ac_ascending": 12,  // Ascending AC if given, otherwise null
-  "movement": "120' (40')",  // Movement rate as string
-  "attacks": [
-    {"name": "Claw", "damage": "1d4", "count": 2},
-    {"name": "Bite", "damage": "1d8", "count": 1}
-  ],
-  "special_abilities": [
-    {"name": "Regeneration", "description": "Regains 1 HP per round"}
-  ],
-  "save_as": "F2",  // Save as Fighter 2, etc.
-  "morale": 8,
+
+  // Core Stats
+  "armor_class": 17,  // AC as integer (Dolmenwood uses ascending AC)
+  "hit_dice": "5d8",  // Hit Dice as string (e.g., "1d8", "2d8+1", "3d8*")
+  "hp": 22,  // Average HP if given, otherwise null
+  "level": 5,  // Monster level/HD number (extract from "Level X" if present)
+  "movement": "60' Burrow 20'",  // Full movement description as string
+  "speed": 60,  // Base speed in feet (extract first number from movement)
+  "burrow_speed": 20,  // Burrow speed if listed, otherwise null
+  "fly_speed": null,  // Fly speed if listed, otherwise null
+  "swim_speed": null,  // Swim speed if listed, otherwise null
+
+  // Combat
+  "attacks": ["Bite (+4, 2d6)", "Tail (+4, 2d4)"],  // List of attack strings with bonuses
+  "damage": ["2d6", "2d4"],  // List of damage dice (extract from attacks)
+
+  // Saving Throws - CRITICAL: Extract individual save values
+  "save_doom": 10,  // Save vs Doom (look for "D10" or "Doom 10")
+  "save_ray": 11,   // Save vs Ray (look for "R11" or "Ray 11")
+  "save_hold": 12,  // Save vs Hold (look for "H12" or "Hold 12")
+  "save_blast": 13, // Save vs Blast (look for "B13" or "Blast 13")
+  "save_spell": 14, // Save vs Spell (look for "S14" or "Spell 14")
+  "saves_as": null, // Legacy format like "F2" (Fighter 2) - use if individual saves not listed
+
+  "morale": 9,  // Morale score (2-12)
+
+  // Treasure
+  "treasure_type": null,  // Single letter treasure type if given
+  "hoard": "C6 + R7 + M4",  // Hoard composition if given (Dolmenwood format)
+  "possessions": "None",  // Individual possessions description
+
+  // Monster Classification
+  "size": "Large",  // Size category (Tiny, Small, Medium, Large, Huge, Gargantuan)
+  "monster_type": "Dragon",  // Type (Dragon, Undead, Beast, Humanoid, Aberration, etc.)
+  "sentience": "Sentient",  // Sentient, Semi-Sentient, or Non-Sentient
   "alignment": "Chaotic",  // Lawful, Neutral, or Chaotic
-  "xp": 50,
-  "number_appearing": "1d6",
-  "treasure_type": "B",
-  "description": "A brief description of the monster..."
+  "intelligence": null,  // Intelligence description if given
+
+  // Abilities and Features
+  "special_abilities": [
+    "Surprise: When lying in wait beneath earth, opposing side has 4-in-6 chance of being surprised",
+    "Sleeping in lair: 50% chance of being asleep if encountered in lair",
+    "Immunities: Suffer half damage from mundane weapons. Immune to acid and poison.",
+    "Dark sight: Can see normally without light",
+    "Breath (thrice a day): Vomit caustic black bile in 10' wide, 30' long stream. Damage equal to current HP (Save vs Blast for half)",
+    "Commanding growl (thrice a day): Single target must Save vs Spell or obey command for 1 Round"
+  ],
+  "immunities": ["acid", "poison", "mundane fire", "lightning", "cold"],
+  "resistances": ["magical fire", "magical lightning", "magical cold"],  // Half damage
+  "vulnerabilities": [],  // Weaknesses if listed
+
+  // Roleplaying Information
+  "description": "30' long, with lumpy flesh, brown-black scales, patches of fur or feathers, and leering, lupine faces. Burrow into the earth to surprise prey. Delight in killing for its own sake.",
+  "behavior": "Savage, rapacious, destructive",  // Behavior trait from "Behaviour" field
+  "speech": "Growling, broken sentences. Basic Woldish, Wyrm",  // Speech/Languages
+  "traits": [
+    "Reeks of sulphur",
+    "Eyes of phosphorescent amber",
+    "Plume of lustrous, black feathers around the neck",
+    "Thorns along sides",
+    "Salivates and froths at the mouth",
+    "Scales covered with moss"
+  ],  // Physical/descriptive traits (numbered list in source)
+
+  // Encounter Information
+  "number_appearing": "1",  // Number appearing (extract number before "in lair" percentage)
+  "lair_percentage": 50,  // Percentage in lair (extract from "50% in lair")
+  "encounter_scenarios": [
+    "Coiled around a dead horse, in battle with a knight (Level 3)",
+    "Lying in wait beneath a mound of freshly dug earth topped with the bloody corpse of an old woman",
+    "Crashing through forest in blood rage, levelling small trees. Has ravaged woodland huts and hungers for more flesh",
+    "Enraged and coiled around an 8' sphere of black energy containing a magician. Reeks of sulphur"
+  ],  // Sample encounter scenarios (numbered "ENCOUNTERS" list)
+  "lair_descriptions": [
+    "Nest of a giant bird—possibly still containing unhatched egg—amid branches of mighty tree. Wyrm adept at climbing trunk",
+    "Muddy hole burrowed out of side of a hill",
+    "Nest of feathers and furs in deepest hole of natural cave network. Bones and ravaged remains strewn outside",
+    "At base of natural canyon, overgrown with brambles. Collects blood of victims in basin at centre of treasure hoard"
+  ],  // Sample lair descriptions (numbered "LAIRS" list)
+
+  "xp_value": 460,  // XP value
+  "habitat": []  // Habitat types if given (forest, swamp, etc.)
 }
 
-If a field is not present in the source, use null.
+IMPORTANT EXTRACTION NOTES:
+1. **Saving Throws**: Always extract individual save values (D, R, H, B, S format). Look for patterns like "Saves D10 R11 H12 B13 S14"
+2. **Special Abilities**: Extract full ability descriptions including mechanics, usage limits, and save DCs
+3. **Immunities/Resistances**: Parse from ability text (e.g., "Immune to acid" → add "acid" to immunities array)
+4. **Traits**: Extract numbered descriptive traits list (usually 1-6 random traits)
+5. **Encounters/Lairs**: Extract numbered scenario/lair description lists separately
+6. **Movement**: Parse into base speed plus special movement types (burrow, fly, swim)
+7. **Size/Type/Sentience**: Usually on same line (e.g., "Large Dragon—Sentient—Chaotic")
+
+If a field is not present in the source, use null for single values or [] for arrays.
 Output as a JSON array of monster objects.
 Only extract actual monster stat blocks, not references or mentions.''',
 

@@ -872,53 +872,88 @@ class GameRule(BaseModel):
 
 class MonsterStatBlock(BaseModel):
     """Monster statistics from the monster book."""
-    
+
     monster_id: str = Field(default_factory=lambda: generate_id("mon"))
     name: str
-    
+
+    # Core stats
     armor_class: int
     hit_dice: str
     hp: Optional[int] = Field(default=None, ge=0)
+    level: Optional[int] = Field(default=None, ge=0, description="Monster level (HD equivalent)")
     movement: str
-    
+    speed: Optional[int] = Field(default=None, description="Base speed in feet")
+    burrow_speed: Optional[int] = Field(default=None, description="Burrow speed in feet")
+    fly_speed: Optional[int] = Field(default=None, description="Fly speed in feet")
+    swim_speed: Optional[int] = Field(default=None, description="Swim speed in feet")
+
+    # Combat
     attacks: list[str] = Field(default_factory=list)
     damage: list[str] = Field(default_factory=list)
-    
-    saves_as: str
+
+    # Saving throws - individual values (Dolmenwood/OSE format)
+    save_doom: Optional[SaveTarget] = Field(default=None, description="Save vs Doom")
+    save_ray: Optional[SaveTarget] = Field(default=None, description="Save vs Ray")
+    save_hold: Optional[SaveTarget] = Field(default=None, description="Save vs Hold")
+    save_blast: Optional[SaveTarget] = Field(default=None, description="Save vs Blast")
+    save_spell: Optional[SaveTarget] = Field(default=None, description="Save vs Spell")
+    saves_as: Optional[str] = Field(default=None, description="Legacy save format (e.g., 'F2')")
+
     morale: MoraleScore
-    
+
+    # Treasure
     treasure_type: Optional[str] = None
-    special_abilities: list[str] = Field(default_factory=list)
-    
+    hoard: Optional[str] = Field(default=None, description="Hoard composition (e.g., 'C6 + R7 + M4')")
+    possessions: Optional[str] = Field(default=None, description="Individual possessions")
+
+    # Monster classification
+    size: Optional[str] = Field(default=None, description="Size category (Small, Medium, Large, etc.)")
+    monster_type: Optional[str] = Field(default=None, description="Type (Dragon, Undead, Beast, etc.)")
+    sentience: Optional[str] = Field(default=None, description="Sentient, Semi-Sentient, Non-Sentient")
     alignment: Optional[str] = None
     intelligence: Optional[str] = None
-    
+
+    # Abilities and features
+    special_abilities: list[str] = Field(default_factory=list)
+    immunities: list[str] = Field(default_factory=list, description="Damage immunities")
+    resistances: list[str] = Field(default_factory=list, description="Damage resistances")
+    vulnerabilities: list[str] = Field(default_factory=list, description="Damage vulnerabilities")
+
+    # Roleplaying information
     description: str
-    
+    behavior: Optional[str] = Field(default=None, description="Typical behavior traits")
+    speech: Optional[str] = Field(default=None, description="Speech patterns and languages")
+    traits: list[str] = Field(default_factory=list, description="Physical/descriptive traits")
+
+    # Encounter information
     number_appearing: str
+    lair_percentage: Optional[int] = Field(default=None, ge=0, le=100, description="% appearing in lair")
+    encounter_scenarios: list[str] = Field(default_factory=list, description="Sample encounter descriptions")
+    lair_descriptions: list[str] = Field(default_factory=list, description="Sample lair descriptions")
+
     xp_value: int = Field(default=0, ge=0)
     habitat: list[str] = Field(default_factory=list)
-    
+
     # v1.1: Source tracking
     source: Optional[SourceReference] = None
-    
+
     # v1.1: Variant tracking
     is_variant: bool = False
     base_monster_id: Optional[str] = None
-    
+
     foundry_actor_id: Optional[str] = None
-    
+
     def roll_hp(self) -> int:
         match = re.match(r"(\d+)([+-]\d+)?", self.hit_dice)
         if not match:
             return 4
-        
+
         num_dice = int(match.group(1))
         modifier = int(match.group(2) or 0)
-        
+
         total = sum(random.randint(1, 8) for _ in range(num_dice))
         total += modifier
-        
+
         return max(1, total)
 
 
