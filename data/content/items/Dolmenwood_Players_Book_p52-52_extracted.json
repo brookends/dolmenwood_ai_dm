@@ -1,0 +1,643 @@
+{
+  "_metadata": {
+    "source_file": "../data/pdfs/core/Dolmenwood_Players_Book.pdf",
+    "pages": [
+      52
+    ],
+    "content_type": "items",
+    "item_count": 50,
+    "errors": [],
+    "note": "Review and correct this data before importing"
+  },
+  "items": [
+    {
+      "name": "Bag of Stone Marbles",
+      "item_id": "bag_of_stone_marbles",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Each has a name and rolls towards whoever speaks it.",
+      "properties": [
+        "magical"
+      ]
+    },
+    {
+      "name": "Block of Cheese Infected with Hallucinogenic Fungus",
+      "item_id": "block_of_cheese_infected_with_hallucinogenic_fungus",
+      "type": "food",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A block of cheese infected with hallucinogenic fungus.",
+      "properties": [
+        "hallucinogenic"
+      ]
+    },
+    {
+      "name": "Bloodstained Hat",
+      "item_id": "bloodstained_hat",
+      "type": "clothing",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A bloodstained hat that once belonged to a redcap.",
+      "properties": [
+        "cursed"
+      ]
+    },
+    {
+      "name": "Book of Saints' Crimes",
+      "item_id": "book_of_saints_crimes",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A book alleging crimes by each of the 100 saints of Dolmenwood. Found on the body of a murdered man.",
+      "properties": [
+        "cursed"
+      ]
+    },
+    {
+      "name": "Bottle of Yeast-Froth Shampoo",
+      "item_id": "bottle_of_yeast_froth_shampoo",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A bottle of yeast-froth shampoo, essential for maintaining the lustre of mossy manes.",
+      "properties": []
+    },
+    {
+      "name": "Bouquet of Honeysuckle",
+      "item_id": "bouquet_of_honeysuckle",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A bouquet of honeysuckle that drips real honey. The honey attracts wasps.",
+      "properties": [
+        "magical"
+      ]
+    },
+    {
+      "name": "Brass Cowbell",
+      "item_id": "brass_cowbell",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A brass cowbell. When struck, nearby milk and cheese products jump half a foot towards it.",
+      "properties": [
+        "magical"
+      ]
+    },
+    {
+      "name": "Broad-Brimmed Hat Covered in Shimmering Moss",
+      "item_id": "broad_brimmed_hat_covered_in_shimmering_moss",
+      "type": "clothing",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A broad-brimmed hat covered in shimmering moss.",
+      "properties": []
+    },
+    {
+      "name": "Bronze Idol to a Two-Headed Mushroom God",
+      "item_id": "bronze_idol_to_a_two_headed_mushroom_god",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A bronze idol to a two-headed mushroom god.",
+      "properties": [
+        "religious"
+      ]
+    },
+    {
+      "name": "Chunk of Volcanic Rock",
+      "item_id": "chunk_of_volcanic_rock",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A chunk of volcanic rock, warm to the touch. A single Old Woldish rune has been carved into it.",
+      "properties": [
+        "magical",
+        "warm"
+      ]
+    },
+    {
+      "name": "Clay Figurine of a Pot-Bellied Giant",
+      "item_id": "clay_figurine_of_a_pot_bellied_giant",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A clay figurine of a pot-bellied giant with a single eye.",
+      "properties": []
+    },
+    {
+      "name": "Cluster of Symbiotic Fungus",
+      "item_id": "cluster_of_symbiotic_fungus",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A cluster of fungus consisting of a dozen different kinds of mushrooms living in symbiosis.",
+      "properties": [
+        "living"
+      ]
+    },
+    {
+      "name": "Collection of Gravestone Rocks",
+      "item_id": "collection_of_gravestone_rocks",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A collection of small rocks, all chipped from different gravestones.",
+      "properties": [
+        "cursed"
+      ]
+    },
+    {
+      "name": "Mushroom-Adding Cooking Pot",
+      "item_id": "mushroom_adding_cooking_pot",
+      "type": "container",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A cooking pot that adds mushrooms to every dish cooked inside it.",
+      "properties": [
+        "magical"
+      ]
+    },
+    {
+      "name": "Pressed Flower in Dead Man's Journal",
+      "item_id": "pressed_flower_in_dead_mans_journal",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A flower pressed inside a dead man's journal.",
+      "properties": [
+        "cursed"
+      ]
+    },
+    {
+      "name": "Hunting Horn from Boar Tusk",
+      "item_id": "hunting_horn_from_boar_tusk",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A hunting horn fashioned from a great boar tusk.",
+      "properties": []
+    },
+    {
+      "name": "Jar of Blue Cheese Massage Oil",
+      "item_id": "jar_of_blue_cheese_massage_oil",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A jar of blue cheese massage oil.",
+      "properties": []
+    },
+    {
+      "name": "Jar of Green Jelly",
+      "item_id": "jar_of_green_jelly",
+      "type": "food",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A jar of green jelly with the label \"Don't Eat Me.\"",
+      "properties": [
+        "dangerous"
+      ]
+    },
+    {
+      "name": "Large Egg from Woodgrue",
+      "item_id": "large_egg_from_woodgrue",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A large egg, entrusted to you by a panicked woodgrue.",
+      "properties": [
+        "living"
+      ]
+    },
+    {
+      "name": "Large Gooseberry with Creature Inside",
+      "item_id": "large_gooseberry_with_creature_inside",
+      "type": "food",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A large gooseberry that appears to have a creature growing inside it.",
+      "properties": [
+        "living"
+      ]
+    },
+    {
+      "name": "Large Pink Sausage",
+      "item_id": "large_pink_sausage",
+      "type": "food",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A large, pink sausage. Tries to crawl away if left unattended.",
+      "properties": [
+        "living"
+      ]
+    },
+    {
+      "name": "Seasonal Leaf",
+      "item_id": "seasonal_leaf",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A leaf that changes with the seasons, dying by winter only to rejuvenate in spring.",
+      "properties": [
+        "magical",
+        "seasonal"
+      ]
+    },
+    {
+      "name": "Mossy Rock",
+      "item_id": "mossy_rock",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A mossy rock. When placed on the ground for at least a minute and then lifted, bugs scurry out from underneath it.",
+      "properties": [
+        "magical"
+      ]
+    },
+    {
+      "name": "Mould-Riddled Tapestry",
+      "item_id": "mould_riddled_tapestry",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A mould-riddled tapestry depicting the hunt for a swine of mythic size.",
+      "properties": []
+    },
+    {
+      "name": "Puffball with Tiny Mouths",
+      "item_id": "puffball_with_tiny_mouths",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A puffball with dozens of tiny mouths which burp in unison at dawn.",
+      "properties": [
+        "living"
+      ]
+    },
+    {
+      "name": "Puffball-Skin Pouch",
+      "item_id": "puffball_skin_pouch",
+      "type": "container",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A puffball-skin pouch filled with jelly.",
+      "properties": []
+    },
+    {
+      "name": "Sack of Half-Empty Ale Bottles",
+      "item_id": "sack_of_half_empty_ale_bottles",
+      "type": "container",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A sack of half-empty ale bottles.",
+      "properties": []
+    },
+    {
+      "name": "Sealed Bottle of Ancestral Spirits",
+      "item_id": "sealed_bottle_of_ancestral_spirits",
+      "type": "food",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A sealed bottle of spirits, brewed from the composted remains of one of your ancestors.",
+      "properties": [
+        "cursed"
+      ]
+    },
+    {
+      "name": "Shepherd's Crook",
+      "item_id": "shepherds_crook",
+      "type": "weapon",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": "1d6",
+      "ac_bonus": null,
+      "description": "A shepherd's crook that induces fear in farm animals when brandished.",
+      "properties": [
+        "magical",
+        "fear"
+      ]
+    },
+    {
+      "name": "Single Elven Hair",
+      "item_id": "single_elven_hair",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A single hair from the head of an elven lady; a token of her affection.",
+      "properties": [
+        "romantic"
+      ]
+    },
+    {
+      "name": "Small Beetle",
+      "item_id": "small_beetle",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A small beetle you found on the road. You have since received a letter from an angry grimalkin charging you with its theft.",
+      "properties": [
+        "living",
+        "stolen"
+      ]
+    },
+    {
+      "name": "Small Breggle Effigy",
+      "item_id": "small_breggle_effigy",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A small effigy of a breggle made from dried mushroom flesh.",
+      "properties": []
+    },
+    {
+      "name": "Small Pouch of Magic Nuts",
+      "item_id": "small_pouch_of_magic_nuts",
+      "type": "container",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A small pouch of magic nuts. When a nut is broken open, it emits a pearl of wisdom.",
+      "properties": [
+        "magical",
+        "wisdom"
+      ]
+    },
+    {
+      "name": "Small Snake with Return Note",
+      "item_id": "small_snake_with_return_note",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A small snake with a \"Return to\" note attached. The owner's name is smudged out.",
+      "properties": [
+        "living"
+      ]
+    },
+    {
+      "name": "Small Hollow Toadstool",
+      "item_id": "small_hollow_toadstool",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A small, hollow toadstool with a tiny wooden door.",
+      "properties": []
+    },
+    {
+      "name": "Regenerating Snail Shell",
+      "item_id": "regenerating_snail_shell",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A snail shell that grows a new snail at dawn if the old one is removed or killed.",
+      "properties": [
+        "magical",
+        "regenerating"
+      ]
+    },
+    {
+      "name": "Squirrel-Sized Collar and Leash",
+      "item_id": "squirrel_sized_collar_and_leash",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A squirrel-sized collar and leash.",
+      "properties": []
+    },
+    {
+      "name": "Story Book About Rat-People",
+      "item_id": "story_book_about_rat_people",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A story book about the charming exploits of the rat-people of the moon.",
+      "properties": []
+    },
+    {
+      "name": "Unique Pipeweed Mix",
+      "item_id": "unique_pipeweed_mix",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A unique pipeweed mix of your own invention. A bit too combustible.",
+      "properties": [
+        "combustible"
+      ]
+    },
+    {
+      "name": "Trickling Watering Can",
+      "item_id": "trickling_watering_can",
+      "type": "tool",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A watering can that constantly trickles water from its spout.",
+      "properties": [
+        "magical"
+      ]
+    },
+    {
+      "name": "Waterskin of Yellow Slime",
+      "item_id": "waterskin_of_yellow_slime",
+      "type": "container",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A waterskin of yellow slime that drips upwards when unstoppered.",
+      "properties": [
+        "magical"
+      ]
+    },
+    {
+      "name": "Wheel of Perpetual Motion Cheese",
+      "item_id": "wheel_of_perpetual_motion_cheese",
+      "type": "food",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A wheel of cheese that never loses momentum once it starts rolling.",
+      "properties": [
+        "magical",
+        "perpetual_motion"
+      ]
+    },
+    {
+      "name": "Aging Wooden Carving",
+      "item_id": "aging_wooden_carving",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A wooden carving of yourself that ages as you do.",
+      "properties": [
+        "magical",
+        "aging"
+      ]
+    },
+    {
+      "name": "Wooden Peg Leg Fungus Incubator",
+      "item_id": "wooden_peg_leg_fungus_incubator",
+      "type": "tool",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A wooden peg leg that you found and converted into an incubator for rare fungi.",
+      "properties": []
+    },
+    {
+      "name": "Prophetic Worm",
+      "item_id": "prophetic_worm",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A worm whose squirming slowly spells out threatening prophecies.",
+      "properties": [
+        "living",
+        "prophetic"
+      ]
+    },
+    {
+      "name": "Whispering Button Mushroom",
+      "item_id": "whispering_button_mushroom",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "An adorable red-and-white button mushroom. Whispers to you when no one else is listening.",
+      "properties": [
+        "living",
+        "whispering"
+      ]
+    },
+    {
+      "name": "Incomplete Map of Inns",
+      "item_id": "incomplete_map_of_inns",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "An incomplete, and possibly inaccurate, map of all the inns in Dolmenwood.",
+      "properties": [
+        "incomplete",
+        "inaccurate"
+      ]
+    },
+    {
+      "name": "Baby-Shaped Onion",
+      "item_id": "baby_shaped_onion",
+      "type": "food",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "An onion shaped like a baby.",
+      "properties": []
+    },
+    {
+      "name": "Mechanical Mouse Organ Clock Blueprints",
+      "item_id": "mechanical_mouse_organ_clock_blueprints",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Blueprints for a marvellous mechanical mouse organ clock.",
+      "properties": []
+    },
+    {
+      "name": "Bark Book",
+      "item_id": "bark_book",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Dozens of different kinds of bark, stitched together like a book.",
+      "properties": []
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "_metadata": {
+    "source_file": "../data/pdfs/core/Dolmenwood_Players_Book.pdf",
+    "pages": [
+      92
+    ],
+    "content_type": "spells",
+    "item_count": 5,
+    "errors": [],
+    "note": "Review and correct this data before importing"
+  },
+  "items": [
+    {
+      "name": "Anti-Magic Ward",
+      "spell_id": "anti_magic_ward",
+      "level": 6,
+      "magic_type": "arcane",
+      "duration": "1 Round per Level",
+      "range": "The caster",
+      "description": "Wreathes the caster in a shimmering violet shell that nullifies incoming spells with a violent flash of coloured energy. Ward: The barrier blocks all incoming spells and spell effects of Ranks 1–3. This includes spells cast from magic items such as scrolls or wands. Dispelling: Dispel Magic is effective against this spell.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Control Weather",
+      "spell_id": "control_weather",
+      "level": 6,
+      "magic_type": "arcane",
+      "duration": "Concentration",
+      "range": "720′ around the caster",
+      "description": "Weather conditions of the caster's choosing manifest in the local area. Concentration: If the caster is harmed, moves, or takes any other action, the spell ends. Outdoors only: This spell only functions outdoors. Weather Conditions: Calm: Clears bad weather (though side-effects—e.g. mud after rain—remain). Extreme heat: Dries up snow or mud (including the Mire spell). Creatures in the area move at half Speed. Fog: Visibility drops to 20′. Creatures in the area move at half Speed and, at the Referee's option, may also have a chance of getting lost. High winds: Creatures in the area move at half Speed. Missile fire and flight are impossible. High winds may be used to increase the sailing speed of ships by 50%. In sandy areas, high winds cause sandstorms, reducing visibility to 20′. Rain: –2 penalty to Attack Rolls with missile weapons. Mud forms after 3 Turns, halving Speed. Snow: Visibility drops to 20′. Creatures in the area move at half Speed. Bodies of water begin to freeze. After the snow thaws, mud remains and impedes movement.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Disintegrate",
+      "spell_id": "disintegrate",
+      "level": 6,
+      "magic_type": "arcane",
+      "duration": "Instant",
+      "range": "60′",
+      "description": "Instantly and permanently destroys the material form of a single, non-magical creature or object. Targeting a creature: The victim must Save Versus Doom to resist disintegration. Targeting an object: The Referee decides what can be affected, for example: a tree, a ship, a 10′ section of wall.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Dweomerfire",
+      "spell_id": "dweomerfire",
+      "level": 6,
+      "magic_type": "arcane",
+      "duration": "1 Round",
+      "range": "60′",
+      "description": "Prismatic flame briefly engulfs any magical energy in a selected 20′ cube within range. Magic items and enchantments: Objects, areas, or creatures under the influence of magic are wreathed in flame. Creatures in contact suffer 1d6 damage. Spell-casting: Subsequently cast spells explode in a conflagration of vivid energy. Creatures casting a spell must Save Versus Spell or suffer 3d6 damage, rendering the cast spell ineffective. Memorised spells: The imprinted energy patterns of memorised arcane spells burn the mind. Arcane spell-casters must Save Versus Spell or suffer 1 damage per memorised spell.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Geas",
+      "spell_id": "geas",
+      "level": 6,
+      "magic_type": "arcane",
+      "duration": "Permanent",
+      "range": "30′",
+      "description": "The caster compels a subject to perform—or avoid performing—a specific action. Examples: Bringing a specific item to the caster, eating or drinking without restraint, keeping a certain fact secret. Impossible or deadly tasks: The prescribed geas must not be impossible or directly deadly—if such a geas is cast, it rebounds and affects the caster instead. Saving throw: The subject may Save Versus Spell to avoid coming under the spell's effect. If the save fails: The subject must follow the stipulated course of action or suffer gradually increasing (and eventually fatal) penalties determined by the Referee (e.g. Attack penalties, Ability Score reductions, inability to memorise spells, physical torment and feebleness, etc.). Removing: Dispel Magic is ineffective against a geas. Remove Curse and Hex Weaving only work if the caster is 2 or more Levels higher than the caster of Geas.",
+      "reversible": false,
+      "reversed_name": null
+    }
+  ]
+}

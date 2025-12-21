@@ -1,0 +1,103 @@
+{
+  "_metadata": {
+    "source_file": "../data/pdfs/core/Dolmenwood_Players_Book.pdf",
+    "pages": [
+      104,
+      105
+    ],
+    "content_type": "spells",
+    "item_count": 8,
+    "errors": [],
+    "note": "Review and correct this data before importing"
+  },
+  "items": [
+    {
+      "name": "Detect Evil",
+      "spell_id": "detect_evil",
+      "level": 1,
+      "magic_type": "divine",
+      "duration": "6 Turns",
+      "range": "120'",
+      "description": "The caster perceives a faint halo of wicked, grinning spirits flickering around objects under an evil enchantment and living beings with evil intentions. Intent only: The caster cannot read the thoughts of creatures with evil intent. Definition of evil: The Referee must judge what is classified as evil. Beings of Chaotic Alignment do not always have evil intent. Traps and poisons, while potentially harmful, are not evil.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Detect Magic",
+      "spell_id": "detect_magic",
+      "level": 1,
+      "magic_type": "divine",
+      "duration": "2 Turns",
+      "range": "60'",
+      "description": "Enchanted objects, areas, or creatures within range of the caster are wreathed in a shimmering, golden glow. Both permanent and temporary enchantments are revealed.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Frost Ward",
+      "spell_id": "frost_ward",
+      "level": 1,
+      "magic_type": "divine",
+      "duration": "6 Turns",
+      "range": "30'",
+      "description": "A soothing warmth comes upon all allies within range, rebuking the malicious effects of cold and frost. Normal cold: Subjects are untroubled by non-magical freezing temperatures. Save bonus: Subjects gain a +2 bonus to Saving Throws versus cold-based effects (e.g. magic or breath attacks). Cold-based damage: Reduce cold damage by 1 per damage die rolled. (For example, 4d6 damage is reduced by 4.)",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Lesser Healing",
+      "spell_id": "lesser_healing",
+      "level": 1,
+      "magic_type": "divine",
+      "duration": "Instant",
+      "range": "The caster or a living creature touched",
+      "description": "The fluttering of doves' wings and the sweet scent of blossom manifest as the caster recites this prayer. A living subject receives one of the following ministrations: 1. Healing: Restores 1d6+1 Hit Points. This cannot raise the subject's Hit Points above the normal maximum. 2. Curing paralysis: Paralysing effects are negated.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Light",
+      "spell_id": "light",
+      "level": 1,
+      "magic_type": "divine",
+      "duration": "12 Turns",
+      "range": "120'",
+      "description": "A bobbing wisp of light floats from the caster's palm and manifests one of the following effects: 1. Golden radiance: Casts holy light in a 15′ radius. The light is sufficient for reading, but is not as bright as daylight. The spell may be cast upon an object, in which case the golden light moves with the object. 2. Blinding a creature: A flash of divine light blinds a Chaotic creature for the duration. The target may Save Versus Spell to resist. (See Darkness and Blindness, p150.) 3. Cancelling magical darkness: St Foggarty's Benediction may cancel a 15′ radius area of magical darkness.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Mantle of Protection",
+      "spell_id": "mantle_of_protection",
+      "level": 1,
+      "magic_type": "divine",
+      "duration": "12 Turns",
+      "range": "The caster",
+      "description": "Invoking the name of an archangel, the caster is warded from attacks by Chaotic creatures as well as creatures created or summoned by magic. AC and Saving Throw bonus: The caster gains a +1 Armour Class and Saving Throw bonus against attacks and special powers of affected creatures. Magically created or summoned creatures: The prayer additionally prevents such creatures from making melee attacks against the caster, though they may still make ranged attacks. If the caster engages such a creature in melee, this protection is broken (though the caster still gains the Armour Class and Saving Throw bonuses mentioned above).",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Purify Food and Drink",
+      "spell_id": "purify_food_and_drink",
+      "level": 1,
+      "magic_type": "divine",
+      "duration": "Permanent",
+      "range": "Touch",
+      "description": "The sound of distant goat bells echoes and a quantity of poisoned, rotten, spoiled, or contaminated food and drink is purified. Quantity: Up to 12 portions of food and drink, in any combination. 1 ration counts as a portion of food and 1 pint counts as a portion of drink.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Rally",
+      "spell_id": "rally",
+      "level": 1,
+      "magic_type": "divine",
+      "duration": "2 Turns",
+      "range": "The caster or a creature touched",
+      "description": "The emboldening words of this prayer reverberate in the subject's mind, calming them and purging them of fear. Magically induced fear: Make a Save Versus Spell with a +1 bonus per Level of the caster to counter magical terror. This applies to effects active when Rally is cast and subsequent effects during the duration.",
+      "reversible": false,
+      "reversed_name": null
+    }
+  ]
+}

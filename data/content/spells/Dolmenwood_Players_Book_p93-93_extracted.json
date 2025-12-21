@@ -1,0 +1,91 @@
+{
+  "_metadata": {
+    "source_file": "../data/pdfs/core/Dolmenwood_Players_Book.pdf",
+    "pages": [
+      93
+    ],
+    "content_type": "spells",
+    "item_count": 7,
+    "errors": [],
+    "note": "Review and correct this data before importing"
+  },
+  "items": [
+    {
+      "name": "Invisible Stalker",
+      "spell_id": "invisible_stalker",
+      "level": 6,
+      "magic_type": "arcane",
+      "duration": "One mission or until slain",
+      "range": "Summoned to caster's presence",
+      "description": "Summons an invisible, extra-dimensional entity to the caster's presence, magically binding it to perform a mission of the caster's choosing. Wording: The caster must be careful with the wording of the mission. Invisible stalkers are intelligent and treacherous. Unless the assigned mission can be easily and quickly accomplished, the stalker follows the letter of the command while twisting the intent. Duration: The creature is bound to attempt the mission until it succeeds or is destroyed.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Move Terrain",
+      "spell_id": "move_terrain",
+      "level": 6,
+      "magic_type": "arcane",
+      "duration": "6 Turns",
+      "range": "240'",
+      "description": "The land bulges and warps as a terrain feature moves under the caster's control. Terrain feature: A single feature (e.g. a hill, ridge, grove, pool, etc.) contained in a 120' square area may be moved. Movement rate: The caster can move terrain at up to 60' per Turn. Any buildings or creatures present move with the terrain feature. Concentration: The caster must concentrate (no movement or other actions allowed) while moving terrain. They may halt to perform other actions and then resume concentration.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Oracle",
+      "spell_id": "oracle",
+      "level": 6,
+      "magic_type": "arcane",
+      "duration": "1d6 Turns",
+      "range": "The caster",
+      "description": "Casting this spell while burning a portion of the rare dust Ishwagrande (1,000gp, see DCB), the caster opens a channel of communication with an extra-dimensional intelligence. Questions: The caster may ask three questions. Subject: The questions must relate to a specific subject—an object, place, or creature. The caster must be in the presence of the subject or a closely related item (e.g. the tombstone of a deceased person, the sheath of a lost sword). Answers: Questions receive a brief, cryptic answer. Each answer has a 1-in-6 chance of being false or misleading. Limits: Each casting of this spell takes 1d6 Turns. The spell may be cast at most once per week. Peril: Contact with powerful extra-dimensional beings can shatter the caster's mind. The caster must Save Versus Doom with a +2 bonus or enter a coma for 1d6 weeks.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Petrification",
+      "spell_id": "petrification",
+      "level": 6,
+      "magic_type": "arcane",
+      "duration": "Permanent or instant",
+      "range": "120'",
+      "description": "Manifests one of the following effects when cast: 1. Flesh to stone: Permanently transforms a living creature (including equipment) into stone. The victim may Save Versus Hold to resist. 2. Stone to flesh: Restores a magically petrified creature (and its equipment) to life.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Project Image",
+      "spell_id": "project_image",
+      "level": 6,
+      "magic_type": "arcane",
+      "duration": "6 Turns",
+      "range": "240'",
+      "description": "An illusory duplicate of the caster appears within range. Duplicate: The image is an exact duplicate of the caster that can only be differentiated by touch. Subsequent spells cast: Appear to originate from the image. (Targets must still be visible to the caster, however.) Spells and missiles: The image appears unaffected by spells or missile weapons. Melee or touch: If the image is touched or hit in melee, it disappears.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Wave of Force",
+      "spell_id": "wave_of_force",
+      "level": 6,
+      "magic_type": "arcane",
+      "duration": "1 Round per 2 Levels",
+      "range": "60' in front of the caster",
+      "description": "A repulsive force emanates from the caster's outstretched hands, pushing other creatures away. Path: A 10' wide, 60' long path in front of the caster. The caster may turn to affect a new path each Round. Repulsion: All creatures in the path are pushed directly away from the caster at 30' per Round. Creatures attempting to move towards the caster are repelled at their Speed, if it is greater than 30. Concentration: The caster must concentrate (no movement or other actions allowed) while repelling creatures. They may halt to perform other actions and then resume concentration.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Word of Doom",
+      "spell_id": "word_of_doom",
+      "level": 6,
+      "magic_type": "arcane",
+      "duration": "Instant",
+      "range": "240'",
+      "description": "The caster announces the doom of creatures within a selected 60' cube. Effect: A total of up to 4d8 Levels of creatures within the area must Save Versus Doom or die, instantly. Creatures of the lowest Level are affected first. For example, if four Level 3 and five Level 5 creatures are in the targeted area and the 4d8 roll results in 20, then all four Level 3 creatures and one of the Level 5 creatures are affected (a total of 17 Levels). Restrictions: Undead and creatures of greater than Level 7 are unaffected.",
+      "reversible": false,
+      "reversed_name": null
+    }
+  ]
+}

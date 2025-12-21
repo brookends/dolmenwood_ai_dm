@@ -1,0 +1,416 @@
+{
+  "_metadata": {
+    "source_file": "../data/pdfs/core/Dolmenwood_Players_Book.pdf",
+    "pages": [
+      120,
+      121
+    ],
+    "content_type": "items",
+    "item_count": 30,
+    "errors": [],
+    "note": "Review and correct this data before importing"
+  },
+  "items": [
+    {
+      "name": "Battle axe",
+      "item_id": "battle_axe",
+      "type": "weapon",
+      "cost_sp": 70,
+      "weight_coins": 100,
+      "damage": "1d8",
+      "ac_bonus": null,
+      "description": "A heavy axe with a 3′ haft.",
+      "properties": [
+        "melee"
+      ]
+    },
+    {
+      "name": "Club",
+      "item_id": "club",
+      "type": "weapon",
+      "cost_sp": 30,
+      "weight_coins": 20,
+      "damage": "1d4",
+      "ac_bonus": null,
+      "description": "A 2–3′ length of stout wood with a heavy head.",
+      "properties": [
+        "melee"
+      ]
+    },
+    {
+      "name": "Crossbow",
+      "item_id": "crossbow",
+      "type": "weapon",
+      "cost_sp": 300,
+      "weight_coins": 50,
+      "damage": "1d8",
+      "ac_bonus": null,
+      "description": "A bow mounted horizontally on a wooden shaft, with a winding mechanism to pull back the string and nock a quarrel. May be kept in the loaded position.",
+      "properties": [
+        "armour piercing",
+        "missile",
+        "reload",
+        "two-handed"
+      ]
+    },
+    {
+      "name": "Dagger",
+      "item_id": "dagger",
+      "type": "weapon",
+      "cost_sp": 30,
+      "weight_coins": 10,
+      "damage": "1d4",
+      "ac_bonus": null,
+      "description": "A 1′ long, two-edged blade.",
+      "properties": [
+        "melee",
+        "missile"
+      ]
+    },
+    {
+      "name": "Hand axe",
+      "item_id": "hand_axe",
+      "type": "weapon",
+      "cost_sp": 40,
+      "weight_coins": 20,
+      "damage": "1d6",
+      "ac_bonus": null,
+      "description": "A 2′ long hatchet suitable for use in melee or for throwing.",
+      "properties": [
+        "melee",
+        "missile"
+      ]
+    },
+    {
+      "name": "Holy water vial",
+      "item_id": "holy_water_vial",
+      "type": "weapon",
+      "cost_sp": 250,
+      "weight_coins": 10,
+      "damage": "1d8",
+      "ac_bonus": null,
+      "description": null,
+      "properties": [
+        "missile",
+        "splash"
+      ]
+    },
+    {
+      "name": "Lance",
+      "item_id": "lance",
+      "type": "weapon",
+      "cost_sp": 50,
+      "weight_coins": 100,
+      "damage": "1d6",
+      "ac_bonus": null,
+      "description": "A 10′ shaft of strong wood tipped with a pointed, leaf-shaped blade. Designed for use on horseback, but may also be used on foot.",
+      "properties": [
+        "brace",
+        "charge",
+        "melee",
+        "reach"
+      ]
+    },
+    {
+      "name": "Longbow",
+      "item_id": "longbow",
+      "type": "weapon",
+      "cost_sp": 400,
+      "weight_coins": 40,
+      "damage": "1d6",
+      "ac_bonus": null,
+      "description": "A bow of around the wielder's height, typically 6′ in length. Fires arrows.",
+      "properties": [
+        "missile",
+        "two-handed"
+      ]
+    },
+    {
+      "name": "Longsword",
+      "item_id": "longsword",
+      "type": "weapon",
+      "cost_sp": 100,
+      "weight_coins": 30,
+      "damage": "1d8",
+      "ac_bonus": null,
+      "description": "Typically double-edged and around 3–4′ in length.",
+      "properties": [
+        "melee"
+      ]
+    },
+    {
+      "name": "Mace",
+      "item_id": "mace",
+      "type": "weapon",
+      "cost_sp": 50,
+      "weight_coins": 40,
+      "damage": "1d6",
+      "ac_bonus": null,
+      "description": "A 2–3′ haft with a studded, flanged, or spiked head.",
+      "properties": [
+        "melee"
+      ]
+    },
+    {
+      "name": "Oil flask (burning)",
+      "item_id": "oil_flask_burning",
+      "type": "weapon",
+      "cost_sp": 10,
+      "weight_coins": 10,
+      "damage": "1d8",
+      "ac_bonus": null,
+      "description": null,
+      "properties": [
+        "missile",
+        "splash"
+      ]
+    },
+    {
+      "name": "Polearm",
+      "item_id": "polearm",
+      "type": "weapon",
+      "cost_sp": 70,
+      "weight_coins": 140,
+      "damage": "1d10",
+      "ac_bonus": null,
+      "description": "A long haft (8′ or longer) tipped with a stabbing point or slashing blade. Many types of polearms exist, but all are treated as one weapon type for simplicity.",
+      "properties": [
+        "brace",
+        "melee",
+        "reach",
+        "two-handed"
+      ]
+    },
+    {
+      "name": "Shortbow",
+      "item_id": "shortbow",
+      "type": "weapon",
+      "cost_sp": 250,
+      "weight_coins": 20,
+      "damage": "1d6",
+      "ac_bonus": null,
+      "description": "A bow of around 4′ in length. Fires arrows.",
+      "properties": [
+        "missile",
+        "two-handed"
+      ]
+    },
+    {
+      "name": "Shortsword",
+      "item_id": "shortsword",
+      "type": "weapon",
+      "cost_sp": 70,
+      "weight_coins": 20,
+      "damage": "1d6",
+      "ac_bonus": null,
+      "description": "2′ blades designed as thrusting and stabbing weapons.",
+      "properties": [
+        "melee"
+      ]
+    },
+    {
+      "name": "Sling",
+      "item_id": "sling",
+      "type": "weapon",
+      "cost_sp": 20,
+      "weight_coins": 10,
+      "damage": "1d4",
+      "ac_bonus": null,
+      "description": "A strap of leather or fabric used to twirl and launch normal stones at high speed.",
+      "properties": [
+        "missile"
+      ]
+    },
+    {
+      "name": "Spear",
+      "item_id": "spear",
+      "type": "weapon",
+      "cost_sp": 30,
+      "weight_coins": 30,
+      "damage": "1d6",
+      "ac_bonus": null,
+      "description": "A haft of strong, flexible wood, typically around 5′ long, tipped with a stabbing metal point.",
+      "properties": [
+        "brace",
+        "melee",
+        "missile"
+      ]
+    },
+    {
+      "name": "Staff",
+      "item_id": "staff",
+      "type": "weapon",
+      "cost_sp": 20,
+      "weight_coins": 40,
+      "damage": "1d4",
+      "ac_bonus": null,
+      "description": "A stout length of wood, typically 6–8′ long. Staves often double as walking sticks, but those designed for combat may be shod with metal end caps.",
+      "properties": [
+        "melee",
+        "two-handed"
+      ]
+    },
+    {
+      "name": "Torch (flaming)",
+      "item_id": "torch_flaming",
+      "type": "weapon",
+      "cost_sp": 3,
+      "weight_coins": 10,
+      "damage": "1d4",
+      "ac_bonus": null,
+      "description": null,
+      "properties": [
+        "melee"
+      ]
+    },
+    {
+      "name": "Two-handed sword",
+      "item_id": "two_handed_sword",
+      "type": "weapon",
+      "cost_sp": 150,
+      "weight_coins": 140,
+      "damage": "1d10",
+      "ac_bonus": null,
+      "description": "A great, heavy sword, 5–6′ in length.",
+      "properties": [
+        "melee",
+        "two-handed"
+      ]
+    },
+    {
+      "name": "War hammer",
+      "item_id": "war_hammer",
+      "type": "weapon",
+      "cost_sp": 50,
+      "weight_coins": 40,
+      "damage": "1d6",
+      "ac_bonus": null,
+      "description": "A 2–3′ haft tipped with a heavy metal hammer head, often with a spike on one side.",
+      "properties": [
+        "melee"
+      ]
+    },
+    {
+      "name": "Leather",
+      "item_id": "leather",
+      "type": "armor",
+      "cost_sp": 200,
+      "weight_coins": 200,
+      "damage": null,
+      "ac_bonus": 12,
+      "description": "A breastplate of hardened leather, with soft leather covering the rest of the body.",
+      "properties": [
+        "light"
+      ]
+    },
+    {
+      "name": "Bark",
+      "item_id": "bark",
+      "type": "armor",
+      "cost_sp": 300,
+      "weight_coins": 300,
+      "damage": null,
+      "ac_bonus": 13,
+      "description": "Thick layers of tough, lichen-encrusted bark, with flexible joints of young birch bark or bottle corks laced together. Typically only available in small size, designed for mosslings.",
+      "properties": [
+        "light"
+      ]
+    },
+    {
+      "name": "Chainmail",
+      "item_id": "chainmail",
+      "type": "armor",
+      "cost_sp": 400,
+      "weight_coins": 400,
+      "damage": null,
+      "ac_bonus": 14,
+      "description": "A suit of interlocking metal rings over a backing of quilted fabric.",
+      "properties": [
+        "medium"
+      ]
+    },
+    {
+      "name": "Pinecone",
+      "item_id": "pinecone",
+      "type": "armor",
+      "cost_sp": 500,
+      "weight_coins": 400,
+      "damage": null,
+      "ac_bonus": 15,
+      "description": "An intricate scale-work of hardened pine scales threaded onto a cloth backing. Typically only available in small size, designed for mosslings.",
+      "properties": [
+        "medium"
+      ]
+    },
+    {
+      "name": "Plate mail",
+      "item_id": "plate_mail",
+      "type": "armor",
+      "cost_sp": 600,
+      "weight_coins": 500,
+      "damage": null,
+      "ac_bonus": 16,
+      "description": "Metal plates shaped to the contours of the body. Sections of chainmail provide flexibility at the joints.",
+      "properties": [
+        "heavy"
+      ]
+    },
+    {
+      "name": "Full plate",
+      "item_id": "full_plate",
+      "type": "armor",
+      "cost_sp": 10000,
+      "weight_coins": 700,
+      "damage": null,
+      "ac_bonus": 17,
+      "description": "Perfectly interlocking plates of metal over a backing of chain mail and padding. Only the most expert armourers can craft full plate armour, and each suit must be tailored and balanced for a specific individual (takes 1 month). Wearing another person's full plate armour is awkward and only grants AC 16.",
+      "properties": [
+        "heavy"
+      ]
+    },
+    {
+      "name": "Shield",
+      "item_id": "shield",
+      "type": "shield",
+      "cost_sp": 100,
+      "weight_coins": 100,
+      "damage": null,
+      "ac_bonus": 1,
+      "description": "Made of metal or reinforced wood.",
+      "properties": []
+    },
+    {
+      "name": "Arrows (quiver of 20)",
+      "item_id": "arrows_quiver_of_20",
+      "type": "ammunition",
+      "cost_sp": 50,
+      "weight_coins": 20,
+      "damage": null,
+      "ac_bonus": null,
+      "description": null,
+      "properties": []
+    },
+    {
+      "name": "Quarrels (case of 20)",
+      "item_id": "quarrels_case_of_20",
+      "type": "ammunition",
+      "cost_sp": 100,
+      "weight_coins": 20,
+      "damage": null,
+      "ac_bonus": null,
+      "description": null,
+      "properties": []
+    },
+    {
+      "name": "Sling stones",
+      "item_id": "sling_stones",
+      "type": "ammunition",
+      "cost_sp": 0,
+      "weight_coins": 1,
+      "damage": null,
+      "ac_bonus": null,
+      "description": null,
+      "properties": []
+    }
+  ]
+}

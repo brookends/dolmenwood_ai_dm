@@ -1,0 +1,19 @@
+{
+  "_comment": "Example hex location format",
+  "hex_id": "0506",
+  "coordinates": [5, 6],
+  "location_name": "The Whispering Grove",
+  "terrain_type": "forest",
+  "description": "Ancient oaks cluster thickly here, their branches intertwined overhead to block most sunlight. The wind passing through the leaves creates sounds eerily like whispered voices. Local woodcutters avoid this area, claiming the trees themselves speak warnings to those who would harm them.",
+  "special_encounters": [
+    "1-in-6 chance per turn of encountering a Dryad who demands tribute",
+    "At night, will-o-wisps dance among the trees"
+  ],
+  "npcs": ["Old Moss-Beard the Hermit"],
+  "adjacent_hexes": ["0406", "0505", "0507", "0605", "0606", "0607"],
+  "source": {
+    "source_id": "campaign_book",
+    "book_code": "DCB",
+    "page_reference": "p. 124"
+  }
+}

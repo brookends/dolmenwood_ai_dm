@@ -1,0 +1,103 @@
+{
+  "_metadata": {
+    "source_file": "../data/pdfs/core/Dolmenwood_Players_Book.pdf",
+    "pages": [
+      106,
+      107
+    ],
+    "content_type": "spells",
+    "item_count": 8,
+    "errors": [],
+    "note": "Review and correct this data before importing"
+  },
+  "items": [
+    {
+      "name": "Bless",
+      "spell_id": "bless",
+      "level": 2,
+      "magic_type": "divine",
+      "duration": "6 Turns",
+      "range": "60'",
+      "description": "Accompanied by the triumphant blaring of trumpets, a surge of divine righteousness bolsters the morale of allies within a 20′ × 20′ area. Bonuses: Subjects gain a +1 bonus to Attack and Damage Rolls. Retainers: Also gain a +1 bonus to Loyalty.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Charm Serpents",
+      "spell_id": "charm_serpents",
+      "level": 2,
+      "magic_type": "divine",
+      "duration": "1d4 Rounds or 1d4 Turns",
+      "range": "60'",
+      "description": "This prayer hypnotises snakes; the serpents rear upright and sway to and fro, but they never attack while charmed. Number of snakes affected: Snakes whose Levels total up to twice the caster's Level. For example, a Level 3 caster could affect three Level 2 snakes, two Level 3 snakes, etc. The caster selects which individuals are affected. Duration: When cast on snakes that are already attacking, the effect lasts for 1d4 Rounds. Otherwise, it lasts for 1d4 Turns.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Find Traps",
+      "spell_id": "find_traps",
+      "level": 2,
+      "magic_type": "divine",
+      "duration": "2 Turns",
+      "range": "30'",
+      "description": "Trapped objects and areas within range of the caster are wreathed in an apparition of faint, flickering flames. Magical and mechanical traps: All are revealed. No disarm: The spell provides no assistance bypassing or deactivating traps, only revealing their locations.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Flame Ward",
+      "spell_id": "flame_ward",
+      "level": 2,
+      "magic_type": "divine",
+      "duration": "2 Turns",
+      "range": "30'",
+      "description": "A puff of flour and the aroma of freshly baked bread manifest around a single creature of the caster's choosing, which is bestowed with supernatural resistance to fire. Normal heat: The subject is unharmed by non-magical heat or fire. Save bonus: The subject gains a +2 bonus to Saving Throws versus fire-based effects (e.g. magic or breath attacks). Fire-based damage: Reduce fire damage by 1 per damage die rolled. (For example, 4d6 damage is reduced by 4.)",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Hold Person",
+      "spell_id": "hold_person",
+      "level": 2,
+      "magic_type": "divine",
+      "duration": "9 Turns",
+      "range": "180'",
+      "description": "The caster castigates one or more mortals, fairies, or demi-fey for their misdeeds, causing them to halt in their tracks if they fail a Save Versus Hold. The spell may be used in two ways: 1. Against an individual: The target's Saving Throw is penalised by –2. 2. Against a group: 1d4 individuals in the group are targeted. The individuals are selected by the caster. Restrictions: Large creatures are immune. Paralysis: Affected targets are aware but cannot move their limbs. They may, at the caster's option, speak. Freeing: The caster may free paralysed targets with a word.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Reveal Alignment",
+      "spell_id": "reveal_alignment",
+      "level": 2,
+      "magic_type": "divine",
+      "duration": "Instant",
+      "range": "30'",
+      "description": "An angelic voice whispers in the caster's mind, revealing the Alignment of a selected character, monster, object, or area within range. (Most objects and areas do not have an Alignment, but magic items or holy places may.)",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Silence",
+      "spell_id": "silence",
+      "level": 2,
+      "magic_type": "divine",
+      "duration": "12 Turns",
+      "range": "180'",
+      "description": "Raising a finger to their lips, the caster whispers a hushed prayer to St Signis the Silent. A 15′ radius area within range is shrouded in holy silence. Within the area: All sound is prevented. Conversation and spell casting are impossible. Noise from outside: Those within the area of silence can only hear sounds from outside it. Casting upon a creature: Silence may be cast upon a creature, which must Save Versus Spell. If the Saving Throw fails, the shrouded 15′ radius area of silence moves with the target. If the Saving Throw succeeds, the spell has no effect.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Speak with Animals",
+      "spell_id": "speak_with_animals",
+      "level": 2,
+      "magic_type": "divine",
+      "duration": "6 Turns",
+      "range": "The caster",
+      "description": "Animals of one selected species prick up their ears to the lilting words of this prayer. The caster can speak with all animals of that type for the duration. Type of animal: The spell translates for one species of normal or giant animals at a time. Intelligent animals and fantastic monsters are not affected. Services: Animals which are friendly towards the caster may be persuaded to perform a service. The service must be within an animal's comprehension and capabilities.",
+      "reversible": false,
+      "reversed_name": null
+    }
+  ]
+}

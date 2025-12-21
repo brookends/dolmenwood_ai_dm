@@ -1,0 +1,171 @@
+{
+  "_metadata": {
+    "source_file": "../data/pdfs/core/Dolmenwood_Players_Book.pdf",
+    "pages": [
+      122
+    ],
+    "content_type": "monsters",
+    "item_count": 6,
+    "errors": [],
+    "note": "Review and correct this data before importing"
+  },
+  "items": [
+    {
+      "name": "Charger",
+      "monster_id": "charger",
+      "hd": "3",
+      "hp": 13,
+      "ac": 12,
+      "ac_ascending": null,
+      "movement": "40'",
+      "attacks": [
+        {
+          "name": "Hooves",
+          "damage": "1d6",
+          "count": 2
+        }
+      ],
+      "special_abilities": [
+        {
+          "name": "Charge",
+          "description": "Trained to charge into melee, requiring a clear run of 40′. When charging, the horse cannot attack, but a successful lance attack by the rider inflicts double damage."
+        },
+        {
+          "name": "Melee",
+          "description": "When in melee, both rider and horse can attack."
+        }
+      ],
+      "save_as": null,
+      "morale": 9,
+      "alignment": "Neutral",
+      "xp": 65,
+      "number_appearing": null,
+      "treasure_type": null,
+      "description": "War horses bred for strength and courage in battle. Adapted to short bursts of speed; not suited to long-distance riding."
+    },
+    {
+      "name": "Dapple-Doff",
+      "monster_id": "dapple-doff",
+      "hd": "3",
+      "hp": 13,
+      "ac": 12,
+      "ac_ascending": null,
+      "movement": "30'",
+      "attacks": [],
+      "special_abilities": [],
+      "save_as": null,
+      "morale": 5,
+      "alignment": "Neutral",
+      "xp": 40,
+      "number_appearing": null,
+      "treasure_type": null,
+      "description": "Mighty, shaggy-furred draft horses, bred for their great strength. Dull-witted and easily spooked."
+    },
+    {
+      "name": "Hop-Clopper",
+      "monster_id": "hop-clopper",
+      "hd": "3",
+      "hp": 13,
+      "ac": 12,
+      "ac_ascending": null,
+      "movement": "30'",
+      "attacks": [
+        {
+          "name": "Hooves",
+          "damage": "1d4",
+          "count": 2
+        }
+      ],
+      "special_abilities": [],
+      "save_as": null,
+      "morale": 7,
+      "alignment": "Neutral",
+      "xp": 40,
+      "number_appearing": null,
+      "treasure_type": null,
+      "description": "Stocky, green-maned draft horses beloved by Prigwort breweries. Get tetchy without their daily pint of ale."
+    },
+    {
+      "name": "Mule",
+      "monster_id": "mule",
+      "hd": "2",
+      "hp": 9,
+      "ac": 12,
+      "ac_ascending": null,
+      "movement": "40'",
+      "attacks": [
+        {
+          "name": "Kick",
+          "damage": "1d4",
+          "count": 1
+        },
+        {
+          "name": "Bite",
+          "damage": "1d3",
+          "count": 1
+        }
+      ],
+      "special_abilities": [],
+      "save_as": null,
+      "morale": 8,
+      "alignment": "Neutral",
+      "xp": 20,
+      "number_appearing": null,
+      "treasure_type": null,
+      "description": "Stubborn horse/donkey cross-breeds used as beasts of burden. Unlike other horses, mules can be taken underground."
+    },
+    {
+      "name": "Prigwort Prancer",
+      "monster_id": "prigwort_prancer",
+      "hd": "2",
+      "hp": 9,
+      "ac": 12,
+      "ac_ascending": null,
+      "movement": "80'",
+      "attacks": [
+        {
+          "name": "Hooves",
+          "damage": "1d4",
+          "count": 2
+        }
+      ],
+      "special_abilities": [],
+      "save_as": null,
+      "morale": 7,
+      "alignment": "Neutral",
+      "xp": 20,
+      "number_appearing": null,
+      "treasure_type": null,
+      "description": "Lightly built horses adapted to run at high speed. Fond of snacking on acorns in the autumn."
+    },
+    {
+      "name": "Yellow-Flank",
+      "monster_id": "yellow-flank",
+      "hd": "3",
+      "hp": 13,
+      "ac": 12,
+      "ac_ascending": null,
+      "movement": "60'",
+      "attacks": [
+        {
+          "name": "Hooves",
+          "damage": "1d4",
+          "count": 2
+        }
+      ],
+      "special_abilities": [
+        {
+          "name": "Alignment",
+          "description": "The Referee should secretly determine the Alignment of each yellow-flank, at random. After 1d3 weeks of being owned by a character of differing Alignment, the horse attempts to escape, even chewing reins and tethers."
+        }
+      ],
+      "save_as": null,
+      "morale": 7,
+      "alignment": "Any Alignment",
+      "xp": 40,
+      "number_appearing": null,
+      "treasure_type": null,
+      "description": "Tall, slender horses favoured by nobility, with flowing, silver manes and golden dappling along their sides. The haughty, laughing neigh of the yellow-flank bespeaks the breed's rumoured fairy ancestry."
+    }
+  ]
+}

@@ -1,0 +1,853 @@
+{
+  "_metadata": {
+    "source_file": "../data/pdfs/core/Dolmenwood_Players_Book.pdf",
+    "pages": [
+      118,
+      119
+    ],
+    "content_type": "items",
+    "item_count": 66,
+    "errors": [],
+    "note": "Review and correct this data before importing"
+  },
+  "items": [
+    {
+      "name": "Backpack",
+      "item_id": "backpack",
+      "type": "container",
+      "cost_sp": 40,
+      "weight_coins": 50,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A leather bag with shoulder straps. Holds up to 400 coins.",
+      "properties": [
+        "capacity: 400 coins"
+      ]
+    },
+    {
+      "name": "Barrel",
+      "item_id": "barrel",
+      "type": "container",
+      "cost_sp": 10,
+      "weight_coins": 70,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A wooden barrel that holds 40 gallons (320 pints).",
+      "properties": [
+        "capacity: 320 pints"
+      ]
+    },
+    {
+      "name": "Belt pouch",
+      "item_id": "belt_pouch",
+      "type": "container",
+      "cost_sp": 10,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A leather pouch that holds up to 50 coins.",
+      "properties": [
+        "capacity: 50 coins"
+      ]
+    },
+    {
+      "name": "Bucket",
+      "item_id": "bucket",
+      "type": "container",
+      "cost_sp": 10,
+      "weight_coins": 20,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Holds 40 pints (5 gallons).",
+      "properties": [
+        "capacity: 40 pints"
+      ]
+    },
+    {
+      "name": "Casket (iron, large)",
+      "item_id": "casket_iron_large",
+      "type": "container",
+      "cost_sp": 300,
+      "weight_coins": 400,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A solid iron casket. A large casket can hold up to 800 coins.",
+      "properties": [
+        "capacity: 800 coins"
+      ]
+    },
+    {
+      "name": "Casket (iron, small)",
+      "item_id": "casket_iron_small",
+      "type": "container",
+      "cost_sp": 100,
+      "weight_coins": 100,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A solid iron casket. A small casket can hold up to 250 coins.",
+      "properties": [
+        "capacity: 250 coins"
+      ]
+    },
+    {
+      "name": "Chest (wooden, large)",
+      "item_id": "chest_wooden_large",
+      "type": "container",
+      "cost_sp": 50,
+      "weight_coins": 200,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A large chest can hold 1,000 coins.",
+      "properties": [
+        "capacity: 1,000 coins"
+      ]
+    },
+    {
+      "name": "Chest (wooden, small)",
+      "item_id": "chest_wooden_small",
+      "type": "container",
+      "cost_sp": 10,
+      "weight_coins": 50,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A small chest can hold 300 coins.",
+      "properties": [
+        "capacity: 300 coins"
+      ]
+    },
+    {
+      "name": "Sack",
+      "item_id": "sack",
+      "type": "container",
+      "cost_sp": 10,
+      "weight_coins": 5,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A large, hessian sack that can hold 600 coins.",
+      "properties": [
+        "capacity: 600 coins"
+      ]
+    },
+    {
+      "name": "Scroll case",
+      "item_id": "scroll_case",
+      "type": "container",
+      "cost_sp": 10,
+      "weight_coins": 5,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "An oiled leather tube with a cap. Not completely watertight.",
+      "properties": [
+        "capacity: 1 scroll"
+      ]
+    },
+    {
+      "name": "Vial (glass)",
+      "item_id": "vial_glass",
+      "type": "container",
+      "cost_sp": 10,
+      "weight_coins": 1,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A glass vial that can hold up to half a pint of liquid.",
+      "properties": [
+        "capacity: 1/2 pint"
+      ]
+    },
+    {
+      "name": "Waterskin",
+      "item_id": "waterskin",
+      "type": "container",
+      "cost_sp": 10,
+      "weight_coins": 50,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A leather container that holds up to 2 pints of liquid. Weighs 5 coins when empty.",
+      "properties": [
+        "capacity: 2 pints",
+        "weight when full"
+      ]
+    },
+    {
+      "name": "Candles (10)",
+      "item_id": "candles_10",
+      "type": "adventuring_gear",
+      "cost_sp": 10,
+      "weight_coins": 20,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Casts dim light in a 5′ radius and burns for 1 hour.",
+      "properties": [
+        "light source",
+        "1 hour duration"
+      ]
+    },
+    {
+      "name": "Lantern (hooded)",
+      "item_id": "lantern_hooded",
+      "type": "adventuring_gear",
+      "cost_sp": 50,
+      "weight_coins": 20,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Shutters allow the light to be hidden and the flame protected. Burns one oil flask every 4 hours (24 Turns). A hooded lantern casts light in a 30′ radius.",
+      "properties": [
+        "light source",
+        "30′ radius",
+        "4 hours per oil flask"
+      ]
+    },
+    {
+      "name": "Lantern (bullseye)",
+      "item_id": "lantern_bullseye",
+      "type": "adventuring_gear",
+      "cost_sp": 100,
+      "weight_coins": 20,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Shutters allow the light to be hidden and the flame protected. Burns one oil flask every 4 hours (24 Turns). A bullseye lantern casts light in a narrow beam, 60′ long and 20′ wide at the end.",
+      "properties": [
+        "light source",
+        "60′ beam",
+        "4 hours per oil flask"
+      ]
+    },
+    {
+      "name": "Oil (flask)",
+      "item_id": "oil_flask",
+      "type": "adventuring_gear",
+      "cost_sp": 10,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A flask of oil fuels a lantern for four hours (24 Turns). Burning oil can also be used as a weapon, either by throwing it at enemies or by pooling it on the ground (covers a 3′ diameter area, burns for 1 Turn, 1d8 Damage to creatures passing through).",
+      "properties": [
+        "fuel",
+        "weapon potential",
+        "1d8 damage when burning"
+      ]
+    },
+    {
+      "name": "Tinder box",
+      "item_id": "tinder_box",
+      "type": "adventuring_gear",
+      "cost_sp": 30,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Used to light fires, including torches. In perilous situations, there is a 2-in-6 chance of success lighting a fire per Round.",
+      "properties": [
+        "fire starting",
+        "2-in-6 success chance"
+      ]
+    },
+    {
+      "name": "Torches (3)",
+      "item_id": "torches_3",
+      "type": "adventuring_gear",
+      "cost_sp": 10,
+      "weight_coins": 30,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "When lit, casts light in a 30′ radius and burns for 1 hour (6 Turns). Torches may also be used in combat.",
+      "properties": [
+        "light source",
+        "30′ radius",
+        "1 hour duration",
+        "weapon potential"
+      ]
+    },
+    {
+      "name": "Bedroll",
+      "item_id": "bedroll",
+      "type": "adventuring_gear",
+      "cost_sp": 20,
+      "weight_coins": 70,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A heavy woollen blanket with a small pillow.",
+      "properties": []
+    },
+    {
+      "name": "Cooking pots",
+      "item_id": "cooking_pots",
+      "type": "adventuring_gear",
+      "cost_sp": 30,
+      "weight_coins": 100,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Pots and pans for campfire cooking.",
+      "properties": []
+    },
+    {
+      "name": "Firewood (bundle, 8 hours)",
+      "item_id": "firewood_bundle_8_hours",
+      "type": "adventuring_gear",
+      "cost_sp": 10,
+      "weight_coins": 200,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A bundle of dry wood. Burns for 8 hours.",
+      "properties": [
+        "8 hour burn time"
+      ]
+    },
+    {
+      "name": "Fishing rod and tackle",
+      "item_id": "fishing_rod_and_tackle",
+      "type": "adventuring_gear",
+      "cost_sp": 40,
+      "weight_coins": 50,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A rod, line, hook, and bait box.",
+      "properties": []
+    },
+    {
+      "name": "Rations (preserved, 1 day)",
+      "item_id": "rations_preserved_1_day",
+      "type": "food",
+      "cost_sp": 20,
+      "weight_coins": 20,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Preserved rations last up to 2 months, or 1 week in dank conditions (e.g. fungal forest, dungeons).",
+      "properties": [
+        "2 month shelf life",
+        "1 week in dank conditions"
+      ]
+    },
+    {
+      "name": "Rations (fresh, 1 day)",
+      "item_id": "rations_fresh_1_day",
+      "type": "food",
+      "cost_sp": 10,
+      "weight_coins": 20,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Fresh rations last for 1 week, or 1 day in dank conditions.",
+      "properties": [
+        "1 week shelf life",
+        "1 day in dank conditions"
+      ]
+    },
+    {
+      "name": "Tent",
+      "item_id": "tent",
+      "type": "adventuring_gear",
+      "cost_sp": 200,
+      "weight_coins": 20,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Large enough for two people.",
+      "properties": [
+        "2 person capacity"
+      ]
+    },
+    {
+      "name": "Holy symbol (gold)",
+      "item_id": "holy_symbol_gold",
+      "type": "adventuring_gear",
+      "cost_sp": 1000,
+      "weight_coins": 20,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Servants of the Pluritine Church must carry a holy symbol worn around the neck. A gold holy symbol grants a +1 bonus to the 2d6 roll which determines the success of the turning attempt and a +1 bonus to the 2d4 roll which determines the number of monsters affected.",
+      "properties": [
+        "+1 to turning success",
+        "+1 to monsters affected"
+      ]
+    },
+    {
+      "name": "Holy symbol (silver)",
+      "item_id": "holy_symbol_silver",
+      "type": "adventuring_gear",
+      "cost_sp": 250,
+      "weight_coins": 20,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Servants of the Pluritine Church must carry a holy symbol worn around the neck. A silver holy symbol grants a +1 bonus to the 2d6 roll which determines the success of the turning attempt.",
+      "properties": [
+        "+1 to turning success"
+      ]
+    },
+    {
+      "name": "Holy symbol (wooden)",
+      "item_id": "holy_symbol_wooden",
+      "type": "adventuring_gear",
+      "cost_sp": 50,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Servants of the Pluritine Church must carry a holy symbol worn around the neck.",
+      "properties": []
+    },
+    {
+      "name": "Holy water (vial)",
+      "item_id": "holy_water_vial",
+      "type": "adventuring_gear",
+      "cost_sp": 250,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Water blessed by high-ranking clergy, stored in a special vial for use in religious rituals. Holy water inflicts damage on undead monsters. Loses its power if transferred from the blessed vials it is stored in.",
+      "properties": [
+        "damages undead",
+        "loses power if transferred"
+      ]
+    },
+    {
+      "name": "Bell (miniature)",
+      "item_id": "bell_miniature",
+      "type": "adventuring_gear",
+      "cost_sp": 10,
+      "weight_coins": 1,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A 1″ brass bell.",
+      "properties": []
+    },
+    {
+      "name": "Block and tackle",
+      "item_id": "block_and_tackle",
+      "type": "tool",
+      "cost_sp": 50,
+      "weight_coins": 50,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Used for lifting heavy objects. Reduces effective weight by 75%, but requires 4 times as much rope.",
+      "properties": [
+        "reduces weight by 75%",
+        "requires 4x rope"
+      ]
+    },
+    {
+      "name": "Caltrops (bag of 20)",
+      "item_id": "caltrops_bag_of_20",
+      "type": "adventuring_gear",
+      "cost_sp": 10,
+      "weight_coins": 20,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Small metal spikes sufficient to cover a 5′ × 5′ area. Creatures moving through the area have a 2-in-6 chance of treading on a spike. Victims suffer a 50% Speed reduction for 24 hours (or until they receive magical healing).",
+      "properties": [
+        "covers 5′ × 5′ area",
+        "2-in-6 chance to hit",
+        "50% speed reduction for 24 hours"
+      ]
+    },
+    {
+      "name": "Chain (10′ long)",
+      "item_id": "chain_10_long",
+      "type": "adventuring_gear",
+      "cost_sp": 300,
+      "weight_coins": 100,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A 10′ length of heavy, iron chain.",
+      "properties": [
+        "10′ length"
+      ]
+    },
+    {
+      "name": "Chalk (10 sticks)",
+      "item_id": "chalk_10_sticks",
+      "type": "adventuring_gear",
+      "cost_sp": 10,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Useful for making markings on stone.",
+      "properties": []
+    },
+    {
+      "name": "Chisel",
+      "item_id": "chisel",
+      "type": "tool",
+      "cost_sp": 20,
+      "weight_coins": 20,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Used with a hammer for chipping away stone.",
+      "properties": []
+    },
+    {
+      "name": "Crowbar",
+      "item_id": "crowbar",
+      "type": "tool",
+      "cost_sp": 100,
+      "weight_coins": 50,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "An iron bar, 2–3′ long. Used for prying open doors, chest lids, etc.",
+      "properties": [
+        "2-3′ long"
+      ]
+    },
+    {
+      "name": "Grappling hook",
+      "item_id": "grappling_hook",
+      "type": "adventuring_gear",
+      "cost_sp": 200,
+      "weight_coins": 40,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Made of iron, with 3–4 hooks and a ring to attach a rope.",
+      "properties": [
+        "3-4 hooks",
+        "rope attachment ring"
+      ]
+    },
+    {
+      "name": "Hammer (small)",
+      "item_id": "hammer_small",
+      "type": "tool",
+      "cost_sp": 20,
+      "weight_coins": 30,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Useful for hammering in iron spikes or tapping stonework.",
+      "properties": []
+    },
+    {
+      "name": "Hammer (sledgehammer)",
+      "item_id": "hammer_sledgehammer",
+      "type": "tool",
+      "cost_sp": 50,
+      "weight_coins": 100,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A big heavy hammer for breaking rock.",
+      "properties": []
+    },
+    {
+      "name": "Ink (vial)",
+      "item_id": "ink_vial",
+      "type": "adventuring_gear",
+      "cost_sp": 10,
+      "weight_coins": 5,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A vial of black ink. Coloured ink costs double. Sufficient for about 50 pages of writing.",
+      "properties": [
+        "50 pages worth",
+        "colored ink costs double"
+      ]
+    },
+    {
+      "name": "Iron spikes (12)",
+      "item_id": "iron_spikes_12",
+      "type": "adventuring_gear",
+      "cost_sp": 10,
+      "weight_coins": 60,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "May be used to wedge doors open or shut, anchor ropes, and many other purposes.",
+      "properties": []
+    },
+    {
+      "name": "Lock",
+      "item_id": "lock",
+      "type": "adventuring_gear",
+      "cost_sp": 200,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A basic iron lock with a key.",
+      "properties": [
+        "includes key"
+      ]
+    },
+    {
+      "name": "Magnifying glass",
+      "item_id": "magnifying_glass",
+      "type": "tool",
+      "cost_sp": 30,
+      "weight_coins": 5,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Used for studying fine details.",
+      "properties": []
+    },
+    {
+      "name": "Manacles",
+      "item_id": "manacles",
+      "type": "adventuring_gear",
+      "cost_sp": 150,
+      "weight_coins": 60,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Iron manacles with a chain. Used for restraining a creature's hands or feet.",
+      "properties": [
+        "includes chain"
+      ]
+    },
+    {
+      "name": "Marbles (bag of 20)",
+      "item_id": "marbles_bag_of_20",
+      "type": "adventuring_gear",
+      "cost_sp": 10,
+      "weight_coins": 20,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A bag of small, colourful glass beads.",
+      "properties": []
+    },
+    {
+      "name": "Mining pick",
+      "item_id": "mining_pick",
+      "type": "tool",
+      "cost_sp": 30,
+      "weight_coins": 100,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A strong pick for breaking rock.",
+      "properties": []
+    },
+    {
+      "name": "Mirror (small)",
+      "item_id": "mirror_small",
+      "type": "adventuring_gear",
+      "cost_sp": 50,
+      "weight_coins": 50,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Useful for looking around corners or for reflecting a monster's harmful gaze.",
+      "properties": [
+        "reflects gaze attacks"
+      ]
+    },
+    {
+      "name": "Musical instrument (stringed)",
+      "item_id": "musical_instrument_stringed",
+      "type": "adventuring_gear",
+      "cost_sp": 200,
+      "weight_coins": 50,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A stringed instrument (e.g. a lute or mandolin). The listed price is for an instrument of basic quality. Higher quality instruments can cost up to 10 times as much.",
+      "properties": [
+        "basic quality",
+        "higher quality costs up to 10x"
+      ]
+    },
+    {
+      "name": "Musical instrument (wind)",
+      "item_id": "musical_instrument_wind",
+      "type": "adventuring_gear",
+      "cost_sp": 50,
+      "weight_coins": 20,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A wind instrument (e.g. a flute or pipe). The listed price is for an instrument of basic quality. Higher quality instruments can cost up to 10 times as much.",
+      "properties": [
+        "basic quality",
+        "higher quality costs up to 10x"
+      ]
+    },
+    {
+      "name": "Paper or parchment (2 sheets)",
+      "item_id": "paper_or_parchment_2_sheets",
+      "type": "adventuring_gear",
+      "cost_sp": 10,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Approximately 1′-square sheets.",
+      "properties": [
+        "1′-square sheets"
+      ]
+    },
+    {
+      "name": "Pole (10′ long, wooden)",
+      "item_id": "pole_10_long_wooden",
+      "type": "adventuring_gear",
+      "cost_sp": 10,
+      "weight_coins": 70,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A 2″ thick wooden pole useful for poking and prodding suspicious items in a dungeon.",
+      "properties": [
+        "10′ long",
+        "2″ thick"
+      ]
+    },
+    {
+      "name": "Quill",
+      "item_id": "quill",
+      "type": "adventuring_gear",
+      "cost_sp": 10,
+      "weight_coins": 1,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A large feather sharpened into a writing point.",
+      "properties": []
+    },
+    {
+      "name": "Rope (50′ long)",
+      "item_id": "rope_50_long",
+      "type": "adventuring_gear",
+      "cost_sp": 10,
+      "weight_coins": 100,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Strong enough to hold the weight of three people and their equipment.",
+      "properties": [
+        "50′ long",
+        "holds 3 people + equipment"
+      ]
+    },
+    {
+      "name": "Rope ladder (25′ long)",
+      "item_id": "rope_ladder_25_long",
+      "type": "adventuring_gear",
+      "cost_sp": 50,
+      "weight_coins": 200,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Two ropes with looped rungs and a knot at the top to attach a grappling hook. Strong enough to hold the weight of three people and their equipment.",
+      "properties": [
+        "25′ long",
+        "grappling hook attachment",
+        "holds 3 people + equipment"
+      ]
+    },
+    {
+      "name": "Saw",
+      "item_id": "saw",
+      "type": "tool",
+      "cost_sp": 10,
+      "weight_coins": 20,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A carpenter's hand saw for cutting wood.",
+      "properties": []
+    },
+    {
+      "name": "Shovel",
+      "item_id": "shovel",
+      "type": "tool",
+      "cost_sp": 20,
+      "weight_coins": 50,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "For excavating earth.",
+      "properties": []
+    },
+    {
+      "name": "Spell book (blank)",
+      "item_id": "spell_book_blank",
+      "type": "adventuring_gear",
+      "cost_sp": 1000,
+      "weight_coins": 50,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A hefty tome of vellum pages bound in leather, suitable for inscribing spells. A spell book can contain up to three spells.",
+      "properties": [
+        "holds up to 3 spells"
+      ]
+    },
+    {
+      "name": "Thieves' tools",
+      "item_id": "thieves_tools",
+      "type": "tool",
+      "cost_sp": 250,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A set of lock picking tools in a small case.",
+      "properties": []
+    },
+    {
+      "name": "Twine (100′ ball)",
+      "item_id": "twine_100_ball",
+      "type": "adventuring_gear",
+      "cost_sp": 10,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A wound ball of thin cord or string. Can support up to 300 coins of weight.",
+      "properties": [
+        "100′ length",
+        "supports 300 coins weight"
+      ]
+    },
+    {
+      "name": "Whistle",
+      "item_id": "whistle",
+      "type": "adventuring_gear",
+      "cost_sp": 10,
+      "weight_coins": 1,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Useful for signalling or faking bird calls.",
+      "properties": []
+    },
+    {
+      "name": "Clothes, common",
+      "item_id": "clothes_common",
+      "type": "clothing",
+      "cost_sp": 10,
+      "weight_coins": 30,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Full sets of clothing to cover the whole body, including hose, tunic, shirt, belt, dress, etc.",
+      "properties": []
+    },
+    {
+      "name": "Clothes, extravagant",
+      "item_id": "clothes_extravagant",
+      "type": "clothing",
+      "cost_sp": 1000,
+      "weight_coins": 60,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Full sets of clothing to cover the whole body, including hose, tunic, shirt, belt, dress, etc.",
+      "properties": []
+    },
+    {
+      "name": "Clothes, fine",
+      "item_id": "clothes_fine",
+      "type": "clothing",
+      "cost_sp": 200,
+      "weight_coins": 40,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Full sets of clothing to cover the whole body, including hose, tunic, shirt, belt, dress, etc.",
+      "properties": []
+    },
+    {
+      "name": "Habit, friar's",
+      "item_id": "habit_friars",
+      "type": "clothing",
+      "cost_sp": 20,
+      "weight_coins": 30,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Simple hessian tunic and cowl with a cord belt, worn by friars.",
+      "properties": []
+    },
+    {
+      "name": "Robes, ritual",
+      "item_id": "robes_ritual",
+      "type": "clothing",
+      "cost_sp": 100,
+      "weight_coins": 30,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Fine quality robes with embroidered symbols. Often used by magicians.",
+      "properties": []
+    },
+    {
+      "name": "Winter cloak",
+      "item_id": "winter_cloak",
+      "type": "clothing",
+      "cost_sp": 20,
+      "weight_coins": 20,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A thick, woollen traveller's cloak.",
+      "properties": []
+    }
+  ]
+}

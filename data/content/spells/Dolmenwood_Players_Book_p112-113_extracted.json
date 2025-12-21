@@ -1,0 +1,81 @@
+{
+  "_metadata": {
+    "source_file": "../data/pdfs/core/Dolmenwood_Players_Book.pdf",
+    "pages": [
+      112,
+      113
+    ],
+    "content_type": "spells",
+    "item_count": 6,
+    "errors": [],
+    "note": "Review and correct this data before importing"
+  },
+  "items": [
+    {
+      "name": "Communion",
+      "spell_id": "communion",
+      "level": 5,
+      "magic_type": "divine",
+      "duration": "3 Turns",
+      "range": "The caster",
+      "description": "This prayer allows the caster to enter into communion with one of the ascended saints, asking questions and receiving answers relaying the divine wisdom of the One True God. The spell must be cast upon the saint's feast day. For the duration of the spell, the caster is in a spiritual trance, unaware of the world around them. The caster may ask 3 questions of the saint. Each question receives a simple \"yes\" or \"no\" answer. The answers are guaranteed to be true. Communion may be cast once per week. The Referee can limit it to once per month if overused. St Clewyd does not respond to this spell.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Create Food",
+      "spell_id": "create_food",
+      "level": 5,
+      "magic_type": "divine",
+      "duration": "Permanent",
+      "range": "Appears in the caster's presence",
+      "description": "Barrels and hampers of fresh food wash up on a foaming swell of seawater. The brine disappears instantly, but the food remains. Food sufficient for 12 people and 12 mounts is conjured—enough to last one day. If the caster is higher than Level 9, food sufficient for an additional 12 people and mounts is produced for each Level beyond 9.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Holy Fire",
+      "spell_id": "holy_fire",
+      "level": 5,
+      "magic_type": "divine",
+      "duration": "Concentration (up to 1 Turn) or instant",
+      "range": "30′ or the caster or a creature touched",
+      "description": "A column of holy fire surrounds the caster, channelling divine grace for one of three purposes: 1. Circle of warding: By concentrating and remaining stationary, the caster creates a ward against undead and creatures created or summoned by magic. Any such creature that comes within 30′ must Save Versus Spell or be destroyed or banished to its place of origin. If a monster's save succeeds, it flees the warded area. 2. Target single monster: Instantly banish or destroy a single magically-summoned, created, or undead creature within range. The monster may Save Versus Spell (with a –2 penalty) to avoid banishment or destruction. If the monster's save succeeds, it flees the affected area. 3. Restoration: Touching a subject instantly removes a curse, disease, or other affliction.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Holy Quest",
+      "spell_id": "holy_quest",
+      "level": 5,
+      "magic_type": "divine",
+      "duration": "Until quest is completed",
+      "range": "30′",
+      "description": "Accompanied by a clap of thunder and a ray of holy light, the caster commands a single subject to perform a specific quest or task. Example quests: Rescuing a prisoner, killing a specific monster, bringing a magic item to the caster, going on a journey to a holy site. The prescribed quest must not be obviously suicidal. The subject must undertake the quest or suffer a –2 penalty to Attack Rolls and Saving Throws. Once the task is completed, the spell ends. The subject may Save Versus Spell to resist the holy compulsion, negating the effects of the spell.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Insect Plague",
+      "spell_id": "insect_plague",
+      "level": 5,
+      "magic_type": "divine",
+      "duration": "1 Turn per Level",
+      "range": "360′",
+      "description": "A writhing, 60′ diameter swarm of biting insects manifests at a location within range. The swarm does not move from the area it is summoned in. Inside the swarm: Vision is limited to 30′. Biting insects inflict 1 damage per Round on all creatures. Creatures of Level 1–2: Low-level creatures caught within the swarm flee in horror and only stop when at least 240′ away.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Raise Dead",
+      "spell_id": "raise_dead",
+      "level": 5,
+      "magic_type": "divine",
+      "duration": "Instant",
+      "range": "120′",
+      "description": "The ultimate miracle—by the grace of God, a deceased person may be returned to life. Mortals may be raised. Fairies and demi-fey may not, the fate of their souls being outside of the purview of the Pluritine Church. Raise Dead requires a grandiose ritual in a cathedral, the participation of a dozen priests, and the burning of rare incenses to the value of 2,000gp. A person deceased for no longer than 2 days per Level of the caster can be raised. Returning from death is an ordeal. Until the subject gets 2 full weeks of bed rest, they have 1 Hit Point, move at half Speed, cannot carry heavy items, and cannot attack, cast spells, make Skill Checks, or use other Class capabilities. Recovery from this weakness cannot be hastened by magic of any kind.",
+      "reversible": false,
+      "reversed_name": null
+    }
+  ]
+}

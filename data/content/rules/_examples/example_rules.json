@@ -1,0 +1,25 @@
+[
+  {
+    "_comment": "Example rules format - can be single rule or array",
+    "title": "Morale Checks",
+    "rule_id": "rule_morale_checks",
+    "category": "combat",
+    "content": "Morale is checked in two situations:\n\n1. When a side first loses a member in combat\n2. When half the group has been incapacitated\n\nTo check morale, roll 2d6. If the result is higher than the creature's morale score, it attempts to flee or surrender.\n\nRetainers also check morale when their employer is killed or in extremely dangerous situations.",
+    "source": {
+      "source_id": "players_book",
+      "book_code": "DPB",
+      "page_reference": "p. 112"
+    }
+  },
+  {
+    "title": "Getting Lost",
+    "rule_id": "rule_getting_lost",
+    "category": "exploration",
+    "content": "When traveling through wilderness, parties without a guide or reliable map must check for getting lost.\n\nChance of getting lost by terrain:\n- Clear, grasslands: 1-in-6\n- Forest, hills, mountains: 2-in-6\n- Swamp, jungle, desert: 3-in-6\n\nA lost party moves in a random direction for that day's travel. They remain lost until they either find a landmark, succeed on a subsequent getting lost check, or use magic to determine their location.",
+    "source": {
+      "source_id": "players_book",
+      "book_code": "DPB",
+      "page_reference": "p. 98"
+    }
+  }
+]

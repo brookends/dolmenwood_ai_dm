@@ -1,0 +1,260 @@
+{
+  "_metadata": {
+    "source_file": "../data/pdfs/core/Dolmenwood_Players_Book.pdf",
+    "pages": [
+      124,
+      125
+    ],
+    "content_type": "monsters",
+    "item_count": 8,
+    "errors": [],
+    "note": "Review and correct this data before importing"
+  },
+  "items": [
+    {
+      "name": "Bloodhound",
+      "monster_id": "bloodhound",
+      "hd": "2",
+      "hp": 9,
+      "ac": 13,
+      "ac_ascending": 13,
+      "movement": "50'",
+      "attacks": [
+        {
+          "name": "Bite",
+          "damage": "1d6",
+          "count": 1
+        }
+      ],
+      "special_abilities": [
+        {
+          "name": "Tracking",
+          "description": "Excellent scent-trackers. Once a bloodhound is on the trail, it is exceedingly difficult to thwart."
+        }
+      ],
+      "save_as": null,
+      "morale": 7,
+      "alignment": "Neutral",
+      "xp": 20,
+      "number_appearing": null,
+      "treasure_type": null,
+      "description": "Medium hounds with sleek, rusty fur and blood red eyes. Bred for their excellent tracking skills. Common working dogs found in every woodland village in Dolmenwood."
+    },
+    {
+      "name": "Dapper",
+      "monster_id": "dapper",
+      "hd": "2",
+      "hp": 9,
+      "ac": 13,
+      "ac_ascending": 13,
+      "movement": "50'",
+      "attacks": [
+        {
+          "name": "Bite",
+          "damage": "1d4",
+          "count": 1
+        }
+      ],
+      "special_abilities": [
+        {
+          "name": "Language",
+          "description": "Dappers are able to mimic speech. Each dog can be trained to mimic up to 10 words, though they have no inkling of their meaning."
+        }
+      ],
+      "save_as": null,
+      "morale": 7,
+      "alignment": "Neutral",
+      "xp": 20,
+      "number_appearing": null,
+      "treasure_type": null,
+      "description": "Curly-furred dogs with huge, floppy ears and great fringes that obscure their eyes. Dappers are favoured by the noble classes for their curious love of dressing in preposterous outfits and performing amusing dances."
+    },
+    {
+      "name": "Dolmen Pincher",
+      "monster_id": "dolmen_pincher",
+      "hd": "2",
+      "hp": 9,
+      "ac": 12,
+      "ac_ascending": 12,
+      "movement": "50'",
+      "attacks": [
+        {
+          "name": "Bite",
+          "damage": "1d6",
+          "count": 1
+        }
+      ],
+      "special_abilities": [
+        {
+          "name": "Bring down prey",
+          "description": "If a dolmen pincher successfully attacks a target of Level 4 or less and rolls 4 or higher for damage, it drags down the target. In the following Round, the target may not move and suffers a –1 penalty to Armour Class and Attack."
+        }
+      ],
+      "save_as": null,
+      "morale": 9,
+      "alignment": "Neutral",
+      "xp": 35,
+      "number_appearing": null,
+      "treasure_type": null,
+      "description": "Sleek, muscular hunting hounds with black fur and a rusty muzzle. Employed especially for hunting large beasts."
+    },
+    {
+      "name": "Lankston Mastiff",
+      "monster_id": "lankston_mastiff",
+      "hd": "3",
+      "hp": 13,
+      "ac": 12,
+      "ac_ascending": 12,
+      "movement": "40'",
+      "attacks": [
+        {
+          "name": "Bite",
+          "damage": "1d6+1",
+          "count": 1
+        }
+      ],
+      "special_abilities": [
+        {
+          "name": "Failed Morale Checks",
+          "description": "If a Lankston mastiff fails a Morale Check, there is a 2-in-6 chance that it will go wild, attacking anyone who comes near to it (including its owner or trainer). This state is permanent."
+        }
+      ],
+      "save_as": null,
+      "morale": 9,
+      "alignment": "Neutral",
+      "xp": 40,
+      "number_appearing": null,
+      "treasure_type": null,
+      "description": "Huge, bulky beasts with thick, shaggy fur and a volatile, vicious temperament. Mastiffs make excellent and diligent guard dogs, but they are notoriously difficult to train."
+    },
+    {
+      "name": "Lichhound",
+      "monster_id": "lichhound",
+      "hd": "1",
+      "hp": 4,
+      "ac": 12,
+      "ac_ascending": 12,
+      "movement": "40'",
+      "attacks": [
+        {
+          "name": "Bite",
+          "damage": "1d4",
+          "count": 1
+        },
+        {
+          "name": "Turning bark",
+          "damage": null,
+          "count": 1
+        }
+      ],
+      "special_abilities": [
+        {
+          "name": "Fear no undead",
+          "description": "Do not check Morale when in combat with undead monsters."
+        },
+        {
+          "name": "Turning bark (once a day)",
+          "description": "A lichhound may emit a baying that is terrifying to the undead. On a 2d6 roll of 7 or more, Level 1 undead monsters are turned, and on a roll of 9 or more, Level 2 monster are turned. If the baying succeeds, 2d4 undead monsters flee from the hound for 1 Turn."
+        }
+      ],
+      "save_as": null,
+      "morale": 8,
+      "alignment": "Neutral",
+      "xp": 10,
+      "number_appearing": null,
+      "treasure_type": null,
+      "description": "Stocky, grey, wiry-furred hounds with upright, pointed ears and narrow, yellow eyes. Lichhounds are bred by the Church as companions for graveyard wardens and clerics of the order of Saint Signis."
+    },
+    {
+      "name": "Pisker",
+      "monster_id": "pisker",
+      "hd": "2",
+      "hp": 9,
+      "ac": 11,
+      "ac_ascending": 11,
+      "movement": "40'",
+      "attacks": [
+        {
+          "name": "Bite",
+          "damage": "1d6",
+          "count": 1
+        }
+      ],
+      "special_abilities": [
+        {
+          "name": "Detect fairies",
+          "description": "All animals exhibit an uneasiness in the presence of fairies. In piskers, however, this instinct is honed to perfection. A pisker (even when sleeping) can detect fairies within 20′ and will make their presence known by incessantly yelping for 1 Turn."
+        }
+      ],
+      "save_as": null,
+      "morale": 8,
+      "alignment": "Neutral",
+      "xp": 20,
+      "number_appearing": null,
+      "treasure_type": null,
+      "description": "Stocky, short-legged dogs with lustrous reddish fur, lolling tongues, and soft, pudgy bellies. Known for their frisky, boisterous temperament and obnoxious yapping. Commonly kept by the people of Prigwort, who fear the presence of fairies."
+    },
+    {
+      "name": "Seelie Dog",
+      "monster_id": "seelie_dog",
+      "hd": "1",
+      "hp": 4,
+      "ac": 13,
+      "ac_ascending": 13,
+      "movement": "60'",
+      "attacks": [
+        {
+          "name": "Bite",
+          "damage": "1d4",
+          "count": 1
+        }
+      ],
+      "special_abilities": [
+        {
+          "name": "Language",
+          "description": "Cannot speak, but have a basic understanding of language (typically Woldish and Sylvan)."
+        },
+        {
+          "name": "Loyalty",
+          "description": "Seelies are notoriously picky about their companions—there is only a 2-in-6 chance of a seelie dog taking to a mortal owner. If the dog dislikes the owner, it will be utterly obstinate. If it likes the owner, it will be unfailingly loyal."
+        }
+      ],
+      "save_as": null,
+      "morale": 7,
+      "alignment": "Neutral",
+      "xp": 10,
+      "number_appearing": null,
+      "treasure_type": null,
+      "description": "Tall, silver-furred hounds with the delicate bone structure and long legs suited for running. Seelie dogs' eyes are bright pink, and they are said to be of fairy ancestry."
+    },
+    {
+      "name": "Spookhound",
+      "monster_id": "spookhound",
+      "hd": "1",
+      "hp": 4,
+      "ac": 12,
+      "ac_ascending": 12,
+      "movement": "40'",
+      "attacks": [
+        {
+          "name": "Bite",
+          "damage": "1d4",
+          "count": 1
+        }
+      ],
+      "special_abilities": [
+        {
+          "name": "Smell undead",
+          "description": "Spookhounds are able to smell undead monsters (both corporeal and incorporeal) within 60′. They are typically trained to bark in response to this scent."
+        }
+      ],
+      "save_as": null,
+      "morale": 6,
+      "alignment": "Neutral",
+      "xp": 10,
+      "number_appearing": null,
+      "treasure_type": null,
+      "description": "Slender, short-haired hounds of gentle demeanour, recognisable for their white/grey coats, fluffy tails, and buggy eyes. The spookhound was bred for the ability to detect the presence of the undead."
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "_metadata": {
+    "source_file": "../data/pdfs/core/Dolmenwood_Players_Book.pdf",
+    "pages": [
+      100
+    ],
+    "content_type": "spells",
+    "item_count": 6,
+    "errors": [],
+    "note": "Review and correct this data before importing"
+  },
+  "items": [
+    {
+      "name": "Arcane Unbinding",
+      "spell_id": "arcane_unbinding",
+      "level": 2,
+      "magic_type": "rune",
+      "duration": "Instant",
+      "range": "120'",
+      "description": "All magical effects of arcane or fairy origin in a 20′ cube are negated. Spells, glamours, and runes: Effects created by lower or equal Level casters automatically end. Effects created by higher Level casters are unaffected. Magic items: Are rendered ineffective for 1 Turn. Holy magic: Spells and magic items of holy origin are unaffected.",
+      "reversible": false,
+      "reversed_name": null,
+      "kindred": [
+        "Elf",
+        "Grimalkin",
+        "Woodgrue"
+      ]
+    },
+    {
+      "name": "Fairy Gold",
+      "spell_id": "fairy_gold",
+      "level": 2,
+      "magic_type": "rune",
+      "duration": "1d6 hours",
+      "range": "Appears on the caster's person",
+      "description": "This rune conjures a leather bag of 2d100 gold pieces from the vaults of the fairy noble who granted it. When the duration expires, the coins are whisked back to Fairy.",
+      "reversible": false,
+      "reversed_name": null,
+      "kindred": [
+        "Elf",
+        "Grimalkin",
+        "Woodgrue"
+      ]
+    },
+    {
+      "name": "Fairy Steed",
+      "spell_id": "fairy_steed",
+      "level": 2,
+      "magic_type": "rune",
+      "duration": "Until dawn",
+      "range": "Appears in the caster's presence",
+      "description": "A dashing fairy horse—fleet of foot and charming of wit—is summoned to serve the caster. Commands: The fairy horse serves the caster as a mount or in any other capacity. It will not obey suicidal commands.",
+      "reversible": false,
+      "reversed_name": null,
+      "kindred": [
+        "Elf",
+        "Grimalkin",
+        "Woodgrue"
+      ]
+    },
+    {
+      "name": "Ice Storm",
+      "spell_id": "ice_storm",
+      "level": 2,
+      "magic_type": "rune",
+      "duration": "Instant",
+      "range": "120'",
+      "description": "A violent maelstrom of hail and sleet descends on a 30′ diameter area. Damage: All within the storm suffer 3d8 damage. Icy surface: The surface of the ground where the storm hit remains icy for 1 Turn. Creatures walking through the area must move at half their normal Speed in order to avoid slipping.",
+      "reversible": false,
+      "reversed_name": null,
+      "kindred": [
+        "Elf",
+        "Grimalkin",
+        "Woodgrue"
+      ]
+    },
+    {
+      "name": "Rune of Invisibility",
+      "spell_id": "rune_of_invisibility",
+      "level": 2,
+      "magic_type": "rune",
+      "duration": "1 day",
+      "range": "The caster",
+      "description": "The caster is rendered invisible to the sight of all beings. Equipment and clothing: Any gear the caster is carrying is also rendered invisible (this includes clothing and armour). Items subsequently put down become visible. If the caster is carrying a light source, the light it casts is not rendered invisible. Attacking: If the caster attacks while under the effects of this rune, they are rendered momentarily visible. Opponents may attack the caster in the same Round or the following Round, but suffer a –2 Attack penalty. Becoming visible: The caster may choose to become visible at any time, ending the rune's effect.",
+      "reversible": false,
+      "reversed_name": null,
+      "kindred": [
+        "Elf",
+        "Grimalkin",
+        "Woodgrue"
+      ]
+    },
+    {
+      "name": "Sway the Mind",
+      "spell_id": "sway_the_mind",
+      "level": 2,
+      "magic_type": "rune",
+      "duration": "1 day",
+      "range": "30'",
+      "description": "A single creature of any kind—person, beast, or monster—must Save Versus Spell or be charmed by fairy magic. Fairies gain a +4 bonus to the save. Friendship: The subject's mind is swayed such that they regard the caster as a close friend and comes to the caster's defence. Commands: If they share a language, the caster may give the charmed subject commands, which they obey. Resisting commands: The subject resists commands that contradict their habits or Alignment. Suicidal or clearly harmful commands are always refused.",
+      "reversible": false,
+      "reversed_name": null,
+      "kindred": [
+        "Elf",
+        "Grimalkin",
+        "Woodgrue"
+      ]
+    }
+  ]
+}

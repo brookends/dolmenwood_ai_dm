@@ -1,0 +1,319 @@
+{
+  "_metadata": {
+    "source_file": "../data/pdfs/core/Dolmenwood_Players_Book.pdf",
+    "pages": [
+      130,
+      131
+    ],
+    "content_type": "items",
+    "item_count": 24,
+    "errors": [],
+    "note": "Review and correct this data before importing"
+  },
+  "items": [
+    {
+      "name": "Bog-oak pipe",
+      "item_id": "bog_oak_pipe",
+      "type": "adventuring_gear",
+      "cost_sp": 150,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A hard, black pipe carved from wood dredged out of a peat bog. The sombre faces of ancient bog-denizens can be spied drifting in the smoke. Said to be the favoured pipe of wizards of all kinds.",
+      "properties": []
+    },
+    {
+      "name": "Cherry-wood pipe",
+      "item_id": "cherry_wood_pipe",
+      "type": "adventuring_gear",
+      "cost_sp": 50,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A fine pipe of carved cherry, producing a smooth, aromatic smoke.",
+      "properties": []
+    },
+    {
+      "name": "Clay pipe",
+      "item_id": "clay_pipe",
+      "type": "adventuring_gear",
+      "cost_sp": 10,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A common pipe of fired clay, often inscribed with motifs, symbols, or script.",
+      "properties": []
+    },
+    {
+      "name": "Gourd pipe (mossling style)",
+      "item_id": "gourd_pipe_mossling_style",
+      "type": "adventuring_gear",
+      "cost_sp": 20,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A curiously shaped, colourful gourd with a curved stem and a plump bowl. Favoured by mosslings, who craft gourd pipes in their hidden communities.",
+      "properties": []
+    },
+    {
+      "name": "Barley Blend",
+      "item_id": "barley_blend",
+      "type": "adventuring_gear",
+      "cost_sp": 0.4,
+      "weight_coins": 1,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Finely chopped, golden-brown leaf with malty undertones and a smooth, sweet taste. A cheap leaf, favoured by farmers and ploughmen. Effect: Aids digestion after a heavy meal.",
+      "properties": [
+        "pipeleaf"
+      ]
+    },
+    {
+      "name": "Burglar's Blend",
+      "item_id": "burglars_blend",
+      "type": "adventuring_gear",
+      "cost_sp": 0.3,
+      "weight_coins": 1,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A stringy, rough-cut mix of black and chestnut brown leaves. Its coarse, bonfire aroma makes it an acquired taste. Effect: Keeps one awake in the dead of night.",
+      "properties": [
+        "pipeleaf"
+      ]
+    },
+    {
+      "name": "Crofter's Daughter",
+      "item_id": "crofters_daughter",
+      "type": "adventuring_gear",
+      "cost_sp": 0.5,
+      "weight_coins": 1,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A soft, auburn-hued leaf. Its smooth aroma carries a note of citrus. A homely leaf, beloved of townsfolk. Effect: Makes one feel happy with one's lot.",
+      "properties": [
+        "pipeleaf"
+      ]
+    },
+    {
+      "name": "Dusty Abbot",
+      "item_id": "dusty_abbot",
+      "type": "adventuring_gear",
+      "cost_sp": 2,
+      "weight_coins": 1,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "An ultra-fine dust (can also be taken as a snuff) of purplish-brown hue. Produces a cool, refined smoke with the odour of rosewood and the taste of cherry. Favoured by the noble classes. Effect: Elicits a state of jovial eloquence.",
+      "properties": [
+        "pipeleaf"
+      ]
+    },
+    {
+      "name": "Fatty Lumper",
+      "item_id": "fatty_lumper",
+      "type": "adventuring_gear",
+      "cost_sp": 0.7,
+      "weight_coins": 1,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Uncut leaves, crumbled roughly. Tastes sweet and nutty, smells of elderberries. Effect: Brings on a ravenous appetite.",
+      "properties": [
+        "pipeleaf"
+      ]
+    },
+    {
+      "name": "Flufftop",
+      "item_id": "flufftop",
+      "type": "adventuring_gear",
+      "cost_sp": 1,
+      "weight_coins": 1,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A soft, furry, golden leaf, roughly cut, glistening with fragments of crystalline pollen. Produces a thick, greenish smoke with a heady aroma of spice. Favoured by Grimalkin. Some say this leaf originated in Catland. Effect: Brings on a state of light-hearted whimsy.",
+      "properties": [
+        "pipeleaf"
+      ]
+    },
+    {
+      "name": "Gamgy Weed",
+      "item_id": "gamgy_weed",
+      "type": "adventuring_gear",
+      "cost_sp": 0.5,
+      "weight_coins": 1,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Slivered, semi-dried leaf of brown-green hue. The pungent aroma has an off-putting edge of ammonia, but the smoke is smooth and floral. Effect: Causes a heavy sleepiness.",
+      "properties": [
+        "pipeleaf"
+      ]
+    },
+    {
+      "name": "The Gibbet's Gift",
+      "item_id": "the_gibbets_gift",
+      "type": "adventuring_gear",
+      "cost_sp": 0.7,
+      "weight_coins": 1,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Ashen white dust. Produces an exceptionally thin, penetrating smoke that seeps across the ground. The smoke is almost odourless, but tastes strongly of gravy. Effect: Smoking this pipeleaf aids one in following through with unpleasant decisions.",
+      "properties": [
+        "pipeleaf"
+      ]
+    },
+    {
+      "name": "Green Jenny",
+      "item_id": "green_jenny",
+      "type": "adventuring_gear",
+      "cost_sp": 0.8,
+      "weight_coins": 1,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Raw, rolled leaves of a variety that will burn undried. The smoke is thin and astringent, but the taste is sublime, with notes of apple and walnut. Effect: Smoking this leaf in excessive quantities causes one's vision to take on a green tinge.",
+      "properties": [
+        "pipeleaf"
+      ]
+    },
+    {
+      "name": "Lanksbottom Leaf",
+      "item_id": "lanksbottom_leaf",
+      "type": "adventuring_gear",
+      "cost_sp": 0.6,
+      "weight_coins": 1,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Chopped almost to dust, this common pipeleaf is near black in colour and has a robust, chocolate aroma. Grown in the warm valleys of the southern High Wold. The favoured smoke of lower class breggles. Effect: Brings on a state of merry arrogance.",
+      "properties": [
+        "pipeleaf"
+      ]
+    },
+    {
+      "name": "Mogglemoss",
+      "item_id": "mogglemoss",
+      "type": "adventuring_gear",
+      "cost_sp": 1.8,
+      "weight_coins": 1,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Rich, green curls that produce a smouldering, emerald smoke. The aroma is of springtime, the taste of cheese and onion. Favoured by woodgrues, scrabies, and (rumour has it) the Drune. Effect: Causes an introspective state in which the obscure may become clear.",
+      "properties": [
+        "pipeleaf"
+      ]
+    },
+    {
+      "name": "Mummer's Farce",
+      "item_id": "mummers_farce",
+      "type": "adventuring_gear",
+      "cost_sp": 0.8,
+      "weight_coins": 1,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A finely shredded, oak-brown leaf with fibrous hairs. Favoured by gamblers, its pungent, nutmeg aroma lingers in the taverns of Dreg. Effect: Inspires jollity and hijinks.",
+      "properties": [
+        "pipeleaf"
+      ]
+    },
+    {
+      "name": "Old Doby",
+      "item_id": "old_doby",
+      "type": "adventuring_gear",
+      "cost_sp": 0.6,
+      "weight_coins": 1,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Sumptuous, velvety, red-brown leaf with an aroma reminiscent of the woods in autumn. Old Doby is regarded by many as the forefather of all varieties of pipeleaf. A common but well-loved leaf. Effect: Calms the nerves and lightens the spirit.",
+      "properties": [
+        "pipeleaf"
+      ]
+    },
+    {
+      "name": "Pedlar Puff",
+      "item_id": "pedlar_puff",
+      "type": "adventuring_gear",
+      "cost_sp": 0.7,
+      "weight_coins": 1,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A rich, densely packed, sticky leaf, lustrous near-black in colour. The smoke is thick and cloying, the aroma like that of summer rain. Effect: Smoking this pipeleaf enhances the determination of foot-travellers whose destination still lies far away.",
+      "properties": [
+        "pipeleaf"
+      ]
+    },
+    {
+      "name": "Shaggy Pony",
+      "item_id": "shaggy_pony",
+      "type": "adventuring_gear",
+      "cost_sp": 0.7,
+      "weight_coins": 1,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A stringy, oat-brown leaf that smells of horse. The smoke is sweet (and also horsey) and tastes of baked tomato. Effect: Aids deep and restful sleep.",
+      "properties": [
+        "pipeleaf"
+      ]
+    },
+    {
+      "name": "Special Shag",
+      "item_id": "special_shag",
+      "type": "adventuring_gear",
+      "cost_sp": 3,
+      "weight_coins": 1,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Rich, moist, finely-cut leaf of dark, reddish-brown hue. The refined aroma carries notes of plum blossom. Bears the Ducal seal of approval. Effect: Enhances good judgement in trying times.",
+      "properties": [
+        "pipeleaf"
+      ]
+    },
+    {
+      "name": "Speckled Wyrm",
+      "item_id": "speckled_wyrm",
+      "type": "adventuring_gear",
+      "cost_sp": 2.5,
+      "weight_coins": 1,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A blend of greyish, rough-cut leaf with strands of silver. The taste is hoppy; the smoke is woody and is speckled with glittering, silver motes. Effect: Brings about a state of intent concentration.",
+      "properties": [
+        "pipeleaf"
+      ]
+    },
+    {
+      "name": "Wayside Wisp",
+      "item_id": "wayside_wisp",
+      "type": "adventuring_gear",
+      "cost_sp": 2.5,
+      "weight_coins": 1,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A fine, supple leaf of silvery hue. Produces coils and spirals of violet smoke, smelling of lavender. This rare and refined leaf is said to be cultivated in Fairy. Effect: Smoking it brings on a state of wonder and glee.",
+      "properties": [
+        "pipeleaf"
+      ]
+    },
+    {
+      "name": "Westling's Weed",
+      "item_id": "westlings_weed",
+      "type": "adventuring_gear",
+      "cost_sp": 2,
+      "weight_coins": 1,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Dense, fibrous leaf of copper-red hue. Imported from the distant west. Produces a heavy, dark smoke with the odour of smoked fish. Effect: Inspires dreams of travel and adventure.",
+      "properties": [
+        "pipeleaf"
+      ]
+    },
+    {
+      "name": "Witch's Shag",
+      "item_id": "witchs_shag",
+      "type": "adventuring_gear",
+      "cost_sp": 0.8,
+      "weight_coins": 1,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A blend of yellow and purplish leaves, finely cut. The smoke is smooth and fruity. Effect: Inspires a pleasant dizziness.",
+      "properties": [
+        "pipeleaf"
+      ]
+    }
+  ]
+}

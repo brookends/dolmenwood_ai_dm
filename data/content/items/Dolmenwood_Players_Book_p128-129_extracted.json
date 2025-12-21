@@ -1,0 +1,474 @@
+{
+  "_metadata": {
+    "source_file": "../data/pdfs/core/Dolmenwood_Players_Book.pdf",
+    "pages": [
+      128,
+      129
+    ],
+    "content_type": "items",
+    "item_count": 35,
+    "errors": [],
+    "note": "Review and correct this data before importing"
+  },
+  "items": [
+    {
+      "name": "Barrowblaster",
+      "item_id": "barrowblaster",
+      "type": "food",
+      "cost_sp": 1,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A robust ale, streaked black and white, with a rich, iron-like flavour. Effect: Belching and goggling.",
+      "properties": [
+        "beer",
+        "cider"
+      ]
+    },
+    {
+      "name": "Keye's Balm",
+      "item_id": "keyes_balm",
+      "type": "food",
+      "cost_sp": 1,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A golden ale that tastes of honey and hops. Effect: Causes good-natured slumping.",
+      "properties": [
+        "beer",
+        "cider"
+      ]
+    },
+    {
+      "name": "Marrowhyte Dark",
+      "item_id": "marrowhyte_dark",
+      "type": "food",
+      "cost_sp": 2,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A thick stout as black as midnight on a moonless night. Tastes of smoky bacon. Effect: Brings on a woozy empathy.",
+      "properties": [
+        "beer",
+        "cider"
+      ]
+    },
+    {
+      "name": "Pilston's Heartbreaker",
+      "item_id": "pilstons_heartbreaker",
+      "type": "food",
+      "cost_sp": 0,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A milky white ale that tastes of singed elderberries. Effect: Causes a delirious state of cackling and misdirected aggression.",
+      "properties": [
+        "beer",
+        "cider"
+      ]
+    },
+    {
+      "name": "Bard's Cordial",
+      "item_id": "bards_cordial",
+      "type": "food",
+      "cost_sp": 2,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A frothy, orange spirit that tastes of malted rye. Effect: Brings on a state of unexpected poetry.",
+      "properties": [
+        "spirit"
+      ]
+    },
+    {
+      "name": "Old Swythener",
+      "item_id": "old_swythener",
+      "type": "food",
+      "cost_sp": 1,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A colourless spirit, tasting of charred beech and honey. Effect: Brings on a state of rampant disorientation.",
+      "properties": [
+        "spirit"
+      ]
+    },
+    {
+      "name": "Prigwort Tipple",
+      "item_id": "prigwort_tipple",
+      "type": "food",
+      "cost_sp": 3,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A recent export from the cheaper distilleries of Prigwort. An electric blue spirit that tastes of chestnut and fennel. Effect: Inspires giddy hijinks.",
+      "properties": [
+        "spirit"
+      ]
+    },
+    {
+      "name": "Mason's",
+      "item_id": "masons",
+      "type": "food",
+      "cost_sp": 0,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Finely shredded, chestnut brown leaves, commonly drunk with milk. Favoured by the working classes. Effect: Highly invigorating.",
+      "properties": [
+        "tea"
+      ]
+    },
+    {
+      "name": "Cobsworth Pale",
+      "item_id": "cobsworth_pale",
+      "type": "food",
+      "cost_sp": 5,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A fine, fizzing ale with a yellow hue and the flavour of cherry syrup. Effect: Indulging brings on a propensity for pointed philosophical debate.",
+      "properties": [
+        "beer",
+        "cider"
+      ]
+    },
+    {
+      "name": "Halthwidden's",
+      "item_id": "halthwiddens",
+      "type": "food",
+      "cost_sp": 3,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A gloopy, grey ale that tastes of plum and cinnamon. Effect: Provokes indiscriminate romantic advances.",
+      "properties": [
+        "beer",
+        "cider"
+      ]
+    },
+    {
+      "name": "Merryweather",
+      "item_id": "merryweather",
+      "type": "food",
+      "cost_sp": 4,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A crisp, pale green, sparkling cider with a hint of butterscotch. Effect: Grinning and redness of face.",
+      "properties": [
+        "beer",
+        "cider"
+      ]
+    },
+    {
+      "name": "Tithelands Cider",
+      "item_id": "tithelands_cider",
+      "type": "food",
+      "cost_sp": 2,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Sharp, amber, slightly sour. Leaves a tingling sensation on the palate. Effect: Tranquil daydreaming. A few drops in a poultice cures pimples, wearing a sock soaked in it relieves melancholy.",
+      "properties": [
+        "beer",
+        "cider"
+      ]
+    },
+    {
+      "name": "Glubwob",
+      "item_id": "glubwob",
+      "type": "food",
+      "cost_sp": 2,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A stinking grey-green slop of aged lichen and yeast froth. A commonplace mossling beverage. Tastes of rank ditch water. Effect: Induces light-hearted tomfoolery and cathartic vomiting.",
+      "properties": [
+        "specialist"
+      ]
+    },
+    {
+      "name": "Mead",
+      "item_id": "mead",
+      "type": "food",
+      "cost_sp": 12,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A sweet, syrupy wine made from fermented honey. Especially beloved by woodgrues. Effect: Induces a cosy feeling in the belly and a light, eloquent state of mind.",
+      "properties": [
+        "specialist"
+      ]
+    },
+    {
+      "name": "Distillation of Dusk",
+      "item_id": "distillation_of_dusk",
+      "type": "food",
+      "cost_sp": 7,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A rare, ultraviolet spirit with a lingering, oaken after-taste. Effect: Brings on a delightful state of listless lounging.",
+      "properties": [
+        "spirit"
+      ]
+    },
+    {
+      "name": "Ether of Blue",
+      "item_id": "ether_of_blue",
+      "type": "food",
+      "cost_sp": 5,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A spirit with a delicate, translucent aqua hue and a flavour akin to custard with a hint of skunk. Effect: Inspires a state of lucid sensuality.",
+      "properties": [
+        "spirit"
+      ]
+    },
+    {
+      "name": "Pokey Nog",
+      "item_id": "pokey_nog",
+      "type": "food",
+      "cost_sp": 5,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A fermented custard, egg-yolk yellow in hue and with a delightful, creamy flavour. Effect: Brings on a state of rambunctious speaking in tongues.",
+      "properties": [
+        "spirit"
+      ]
+    },
+    {
+      "name": "Porrid's Full Moon",
+      "item_id": "porrids_full_moon",
+      "type": "food",
+      "cost_sp": 1,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A spirit of profound indigo hue that tastes of blackcurrant. Effect: Causes cathartic bellowing and screeching.",
+      "properties": [
+        "spirit"
+      ]
+    },
+    {
+      "name": "The Night Liqueur",
+      "item_id": "the_night_liqueur",
+      "type": "food",
+      "cost_sp": 6,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A spirit of violent, greenish-purple hue. Tasteless but highly astringent. Effect: Brings about a soporific languor.",
+      "properties": [
+        "spirit"
+      ]
+    },
+    {
+      "name": "Wakelyke's Scarlet",
+      "item_id": "wakelykes_scarlet",
+      "type": "food",
+      "cost_sp": 0,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A deep red spirit with a wince-inducing, acrid flavour. Effect: Causes gagging and shouting.",
+      "properties": [
+        "spirit"
+      ]
+    },
+    {
+      "name": "Earl Yellow",
+      "item_id": "earl_yellow",
+      "type": "food",
+      "cost_sp": 1,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Dark leaves with flecks of scintillating gold. Mild, aromatic bouquet. Effect: Calms the mind.",
+      "properties": [
+        "tea"
+      ]
+    },
+    {
+      "name": "Buckston Fizz",
+      "item_id": "buckston_fizz",
+      "type": "food",
+      "cost_sp": 12,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A clear, sparkling wine that tastes of bitter herbs. Effect: Brings on dreamlike visions.",
+      "properties": [
+        "wine"
+      ]
+    },
+    {
+      "name": "Faggley's Iced",
+      "item_id": "faggleys_iced",
+      "type": "food",
+      "cost_sp": 14,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "An ice wine imported from the far eastern reaches of the Duchy. Tastes of elderflower and spring bouquets. Effect: Inspires a drowsiness punctuated with serene visions of snowdrifts.",
+      "properties": [
+        "wine"
+      ]
+    },
+    {
+      "name": "Inkling Wine",
+      "item_id": "inkling_wine",
+      "type": "food",
+      "cost_sp": 11,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A rich, full-bodied red wine that tastes of syrup, over-ripe plums, and hawberries. Effect: Rankles the spirit, provoking a belligerent and arrogant mood.",
+      "properties": [
+        "wine"
+      ]
+    },
+    {
+      "name": "Moon's Milk",
+      "item_id": "moons_milk",
+      "type": "food",
+      "cost_sp": 2,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Exported from the mossling village of Orbswallow. A sweet and awfully sour fermented mix of milky and fruity liquids. Effect: Inspires jovial banter.",
+      "properties": [
+        "specialist"
+      ]
+    },
+    {
+      "name": "Nippers",
+      "item_id": "nippers",
+      "type": "food",
+      "cost_sp": 5,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A distillation of fermented catnip which is a common vice among grimalkins. Insipid stuff for non-grimalkins. Effect: Drives cat-folk wild and raucous.",
+      "properties": [
+        "specialist"
+      ]
+    },
+    {
+      "name": "Lord Oberon's Ambrosial",
+      "item_id": "lord_oberons_ambrosial",
+      "type": "food",
+      "cost_sp": 10,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Prigwort's finest distillation. An insipid brown spirit tasting of sour rosehips. Effect: Imbibers slip into a blissful reverie.",
+      "properties": [
+        "spirit"
+      ]
+    },
+    {
+      "name": "Prigwort Pure",
+      "item_id": "prigwort_pure",
+      "type": "food",
+      "cost_sp": 7,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A rich, emerald green spirit with a flavour alike to woody salmon. Effect: Causes a state of eloquent camaraderie.",
+      "properties": [
+        "spirit"
+      ]
+    },
+    {
+      "name": "Purple Aspintheon",
+      "item_id": "purple_aspintheon",
+      "type": "food",
+      "cost_sp": 10,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A spirit of the utmost refinement. Pale mauve in colour, tasting of bitter liquorice. Effect: Brings on a clear-headed state in which the drinker feels immortal.",
+      "properties": [
+        "spirit"
+      ]
+    },
+    {
+      "name": "Tomfoy's",
+      "item_id": "tomfoys",
+      "type": "food",
+      "cost_sp": 1,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A pale-leafed, smoky tea flavoured with aniseed and wormwood. Favoured by intellectuals. Effect: Clear-minded focus.",
+      "properties": [
+        "tea"
+      ]
+    },
+    {
+      "name": "Lady Mauve",
+      "item_id": "lady_mauve",
+      "type": "food",
+      "cost_sp": 30,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A delicate, violet wine imported from Fairy. Tastes of plum and charred lavender. Effect: Causes one's sorrows to drift away.",
+      "properties": [
+        "wine"
+      ]
+    },
+    {
+      "name": "The Cold Prince",
+      "item_id": "the_cold_prince",
+      "type": "food",
+      "cost_sp": 35,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A colourless, bubbling wine always served on ice. The wine is said to contain fairy grapes but is not itself produced in the immortal world of Fairy. Tastes like pear and honey. Effect: Inspires the imbiber to feats of romantic daring.",
+      "properties": [
+        "wine"
+      ]
+    },
+    {
+      "name": "Underbrood's Vintage",
+      "item_id": "underbroods_vintage",
+      "type": "food",
+      "cost_sp": 50,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A gourmet red wine from the legendary, deceased vintner Wayfellow Underbrood. In dwindling supply and priced accordingly, the master's final fermentation is famed for exquisitely robust flavour, with undertones of lemon zest and mead. Effect: Overindulgence causes an embarrassingly rapid dissolution of muscle control.",
+      "properties": [
+        "wine"
+      ]
+    },
+    {
+      "name": "Bottle",
+      "item_id": "bottle",
+      "type": "container",
+      "cost_sp": null,
+      "weight_coins": 30,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Contains 5 portions of wine, spirit, or specialist beverage for the price of 4 portions.",
+      "properties": []
+    },
+    {
+      "name": "Cask",
+      "item_id": "cask",
+      "type": "container",
+      "cost_sp": null,
+      "weight_coins": 80,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Contains 10 portions of beer or cider for the price of 8 portions.",
+      "properties": []
+    }
+  ]
+}

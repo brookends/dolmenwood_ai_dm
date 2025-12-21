@@ -1,0 +1,291 @@
+{
+  "_metadata": {
+    "source_file": "../data/pdfs/core/Dolmenwood_Players_Book.pdf",
+    "pages": [
+      122,
+      123
+    ],
+    "content_type": "items",
+    "item_count": 19,
+    "errors": [],
+    "note": "Review and correct this data before importing"
+  },
+  "items": [
+    {
+      "name": "Charger",
+      "item_id": "charger",
+      "type": "mount",
+      "cost_sp": 2500,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "War horses bred for strength and courage in battle. Adapted to short bursts of speed; not suited to long-distance riding.",
+      "properties": [
+        "charge",
+        "melee_capable",
+        "load_4000"
+      ]
+    },
+    {
+      "name": "Dapple-doff",
+      "item_id": "dapple_doff",
+      "type": "mount",
+      "cost_sp": 400,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Mighty, shaggy-furred draft horses, bred for their great strength. Dull-witted and easily spooked.",
+      "properties": [
+        "draft",
+        "load_5000"
+      ]
+    },
+    {
+      "name": "Hop-clopper",
+      "item_id": "hop_clopper",
+      "type": "mount",
+      "cost_sp": 800,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Stocky, green-maned draft horses beloved by Prigwort breweries. Get tetchy without their daily pint of ale.",
+      "properties": [
+        "draft",
+        "load_5000"
+      ]
+    },
+    {
+      "name": "Mule",
+      "item_id": "mule",
+      "type": "mount",
+      "cost_sp": 300,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Stubborn horse/donkey cross-breeds used as beasts of burden. Unlike other horses, mules can be taken underground.",
+      "properties": [
+        "underground_capable",
+        "load_2500"
+      ]
+    },
+    {
+      "name": "Prigwort prancer",
+      "item_id": "prigwort_prancer",
+      "type": "mount",
+      "cost_sp": 750,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Lightly built horses adapted to run at high speed. Fond of snacking on acorns in the autumn.",
+      "properties": [
+        "riding",
+        "load_3000",
+        "speed_80"
+      ]
+    },
+    {
+      "name": "Yellow-flank",
+      "item_id": "yellow_flank",
+      "type": "mount",
+      "cost_sp": 2500,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Tall, slender horses favoured by nobility, with flowing, silver manes and golden dappling along their sides. The haughty, laughing neigh of the yellow-flank bespeaks the breed's rumoured fairy ancestry.",
+      "properties": [
+        "riding",
+        "load_3500",
+        "alignment_sensitive",
+        "speed_60"
+      ]
+    },
+    {
+      "name": "Feed (1 day)",
+      "item_id": "feed_1_day",
+      "type": "food",
+      "cost_sp": 1,
+      "weight_coins": 100,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A sack of hay, oat grains, and the odd apple or carrot to chomp.",
+      "properties": [
+        "animal_feed"
+      ]
+    },
+    {
+      "name": "Horse barding (+2 AC)",
+      "item_id": "horse_barding",
+      "type": "armor",
+      "cost_sp": 1500,
+      "weight_coins": 600,
+      "damage": null,
+      "ac_bonus": 2,
+      "description": "Armour made of leather and plates of metal. Grants a +2 bonus to Armour Class.",
+      "properties": [
+        "horse_armor"
+      ]
+    },
+    {
+      "name": "Pack saddle and bridle",
+      "item_id": "pack_saddle_and_bridle",
+      "type": "adventuring_gear",
+      "cost_sp": 100,
+      "weight_coins": 150,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A pack saddle is necessary for horses to carry heavy loads, as it includes a rack upon which to lash crates, bags, and bundles.",
+      "properties": [
+        "pack_equipment"
+      ]
+    },
+    {
+      "name": "Riding saddle and bridle",
+      "item_id": "riding_saddle_and_bridle",
+      "type": "adventuring_gear",
+      "cost_sp": 250,
+      "weight_coins": 300,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A riding saddle is a leather seat required to mount and ride a horse.",
+      "properties": [
+        "riding_equipment"
+      ]
+    },
+    {
+      "name": "Riding saddle bags",
+      "item_id": "riding_saddle_bags",
+      "type": "container",
+      "cost_sp": 50,
+      "weight_coins": 100,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Hold up to 500 coins of weight.",
+      "properties": [
+        "capacity_500"
+      ]
+    },
+    {
+      "name": "Cart",
+      "item_id": "cart",
+      "type": "vehicle",
+      "cost_sp": 1000,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A two-wheeled vehicle. If pulled by twice as many animals (2 draft horses or 4 mules), a cart can hold up to 20,000 coins of weight.",
+      "properties": [
+        "land_vehicle",
+        "cargo_10000",
+        "requires_1_draft_horse_or_2_mules"
+      ]
+    },
+    {
+      "name": "Wagon",
+      "item_id": "wagon",
+      "type": "vehicle",
+      "cost_sp": 2000,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A four-wheeled, open vehicle. If pulled by twice as many animals (4 draft horses or 8 mules), a wagon can hold up to 40,000 coins of weight.",
+      "properties": [
+        "land_vehicle",
+        "cargo_20000",
+        "requires_2_draft_horses_or_4_mules"
+      ]
+    },
+    {
+      "name": "Barge",
+      "item_id": "barge",
+      "type": "vehicle",
+      "cost_sp": 5000,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A flat-bottomed boat, 20′ long and 10′ wide, designed for carrying cargo. Barges may be rowed, pushed with poles, or pulled by horses on the riverbank.",
+      "properties": [
+        "water_vehicle",
+        "cargo_160000",
+        "requires_2_4_sailors"
+      ]
+    },
+    {
+      "name": "Canoe",
+      "item_id": "canoe",
+      "type": "vehicle",
+      "cost_sp": 300,
+      "weight_coins": 500,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A small boat, 15′ long and 3′ wide, made of hide or canvas stretched over a wooden frame. Because of its small size and lightweight construction (weighing 500 coins), a canoe may be carried by two people.",
+      "properties": [
+        "water_vehicle",
+        "cargo_5000",
+        "portable",
+        "requires_1_2_untrained"
+      ]
+    },
+    {
+      "name": "Fishing boat",
+      "item_id": "fishing_boat",
+      "type": "vehicle",
+      "cost_sp": 3500,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A small sailing boat, 20–30′ long and 6′ wide.",
+      "properties": [
+        "water_vehicle",
+        "cargo_25000",
+        "requires_1_2_sailors"
+      ]
+    },
+    {
+      "name": "Raft",
+      "item_id": "raft",
+      "type": "vehicle",
+      "cost_sp": 10,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A professionally built raft has raised sides, a basic steering oar, and some form of shelter for goods or passengers. Such a raft may be up to 30′ × 40′. Professionally built rafts are sometimes floated downstream with cargo and then broken down and sold for the value of their wood (25cp per square foot).",
+      "properties": [
+        "water_vehicle",
+        "cargo_500_per_sq_ft",
+        "requires_1_untrained",
+        "cost_per_sq_ft"
+      ]
+    },
+    {
+      "name": "Raft, makeshift",
+      "item_id": "raft_makeshift",
+      "type": "vehicle",
+      "cost_sp": 0,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Given sufficient trees for wood, characters may build a makeshift raft in 1d3 days per 10′ square section (up to a maximum size of 20′ × 30′).",
+      "properties": [
+        "water_vehicle",
+        "cargo_250_per_sq_ft",
+        "requires_1_untrained",
+        "craftable"
+      ]
+    },
+    {
+      "name": "Rowing boat",
+      "item_id": "rowing_boat",
+      "type": "vehicle",
+      "cost_sp": 250,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A small wooden boat for 1–2 people, 10′ long and 4′ wide.",
+      "properties": [
+        "water_vehicle",
+        "cargo_5000",
+        "requires_1_2_untrained"
+      ]
+    }
+  ]
+}

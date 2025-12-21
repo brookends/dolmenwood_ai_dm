@@ -1,0 +1,336 @@
+{
+  "_metadata": {
+    "source_file": "../data/pdfs/core/Dolmenwood_Players_Book.pdf",
+    "pages": [
+      96,
+      97,
+      98
+    ],
+    "content_type": "spells",
+    "item_count": 20,
+    "errors": [],
+    "note": "Review and correct this data before importing"
+  },
+  "items": [
+    {
+      "name": "Awe",
+      "spell_id": "awe",
+      "level": null,
+      "magic_type": "fairy_glamour",
+      "duration": "1d4 Rounds",
+      "range": "30'",
+      "description": "The caster's dramatic gesture and otherworldly presence unnerve a group of mortals or animals (or a mixed group), triggering a Morale Check. If the Morale Check fails: Creatures whose Levels total up to the caster's Level are awestruck and flee the caster's presence for 1d4 Rounds. Creatures of the lowest Level are affected first. Usage frequency: Once per Turn.",
+      "reversible": false,
+      "reversed_name": null,
+      "kindred": [
+        "Elf",
+        "Grimalkin",
+        "Woodgrue"
+      ]
+    },
+    {
+      "name": "Beguilement",
+      "spell_id": "beguilement",
+      "level": null,
+      "magic_type": "fairy_glamour",
+      "duration": "1d4 Rounds",
+      "range": "30'",
+      "description": "The caster's words have great power over mortal minds. A single mortal addressed by the caster must Save Versus Spell or believe the caster's words for a brief period. Language: The target must understand the caster's words. After the duration ends: It is immediately obvious that a magical deception has occurred. Usage frequency: Once per day per subject.",
+      "reversible": false,
+      "reversed_name": null,
+      "kindred": [
+        "Elf",
+        "Grimalkin",
+        "Woodgrue"
+      ]
+    },
+    {
+      "name": "Breath of the Wind",
+      "spell_id": "breath_of_the_wind",
+      "level": null,
+      "magic_type": "fairy_glamour",
+      "duration": "1d4 Rounds",
+      "range": "30'",
+      "description": "An enchanted flurry of wind causes dust to billow, leaves to rustle, and so forth. Stealth: While the wind blows, the caster moves in complete silence, unnoticed by any listeners within range. Usage frequency: Once per Turn.",
+      "reversible": false,
+      "reversed_name": null,
+      "kindred": [
+        "Elf",
+        "Grimalkin",
+        "Woodgrue"
+      ]
+    },
+    {
+      "name": "Cloak of Darkness",
+      "spell_id": "cloak_of_darkness",
+      "level": null,
+      "magic_type": "fairy_glamour",
+      "duration": "Concentration / 1 Round",
+      "range": "The caster",
+      "description": "The caster conjures an area of gloom and shadow, hiding themselves from mundane sight. Concentration: The Cloak of Darkness lasts as long as the caster remains motionless and does not perform any other actions. Moving: Once the caster moves or performs another action, the Cloak of Darkness lasts for 1 Round. Usage frequency: Once per Turn.",
+      "reversible": false,
+      "reversed_name": null,
+      "kindred": [
+        "Elf",
+        "Grimalkin",
+        "Woodgrue"
+      ]
+    },
+    {
+      "name": "Conjure Treats",
+      "spell_id": "conjure_treats",
+      "level": null,
+      "magic_type": "fairy_glamour",
+      "duration": "Permanent",
+      "range": "Appears in the caster's hand",
+      "description": "With a flourishing gesture, the caster conjures a mortal's or animal's favourite treat (e.g. sweets, pastries, sizzling sausages, apples, etc.) out of thin air. Offering to the subject: If the treat is offered to the mortal or animal, their disposition toward the caster is improved. Sustenance: The treats are real (not illusionary), but do not provide genuine sustenance. Usage frequency: Once per day per subject.",
+      "reversible": false,
+      "reversed_name": null,
+      "kindred": [
+        "Elf",
+        "Grimalkin",
+        "Woodgrue"
+      ]
+    },
+    {
+      "name": "Dancing Flame",
+      "spell_id": "dancing_flame",
+      "level": null,
+      "magic_type": "fairy_glamour",
+      "duration": "Concentration (up to 2d6 Rounds)",
+      "range": "60'",
+      "description": "The caster commands a small flame (e.g. a torch, lantern, or candle) burning within range to disconnect from its source and float through the air. Movement: The flame moves up to 10′ per Round. Concentration: The caster must concentrate while using this glamour. They may move, but they cannot perform other actions. When the duration ends: The flame dies out.",
+      "reversible": false,
+      "reversed_name": null,
+      "kindred": [
+        "Elf",
+        "Grimalkin",
+        "Woodgrue"
+      ]
+    },
+    {
+      "name": "Disguise Object",
+      "spell_id": "disguise_object",
+      "level": null,
+      "magic_type": "fairy_glamour",
+      "duration": "Until touched by another",
+      "range": "Object touched",
+      "description": "An object touched is made to appear as something else of similar dimensions. Duration: The glamour lasts until the object is touched by another being or until the caster uses this glamour on another object. Usage limit: The caster may disguise only one object at a time with this glamour.",
+      "reversible": false,
+      "reversed_name": null,
+      "kindred": [
+        "Elf",
+        "Grimalkin",
+        "Woodgrue"
+      ]
+    },
+    {
+      "name": "Fairy Dust",
+      "spell_id": "fairy_dust",
+      "level": null,
+      "magic_type": "fairy_glamour",
+      "duration": "1 Round",
+      "range": "30'",
+      "description": "Motes of glittering dust fill the air around the caster, momentarily revealing invisible objects and creatures. Attacking: Invisible creatures revealed can be attacked with only a –1 Attack penalty for the next Round. Usage frequency: Once per day.",
+      "reversible": false,
+      "reversed_name": null,
+      "kindred": [
+        "Elf",
+        "Grimalkin",
+        "Woodgrue"
+      ]
+    },
+    {
+      "name": "Flame Charm",
+      "spell_id": "flame_charm",
+      "level": null,
+      "magic_type": "fairy_glamour",
+      "duration": "Concentration / Instant",
+      "range": "The caster / 10'",
+      "description": "The caster can conjure and extinguish flame. Conjuring flame: The caster's fingertip is wreathed in colourful fire, which may be used to ignite flammable materials or to cast light in a 10′ radius. The flame remains as long as the caster concentrates—they may move, but they cannot perform other actions. Extinguishing flame: With a snap of their fingers, the caster causes a non-magical flame (up to the size of a candle or table lamp) within 10′ to be instantaneously extinguished. If a flame is held by a creature, they may Save Versus Spell to prevent the flame from being extinguished.",
+      "reversible": false,
+      "reversed_name": null,
+      "kindred": [
+        "Elf",
+        "Grimalkin",
+        "Woodgrue"
+      ]
+    },
+    {
+      "name": "Fool's Gold",
+      "spell_id": "fools_gold",
+      "level": null,
+      "magic_type": "fairy_glamour",
+      "duration": "1d6 minutes",
+      "range": "Coins touched",
+      "description": "The caster makes copper coins appear as gold to gullible mortals. Saving Throw: Each mortal who views the glamoured coins may Save Versus Spell to see the fairy trick for what it is. Usage frequency: The caster may disguise up to 20 coins per Level per day with this glamour.",
+      "reversible": false,
+      "reversed_name": null,
+      "kindred": [
+        "Elf",
+        "Grimalkin",
+        "Woodgrue"
+      ]
+    },
+    {
+      "name": "Forgetting",
+      "spell_id": "forgetting",
+      "level": null,
+      "magic_type": "fairy_glamour",
+      "duration": "Instant",
+      "range": "30'",
+      "description": "With a twinkle of the eye, the caster causes a single mortal or animal to forget what they just witnessed a moment before (the previous Round). Saving Throw: The subject must Save Versus Spell to resist the glamour. Usage frequency: Once per day per subject.",
+      "reversible": false,
+      "reversed_name": null,
+      "kindred": [
+        "Elf",
+        "Grimalkin",
+        "Woodgrue"
+      ]
+    },
+    {
+      "name": "Masquerade",
+      "spell_id": "masquerade",
+      "level": null,
+      "magic_type": "fairy_glamour",
+      "duration": "Permanent until dismissed",
+      "range": "The caster",
+      "description": "The caster disguises and alters their facial features with a minor illusion. Subtle features: May be switched in a moment (e.g. eye colour, hair colour). More dramatic changes: Take 1 Turn of concentration. Duplicating another: It is not possible to duplicate a specific individual using this glamour.",
+      "reversible": false,
+      "reversed_name": null,
+      "kindred": [
+        "Elf",
+        "Grimalkin",
+        "Woodgrue"
+      ]
+    },
+    {
+      "name": "Mirth and Malice",
+      "spell_id": "mirth_and_malice",
+      "level": null,
+      "magic_type": "fairy_glamour",
+      "duration": "1 Turn",
+      "range": "30'",
+      "description": "When speaking to a group of mortals, the caster can impart a subtle sense of shared cheer or creeping discord. Language: The targets must understand the caster's words. Minimum time speaking: The caster must speak to the group of mortals for at least 1 Turn. After this time, the glamour takes effect. Effect: Up to one mortal per Level of the caster must Save Versus Spell. Those who fail are strongly affected, either expressing great affection or anger. The caster has no control over how these feelings are directed or expressed. When the caster stops speaking: The imparted emotion dissipates within 1 Turn. Usage frequency: Once per day per group.",
+      "reversible": false,
+      "reversed_name": null,
+      "kindred": [
+        "Elf",
+        "Grimalkin",
+        "Woodgrue"
+      ]
+    },
+    {
+      "name": "Moon Sight",
+      "spell_id": "moon_sight",
+      "level": null,
+      "magic_type": "fairy_glamour",
+      "duration": "Permanent (always active)",
+      "range": "The caster",
+      "description": "The caster can see in darkness up to 60′, viewing the world as though it glows in faint moonlight. Acuity: This does not incur low light penalties (p150), but fine detail (e.g. writing) cannot be perceived.",
+      "reversible": false,
+      "reversed_name": null,
+      "kindred": [
+        "Elf",
+        "Grimalkin",
+        "Woodgrue"
+      ]
+    },
+    {
+      "name": "Seeming",
+      "spell_id": "seeming",
+      "level": null,
+      "magic_type": "fairy_glamour",
+      "duration": "Permanent until touched",
+      "range": "The caster",
+      "description": "The caster may make their garb appear as they wish. Touching: The glamour is only visual, and is dispelled by touch.",
+      "reversible": false,
+      "reversed_name": null,
+      "kindred": [
+        "Elf",
+        "Grimalkin",
+        "Woodgrue"
+      ]
+    },
+    {
+      "name": "Silver Tongue",
+      "spell_id": "silver_tongue",
+      "level": null,
+      "magic_type": "fairy_glamour",
+      "duration": "1 day",
+      "range": "The caster",
+      "description": "By using ancient modes of the immortal tongue of Fairy, the caster is able to communicate with any being, including mundane animals. Usage frequency: This glamour may only be used to communicate in one language per day (e.g. one mortal tongue or the speech of one animal species).",
+      "reversible": false,
+      "reversed_name": null,
+      "kindred": [
+        "Elf",
+        "Grimalkin",
+        "Woodgrue"
+      ]
+    },
+    {
+      "name": "Subtle Sight",
+      "spell_id": "subtle_sight",
+      "level": null,
+      "magic_type": "fairy_glamour",
+      "duration": "Permanent (always active)",
+      "range": "The caster",
+      "description": "The caster can sometimes spot invisible creatures or objects, perceiving them as a faint, shimmering outline. Chance of spotting: There is a 3-in-6 chance of the caster noticing invisible creatures or objects in their line of sight. The Referee should roll this chance secretly. In combat: The caster may attack an invisible creature they have spotted with a only –1 Attack penalty.",
+      "reversible": false,
+      "reversed_name": null,
+      "kindred": [
+        "Elf",
+        "Grimalkin",
+        "Woodgrue"
+      ]
+    },
+    {
+      "name": "Through the Keyhole",
+      "spell_id": "through_the_keyhole",
+      "level": null,
+      "magic_type": "fairy_glamour",
+      "duration": "Instant",
+      "range": "Door touched",
+      "description": "The caster may step through any door with a keyhole, peephole, or other small aperture, disappearing for an instant then reappearing on the other side. Magically sealed doors: Thwart this glamour, unless the caster makes a successful Save Versus Spell. Usage frequency: Once per day per door.",
+      "reversible": false,
+      "reversed_name": null,
+      "kindred": [
+        "Elf",
+        "Grimalkin",
+        "Woodgrue"
+      ]
+    },
+    {
+      "name": "Vanishing",
+      "spell_id": "vanishing",
+      "level": null,
+      "magic_type": "fairy_glamour",
+      "duration": "1d3 Rounds",
+      "range": "60'",
+      "description": "The caster briefly disappears from the sight of a selected creature within range. Equipment and clothing: Any gear the caster is carrying is also rendered invisible (this includes clothing and armour). Items subsequently put down become visible. If the caster is carrying a light source, the light it casts is not rendered invisible. Attacking: If the caster attacks the selected creature, they are rendered visible. Usage frequency: Once per day per subject.",
+      "reversible": false,
+      "reversed_name": null,
+      "kindred": [
+        "Elf",
+        "Grimalkin",
+        "Woodgrue"
+      ]
+    },
+    {
+      "name": "Walk in Shadows",
+      "spell_id": "walk_in_shadows",
+      "level": null,
+      "magic_type": "fairy_glamour",
+      "duration": "1 Round",
+      "range": "The caster",
+      "description": "Few can perceive the circuitous pathways between worlds that exist in shadows. The caster can walks these paths, seemingly vanishing into shadow and, moments later, reappearing at a different location. Locating a shadow door: Not all areas of darkness contain suitable shadow doors. Using this glamour, the caster can scan a 10′ × 10′ area of darkness. There is a 2-in-6 chance of discovering a shadow door that the caster may step through. Stepping through: Stepping through a discovered shadow door, the caster disappears for 1 Round, then reappears at a random shadowy location within 60′.",
+      "reversible": false,
+      "reversed_name": null,
+      "kindred": [
+        "Elf",
+        "Grimalkin",
+        "Woodgrue"
+      ]
+    }
+  ]
+}

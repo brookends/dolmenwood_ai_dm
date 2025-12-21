@@ -1,0 +1,69 @@
+{
+  "_metadata": {
+    "source_file": "../data/pdfs/core/Dolmenwood_Players_Book.pdf",
+    "pages": [
+      82
+    ],
+    "content_type": "spells",
+    "item_count": 5,
+    "errors": [],
+    "note": "Review and correct this data before importing"
+  },
+  "items": [
+    {
+      "name": "Crystal Resonance",
+      "spell_id": "crystal_resonance",
+      "level": 1,
+      "magic_type": "arcane",
+      "duration": "Special",
+      "range": "10'",
+      "description": "Allows the caster to attune a gem or crystal (of at least 50gp value) to copy certain energies from the environment or to release copied energies. The spell manifests one of the following effects when cast: 1. Imprint: Holding the crystal aloft for 1 Turn, the caster imprints it from the surroundings (the area within range). A single type of energy (see Types of Energy) may be imprinted into the crystal. Any energy previously absorbed into the crystal is replaced. There is a 1-in-20 chance of the crystal shattering and becoming useless. 2. Release: Causes a previously imprinted crystal to reproduce the stored energy in the environment it now occupies (the area within range). Released energies only reproduce normal ambient conditions and cannot cause damage, blindness, deafness, or other special effects. Types of Energies - Light: The lighting qualities of an environment may be absorbed and reproduced, causing an area of light, gloom, shadow, and so forth to be emitted from the crystal for 1 Turn per Level of the caster. Images: A static snapshot of the crystal's environment can be absorbed for later examination. The image is reproduced for 1 Turn. Sound: Any sound emitted during the 1 Turn absorption time is recorded and may be reproduced. Temperature: Warmth or cold may be absorbed into the crystal and re-emitted for 1 Turn per Level of the caster.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Decipher",
+      "spell_id": "decipher",
+      "level": 1,
+      "magic_type": "arcane",
+      "duration": "2 Turns",
+      "range": "5'",
+      "description": "Script which the caster passes their hand over writhes, glows, and temporarily transforms into common Woldish text with the same meaning. Script: Written information in any language, including coded messages or symbols (e.g. on treasure maps) may be deciphered by this spell. Instances: Multiple separate scripts can be translated while the spell lasts, but all revert to their original form once the duration ends.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Fairy Servant",
+      "spell_id": "fairy_servant",
+      "level": 1,
+      "magic_type": "arcane",
+      "duration": "6 Turns",
+      "range": "30'",
+      "description": "Summons an invisible sprite who performs the caster's bidding if gifted a pretty trinket (worth at least 50gp) or a portion of magical fungus. The gift vanishes instantly. Tasks: The sprite can manipulate small objects (e.g. open a door, flip the pages of a book, pick up and drop a small stone) or perform basic tasks such as cleaning or folding clothes. Capabilities: The sprite can fly and can carry or manipulate objects weighing up to 80 coins. It cannot fight but may be attacked by creatures that can see the invisible.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Firelight",
+      "spell_id": "firelight",
+      "level": 1,
+      "magic_type": "arcane",
+      "duration": "6 Turns + 1 Turn per Level",
+      "range": "The caster",
+      "description": "Conjures a ball of flickering flame around the caster's hand, floating above their shoulder, or around object held. Light: The flame sheds light in a 15′ radius, sufficient for reading, but not as bright as daylight. Heatless: The conjured flame does not produce heat and cannot be used to ignite objects or cause damage. Flare: With a magic word, the caster may command the flame to flare suddenly. All within 30′ who see the flare must Save Versus Spell or be dazzled, suffering a –2 penalty to Attack Rolls for 1d4 Rounds. The caster is not affected by the flare, but allies may be unless warned to close their eyes. After flaring, the flame disappears and the spell ends.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Floating Disc",
+      "spell_id": "floating_disc",
+      "level": 1,
+      "magic_type": "arcane",
+      "duration": "6 Turns",
+      "range": "6'",
+      "description": "Conjures a disc of magical force that can carry loads. The disc is invisible, but the caster can sense its location. Dimensions: The disc is shaped like a round shield—about 3′ across and slightly concave. Load: The disc can hold up to 5,000 coins of weight. Motion: The disc floats at waist height, following the caster as they move. Expiration: Anything placed on the disc is dropped when it disappears at the end of the spell's duration.",
+      "reversible": false,
+      "reversed_name": null
+    }
+  ]
+}

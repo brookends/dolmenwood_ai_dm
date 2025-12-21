@@ -1,0 +1,80 @@
+{
+  "_metadata": {
+    "source_file": "../data/pdfs/core/Dolmenwood_Players_Book.pdf",
+    "pages": [
+      85
+    ],
+    "content_type": "spells",
+    "item_count": 6,
+    "errors": [],
+    "note": "Review and correct this data before importing"
+  },
+  "items": [
+    {
+      "name": "Levitate",
+      "spell_id": "levitate",
+      "level": 2,
+      "magic_type": "arcane",
+      "duration": "6 Turns +1 per Level",
+      "range": "The caster",
+      "description": "Untethered from the force of gravity, the caster may move up and down through the air at will. Vertical movement: Up to 20′ per Round. Horizontal movement: The caster can move laterally by pushing against solid objects (e.g. a ceiling). Weight: The caster can carry a normal amount of weight while levitating.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Mind Crystal",
+      "spell_id": "mind_crystal",
+      "level": 2,
+      "magic_type": "arcane",
+      "duration": "12 Turns",
+      "range": "60′",
+      "description": "Attunes a gem or crystal (of at least 250gp value) to the subtly radiating energies of living minds, allowing the caster to detect the presence of creatures and perceive their thoughts. Focus for 1 Turn: To pick up thoughts, the caster must hold the crystal aloft and focus their concentration in a particular direction for 1 Turn without moving. After 1 Turn: The crystal projects the thoughts of all creatures within range in the chosen direction into the caster's mind. Multiple creatures: If multiple creatures are within range in the direction being focused on, the caster perceives an incomprehensible mix of all their thoughts. If the caster focuses for an additional Turn, they can isolate a single creature's thoughts. Obstructions: This spell is blocked by 2′ of rock or a thin layer of lead.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Mirror Image",
+      "spell_id": "mirror_image",
+      "level": 2,
+      "magic_type": "arcane",
+      "duration": "6 Turns",
+      "range": "The caster",
+      "description": "In a brief flash of prismatic light, 1d4 illusory images of the caster appear. Behaviour: The mirror images look and behave exactly as the caster, remaining within 3′. Speech and spells: The caster's voice, as well as any subsequent spells cast, emanate randomly from one of the mirror images or the caster's true form. Attacks on the caster: Destroy one of the mirror images (even if the attack misses).",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Perceive the Invisible",
+      "spell_id": "perceive_the_invisible",
+      "level": 2,
+      "magic_type": "arcane",
+      "duration": "6 Turns",
+      "range": "10′ per Level",
+      "description": "Invisible creatures and objects in range become visible to the caster, outlined in glittering gold.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Phantasm",
+      "spell_id": "phantasm",
+      "level": 2,
+      "magic_type": "arcane",
+      "duration": "Concentration",
+      "range": "240′",
+      "description": "A silent, translucent illusion of the caster's choosing manifests in a 20′ cube area. Three types of illusions may be created: 1. A scene: Either changing the appearance of the affected area or creating the appearance of something new in the area. The scene disappears if touched. 2. An illusory attack: For example, an avalanche, a falling ceiling, an offensive spell, etc. 3. An illusory monster: Of Level no greater than the caster's. The monster may be directed to attack, having all its normal capabilities and attack forms. It has Armour Class 10 and vanishes if hit in combat. Viewing: The illusion insinuates its way into the minds of those who look upon it. Viewers must Save Versus Spell or believe the illusion to be real, even if others claim it to be unreal. Those who make the save perceive the illusion as a lifeless, translucent image. Illusions from imagination: If the illusion is of something the caster has not personally seen, viewers gain a +4 bonus to their save. Damage: Illusory attacks and monsters may appear to inflict damage, but no real damage or permanent effects are ever inflicted. A character who appears to die actually falls unconscious, a character turned to stone is actually temporarily paralysed, and so on. Illusory damage and effects last for 1d4 Turns. Concentration: If the caster is harmed, moves, or takes any other action, the spell ends.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Web",
+      "spell_id": "web",
+      "level": 2,
+      "magic_type": "arcane",
+      "duration": "2 Turns per Level",
+      "range": "30′",
+      "description": "Conjures a volume of sticky webbing, blocking a 10′ cube area. Entanglement: Gluey fibres entangle creatures caught inside the web's area. Creatures who run into the web also become entangled. Entangled creatures cannot move. Breaking free: Characters with Strength below 13 cannot break free. Those with Strength 13 or above can break free in 1d4 Turns. Large creatures of greater than human Strength can break free in 1d4 Rounds. Flammable: The web can be destroyed by fire in 2 Rounds. Creatures caught within flaming webs suffer 1d6 damage.",
+      "reversible": false,
+      "reversed_name": null
+    }
+  ]
+}

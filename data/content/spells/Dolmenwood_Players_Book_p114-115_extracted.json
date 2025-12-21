@@ -1,0 +1,219 @@
+{
+  "_metadata": {
+    "source_file": "../data/pdfs/core/Dolmenwood_Players_Book.pdf",
+    "pages": [
+      114,
+      115
+    ],
+    "content_type": "spells",
+    "item_count": 6,
+    "errors": [],
+    "note": "Review and correct this data before importing"
+  },
+  "items": [
+    {
+      "name": "Bird Friend",
+      "spell_id": "bird_friend",
+      "level": null,
+      "magic_type": "knack",
+      "duration": null,
+      "range": null,
+      "description": "Over the course of a life spent in the depths of the forest among the colonies of birds, the mossling has learned to speak their secret languages and has earned their trust.",
+      "reversible": false,
+      "reversed_name": null,
+      "kindred": "Mossling",
+      "abilities": [
+        {
+          "level": 1,
+          "name": "Bird speech",
+          "description": "The mossling converses with birds and understands their replies (which are typically simplistic)."
+        },
+        {
+          "level": 3,
+          "name": "Bird companion",
+          "description": "The mossling can charm a bird companion of Level 1 or less. If the bird fails a Save Versus Spell, it remains in the company of the mossling until dismissed. Only one bird may be charmed in this way at a time."
+        },
+        {
+          "level": 5,
+          "name": "Twittering message",
+          "description": "Once per day, forest birds may relay a message of up to 10 words for the mossling. The message is passed among the birds of the forest, carried to the specified person or location at a rate of 12 miles per hour. When it arrives at the destination, the message is reproduced in the twitterings of the birds."
+        },
+        {
+          "level": 7,
+          "name": "Summon flock",
+          "description": "Once per day, the mossling can call upon the aid of woodland birds. A flock of sparrows, starlings, thrushes, and blackbirds gathers and remains in the mossling's service for 1d4 Turns."
+        }
+      ]
+    },
+    {
+      "name": "Lock Singer",
+      "spell_id": "lock_singer",
+      "level": null,
+      "magic_type": "knack",
+      "duration": null,
+      "range": null,
+      "description": "The mossling studies mysterious and closely-guarded songs which have the power to charm locks.",
+      "reversible": false,
+      "reversed_name": null,
+      "kindred": "Mossling",
+      "abilities": [
+        {
+          "level": 1,
+          "name": "Open simple locks",
+          "description": "For every Turn the mossling sings to a simple, mundane lock, there is a 2-in-6 chance the device is coaxed open."
+        },
+        {
+          "level": 3,
+          "name": "Locate key",
+          "description": "A brief, whispered cant persuades a lock to reveal the location of its key (or the closest key, if multiple exist). The information is conveyed via a quiet whining which only the mossling comprehends."
+        },
+        {
+          "level": 5,
+          "name": "Snap shut",
+          "description": "Simple, mundane locks within 30′ instantly snap shut after a single Round of song."
+        },
+        {
+          "level": 7,
+          "name": "Open any lock",
+          "description": "The mossling's song can persuade locks of any complexity to open, with a 2-in-6 chance of success per Turn of singing. Even magically sealed locks are cooperative, although in this case there is a 1-in-6 chance of the magic backfiring and sealing the mossling's mouth shut for 1d4 days."
+        }
+      ]
+    },
+    {
+      "name": "Root Friend",
+      "spell_id": "root_friend",
+      "level": null,
+      "magic_type": "knack",
+      "duration": null,
+      "range": null,
+      "description": "Dwelling in subterranean burrows, the mossling has developed a keen affinity with the roots of forest plants.",
+      "reversible": false,
+      "reversed_name": null,
+      "kindred": "Mossling",
+      "abilities": [
+        {
+          "level": 1,
+          "name": "Root question",
+          "description": "Once per day, the mossling can pose one question of a root about its surroundings. The root answers truthfully with 1d6 words."
+        },
+        {
+          "level": 3,
+          "name": "Summon roots",
+          "description": "The mossling can summon edible roots to the surface once per day. 1d4 fresh rations are produced."
+        },
+        {
+          "level": 5,
+          "name": "Root respite",
+          "description": "The mossling may shelter in the roots of a tree or other large plant once per day. The mossling is taken underground into the plant's root system, where they may lie unnoticed for up to an hour."
+        },
+        {
+          "level": 7,
+          "name": "Summon root thing",
+          "description": "The mossling can summon a monstrous root vegetable from the earth once per day. The creature arrives at the character's location in 1d6 Rounds and obeys their commands for 1d6 Turns before fleeing into the undergrowth."
+        }
+      ]
+    },
+    {
+      "name": "Thread Whistling",
+      "spell_id": "thread_whistling",
+      "level": null,
+      "magic_type": "knack",
+      "duration": null,
+      "range": "30'",
+      "description": "A mysterious whistling technique grants the mossling sympathetic control over threads and strings within 30′.",
+      "reversible": false,
+      "reversed_name": null,
+      "kindred": "Mossling",
+      "abilities": [
+        {
+          "level": 1,
+          "name": "Thread mastery",
+          "description": "The mossling's whistling can tie, untie, or unravel any textile thinner than rope: string, laces, and the fabric of garments."
+        },
+        {
+          "level": 3,
+          "name": "Animate threads",
+          "description": "The mossling commands loose threads or strings to move as they direct. The threads may be commanded to move up to 5′ per Round for as long as the mossling whistles. Commanded threads do not have the strength to attack, but do have the strength to drag small objects (up to 20 coins of weight)."
+        },
+        {
+          "level": 5,
+          "name": "Rope mastery",
+          "description": "Ropes loosen or tighten at the mossling's command."
+        },
+        {
+          "level": 7,
+          "name": "Animate rope",
+          "description": "At the mossling's command, a rope animates to attack and entangle foes. The mossling must concentrate and continue to whistle while commanding a rope—they may move at half Speed but may not attack or perform other actions."
+        }
+      ]
+    },
+    {
+      "name": "Wood Kenning",
+      "spell_id": "wood_kenning",
+      "level": null,
+      "magic_type": "knack",
+      "duration": "1 Turn",
+      "range": null,
+      "description": "The mossling's fingers are sensitised to the subtle vibrations of tree and wood. By spending 1 Turn touching a wooden item or the trunk of a tree, the mossling may glean knowledge.",
+      "reversible": false,
+      "reversed_name": null,
+      "kindred": "Mossling",
+      "abilities": [
+        {
+          "level": 1,
+          "name": "Sense history",
+          "description": "The mossling learns the name of a wooden item's creator or the name of the last person to touch it."
+        },
+        {
+          "level": 3,
+          "name": "Sense emotions",
+          "description": "The mossling discerns the most recent strong emotion which the wood has absorbed from a sentient being (wood is highly sensitive to such energies)."
+        },
+        {
+          "level": 5,
+          "name": "See beyond",
+          "description": "The mossling gains a momentary image of what lies on the other side of a wooden barrier (e.g. a door or wall)."
+        },
+        {
+          "level": 7,
+          "name": "True name",
+          "description": "The mossling learns a tree's true name. Once per day, the mossling may invoke one tree whose true name they know, gaining a glimpse of the tree's surroundings. Invoking the true name of a deceased tree provokes a curious vision of the vegetable afterlife."
+        }
+      ]
+    },
+    {
+      "name": "Yeast Master",
+      "spell_id": "yeast_master",
+      "level": null,
+      "magic_type": "knack",
+      "duration": null,
+      "range": null,
+      "description": "The mossling has a special affinity for the great mass of yeasts and fungal spores that permeate the deep woods. The yeast master hears the chorus of their song and counts them as constant companions.",
+      "reversible": false,
+      "reversed_name": null,
+      "kindred": "Mossling",
+      "abilities": [
+        {
+          "level": 1,
+          "name": "Ferment",
+          "description": "The mossling's touch ferments sweet liquids at a rate of one pint per Turn. The liquid is transformed to a frothy, alcoholic brew, delicious to mosslings. There is a 2-in-6 chance of it being palatable to other folk."
+        },
+        {
+          "level": 3,
+          "name": "Commune with yeast",
+          "description": "The mossling communes with the yeasts in alcoholic beverages. Sipping from a drink which has been partly consumed by someone else reveals the person's name to the mossling."
+        },
+        {
+          "level": 5,
+          "name": "Yeasty belch",
+          "description": "By allowing potent yeasts to ferment in their belly, the mossling can emit a heady belch once per day. The belch may be targeted at an individual within 10′, who must Save Versus Blast or faint for 1d6 Rounds."
+        },
+        {
+          "level": 7,
+          "name": "Yeast feast",
+          "description": "Summoning omnipresent micro-organisms, the mossling is able to conjure a yeasty feast equivalent to 1d6 fresh rations. The food is composed of chunks of fleshy, compacted yeast, frothing sheets of slime, and bubbles of alcoholic brew. Such a feast may only be produced once per day."
+        }
+      ]
+    }
+  ]
+}

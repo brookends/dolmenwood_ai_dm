@@ -1,0 +1,146 @@
+{
+  "_metadata": {
+    "source_file": "../data/pdfs/core/Dolmenwood_Players_Book.pdf",
+    "pages": [
+      124,
+      125
+    ],
+    "content_type": "items",
+    "item_count": 10,
+    "errors": [],
+    "note": "Review and correct this data before importing"
+  },
+  "items": [
+    {
+      "name": "Bloodhound",
+      "item_id": "bloodhound",
+      "type": "mount",
+      "cost_sp": 250,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Medium hounds with sleek, rusty fur and blood red eyes. Bred for their excellent tracking skills. Common working dogs found in every woodland village in Dolmenwood.",
+      "properties": [
+        "tracking"
+      ]
+    },
+    {
+      "name": "Dapper",
+      "item_id": "dapper",
+      "type": "mount",
+      "cost_sp": 600,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Curly-furred dogs with huge, floppy ears and great fringes that obscure their eyes. Dappers are favoured by the noble classes for their curious love of dressing in preposterous outfits and performing amusing dances.",
+      "properties": [
+        "language"
+      ]
+    },
+    {
+      "name": "Dolmen Pincher",
+      "item_id": "dolmen_pincher",
+      "type": "mount",
+      "cost_sp": 300,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Sleek, muscular hunting hounds with black fur and a rusty muzzle. Employed especially for hunting large beasts.",
+      "properties": [
+        "bring_down_prey"
+      ]
+    },
+    {
+      "name": "Lankston Mastiff",
+      "item_id": "lankston_mastiff",
+      "type": "mount",
+      "cost_sp": 500,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Huge, bulky beasts with thick, shaggy fur and a volatile, vicious temperament. Mastiffs make excellent and diligent guard dogs, but they are notoriously difficult to train.",
+      "properties": [
+        "guard_dog"
+      ]
+    },
+    {
+      "name": "Lichhound",
+      "item_id": "lichhound",
+      "type": "mount",
+      "cost_sp": 1500,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Stocky, grey, wiry-furred hounds with upright, pointed ears and narrow, yellow eyes. Lichhounds are bred by the Church as companions for graveyard wardens and clerics of the order of Saint Signis.",
+      "properties": [
+        "undead_ward",
+        "fear_no_undead",
+        "turning_bark"
+      ]
+    },
+    {
+      "name": "Pisker",
+      "item_id": "pisker",
+      "type": "mount",
+      "cost_sp": 750,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Stocky, short-legged dogs with lustrous reddish fur, lolling tongues, and soft, pudgy bellies. Known for their frisky, boisterous temperament and obnoxious yapping. Commonly kept by the people of Prigwort, who fear the presence of fairies.",
+      "properties": [
+        "fairy_ward",
+        "detect_fairies"
+      ]
+    },
+    {
+      "name": "Seelie Dog",
+      "item_id": "seelie_dog",
+      "type": "mount",
+      "cost_sp": 600,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Tall, silver-furred hounds with the delicate bone structure and long legs suited for running. Seelie dogs' eyes are bright pink, and they are said to be of fairy ancestry.",
+      "properties": [
+        "language",
+        "loyalty"
+      ]
+    },
+    {
+      "name": "Spookhound",
+      "item_id": "spookhound",
+      "type": "mount",
+      "cost_sp": 1200,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Slender, short-haired hounds of gentle demeanour, recognisable for their white/grey coats, fluffy tails, and buggy eyes. The spookhound was bred for the ability to detect the presence of the undead.",
+      "properties": [
+        "undead_ward",
+        "smell_undead"
+      ]
+    },
+    {
+      "name": "Dog Armour",
+      "item_id": "dog_armour",
+      "type": "armor",
+      "cost_sp": 250,
+      "weight_coins": 2000,
+      "damage": null,
+      "ac_bonus": 2,
+      "description": "Light leather armour with a spiked collar. Grants a +2 bonus to Armour Class.",
+      "properties": []
+    },
+    {
+      "name": "Feed (1 day)",
+      "item_id": "feed_1_day",
+      "type": "food",
+      "cost_sp": 10,
+      "weight_coins": 200,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Fresh meat scraps and bones to gnaw. Dogs may also be fed on rations of freshly caught game.",
+      "properties": []
+    }
+  ]
+}

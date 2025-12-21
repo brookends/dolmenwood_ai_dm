@@ -1,0 +1,80 @@
+{
+  "_metadata": {
+    "source_file": "../data/pdfs/core/Dolmenwood_Players_Book.pdf",
+    "pages": [
+      88
+    ],
+    "content_type": "spells",
+    "item_count": 6,
+    "errors": [],
+    "note": "Review and correct this data before importing"
+  },
+  "items": [
+    {
+      "name": "Acid Globe",
+      "spell_id": "acid_globe",
+      "level": 4,
+      "magic_type": "arcane",
+      "duration": "Instant",
+      "range": "150'",
+      "description": "A 1′ globe of potent, sickly-green acid streaks from the caster's finger and strikes a target within range. Damage: The target suffers 1d4 damage per Level of the caster, with a Save Versus Blast allowed for half damage. If the save fails, the target again suffers 1d4 damage per Level of the caster in the following Round, as the acid drips off. Splash damage: All within 5′ of the target must also Save Versus Blast or suffer 2d4 damage.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Arcane Eye",
+      "spell_id": "arcane_eye",
+      "level": 4,
+      "magic_type": "arcane",
+      "duration": "6 Turns",
+      "range": "240'",
+      "description": "An invisible, magical eye is conjured that allows the caster to see at a distance. Concentration: By concentrating, the caster can see through the eye and can direct it to move within range (up to 120′ per Turn). Vision: The magical eye can see up to 60′ even in complete darkness. Barriers: Though invisible, the eye is tangible (as big as a normal human eye). It cannot pass through solid barriers.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Confusion",
+      "spell_id": "confusion",
+      "level": 4,
+      "magic_type": "arcane",
+      "duration": "12 Rounds",
+      "range": "120'",
+      "description": "3d6 randomly determined creatures within a 30′ radius area are stricken with delusions and become unable to control their actions. Subjects of Level 3 or greater: May Save Versus Spell each Round to resist the spell's effect, acting with free will that Round if they make the Saving Throw. Subjects of Level 2 or lower: May not make a Saving Throw. Behaviour: Roll on the Subject Behaviour table separately for each affected subject each Round to determine how that subject acts that Round.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Dimension Door",
+      "spell_id": "dimension_door",
+      "level": 4,
+      "magic_type": "arcane",
+      "duration": "1 Round",
+      "range": "10' / 360'",
+      "description": "A pair of glowing, door-shaped rifts in the fabric of space open up for a moment—one within 10′ of the caster and the other at a chosen destination location. Stepping through: A single creature may step through the nearby door and instantly exit the destination door. Transfer in the other direction is impossible. Destination: The exit portal may be positioned in one of two ways: either a location within 360′ known to the caster or a location specified by a series of offsets totalling at most 360′ (e.g. 120′ north, 160′ east, 80′ up). Occupied destination: The spell has no effect if the destination is occupied by a solid object. Unwilling subjects: The caster may forcibly transport a creature within 10′ by manifesting the nearby door beside them. The target must Save Versus Hold or be sucked through the dimensional door.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Dominate",
+      "spell_id": "dominate",
+      "level": 4,
+      "magic_type": "arcane",
+      "duration": "Permanent until broken",
+      "range": "120'",
+      "description": "Places a powerful charm on one or more living creatures. Subjects: Either 3d6 creatures of up to Level 3 or a single creature of higher Level, as chosen by the caster. Each subject must Save Versus Spell or be charmed. Charm duration: The charm lasts indefinitely, but each subject makes a further Save Versus Spell once per day. If one of these saves succeeds, the charm ends. Friendship: Subjects regard the caster as a close friend and come to the caster's defence. Commands: If they share a language, the caster may give the charmed subjects commands, which they obey. Resisting commands: Subjects may resist commands that contradict their habits or Alignment. Suicidal or clearly harmful commands are always refused.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Hallucinatory Terrain",
+      "spell_id": "hallucinatory_terrain",
+      "level": 4,
+      "magic_type": "arcane",
+      "duration": "Permanent until touched",
+      "range": "240'",
+      "description": "Conjures an illusory terrain feature (e.g. a hill, wood, marsh, etc.) or disguises an existing terrain feature. Area: The illusion must fit completely within range. Touching: If an intelligent being touches the illusion, it vanishes, ending the spell.",
+      "reversible": false,
+      "reversed_name": null
+    }
+  ]
+}

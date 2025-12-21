@@ -1,0 +1,110 @@
+{
+  "_metadata": {
+    "source_file": "../data/pdfs/core/Dolmenwood_Players_Book.pdf",
+    "pages": [
+      101
+    ],
+    "content_type": "spells",
+    "item_count": 6,
+    "errors": [],
+    "note": "Review and correct this data before importing"
+  },
+  "items": [
+    {
+      "name": "Dream Ship",
+      "spell_id": "dream_ship",
+      "level": 3,
+      "magic_type": "rune",
+      "duration": "1 Turn",
+      "range": "Appears in the caster's presence",
+      "description": "A phantasmagoric galleon sails down from the sky and docks as close to the caster as is possible. Passengers: The caster and up to 12 companions may board the ship. Travel: The ship ferries the caster and companions off to any named destination within Dolmenwood. The voyage: The passengers experience a delightful voyage aboard the ship, drifting through a dream land of pink clouds and cavorting sylphs. The voyage seems to take 1d6 hours. Duration: Whatever the perceptual time aboard, the journey takes a mere ten minutes of real time.",
+      "reversible": false,
+      "reversed_name": null,
+      "kindred": [
+        "Elf",
+        "Grimalkin",
+        "Woodgrue"
+      ]
+    },
+    {
+      "name": "Eternal Slumber",
+      "spell_id": "eternal_slumber",
+      "level": 3,
+      "magic_type": "rune",
+      "duration": "Permanent",
+      "range": "20′",
+      "description": "A mortal within range is placed into a state of stasis and eternal sleep. Awakening: The subject may only be awoken by dispelling the rune's magic or by a condition set by the caster.",
+      "reversible": false,
+      "reversed_name": null,
+      "kindred": [
+        "Elf",
+        "Grimalkin",
+        "Woodgrue"
+      ]
+    },
+    {
+      "name": "Rune of Death",
+      "spell_id": "rune_of_death",
+      "level": 3,
+      "magic_type": "rune",
+      "duration": "Instant",
+      "range": "120′",
+      "description": "Invoking the power of this rune brings death upon one or more mortals or animals within a 30′ diameter area. Effect: A total of up to 4d8 Levels of mortals or animals must Save Versus Doom or die, instantly. Creatures of the lowest Level are affected first. Restrictions: Mortals or animals of Level 8 or above are unaffected.",
+      "reversible": false,
+      "reversed_name": null,
+      "kindred": [
+        "Elf",
+        "Grimalkin",
+        "Woodgrue"
+      ]
+    },
+    {
+      "name": "Rune of Wishing",
+      "spell_id": "rune_of_wishing",
+      "level": 3,
+      "magic_type": "rune",
+      "duration": "Permanent",
+      "range": "Unlimited",
+      "description": "This rune has the power to alter the nature of reality in any conceivable way the caster wishes. Limits and adjudication: The Referee should refer to the guidelines in the DCB—see Wishes under Magic Items. Life force: Using this rune saps the caster's life force, causing a permanent loss of 1d3 Constitution, which cannot be restored by any means. A character reduced to 0 Constitution dies and can never be resurrected.",
+      "reversible": false,
+      "reversed_name": null,
+      "kindred": [
+        "Elf",
+        "Grimalkin",
+        "Woodgrue"
+      ]
+    },
+    {
+      "name": "Summon Wild Hunt",
+      "spell_id": "summon_wild_hunt",
+      "level": 3,
+      "magic_type": "rune",
+      "duration": "1d6 hours or until successful",
+      "range": "Appears in the caster's presence",
+      "description": "This rune invokes the blasting of ghostly horns, summoning forth a hunting host from the wild woods of Fairy. Composition: The wild hunt is composed as follows: 4d6 fairy hounds, 4d20 elf hunters on foot, 4d20 elf hunters mounted on fairy horses, 1d6 goblin horn-blowers. Hunting: The caster may direct the fairy host to chase a specific quarry. Duration: The host remains in the mortal world until the hunt is successful, or until 1d6 hours have passed.",
+      "reversible": false,
+      "reversed_name": null,
+      "kindred": [
+        "Elf",
+        "Grimalkin",
+        "Woodgrue"
+      ]
+    },
+    {
+      "name": "Unravel Death",
+      "spell_id": "unravel_death",
+      "level": 3,
+      "magic_type": "rune",
+      "duration": "Instant",
+      "range": "Touch",
+      "description": "A deceased mortal, demi-fey, or fairy whom the caster touches returns to life. Time limit: The power of this rune restores life to a person who has been dead no longer than 7 days. Weakness: Returning from death is an ordeal. Until the subject gets 2 full weeks of bed rest, they have 1 Hit Point, move at half Speed, cannot carry heavy items, and cannot attack, cast spells, make Skill Checks, or use other Class capabilities. Recovery from this weakness cannot be hastened by magic of any kind.",
+      "reversible": false,
+      "reversed_name": null,
+      "kindred": [
+        "Elf",
+        "Grimalkin",
+        "Woodgrue"
+      ]
+    }
+  ]
+}

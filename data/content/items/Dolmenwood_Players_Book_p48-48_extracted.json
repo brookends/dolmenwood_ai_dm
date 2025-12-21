@@ -1,0 +1,613 @@
+{
+  "_metadata": {
+    "source_file": "../data/pdfs/core/Dolmenwood_Players_Book.pdf",
+    "pages": [
+      48
+    ],
+    "content_type": "items",
+    "item_count": 50,
+    "errors": [],
+    "note": "Review and correct this data before importing"
+  },
+  "items": [
+    {
+      "name": "Black stone which always points towards the sun",
+      "item_id": "black_stone_which_always_points_towards_the_sun",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A black stone which always points towards the sun.",
+      "properties": [
+        "magical"
+      ]
+    },
+    {
+      "name": "Blood sausage, allegedly made of wyrm's blood",
+      "item_id": "blood_sausage_allegedly_made_of_wyrms_blood",
+      "type": "food",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A blood sausage, allegedly made of wyrm's blood.",
+      "properties": []
+    },
+    {
+      "name": "Blood-stained handkerchief that won't wash clean",
+      "item_id": "blood_stained_handkerchief_that_wont_wash_clean",
+      "type": "clothing",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A blood-stained handkerchief that won't wash clean.",
+      "properties": [
+        "cursed"
+      ]
+    },
+    {
+      "name": "Bone statuette of a mermaid with prodigiously hairy armpits",
+      "item_id": "bone_statuette_of_a_mermaid_with_prodigiously_hairy_armpits",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A bone statuette of a mermaid with prodigiously hairy armpits.",
+      "properties": []
+    },
+    {
+      "name": "Bright red egg that was given to you by a sprite",
+      "item_id": "bright_red_egg_that_was_given_to_you_by_a_sprite",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A bright red egg that was given to you by a sprite.",
+      "properties": [
+        "magical"
+      ]
+    },
+    {
+      "name": "Clay effigy that whispers to you in your sleep",
+      "item_id": "clay_effigy_that_whispers_to_you_in_your_sleep",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A clay effigy that whispers to you in your sleep.",
+      "properties": [
+        "magical"
+      ]
+    },
+    {
+      "name": "Cracked marble that falls in slow motion",
+      "item_id": "cracked_marble_that_falls_in_slow_motion",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A cracked marble that falls in slow motion.",
+      "properties": [
+        "magical"
+      ]
+    },
+    {
+      "name": "Deck of cards illustrated with blindfolded kings, queens, knaves, etc.",
+      "item_id": "deck_of_cards_illustrated_with_blindfolded_kings_queens_knaves_etc",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A deck of cards illustrated with blindfolded kings, queens, knaves, etc.",
+      "properties": []
+    },
+    {
+      "name": "Drinking horn carved with cavorting nymphs",
+      "item_id": "drinking_horn_carved_with_cavorting_nymphs",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A drinking horn carved with cavorting nymphs.",
+      "properties": []
+    },
+    {
+      "name": "Dubious fake moustache made of rat fur",
+      "item_id": "dubious_fake_moustache_made_of_rat_fur",
+      "type": "clothing",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A dubious fake moustache made of rat fur.",
+      "properties": []
+    },
+    {
+      "name": "Fine set of silver cutlery and a floral china tea-set, all packed in a wicker hamper",
+      "item_id": "fine_set_of_silver_cutlery_and_a_floral_china_tea_set_all_packed_in_a_wicker_hamper",
+      "type": "container",
+      "cost_sp": null,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A fine set of silver cutlery and a floral china tea-set, all packed in a wicker hamper.",
+      "properties": []
+    },
+    {
+      "name": "Foot-long, spicy sausage",
+      "item_id": "foot_long_spicy_sausage",
+      "type": "food",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A foot-long, spicy sausage.",
+      "properties": []
+    },
+    {
+      "name": "Gauntlet of wyrm scales",
+      "item_id": "gauntlet_of_wyrm_scales",
+      "type": "armor",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A gauntlet of wyrm scales.",
+      "properties": []
+    },
+    {
+      "name": "Goatskin pouch full of giblets",
+      "item_id": "goatskin_pouch_full_of_giblets",
+      "type": "container",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A goatskin pouch full of giblets.",
+      "properties": []
+    },
+    {
+      "name": "Head-sized glass sphere with a neck opening",
+      "item_id": "head_sized_glass_sphere_with_a_neck_opening",
+      "type": "container",
+      "cost_sp": null,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A head-sized glass sphere with a neck opening.",
+      "properties": []
+    },
+    {
+      "name": "Hunk of ancient, mouldy cheese",
+      "item_id": "hunk_of_ancient_mouldy_cheese",
+      "type": "food",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A hunk of ancient, mouldy cheese.",
+      "properties": []
+    },
+    {
+      "name": "Jar that breeds flies, even when tightly sealed",
+      "item_id": "jar_that_breeds_flies_even_when_tightly_sealed",
+      "type": "container",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A jar that breeds flies, even when tightly sealed.",
+      "properties": [
+        "magical"
+      ]
+    },
+    {
+      "name": "Jaunty cap (with a feather stuck in it) which jumps up whenever anyone says your name",
+      "item_id": "jaunty_cap_with_a_feather_stuck_in_it_which_jumps_up_whenever_anyone_says_your_name",
+      "type": "clothing",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A jaunty cap (with a feather stuck in it) which jumps up whenever anyone says your name.",
+      "properties": [
+        "magical"
+      ]
+    },
+    {
+      "name": "Lavender scented cushion embroidered with black roses and thorns",
+      "item_id": "lavender_scented_cushion_embroidered_with_black_roses_and_thorns",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A lavender scented cushion embroidered with black roses and thorns.",
+      "properties": []
+    },
+    {
+      "name": "Lock of hair from the first person you killed",
+      "item_id": "lock_of_hair_from_the_first_person_you_killed",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A lock of hair from the first person you killed.",
+      "properties": []
+    },
+    {
+      "name": "Long kilt of woven moss",
+      "item_id": "long_kilt_of_woven_moss",
+      "type": "clothing",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A long kilt of woven moss.",
+      "properties": []
+    },
+    {
+      "name": "Love letter you are penning in silver ink to your fairy betrothed",
+      "item_id": "love_letter_you_are_penning_in_silver_ink_to_your_fairy_betrothed",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A love letter you are penning in silver ink to your fairy betrothed. (To be placed within a ring of toadstools for delivery.)",
+      "properties": [
+        "magical"
+      ]
+    },
+    {
+      "name": "Miniature brass gnome",
+      "item_id": "miniature_brass_gnome",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A miniature brass gnome. (Appears on your pillow looking at you each morning.)",
+      "properties": [
+        "magical"
+      ]
+    },
+    {
+      "name": "Napkin and cutlery that you stole from a fancy inn",
+      "item_id": "napkin_and_cutlery_that_you_stole_from_a_fancy_inn",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A napkin and cutlery that you stole from a fancy inn.",
+      "properties": []
+    },
+    {
+      "name": "Note from your mother admonishing you to return home as soon as able",
+      "item_id": "note_from_your_mother_admonishing_you_to_return_home_as_soon_as_able",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A note from your mother admonishing you to return home as soon as able.",
+      "properties": []
+    },
+    {
+      "name": "Pair of stripy woollen socks that keep your feet as warm and dry as if you were wearing fine boots",
+      "item_id": "pair_of_stripy_woollen_socks_that_keep_your_feet_as_warm_and_dry_as_if_you_were_wearing_fine_boots",
+      "type": "clothing",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A pair of stripy woollen socks that keep your feet as warm and dry as if you were wearing fine boots.",
+      "properties": [
+        "magical"
+      ]
+    },
+    {
+      "name": "Pebble that glows faintly in the dark",
+      "item_id": "pebble_that_glows_faintly_in_the_dark",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A pebble that glows faintly in the dark.",
+      "properties": [
+        "magical"
+      ]
+    },
+    {
+      "name": "Piece of the moon that fell to earth",
+      "item_id": "piece_of_the_moon_that_fell_to_earth",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A piece of the moon that fell to earth. (Or is it a hunk of desiccated cheese?)",
+      "properties": [
+        "magical"
+      ]
+    },
+    {
+      "name": "Porcelain teapot painted with a scene of owls devouring humans",
+      "item_id": "porcelain_teapot_painted_with_a_scene_of_owls_devouring_humans",
+      "type": "container",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A porcelain teapot painted with a scene of owls devouring humans.",
+      "properties": []
+    },
+    {
+      "name": "Raven's feather quill that writes without ink",
+      "item_id": "ravens_feather_quill_that_writes_without_ink",
+      "type": "tool",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A raven's feather quill that writes without ink.",
+      "properties": [
+        "magical"
+      ]
+    },
+    {
+      "name": "Silver belt woven from the mane of a kelpie",
+      "item_id": "silver_belt_woven_from_the_mane_of_a_kelpie",
+      "type": "clothing",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A silver belt woven from the mane of a kelpie.",
+      "properties": [
+        "magical"
+      ]
+    },
+    {
+      "name": "Silver mirror that always reflects the sky",
+      "item_id": "silver_mirror_that_always_reflects_the_sky",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A silver mirror that always reflects the sky.",
+      "properties": [
+        "magical"
+      ]
+    },
+    {
+      "name": "Silver ring that shrinks or expands to fit whatever finger it is placed upon",
+      "item_id": "silver_ring_that_shrinks_or_expands_to_fit_whatever_finger_it_is_placed_upon",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A silver ring that shrinks or expands to fit whatever finger it is placed upon.",
+      "properties": [
+        "magical"
+      ]
+    },
+    {
+      "name": "Tiny fish in a jar of water",
+      "item_id": "tiny_fish_in_a_jar_of_water",
+      "type": "container",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A tiny fish in a jar of water. At night, it comes to the surface and whispers the names of everyone within 5′.",
+      "properties": [
+        "magical"
+      ]
+    },
+    {
+      "name": "Tiny wicker effigy that you stole from a witch's hut",
+      "item_id": "tiny_wicker_effigy_that_you_stole_from_a_witchs_hut",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A tiny wicker effigy that you stole from a witch's hut.",
+      "properties": [
+        "magical"
+      ]
+    },
+    {
+      "name": "Unicorn statuette carved out of mushroom-wood",
+      "item_id": "unicorn_statuette_carved_out_of_mushroom_wood",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A unicorn statuette carved out of mushroom-wood.",
+      "properties": []
+    },
+    {
+      "name": "Wanted poster for yourself",
+      "item_id": "wanted_poster_for_yourself",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A wanted poster for yourself.",
+      "properties": []
+    },
+    {
+      "name": "Well-thumbed and annotated book of psalms",
+      "item_id": "well_thumbed_and_annotated_book_of_psalms",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A well-thumbed and annotated book of psalms.",
+      "properties": []
+    },
+    {
+      "name": "Ash wand stained with the blood of a troll",
+      "item_id": "ash_wand_stained_with_the_blood_of_a_troll",
+      "type": "weapon",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "An ash wand stained with the blood of a troll.",
+      "properties": [
+        "magical"
+      ]
+    },
+    {
+      "name": "Enormous Green Man brass belt buckle",
+      "item_id": "enormous_green_man_brass_belt_buckle",
+      "type": "clothing",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "An enormous Green Man brass belt buckle.",
+      "properties": []
+    },
+    {
+      "name": "Ornate lantern you found in a bog",
+      "item_id": "ornate_lantern_you_found_in_a_bog",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "An ornate lantern you found in a bog.",
+      "properties": []
+    },
+    {
+      "name": "Sixteen silver pieces, greased with slippery magical oil that cannot be washed off",
+      "item_id": "sixteen_silver_pieces_greased_with_slippery_magical_oil_that_cannot_be_washed_off",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Sixteen silver pieces, greased with slippery magical oil that cannot be washed off.",
+      "properties": [
+        "magical",
+        "cursed"
+      ]
+    },
+    {
+      "name": "Broken tip of a unicorn's horn",
+      "item_id": "broken_tip_of_a_unicorns_horn",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "The broken tip of a unicorn's horn.",
+      "properties": [
+        "magical"
+      ]
+    },
+    {
+      "name": "Fairy sword that slew your father",
+      "item_id": "fairy_sword_that_slew_your_father",
+      "type": "weapon",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "The fairy sword that slew your father.",
+      "properties": [
+        "magical"
+      ]
+    },
+    {
+      "name": "Mummified hand of a bog body",
+      "item_id": "mummified_hand_of_a_bog_body",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "The mummified hand of a bog body.",
+      "properties": []
+    },
+    {
+      "name": "Scintillating, silvery feather of a witch owl",
+      "item_id": "scintillating_silvery_feather_of_a_witch_owl",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "The scintillating, silvery feather of a witch owl.",
+      "properties": [
+        "magical"
+      ]
+    },
+    {
+      "name": "Skeleton of an especially large toad, in pieces",
+      "item_id": "skeleton_of_an_especially_large_toad_in_pieces",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "The skeleton of an especially large toad, in pieces.",
+      "properties": []
+    },
+    {
+      "name": "Skull of a Drune, stolen from a forbidden crypt",
+      "item_id": "skull_of_a_drune_stolen_from_a_forbidden_crypt",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "The skull of a Drune, stolen from a forbidden crypt.",
+      "properties": [
+        "cursed"
+      ]
+    },
+    {
+      "name": "Wobbly, pink severed hand of a gelatinous ape, still fresh and sweet",
+      "item_id": "wobbly_pink_severed_hand_of_a_gelatinous_ape_still_fresh_and_sweet",
+      "type": "food",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "The wobbly, pink severed hand of a gelatinous ape, still fresh and sweet.",
+      "properties": []
+    },
+    {
+      "name": "Your grandfather's beard, rolled up in a hessian cloth",
+      "item_id": "your_grandfathers_beard_rolled_up_in_a_hessian_cloth",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Your grandfather's beard, rolled up in a hessian cloth.",
+      "properties": []
+    }
+  ]
+}

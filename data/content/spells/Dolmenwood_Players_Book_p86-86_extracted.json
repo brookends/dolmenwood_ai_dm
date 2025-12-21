@@ -1,0 +1,80 @@
+{
+  "_metadata": {
+    "source_file": "../data/pdfs/core/Dolmenwood_Players_Book.pdf",
+    "pages": [
+      86
+    ],
+    "content_type": "spells",
+    "item_count": 6,
+    "errors": [],
+    "note": "Review and correct this data before importing"
+  },
+  "items": [
+    {
+      "name": "Circle of Invisibility",
+      "spell_id": "circle_of_invisibility",
+      "level": 3,
+      "magic_type": "arcane",
+      "duration": "1 hour per Level",
+      "range": "120'",
+      "description": "A selected creature and all creatures within 10′ of it shimmer and disappear from sight. Mobile area: The 10′ radius circle of the spell's effect moves with the chosen creature. Exiting the area: Subjects that move more than 10′ away from the chosen creature become visible. Entering the area: Creatures that move into the area after the spell is cast do not become invisible. Gear: Any gear a subject is carrying is also rendered invisible (this includes clothing and armour). Items subsequently put down become visible. Carried light sources become invisible but the emitted light does not. Breaking the invisibility: If a subject attacks or casts a spell, the invisibility is broken for that subject.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Crystal Vision",
+      "spell_id": "crystal_vision",
+      "level": 3,
+      "magic_type": "arcane",
+      "duration": "12 Turns",
+      "range": "60'",
+      "description": "Attunes a gem or crystal (of at least 500gp value) to pick up the visual impressions of living creatures, allowing the caster to see through others' eyes. Focus for 1 Turn: To establish a connection with a creature, the caster must gaze into the crystal and focus their concentration in a particular direction for 1 Turn without moving. After 1 Turn: Facets of the crystal reflect silent images of the current visual perceptions of one creature within range. Multiple creatures: If multiple creatures are within range in the direction being focused on, the crystal connects with the closest. Switching: Once a connection is established, the caster may choose to maintain it or to change to another subject. Obstructions: This spell is blocked by 2′ of rock or a thin layer of lead.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Dark Sight",
+      "spell_id": "dark_sight",
+      "level": 3,
+      "magic_type": "arcane",
+      "duration": "1 day",
+      "range": "The caster or a creature touched",
+      "description": "The subject gains the ability to see normally in darkness up to 60′.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Dispel Magic",
+      "spell_id": "dispel_magic",
+      "level": 3,
+      "magic_type": "arcane",
+      "duration": "Instant",
+      "range": "120'",
+      "description": "All spell effects in a 20′ cube within range are unravelled, disintegrating in coils of coloured energy. Caster Levels: Effects created by lower Level casters are automatically dispelled. There is a 5% chance per Level difference that a higher-Level caster's magic resists the attempt to dispel it and persists. Magic items: Are unaffected. Curses: Those incurred by a spell (e.g. Hex Weaving) are affected. Those incurred by a magic item are unaffected.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Fireball",
+      "spell_id": "fireball",
+      "level": 3,
+      "magic_type": "arcane",
+      "duration": "Instant",
+      "range": "240'",
+      "description": "Flame streaks from the caster's finger towards a point within range and detonates in a roaring 20′ radius sphere of fire. Damage: Creatures caught in the fireball suffer 1d6 damage per Level of the caster, with a successful Save Versus Blast indicating half damage.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Fly",
+      "spell_id": "fly",
+      "level": 3,
+      "magic_type": "arcane",
+      "duration": "1d6 Turns +1 per Level",
+      "range": "The caster or a creature touched",
+      "description": "Commands the wind to service, wrapping the subject in swirling zephyrs that lift them through the air. Free movement: The subject can command the zephyrs to carry them through the air in any direction, including the ability to levitate and to hover in mid-air. Speed: The subject can fly at Speed 120.",
+      "reversible": false,
+      "reversed_name": null
+    }
+  ]
+}

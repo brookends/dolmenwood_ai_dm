@@ -1,0 +1,81 @@
+{
+  "_metadata": {
+    "source_file": "../data/pdfs/core/Dolmenwood_Players_Book.pdf",
+    "pages": [
+      110,
+      111
+    ],
+    "content_type": "spells",
+    "item_count": 6,
+    "errors": [],
+    "note": "Review and correct this data before importing"
+  },
+  "items": [
+    {
+      "name": "Circle of Protection",
+      "spell_id": "circle_of_protection",
+      "level": 4,
+      "magic_type": "divine",
+      "duration": "12 Turns",
+      "range": "10′ around the caster",
+      "description": "A sword of glowing light manifests and inscribes a 10′ radius circle around the caster, leaving a shimmering ring of light which moves with the caster. The caster and all allies within the circle come under the effect of a Mantle of Protection, warded against attacks by Chaotic creatures as well as creatures created or summoned by magic. AC and Saving Throw bonus: Those warded gain a +1 Armour Class and Saving Throw bonus against attacks and special powers of affected creatures. Magically created or summoned creatures: The prayer additionally prevents such creatures from making melee attacks against those warded, though they may still make ranged attacks. If any of the warded party engages such a creature in melee, this protection is broken (those warded still gain the Armour Class and Saving Throw bonuses mentioned above).",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Create Water",
+      "spell_id": "create_water",
+      "level": 4,
+      "magic_type": "divine",
+      "duration": "Permanent",
+      "range": "Touch",
+      "description": "A magical fount of wine-red water springs forth from the ground or a wall. The liquid looks and tastes like a sweet, refreshing wine, but it is actually pure water. Volume: The fount produces enough to sustain 12 people and 12 mounts for one day (approximately 50 gallons). Higher Level casters: If the caster is higher than Level 9, water sufficient for an additional 12 people and mounts is produced for each Level beyond 9.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Greater Healing",
+      "spell_id": "greater_healing",
+      "level": 4,
+      "magic_type": "divine",
+      "duration": "Instant",
+      "range": "The caster or a creature touched",
+      "description": "The rustic voice of St Wick manifests, whispering a parable as the caster touches a living subject. Healing: The prayer restores 2d6+2 Hit Points to the subject. This cannot raise the subject's Hit Points above the normal maximum.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Remove Poison",
+      "spell_id": "remove_poison",
+      "level": 4,
+      "magic_type": "divine",
+      "duration": "Instant",
+      "range": "The caster or a creature or object touched",
+      "description": "The rattling of manacles echoes as a warm light envelops the caster's hand. The light neutralises poison in one touched creature or object. Living creature: Neutralise the effects of poison on a living subject. A subject that has died from poisoning can be revived (restored to 1 Hit Point) if Remove Poison is cast within 10 Rounds. Object or substance: Remove poison from an item, food, or liquid.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Speak with Plants",
+      "spell_id": "speak_with_plants",
+      "level": 4,
+      "magic_type": "divine",
+      "duration": "3 Turns",
+      "range": "The caster",
+      "description": "A vision of a great yew tree briefly manifests behind the caster, its limbs arching protectively overhead. The caster gains the miraculous ability to communicate with plants. Normal plants: Flora informs the caster of creatures that have recently passed or performs simple favours. For example, plants may clear a passageway for the caster's party to pass through or writhe and tangle into an impassable thicket to hinder pursuers. Monstrous plants: The caster can communicate with plant-like or plant-based monsters.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Serpent Transformation",
+      "spell_id": "serpent_transformation",
+      "level": 4,
+      "magic_type": "divine",
+      "duration": "6 Turns",
+      "range": "120′",
+      "description": "Accompanied by the merry laughter of St Horace and the waft of freshly unearthed mushrooms, 2d8 normal sticks leap to attention and miraculously transform into adders. Commands: The snakes follow the caster's orders for the duration of the spell. Reversion: When the spell ends or a snake is killed, the serpent reverts back to a normal stick.",
+      "reversible": false,
+      "reversed_name": null
+    }
+  ]
+}

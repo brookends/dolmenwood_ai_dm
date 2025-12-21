@@ -1,0 +1,91 @@
+{
+  "_metadata": {
+    "source_file": "../data/pdfs/core/Dolmenwood_Players_Book.pdf",
+    "pages": [
+      91
+    ],
+    "content_type": "spells",
+    "item_count": 7,
+    "errors": [],
+    "note": "Review and correct this data before importing"
+  },
+  "items": [
+    {
+      "name": "Feeblemind",
+      "spell_id": "feeblemind",
+      "level": 5,
+      "magic_type": "arcane",
+      "duration": "Permanent",
+      "range": "240'",
+      "description": "An arcane spell-caster within range must Save Versus Spell (at a –4 penalty) or be severely reduced in cognitive and magical aptitude. Effects: Intelligence reduced to 3. Unable to think clearly or cast spells.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Mire",
+      "spell_id": "mire",
+      "level": 5,
+      "magic_type": "arcane",
+      "duration": "3d6 days",
+      "range": "120'",
+      "description": "Transforms a surface of sand, earth, or rock into a sticky mire of thick mud. Area: Up to 3,000 square feet, 10′ deep. Movement: Creatures in the mud move at 10% of their normal Speed. For example, a creature with Speed 30 could move 3′ per Round in the mire. Sinking: Creatures heavy enough to sink in mud (per the Referee's judgement) sink at a rate of 1′ per Round, unless able to grasp support. Completely submerged creatures drown (see Suffocation, p154).",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Passwall",
+      "spell_id": "passwall",
+      "level": 5,
+      "magic_type": "arcane",
+      "duration": "3 Turns",
+      "range": "30'",
+      "description": "A 5′ diameter hole is temporarily opened in solid rock or stone, forming a passageway up to 10′ deep.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Sending",
+      "spell_id": "sending",
+      "level": 5,
+      "magic_type": "arcane",
+      "duration": "Instant",
+      "range": "Unlimited",
+      "description": "The caster sends a mental message to another creature. Recipient: The caster must be familiar with the recipient, including their name and appearance. The recipient must be of at least Animal Intelligence. Message: The message may be up to 25 words. It is understood by the recipient, irrespective of language.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Telekinesis",
+      "spell_id": "telekinesis",
+      "level": 5,
+      "magic_type": "arcane",
+      "duration": "Concentration (up to 6 Rounds)",
+      "range": "120'",
+      "description": "By concentrating, the caster is able to move an object or creature by the power of thought. Weight: Up to 200 coins of weight per Level of the caster. Movement: The caster may move the target up to 20′ per Round in any direction desired (including vertically). Resisting: If a creature is targeted, it may Save Versus Hold to resist the spell. If a held object is targeted, the owner may likewise Save Versus Hold to resist the spell. Concentration: If the caster is harmed, moves, or takes any other action, the spell ends.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Teleport",
+      "spell_id": "teleport",
+      "level": 5,
+      "magic_type": "arcane",
+      "duration": "Instant",
+      "range": "10'",
+      "description": "The caster or a chosen creature vanishes and reappears at a location of the caster's choosing. Gear: The subject is teleported with all its gear, up to its maximum load. Resisting: An unwilling subject may Save Versus Spell to resist the teleportation. Destination: May be at any distance, but must be known to the caster. The destination must be an open space at ground level. (The caster may not intentionally teleport a subject into mid-air or into solid matter.) Risk: When teleporting, there is a risk of accidentally arriving above or below ground level. The chance of a successful teleportation depends on the caster's knowledge of the destination. Too high: The subject appears 1d10 × 10′ above the intended destination. If this is inside solid matter, the subject dies instantly. Otherwise, they fall from a height. Too low: The subject appears 1d10 × 10′ below the intended destination. If this is inside solid matter, the subject dies instantly.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Wall of Stone",
+      "spell_id": "wall_of_stone",
+      "level": 5,
+      "magic_type": "arcane",
+      "duration": "Permanent",
+      "range": "60'",
+      "description": "Conjures a wall of solid rock, shaped as the caster wishes. Size: The wall may be of any shape, provided it does not exceed 1,000 cubic feet of volume. (For example, a 2′ thick wall, 50′ long and 10′ high.) Location: The wall must be supported (e.g. by the ground) and cannot be created in an area occupied by objects.",
+      "reversible": false,
+      "reversed_name": null
+    }
+  ]
+}

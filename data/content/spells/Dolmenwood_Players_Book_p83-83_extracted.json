@@ -1,0 +1,91 @@
+{
+  "_metadata": {
+    "source_file": "../data/pdfs/core/Dolmenwood_Players_Book.pdf",
+    "pages": [
+      83
+    ],
+    "content_type": "spells",
+    "item_count": 7,
+    "errors": [],
+    "note": "Review and correct this data before importing"
+  },
+  "items": [
+    {
+      "name": "Glyph of Sealing",
+      "spell_id": "glyph_of_sealing",
+      "level": 1,
+      "magic_type": "arcane",
+      "duration": "2d6 Turns",
+      "range": "30'",
+      "description": "A glowing rune appears on a single closed door, gate, lid, or similar portal of the caster's choosing, magically preventing it from being opened. Opening by magic: A Knock spell opens the sealed portal instantly, dispelling the Glyph of Sealing. Opening by force: Creatures 3 Levels or more above the caster can open the sealed portal with 1 Round of effort.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Ignite / Extinguish",
+      "spell_id": "ignite_/_extinguish",
+      "level": 1,
+      "magic_type": "arcane",
+      "duration": "Instant",
+      "range": "30'",
+      "description": "Manifests one of the following effects when cast: 1. Ignite: One stream of sparks per Level of the caster shoots from the caster's hand toward one or more targets. Targeted light sources are ignited. Targeted creatures must Save Versus Ray or suffer 1 damage per stream of sparks directed at them. 2. Extinguish: Whirling zephyrs instantly snuff out up to one flame per Level of the caster. Flames up to the size of a burning torch may be affected. If a flame is held by a creature, they may Save Versus Spell to prevent the flame from being extinguished.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Ingratiate",
+      "spell_id": "ingratiate",
+      "level": 1,
+      "magic_type": "arcane",
+      "duration": "3 Turns",
+      "range": "Object touched",
+      "description": "Enchants a small object with the power to charm a person who willingly accepts it as a gift. Recipient: A single mortal, fairy, or demi-fey who accepts the enchanted object must Save Versus Spell or be charmed. Restrictions: Large creatures or those of below Sentient intelligence are immune. Charm duration: The charm lasts indefinitely, but the subject makes a further Save Versus Spell once per day. If one of these saves succeeds, the charm ends. Friendship: The subject regards the caster as a close friend and comes to the caster's defence. Commands: If they share a language, the caster may give the charmed subject commands, which they obey. Resisting commands: Subjects resist commands that contradict their habits or Alignment. Suicidal or clearly harmful commands are always refused.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Ioun Shard",
+      "spell_id": "ioun_shard",
+      "level": 1,
+      "magic_type": "arcane",
+      "duration": "2 Turns",
+      "range": "120'",
+      "description": "Conjures a glowing shard of vividly coloured crystal that slowly orbits the caster's head at a distance of 1'. At the time of casting or at any point in the spell's duration, the caster may choose to fire the shard at a visible target within range. Hit: The shard hits the target without fail (no Attack Roll or Saving Throw). Damage: The shard inflicts 1d6+1 damage. One use: Once fired, the shard is destroyed. At higher Levels: Higher-Level casters may conjure one additional shard per 3 Levels: two at Level 4, three at Level 7, four at Level 10, etc. Multiple shards may be fired simultaneously and may be directed at a single target.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Shield of Force",
+      "spell_id": "shield_of_force",
+      "level": 1,
+      "magic_type": "arcane",
+      "duration": "2 Turns",
+      "range": "The caster",
+      "description": "Conjures an invisible barrier of magical force that defends the caster from harm, glimmering and crackling with any deflected attacks. Ioun shards: The barrier unfailingly deflects Ioun Shards. Missile attacks: The barrier grants the caster AC 17. Other attacks: The barrier grants the caster AC 15.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Vapours of Dream",
+      "spell_id": "vapours_of_dream",
+      "level": 1,
+      "magic_type": "arcane",
+      "duration": "Concentration, up to 1 Round per Level",
+      "range": "240'",
+      "description": "A roiling, violet vapour drifts from a point within range, flowing in a direction of the caster's choosing. Flow: On the first Round, the vapour fills a 10' cube around the origin point. Each subsequent Round, it fills another 10' cube adjacent to the origin point or to a previously filled area. Concentration: If the caster is harmed, moves, or takes any other action, the spell ends. Dissipation: The vapour dissipates when the spell ends. Effects: Living creatures of Level 4 or lower inside the vapour must Save Versus Spell or fall into a deep sleep filled with delirious dreams, lasting for 4d4 Turns. Killing: A single attack with a bladed weapon kills a sleeping creature enchanted by the vapour. Awakening: Enchanted creatures can be forcefully awakened (e.g. by slapping).",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Ventriloquism",
+      "spell_id": "ventriloquism",
+      "level": 1,
+      "magic_type": "arcane",
+      "duration": "2 Turns",
+      "range": "60'",
+      "description": "The caster's voice emanates from anywhere within range (e.g. a statue, a tapestry, an animal).",
+      "reversible": false,
+      "reversed_name": null
+    }
+  ]
+}

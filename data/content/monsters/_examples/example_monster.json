@@ -1,0 +1,28 @@
+{
+  "_comment": "Example monster format - delete this file or move out of monsters/ before importing",
+  "name": "Boggart",
+  "monster_id": "monster_boggart",
+  "hit_dice": "1*",
+  "hp": 5,
+  "armor_class": 6,
+  "movement": "90' (30')",
+  "attacks": ["1 × claw (1d4)"],
+  "damage": ["1d4"],
+  "special_abilities": [
+    "Invisibility: Can turn invisible at will. Becomes visible when attacking.",
+    "Mischief: Delights in playing pranks on travelers."
+  ],
+  "saves_as": "F1",
+  "morale": 7,
+  "alignment": "Chaotic",
+  "xp_value": 13,
+  "number_appearing": "1d6",
+  "treasure_type": "C",
+  "description": "Small, impish fey creatures that haunt the woods of Dolmenwood. They delight in mischief and tormenting travelers, though they rarely cause serious harm.",
+  "habitat": ["forest", "swamp"],
+  "source": {
+    "source_id": "monster_book",
+    "book_code": "DMB",
+    "page_reference": "p. 12"
+  }
+}

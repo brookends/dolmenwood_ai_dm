@@ -1,0 +1,46 @@
+[
+  {
+    "_comment": "Example items - can have single item or array of items",
+    "name": "Longsword",
+    "item_id": "item_longsword",
+    "type": "weapon",
+    "cost_sp": 100,
+    "weight_coins": 60,
+    "damage": "1d8",
+    "description": "A versatile blade favored by knights and soldiers.",
+    "source": {
+      "source_id": "players_book",
+      "book_code": "DPB",
+      "page_reference": "p. 45"
+    }
+  },
+  {
+    "name": "Chain Mail",
+    "item_id": "item_chain_mail",
+    "type": "armor",
+    "cost_sp": 400,
+    "weight_coins": 400,
+    "ac_bonus": 4,
+    "description": "Interlocking metal rings providing good protection.",
+    "source": {
+      "source_id": "players_book",
+      "book_code": "DPB",
+      "page_reference": "p. 44"
+    }
+  },
+  {
+    "name": "Potion of Healing",
+    "item_id": "item_potion_healing",
+    "type": "adventuring_gear",
+    "cost_sp": 500,
+    "weight_coins": 10,
+    "description": "A bubbling red liquid that restores 1d6+1 hit points when consumed.",
+    "is_magical": true,
+    "magical_properties": "Heals 1d6+1 HP",
+    "source": {
+      "source_id": "players_book",
+      "book_code": "DPB",
+      "page_reference": "p. 52"
+    }
+  }
+]

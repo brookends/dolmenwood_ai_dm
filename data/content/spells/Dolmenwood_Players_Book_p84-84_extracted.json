@@ -1,0 +1,80 @@
+{
+  "_metadata": {
+    "source_file": "../data/pdfs/core/Dolmenwood_Players_Book.pdf",
+    "pages": [
+      84
+    ],
+    "content_type": "spells",
+    "item_count": 6,
+    "errors": [],
+    "note": "Review and correct this data before importing"
+  },
+  "items": [
+    {
+      "name": "Arcane Cypher",
+      "spell_id": "arcane_cypher",
+      "level": 2,
+      "magic_type": "arcane",
+      "duration": "Permanent",
+      "range": "5'",
+      "description": "Script which the caster passes their hand over glows and is transformed into arcane sigils incomprehensible to all except the caster. Volume: The text of a single spell in a spell book may be affected, or up to 1 page of normal text per Level of the caster. Magical text cannot be affected. Deciphering: The Arcane Cypher is only decoded by magic (e.g. by the Decipher spell).",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Dweomerlight",
+      "spell_id": "dweomerlight",
+      "level": 2,
+      "magic_type": "arcane",
+      "duration": "6 Turns",
+      "range": "30'",
+      "description": "Magical energy within range glows in scintillating colours. Magic items and enchantments: Magic items and areas, objects, or creatures under the influence of magic are caused to glow. Spell-casting: Spells produce vivid streaks of light, irrefutably indicating the source and target. Memorised spells: The imprinted energy patterns of memorised arcane spells glow, surrounding arcane spell-casters' heads with a halo of rainbow hues.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Flaming Spirit",
+      "spell_id": "flaming_spirit",
+      "level": 2,
+      "magic_type": "arcane",
+      "duration": "1 Round per Level",
+      "range": "60'",
+      "description": "Conjures a whirling streak of crackling, white flame that whisks to and fro at the caster's command. Directing: Each Round, the caster may command the flame to streak towards a target within 30' of its current location. The target must Save Versus Ray or suffer 1d6 damage.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Glyph of Locking",
+      "spell_id": "glyph_of_locking",
+      "level": 2,
+      "magic_type": "arcane",
+      "duration": "Permanent",
+      "range": "30'",
+      "description": "A glowing rune appears on a single closed door, gate, lid, or similar portal of the caster's choosing, magically locking it. Rune: The rune becomes invisible 1 Turn after casting but may be detected by magic (e.g. Dweomerlight, Perceive the Invisible). Bypassing: The caster may temporarily bypass or permanently end the spell at will. Password: The caster may specify a password, allowing others to pass through the locked portal. Higher-Level casters: Arcane spell-casters 3 or more Levels higher than the caster of the Glyph of Locking may pass through the locked portal. Knock spells: Disable the Glyph of Locking for 1 Turn.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Invisibility",
+      "spell_id": "invisibility",
+      "level": 2,
+      "magic_type": "arcane",
+      "duration": "1 hour per Level",
+      "range": "240'",
+      "description": "The caster (or another creature or object of the caster's choosing) shimmers and disappears from sight. If cast on a creature: Any gear the subject is carrying is also rendered invisible (this includes clothing and armour). Items subsequently put down become visible. If the subject attacks or casts a spell, the invisibility is broken and the spell ends. Light sources: If a light source is made invisible (either as part of a creature's gear or as an individual object), the light it casts is unaffected.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Knock",
+      "spell_id": "knock",
+      "level": 2,
+      "magic_type": "arcane",
+      "duration": "Instant",
+      "range": "Door or portal touched",
+      "description": "The caster knocks on a single closed door, gate, lid, or similar portal with their hand or a staff. The portal groans, grumbles, and magically opens. Locks and bars: Are unlocked or removed. Magical seals: Glyphs of Sealing are dispelled. Other magical seals (e.g. Glyphs of Locking) are disabled for 1 Turn. Secret doors: May be opened, but they must be known to the caster.",
+      "reversible": false,
+      "reversed_name": null
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "_metadata": {
+    "source_file": "../data/pdfs/core/Dolmenwood_Players_Book.pdf",
+    "pages": [
+      99
+    ],
+    "content_type": "spells",
+    "item_count": 6,
+    "errors": [],
+    "note": "Review and correct this data before importing"
+  },
+  "items": [
+    {
+      "name": "Deathly Blossom",
+      "spell_id": "deathly_blossom",
+      "level": 1,
+      "magic_type": "rune",
+      "duration": "1 Turn or until used",
+      "range": "Appears in caster's hand",
+      "description": "An exquisite white rose is conjured in the caster's hand. Proffering the rose: One who smells the rose must Save Versus Doom or fall into a deep faint—appearing dead—for 1d6 Turns. Duration: The flower remains in existence until it is used or 1 Turn passes. Restrictions: Only living creatures are affected.",
+      "reversible": false,
+      "reversed_name": null,
+      "kindred": [
+        "Elf",
+        "Grimalkin",
+        "Woodgrue"
+      ]
+    },
+    {
+      "name": "Fog Cloud",
+      "spell_id": "fog_cloud",
+      "level": 1,
+      "magic_type": "rune",
+      "duration": "1 Turn",
+      "range": "20′ around the caster",
+      "description": "A cloud of roiling vapour surrounds the caster, filling a 20′ radius area at the location where the rune is used. Vision: The fog blocks the mundane vision of all save the caster who conjured it. Strong winds: Gusts and gales clear the fog before the rune's duration has expired.",
+      "reversible": false,
+      "reversed_name": null,
+      "kindred": [
+        "Elf",
+        "Grimalkin",
+        "Woodgrue"
+      ]
+    },
+    {
+      "name": "Gust of Wind",
+      "spell_id": "gust_of_wind",
+      "level": 1,
+      "magic_type": "rune",
+      "duration": "1 Round",
+      "range": "10′ wide area, 60′ long",
+      "description": "A forceful blast of air rushes from the caster's outstretched hands, blowing over light objects in its course. Flames: Small, exposed flames (e.g. candles, torches) are extinguished. Small, protected flames (e.g. lanterns) dance wildly and have a 3-in-6 chance of going out. Fog: The wind scatters natural and magical mists. Creatures: Small and Medium creatures are unable to move into the wind and must Save Versus Hold or be pushed back 1d3 × 10′.",
+      "reversible": false,
+      "reversed_name": null,
+      "kindred": [
+        "Elf",
+        "Grimalkin",
+        "Woodgrue"
+      ]
+    },
+    {
+      "name": "Proof Against Deadly Harm",
+      "spell_id": "proof_against_deadly_harm",
+      "level": 1,
+      "magic_type": "rune",
+      "duration": "2d6 Rounds",
+      "range": "The caster",
+      "description": "The caster is rendered completely immune to damage from one specific type of weapons (e.g. swords, bows, claws, etc.), selected when the rune is activated. Magical / cold iron weapons: Enchanted weapons, cold iron weapons, and the attacks of magical creatures still harm the caster.",
+      "reversible": false,
+      "reversed_name": null,
+      "kindred": [
+        "Elf",
+        "Grimalkin",
+        "Woodgrue"
+      ]
+    },
+    {
+      "name": "Rune of Vanishing",
+      "spell_id": "rune_of_vanishing",
+      "level": 1,
+      "magic_type": "rune",
+      "duration": "1 Turn",
+      "range": "The caster",
+      "description": "The caster is rendered invisible to the sight of mortals and animals. Equipment and clothing: Any gear the caster is carrying is also rendered invisible (this includes clothing and armour). Items subsequently put down become visible. If the caster is carrying a light source, the light it casts is not rendered invisible. Attacking: If the caster attacks while under the effects of this rune, they are rendered momentarily visible. Opponents may attack the caster in the same Round or the following Round, but suffer a –2 Attack penalty.",
+      "reversible": false,
+      "reversed_name": null,
+      "kindred": [
+        "Elf",
+        "Grimalkin",
+        "Woodgrue"
+      ]
+    },
+    {
+      "name": "Sway the Mortal Mind",
+      "spell_id": "sway_the_mortal_mind",
+      "level": 1,
+      "magic_type": "rune",
+      "duration": "1 day",
+      "range": "30′",
+      "description": "A single mortal must Save Versus Spell or be charmed by fairy magic. Restrictions: Only mortals of Small or Medium size and Sentient intelligence or greater may be affected. Friendship: The subject's mind is swayed such that they regard the caster as a close friend and come to the caster's defence. Commands: If they share a language, the caster may give the charmed subject commands, which they obey. Resisting commands: The subject resists commands that contradict their habits or Alignment. Suicidal or clearly harmful commands are always refused.",
+      "reversible": false,
+      "reversed_name": null,
+      "kindred": [
+        "Elf",
+        "Grimalkin",
+        "Woodgrue"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "_metadata": {
+    "source_file": "../data/pdfs/core/Dolmenwood_Players_Book.pdf",
+    "pages": [
+      108,
+      109
+    ],
+    "content_type": "spells",
+    "item_count": 6,
+    "errors": [],
+    "note": "Review and correct this data before importing"
+  },
+  "items": [
+    {
+      "name": "Animal Growth",
+      "spell_id": "animal_growth",
+      "level": 3,
+      "magic_type": "divine",
+      "duration": "12 Turns",
+      "range": "120'",
+      "description": "A single animal is briefly haloed with glimmering Liturgic script (the text of this prayer), turns its eyes toward the heavens, and doubles in size. Damage: Double the damage of the animal's melee attacks. Load: Double the maximum weight the animal can carry. Restrictions: This spell may be used on normal or giant animals, but intelligent animals, magical animals, and fantastic monsters are unaffected.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Bless Weapon",
+      "spell_id": "bless_weapon",
+      "level": 3,
+      "magic_type": "divine",
+      "duration": "1 Turn",
+      "range": "30'",
+      "description": "Silver light arcs from the caster's hand and wreathes a single weapon, enchanting it with holy power. Damage: The weapon deals an additional 1d6 damage. Treated as magical: The weapon now harms monsters which can only be harmed by magic.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Cure Affliction",
+      "spell_id": "cure_affliction",
+      "level": 3,
+      "magic_type": "divine",
+      "duration": "Instant",
+      "range": "30'",
+      "description": "The lowing of cattle can be heard as the caster recites this prayer. A living subject receives one of the following ministrations: 1. Cure disease: The subject is purged of a single disease of mundane or magical origin. 2. Cure blindness or deafness: The subject's sight or hearing are restored, nullifying any disease, curse, or enchantment that veiled them.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Holy Light",
+      "spell_id": "holy_light",
+      "level": 3,
+      "magic_type": "divine",
+      "duration": "Permanent or 6 Turns",
+      "range": "120'",
+      "description": "A ray of white light beams from the caster's raised hand and manifests one of the following effects: 1. Eternal radiance: Casts holy light in a 30′ radius. The light is as bright as full daylight (creatures that suffer penalties in daylight are affected). The prayer may only be cast upon a fixed location within range—the eternal radiance does not move. The duration is permanent. 2. Beacon of sanctity: White light radiates in a 15′ radius around a chosen object. Undead creatures suffer a –2 penalty to Attack Rolls and Saving Throws while within the radius of light. The duration is 6 Turns. 3. Cancelling magical darkness: Devotion of St Eggort may cancel a 30′ radius area of magical darkness.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Locate Object",
+      "spell_id": "locate_object",
+      "level": 3,
+      "magic_type": "divine",
+      "duration": "6 Turns",
+      "range": "120'",
+      "description": "A cherub-like apparition of the infant St Keye points in the direction of a sought object, adjusting the indicated direction as the caster moves. One of two types of objects may be located: 1. General class: An object of a general class (e.g. a stairway, an altar, etc.). In this case, the nearest object of that type is located. 2. Specific object: A specific object which the caster can clearly visualise in all aspects. Restrictions: This spell cannot be used to locate creatures.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Remove Curse",
+      "spell_id": "remove_curse",
+      "level": 3,
+      "magic_type": "divine",
+      "duration": "Instant",
+      "range": "The caster or a creature touched",
+      "description": "Milk drips from the caster's hand as they recite this prayer. The subject, doused in holy milk, is permanently cured of the affliction of a single curse. Cursed items: Use of this spell enables a character to discard a cursed magic item.",
+      "reversible": false,
+      "reversed_name": null
+    }
+  ]
+}

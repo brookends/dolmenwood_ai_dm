@@ -1,0 +1,305 @@
+{
+  "_metadata": {
+    "source_file": "../data/pdfs/core/Dolmenwood_Players_Book.pdf",
+    "pages": [
+      132,
+      133
+    ],
+    "content_type": "items",
+    "item_count": 20,
+    "errors": [],
+    "note": "Review and correct this data before importing"
+  },
+  "items": [
+    {
+      "name": "Arrowhame",
+      "item_id": "arrowhame",
+      "type": "adventuring_gear",
+      "cost_sp": 1000,
+      "weight_coins": 4,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Tiny, dried leaves of a climbing plant. Rehydrated and applied as a paste to diseased flesh, grants a Save Versus Doom against a disease of magical origin. If the save succeeds, the disease recedes within 1d3 days. Repeat applications of Arrowhame are ineffective.",
+      "properties": [
+        "magical",
+        "single_use_per_disease"
+      ]
+    },
+    {
+      "name": "Blood Canker",
+      "item_id": "blood_canker",
+      "type": "adventuring_gear",
+      "cost_sp": 500,
+      "weight_coins": 4,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Rust-red dried residue of a slime-mould prevalent in Mulchgrove. Mixed with alcohol and drunk, cures 1d3 Hit Points. Each usage of Blood Canker has a 2-in-6 chance of permanently reducing the character's Constitution by 1.",
+      "properties": [
+        "healing",
+        "constitution_risk"
+      ]
+    },
+    {
+      "name": "Bosun's Balm",
+      "item_id": "bosuns_balm",
+      "type": "adventuring_gear",
+      "cost_sp": 500,
+      "weight_coins": 4,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Roots dredged up from a rare river weed. Eaten at breakfast, the herb stimulates the body's energies, bringing on great endurance for one day. For encumbrance purposes, the effective weight of the character's armour is reduced by 50% or by one bulk category, depending on the encumbrance rules in use.",
+      "properties": [
+        "encumbrance_reduction",
+        "daily_use"
+      ]
+    },
+    {
+      "name": "Fenob",
+      "item_id": "fenob",
+      "type": "adventuring_gear",
+      "cost_sp": 400,
+      "weight_coins": 4,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "The root-bulbs of a forest flower. A bulb of Fenob placed under the tongue before bed causes the character to recover extra 1 Hit Point if a good night's rest is had.",
+      "properties": [
+        "healing",
+        "rest_enhancement"
+      ]
+    },
+    {
+      "name": "Gillywort",
+      "item_id": "gillywort",
+      "type": "adventuring_gear",
+      "cost_sp": 500,
+      "weight_coins": 4,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A finely ground, white powder derived from the leaves of a creeper that favours dank cave-mouths. When the powder is added to liquid, there is a 3-in-6 chance that it turns a shocking purple in the presence of poison. A dose of Gillywort is enough to test one liquid.",
+      "properties": [
+        "poison_detection",
+        "single_use"
+      ]
+    },
+    {
+      "name": "Grue's Ear",
+      "item_id": "grues_ear",
+      "type": "adventuring_gear",
+      "cost_sp": 2000,
+      "weight_coins": 4,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Rubbery, pink ear fungus. Consuming a specimen brings on a mild psychedelia wherein the character's vision is tinged pink and they become sensitive to bright light. The character's alertness is also enhanced, granting a 3-in-6 chance of being able to act during a Surprise Round when their party is surprised. These effects last for 2d6 Turns. Grue's Ear loses its potency with repeated use—after each usage, there is a 2-in-6 chance that the character henceforth requires an extra dose to gain a noticeable effect.",
+      "properties": [
+        "psychedelic",
+        "alertness_enhancement",
+        "diminishing_returns"
+      ]
+    },
+    {
+      "name": "Hogscap",
+      "item_id": "hogscap",
+      "type": "adventuring_gear",
+      "cost_sp": 1250,
+      "weight_coins": 4,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Mottled, fist-sized puffballs, harvested in their plump, immature stage. Consumption brings on a woozy state of mild psychedelia, with wobbling vision and hallucinations of distant wails and keening. The character suffers a –1 penalty to Attack Rolls but gains the ability to sense magical influence in any object touched for 1 Turn. The effects last for 1d6 hours.",
+      "properties": [
+        "psychedelic",
+        "detect_magic",
+        "attack_penalty"
+      ]
+    },
+    {
+      "name": "Lankswith",
+      "item_id": "lankswith",
+      "type": "adventuring_gear",
+      "cost_sp": 150,
+      "weight_coins": 4,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Powdered root of a floating pond weed. Taken as a tea with supper, cures common ailments overnight.",
+      "properties": [
+        "healing",
+        "common_ailments"
+      ]
+    },
+    {
+      "name": "Lilywhite",
+      "item_id": "lilywhite",
+      "type": "adventuring_gear",
+      "cost_sp": 250,
+      "weight_coins": 4,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Carefully dried and folded petals of a marsh lily. Smoking the petals in a pipe brings on a deep, soporific state that aids sleep in harsh conditions. Smoked before bed, the character gains a +1 bonus to any Constitution Checks required to rest.",
+      "properties": [
+        "sleep_aid",
+        "constitution_bonus"
+      ]
+    },
+    {
+      "name": "Marshwick",
+      "item_id": "marshwick",
+      "type": "adventuring_gear",
+      "cost_sp": 2000,
+      "weight_coins": 4,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "The seeds of a scarce and unremarkable marsh flower, ground into a blue powder. A character afflicted by a poison of animal origin who drinks a dose of Marshwick with a swig of wine may Save Versus Doom. If the save succeeds, the venom is neutralised. Repeat doses are ineffective.",
+      "properties": [
+        "antidote",
+        "animal_poison",
+        "single_use_per_poison"
+      ]
+    },
+    {
+      "name": "Moonhaw",
+      "item_id": "moonhaw",
+      "type": "adventuring_gear",
+      "cost_sp": 1000,
+      "weight_coins": 4,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Pale white berries of a thorny bush, only harvested at night under the light of the moon. 1 Turn after chewing a handful of the berries, the character gains the ability to see normally up to 10′ in utter blackness. The effects are short-lived, only lasting for 3 Turns.",
+      "properties": [
+        "darkvision",
+        "temporary_effect"
+      ]
+    },
+    {
+      "name": "Ofteritch",
+      "item_id": "ofteritch",
+      "type": "adventuring_gear",
+      "cost_sp": 1500,
+      "weight_coins": 4,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A black liquid fermented from the young roots of the lantern elm. A character afflicted by a poison of plant origin who drinks a dose of Ofteritch may Save Versus Doom. If the save succeeds, the poison is neutralised. Repeat doses are ineffective.",
+      "properties": [
+        "antidote",
+        "plant_poison",
+        "single_use_per_poison"
+      ]
+    },
+    {
+      "name": "Sallow Parsley",
+      "item_id": "sallow_parsley",
+      "type": "adventuring_gear",
+      "cost_sp": 800,
+      "weight_coins": 4,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Silvery-leafed young shoots of a rare fern, which look uncannily like the culinary herb parsley. On a day spent resting in safety, a character who drinks an infusion of this herb throughout the day will recover 2 Hit Points, in addition to the normal healing due to rest.",
+      "properties": [
+        "healing",
+        "rest_enhancement"
+      ]
+    },
+    {
+      "name": "Smottlebread",
+      "item_id": "smottlebread",
+      "type": "adventuring_gear",
+      "cost_sp": 250,
+      "weight_coins": 4,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Spongy, green, bread-like hunks of giant mushroom flesh. Consuming a chunk of Smottlebread causes a trance state lasting 1d6 Turns, during which the character enters into communion with the spirit of the Smottlebread—a gargantuan, benevolent, elephantine entity formed of green spheres. While the trance lasts, the character is completely immobilised. Following the trance, the character's vision is tinged green and their coordination is fuddled (–1 penalty to melee Attack Rolls, –2 penalty to missile Attack Rolls). Contact with the fungal spirit steels the character's mind, granting them a +2 bonus to Saving Throws against effects of magical origin. Post-trance effects last for 1d6 Turns.",
+      "properties": [
+        "psychedelic",
+        "trance",
+        "saving_throw_bonus",
+        "attack_penalty"
+      ]
+    },
+    {
+      "name": "Spirithame",
+      "item_id": "spirithame",
+      "type": "adventuring_gear",
+      "cost_sp": 800,
+      "weight_coins": 4,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Delicate, curled leaves of a rare moss. When crushed and applied to wounds, cures 1d2 Hit Points. Spirithame loses its effectiveness quickly—a character only benefits from one dose per day.",
+      "properties": [
+        "healing",
+        "daily_limit"
+      ]
+    },
+    {
+      "name": "Tom-a-Merry",
+      "item_id": "tom_a_merry",
+      "type": "adventuring_gear",
+      "cost_sp": 1500,
+      "weight_coins": 4,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Tiny, cute mushrooms as tall as a baby's finger, with pointy blue caps. Consuming a dose of Tom-a-Merry induces a hallucinatory state where time lurches and becomes distorted. The character suffers a –2 penalty to Attack Rolls and Saving Throws and, in combat, always acts last in the Round. The character also gains the ability to see invisible objects and creatures. The effects last for 1d6 Turns.",
+      "properties": [
+        "psychedelic",
+        "see_invisible",
+        "attack_penalty",
+        "initiative_penalty"
+      ]
+    },
+    {
+      "name": "Wallowmost",
+      "item_id": "wallowmost",
+      "type": "adventuring_gear",
+      "cost_sp": 1500,
+      "weight_coins": 4,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Fluffy yellow buds of a spring plant that flowers in Mulchgrove. A character afflicted by a poison of fungal origin who chews and swallows a dose of Wallowmost may Save Versus Doom. If the save succeeds, the poison is neutralised. Repeat doses are ineffective.",
+      "properties": [
+        "antidote",
+        "fungal_poison",
+        "single_use_per_poison"
+      ]
+    },
+    {
+      "name": "Wayfarrow",
+      "item_id": "wayfarrow",
+      "type": "adventuring_gear",
+      "cost_sp": 1000,
+      "weight_coins": 4,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Desiccated red berries of a thorny bush. Chewing the berries throughout the day brings on great vigour and stamina when marching. If the character engages in a forced march, they have a 3-in-6 chance of being fit for action the following day, without the usual penalties for not resting.",
+      "properties": [
+        "travel_enhancement",
+        "forced_march"
+      ]
+    },
+    {
+      "name": "Witch's Oyster",
+      "item_id": "witchs_oyster",
+      "type": "adventuring_gear",
+      "cost_sp": 500,
+      "weight_coins": 4,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Miniature, bright violet oyster mushrooms that grow in high tree branches. Boiling a portion and drinking the water induces a visionary trance lasting 1d4 hours. Upon awakening, the character gains an oracular insight into a topic that puzzles them. The Referee should describe the insight to the player, determining its accuracy by rolling 1d6: 1–2: the insight is entirely apposite and truthful, 3–4: the insight hints at the truth in a mysterious manner, 5–6: the insight is entirely misleading.",
+      "properties": [
+        "psychedelic",
+        "oracular_vision",
+        "trance"
+      ]
+    },
+    {
+      "name": "Wolfsbane",
+      "item_id": "wolfsbane",
+      "type": "adventuring_gear",
+      "cost_sp": 250,
+      "weight_coins": 4,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Long sprigs of purple flowers. Werewolves find Wolfsbane repulsive, but the bloom is odourless to others. A werewolf must make a successful Save Versus Doom each Round in order to make a melee attack against someone decorated with sprigs of Wolfsbane.",
+      "properties": [
+        "werewolf_ward",
+        "protective"
+      ]
+    }
+  ]
+}

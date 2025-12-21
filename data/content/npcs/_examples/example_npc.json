@@ -1,0 +1,21 @@
+{
+  "_comment": "Example NPC format",
+  "name": "Bramwell Thornbury",
+  "npc_id": "npc_bramwell_thornbury",
+  "kindred": "Human",
+  "occupation": "Innkeeper",
+  "location_id": "0708",
+  "description": "A portly man in his fifties with a magnificent grey mustache and perpetually flour-dusted apron. His left eye has a noticeable twitch when he's nervous.",
+  "personality": "Jovial and welcoming to paying customers, but shrewd in business dealings. Has a weakness for gossip and a genuine concern for the welfare of Prigwort's residents.",
+  "motivation": "Wants to expand his inn and become the most respected businessman in town.",
+  "secrets": [
+    "Knows the location of a smuggler's cache in the cellar",
+    "His wife is actually a reformed bandit"
+  ],
+  "is_combatant": false,
+  "source": {
+    "source_id": "campaign_book",
+    "book_code": "DCB",
+    "page_reference": "p. 89"
+  }
+}

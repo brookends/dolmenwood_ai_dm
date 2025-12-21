@@ -1,0 +1,790 @@
+{
+  "_metadata": {
+    "source_file": "../data/pdfs/core/Dolmenwood_Players_Book.pdf",
+    "pages": [
+      40
+    ],
+    "content_type": "items",
+    "item_count": 50,
+    "errors": [],
+    "note": "Review and correct this data before importing"
+  },
+  "items": [
+    {
+      "name": "A bag of caterpillars whose flesh have hallucinogenic properties",
+      "item_id": "bag_of_hallucinogenic_caterpillars",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A bag of caterpillars whose flesh have hallucinogenic properties.",
+      "properties": [
+        "trinket",
+        "hallucinogenic"
+      ]
+    },
+    {
+      "name": "A bag of sticky sweets that never get any smaller when sucked on",
+      "item_id": "endless_sticky_sweets",
+      "type": "food",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A bag of sticky sweets that never get any smaller when sucked on.",
+      "properties": [
+        "trinket",
+        "magical",
+        "endless"
+      ]
+    },
+    {
+      "name": "A ball of silvery twine that is invisible in moonlight",
+      "item_id": "moonlight_invisible_twine",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A ball of silvery twine that is invisible in moonlight.",
+      "properties": [
+        "trinket",
+        "magical",
+        "invisible"
+      ]
+    },
+    {
+      "name": "A ball of yarn, gifted to you by a grateful grimalkin",
+      "item_id": "grimalkin_yarn_ball",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A ball of yarn, gifted to you by a grateful grimalkin.",
+      "properties": [
+        "trinket",
+        "gift"
+      ]
+    },
+    {
+      "name": "A black rose that never wilts",
+      "item_id": "eternal_black_rose",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A black rose that never wilts.",
+      "properties": [
+        "trinket",
+        "magical",
+        "eternal"
+      ]
+    },
+    {
+      "name": "A block of chocolate made with cocoa harvested from a mossling",
+      "item_id": "mossling_chocolate",
+      "type": "food",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A block of chocolate made with cocoa harvested from a mossling.",
+      "properties": [
+        "trinket",
+        "exotic"
+      ]
+    },
+    {
+      "name": "A book of amateur poetry. You suspect the author to be a powerful Fairy noble",
+      "item_id": "fairy_noble_poetry_book",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A book of amateur poetry. You suspect the author to be a powerful Fairy noble.",
+      "properties": [
+        "trinket",
+        "book",
+        "fairy"
+      ]
+    },
+    {
+      "name": "A crown woven from holly and poison ivy",
+      "item_id": "holly_poison_ivy_crown",
+      "type": "clothing",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A crown woven from holly and poison ivy.",
+      "properties": [
+        "trinket",
+        "crown",
+        "poisonous"
+      ]
+    },
+    {
+      "name": "A daisy that glows in moonlight",
+      "item_id": "moonlight_glowing_daisy",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A daisy that glows in moonlight.",
+      "properties": [
+        "trinket",
+        "magical",
+        "glowing"
+      ]
+    },
+    {
+      "name": "A fancy hat topped with elk antlers",
+      "item_id": "elk_antler_hat",
+      "type": "clothing",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A fancy hat topped with elk antlers.",
+      "properties": [
+        "trinket",
+        "hat",
+        "fancy"
+      ]
+    },
+    {
+      "name": "A fragment of glowing crystal that you found in a dream",
+      "item_id": "dream_crystal_fragment",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A fragment of glowing crystal that you found in a dream.",
+      "properties": [
+        "trinket",
+        "magical",
+        "glowing",
+        "dream"
+      ]
+    },
+    {
+      "name": "A fragment of horn from an evil unicorn",
+      "item_id": "evil_unicorn_horn_fragment",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A fragment of horn from an evil unicorn.",
+      "properties": [
+        "trinket",
+        "evil",
+        "unicorn"
+      ]
+    },
+    {
+      "name": "A glass bottle that annihilates any liquid poured into it",
+      "item_id": "liquid_annihilating_bottle",
+      "type": "container",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A glass bottle that annihilates any liquid poured into it.",
+      "properties": [
+        "trinket",
+        "magical",
+        "destructive"
+      ]
+    },
+    {
+      "name": "A glass jar containing the tiny, frozen form of your only sister",
+      "item_id": "frozen_sister_jar",
+      "type": "container",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A glass jar containing the tiny, frozen form of your only sister.",
+      "properties": [
+        "trinket",
+        "tragic",
+        "frozen"
+      ]
+    },
+    {
+      "name": "A glass slipper, stained with blood",
+      "item_id": "bloodstained_glass_slipper",
+      "type": "clothing",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A glass slipper, stained with blood.",
+      "properties": [
+        "trinket",
+        "bloodstained",
+        "glass"
+      ]
+    },
+    {
+      "name": "A harp that, if left unattended, plays mood-inappropriate music with the skill of an enthusiastic amateur",
+      "item_id": "mood_inappropriate_harp",
+      "type": "tool",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A harp that, if left unattended, plays mood-inappropriate music with the skill of an enthusiastic amateur.",
+      "properties": [
+        "trinket",
+        "magical",
+        "musical",
+        "autonomous"
+      ]
+    },
+    {
+      "name": "A Chapes (holy symbol of the Pluritine Church), given to you by a dying friar decades ago",
+      "item_id": "pluritine_chapes",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A Chapes (holy symbol of the Pluritine Church), given to you by a dying friar decades ago.",
+      "properties": [
+        "trinket",
+        "holy",
+        "religious"
+      ]
+    },
+    {
+      "name": "A key fashioned from ice. It melts in the warmth, and reforms in cold weather",
+      "item_id": "ice_key",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A key fashioned from ice. It melts in the warmth, and reforms in cold weather.",
+      "properties": [
+        "trinket",
+        "magical",
+        "ice",
+        "temperature-sensitive"
+      ]
+    },
+    {
+      "name": "A lantern that burns with a cold, blue flame when lit",
+      "item_id": "cold_blue_flame_lantern",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A lantern that burns with a cold, blue flame when lit.",
+      "properties": [
+        "trinket",
+        "magical",
+        "cold",
+        "light"
+      ]
+    },
+    {
+      "name": "A letter promising your imminent demise, written in High Elfish. Delivered over a hundred years ago",
+      "item_id": "death_threat_letter",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A letter promising your imminent demise, written in High Elfish. Delivered over a hundred years ago.",
+      "properties": [
+        "trinket",
+        "threatening",
+        "ancient",
+        "elfish"
+      ]
+    },
+    {
+      "name": "A mortal's heart, freely given",
+      "item_id": "freely_given_mortal_heart",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A mortal's heart, freely given.",
+      "properties": [
+        "trinket",
+        "macabre",
+        "gift"
+      ]
+    },
+    {
+      "name": "A mote of sunlight, trapped in a scintillating crystal",
+      "item_id": "trapped_sunlight_crystal",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A mote of sunlight, trapped in a scintillating crystal.",
+      "properties": [
+        "trinket",
+        "magical",
+        "light",
+        "crystal"
+      ]
+    },
+    {
+      "name": "A necklace composed of honeybees",
+      "item_id": "honeybee_necklace",
+      "type": "clothing",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A necklace composed of honeybees.",
+      "properties": [
+        "trinket",
+        "living",
+        "jewelry"
+      ]
+    },
+    {
+      "name": "A nightmare, sealed inside a bottle",
+      "item_id": "bottled_nightmare",
+      "type": "container",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A nightmare, sealed inside a bottle.",
+      "properties": [
+        "trinket",
+        "magical",
+        "nightmare",
+        "sealed"
+      ]
+    },
+    {
+      "name": "A pan flute stolen from a woodgrue. A single pipe is missing",
+      "item_id": "incomplete_woodgrue_pan_flute",
+      "type": "tool",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A pan flute stolen from a woodgrue. A single pipe is missing.",
+      "properties": [
+        "trinket",
+        "stolen",
+        "musical",
+        "incomplete"
+      ]
+    },
+    {
+      "name": "A peacock feather whose eye intermittently blinks",
+      "item_id": "blinking_peacock_feather",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A peacock feather whose eye intermittently blinks.",
+      "properties": [
+        "trinket",
+        "magical",
+        "living"
+      ]
+    },
+    {
+      "name": "A pleasant dream, distilled into a liquor",
+      "item_id": "dream_liquor",
+      "type": "food",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A pleasant dream, distilled into a liquor.",
+      "properties": [
+        "trinket",
+        "magical",
+        "dream",
+        "alcoholic"
+      ]
+    },
+    {
+      "name": "A receipt for a loan of four rare and expensive tomes from a Fairy library. You no longer have any of these books",
+      "item_id": "fairy_library_receipt",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A receipt for a loan of four rare and expensive tomes from a Fairy library. You no longer have any of these books.",
+      "properties": [
+        "trinket",
+        "debt",
+        "fairy"
+      ]
+    },
+    {
+      "name": "A scabbard taken from the fallen body of a great knight",
+      "item_id": "great_knight_scabbard",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A scabbard taken from the fallen body of a great knight.",
+      "properties": [
+        "trinket",
+        "trophy",
+        "knight"
+      ]
+    },
+    {
+      "name": "A sealed scroll. Allegedly contains one of the Goblin King's myriad names, never spoken",
+      "item_id": "goblin_king_name_scroll",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A sealed scroll. Allegedly contains one of the Goblin King's myriad names, never spoken.",
+      "properties": [
+        "trinket",
+        "sealed",
+        "secret",
+        "goblin"
+      ]
+    },
+    {
+      "name": "A seemingly ordinary acorn. Screams when its cap is removed",
+      "item_id": "screaming_acorn",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A seemingly ordinary acorn. Screams when its cap is removed.",
+      "properties": [
+        "trinket",
+        "magical",
+        "screaming"
+      ]
+    },
+    {
+      "name": "A set of horseshoes, designed for a centaur",
+      "item_id": "centaur_horseshoes",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A set of horseshoes, designed for a centaur.",
+      "properties": [
+        "trinket",
+        "centaur",
+        "specialized"
+      ]
+    },
+    {
+      "name": "A silver spoon that drips honey on command",
+      "item_id": "honey_dripping_silver_spoon",
+      "type": "tool",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A silver spoon that drips honey on command.",
+      "properties": [
+        "trinket",
+        "magical",
+        "silver",
+        "honey"
+      ]
+    },
+    {
+      "name": "A single crow feather, taken from the cloak of the Queen of Blackbirds",
+      "item_id": "queen_of_blackbirds_feather",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A single crow feather, taken from the cloak of the Queen of Blackbirds.",
+      "properties": [
+        "trinket",
+        "royal",
+        "crow",
+        "trophy"
+      ]
+    },
+    {
+      "name": "A skeletal finger that scrapes and scratches at dusk. If provided with a means of making marks (e.g. dipped in ink or blood, a surface that can be scratched), it writes macabre prophecies",
+      "item_id": "prophetic_skeletal_finger",
+      "type": "tool",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A skeletal finger that scrapes and scratches at dusk. If provided with a means of making marks (e.g. dipped in ink or blood, a surface that can be scratched), it writes macabre prophecies.",
+      "properties": [
+        "trinket",
+        "magical",
+        "skeletal",
+        "prophetic",
+        "macabre"
+      ]
+    },
+    {
+      "name": "A small bell shaped like a breggle's eye. Faint bleating accompanies its ringing",
+      "item_id": "breggle_eye_bell",
+      "type": "tool",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A small bell shaped like a breggle's eye. Faint bleating accompanies its ringing.",
+      "properties": [
+        "trinket",
+        "bell",
+        "breggle",
+        "bleating"
+      ]
+    },
+    {
+      "name": "A spider that slowly weaves webs in the shape of clothing",
+      "item_id": "clothing_weaving_spider",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A spider that slowly weaves webs in the shape of clothing.",
+      "properties": [
+        "trinket",
+        "living",
+        "spider",
+        "weaving"
+      ]
+    },
+    {
+      "name": "A spyglass that always shows a view of a sea at night",
+      "item_id": "night_sea_spyglass",
+      "type": "tool",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A spyglass that always shows a view of a sea at night.",
+      "properties": [
+        "trinket",
+        "magical",
+        "spyglass",
+        "fixed-view"
+      ]
+    },
+    {
+      "name": "A thimble that is always magically full of sweet liqueur",
+      "item_id": "endless_liqueur_thimble",
+      "type": "container",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A thimble that is always magically full of sweet liqueur.",
+      "properties": [
+        "trinket",
+        "magical",
+        "endless",
+        "alcoholic"
+      ]
+    },
+    {
+      "name": "A white-and-gold parasol that creates darkness directly underneath it",
+      "item_id": "darkness_creating_parasol",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A white-and-gold parasol that creates darkness directly underneath it.",
+      "properties": [
+        "trinket",
+        "magical",
+        "parasol",
+        "darkness"
+      ]
+    },
+    {
+      "name": "A wolf pelt cloak. The wolf's head is still attached and occasionally salivates",
+      "item_id": "salivating_wolf_pelt_cloak",
+      "type": "clothing",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A wolf pelt cloak. The wolf's head is still attached and occasionally salivates.",
+      "properties": [
+        "trinket",
+        "cloak",
+        "wolf",
+        "living"
+      ]
+    },
+    {
+      "name": "An ancient bronze mask depicting a bearded face",
+      "item_id": "ancient_bronze_bearded_mask",
+      "type": "clothing",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "An ancient bronze mask depicting a bearded face.",
+      "properties": [
+        "trinket",
+        "mask",
+        "bronze",
+        "ancient"
+      ]
+    },
+    {
+      "name": "An empty wine bottle. When held over a liquid, it draws it inside until full",
+      "item_id": "liquid_drawing_wine_bottle",
+      "type": "container",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "An empty wine bottle. When held over a liquid, it draws it inside until full.",
+      "properties": [
+        "trinket",
+        "magical",
+        "bottle",
+        "liquid-drawing"
+      ]
+    },
+    {
+      "name": "An hourglass which constantly flows in one direction. It cannot be inverted",
+      "item_id": "one_way_hourglass",
+      "type": "tool",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "An hourglass which constantly flows in one direction. It cannot be inverted.",
+      "properties": [
+        "trinket",
+        "magical",
+        "hourglass",
+        "one-way"
+      ]
+    },
+    {
+      "name": "An icicle that never melts",
+      "item_id": "eternal_icicle",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "An icicle that never melts.",
+      "properties": [
+        "trinket",
+        "magical",
+        "ice",
+        "eternal"
+      ]
+    },
+    {
+      "name": "Bronze chimes that tinkle in the presence of both ghosts and strong breezes",
+      "item_id": "ghost_detecting_bronze_chimes",
+      "type": "tool",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Bronze chimes that tinkle in the presence of both ghosts and strong breezes.",
+      "properties": [
+        "trinket",
+        "bronze",
+        "chimes",
+        "ghost-detecting"
+      ]
+    },
+    {
+      "name": "Sculpting tools, preternaturally cold to the touch",
+      "item_id": "cold_sculpting_tools",
+      "type": "tool",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Sculpting tools, preternaturally cold to the touch.",
+      "properties": [
+        "trinket",
+        "tools",
+        "cold",
+        "sculpting"
+      ]
+    },
+    {
+      "name": "Six vials of blood, each drawn from a different Kindred",
+      "item_id": "kindred_blood_vials",
+      "type": "container",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Six vials of blood, each drawn from a different Kindred.",
+      "properties": [
+        "trinket",
+        "vials",
+        "blood",
+        "kindred"
+      ]
+    },
+    {
+      "name": "Star charts that match no sky seen from Dolmenwood",
+      "item_id": "alien_star_charts",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Star charts that match no sky seen from Dolmenwood.",
+      "properties": [
+        "trinket",
+        "charts",
+        "alien",
+        "astronomical"
+      ]
+    },
+    {
+      "name": "The severed tail of a fairy horse",
+      "item_id": "fairy_horse_tail",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "The severed tail of a fairy horse.",
+      "properties": [
+        "trinket",
+        "severed",
+        "fairy",
+        "horse"
+      ]
+    }
+  ]
+}

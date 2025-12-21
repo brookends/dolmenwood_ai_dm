@@ -1,0 +1,80 @@
+{
+  "_metadata": {
+    "source_file": "../data/pdfs/core/Dolmenwood_Players_Book.pdf",
+    "pages": [
+      89
+    ],
+    "content_type": "spells",
+    "item_count": 6,
+    "errors": [],
+    "note": "Review and correct this data before importing"
+  },
+  "items": [
+    {
+      "name": "Hex Weaving",
+      "spell_id": "hex_weaving",
+      "level": 4,
+      "magic_type": "arcane",
+      "duration": "Instant or permanent",
+      "range": "The caster or a creature touched",
+      "description": "Weaving the threads of fate surrounding the subject, this spell manifests one of the following effects when cast: 1. Removing a curse: The subject is permanently cured of the affliction of a single curse. This spell may be used to enable a character to discard a cursed magic item. The duration is instant. 2. Placing a curse: The subject must Save Versus Spell or suffer from a deleterious effect of the caster's choosing. Maximum possible effects include: a –2 Saving Throw penalty, a –4 Attack Roll penalty, halving an Ability Score. The duration is permanent. Multiple curses: So long as each has a unique effect, multiple curses may afflict the same creature.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Plant Growth",
+      "spell_id": "plant_growth",
+      "level": 4,
+      "magic_type": "arcane",
+      "duration": "Permanent",
+      "range": "120′",
+      "description": "A dense, thorny thicket of vines and brambles overwhelms an area of normal woodland or scrub within range. Area: An area of up to 3,000 square feet—selected by the caster—is affected (e.g. 150′ × 20′, 100′ × 30′, etc.). Passage: Large creatures can push through at half Speed. Smaller creatures can hack through at 10′ per Turn.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Polymorph",
+      "spell_id": "polymorph",
+      "level": 4,
+      "magic_type": "arcane",
+      "duration": "1d6 Turns + 1 Turn per Level or permanent",
+      "range": "60′",
+      "description": "Transforms the caster or another living subject into another type of living creature, as chosen by the caster. Cast on self: The transformation fails if the new form's Level is greater than the caster's. The transformation does not alter the caster's Hit Points, Save Targets, Attack, or intelligence. Physical capabilities of the new form (e.g. strength, physical attack forms, modes of movement) are acquired. Non-physical special traits or powers (e.g. immunities, breath weapons, spell casting) are not acquired. While polymorphed, the caster is unable to cast spells. The duration is 1d6 Turns + 1 Turn per Level. Cast on another: The transformation fails if the new form's Level is greater than double the caster's. The transformation does not alter the subject's Hit Points, but the subject otherwise truly becomes the new form: all special traits and powers are acquired, along with behavioural patterns, tendencies, and intelligence. The duration is permanent. Specific individuals: The spell cannot be used to duplicate a specific individual. Reversion: If the subject dies while polymorphed, they return to their original form. Resisting: An unwilling subject may Save Versus Spell to resist being transformed.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Wall of Fire",
+      "spell_id": "wall_of_fire",
+      "level": 4,
+      "magic_type": "arcane",
+      "duration": "Concentration + 1 Round per Level",
+      "range": "60′",
+      "description": "Conjures an opaque curtain of raging flame, shaped as the caster wishes. Shape: The wall is 6″ thick and forms either as a straight line (up to 60′ long and up to 20′ high) or a ring (up to 20′ diameter and up to 20′ high). Location: The wall cannot be created in an area occupied by objects. Creatures of Level 4 or greater: Can pass through the wall, but suffer 3d6 damage (double for cold-based creatures and undead). Creatures of Level 3 or lower: Cannot pass the wall. Concentration: The wall persists as long as the caster concentrates on the spell and does not move. When concentration ends, the wall remains for 1 Round per Level.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Wall of Ice",
+      "spell_id": "wall_of_ice",
+      "level": 4,
+      "magic_type": "arcane",
+      "duration": "12 Turns",
+      "range": "120′",
+      "description": "Conjures a semi-transparent sheet of ice, shaped as the caster wishes. Shape: The wall is 6″ thick and forms either as a straight line (up to 60′ long and up to 20′ high) or a ring (up to 20′ diameter and up to 20′ high). Location: The wall must be supported (e.g. by the ground) and cannot be created in an area occupied by objects. Creatures of Level 4 or greater: Can break a 5′ wide hole through the wall, given suitable tools (e.g. mining picks, sledgehammers) and 1d6 Turns of effort. Creatures breaking through suffer 2d6 damage due to chunks of ice (double for fire-based creatures). Creatures of Level 3 or lower: Cannot break the wall.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Woodland Veil",
+      "spell_id": "woodland_veil",
+      "level": 4,
+      "magic_type": "arcane",
+      "duration": "Permanent",
+      "range": "240′",
+      "description": "Up to 100 Small or Medium creatures (chosen by the caster) within a 120′ radius area are veiled by illusion, appearing as a copse of trees or an orchard. Moving through: Once the illusion is in place, even creatures moving among the veiled subjects are deceived. Leaving the area: Subjects who leave the affected area cease to be veiled. Dismissing: The caster may dismiss the illusion in its entirety at any time.",
+      "reversible": false,
+      "reversed_name": null
+    }
+  ]
+}

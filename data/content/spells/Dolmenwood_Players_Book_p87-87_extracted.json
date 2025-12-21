@@ -1,0 +1,80 @@
+{
+  "_metadata": {
+    "source_file": "../data/pdfs/core/Dolmenwood_Players_Book.pdf",
+    "pages": [
+      87
+    ],
+    "content_type": "spells",
+    "item_count": 6,
+    "errors": [],
+    "note": "Review and correct this data before importing"
+  },
+  "items": [
+    {
+      "name": "Haste",
+      "spell_id": "haste",
+      "level": 3,
+      "magic_type": "arcane",
+      "duration": "3 Turns",
+      "range": "240'",
+      "description": "The spirits of up to 24 creatures (of the caster's choosing) in a 30′ radius are quickened, enabling them to move and act twice as quickly as normal. Movement: Subjects' Speed is doubled. Attacks: Subjects make twice the normal number of attacks per Round. Spells and magic items: The number of spells a subject may cast per Round is not doubled. Likewise, the use of magic items such as wands is not doubled.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Lightning Bolt",
+      "spell_id": "lightning_bolt",
+      "level": 3,
+      "magic_type": "arcane",
+      "duration": "Instant",
+      "range": "180'",
+      "description": "A bolt of lightning 60′ long and 5′ wide streaks from a point within range. Damage: Creatures caught in the lightning bolt suffer 1d6 damage per Level of the caster, with a successful Save Versus Ray indicating half damage. Bouncing: If the lightning bolt hits a solid barrier before its full length is reached, it is reflected and travels for any remaining distance of its full length in the direction of the caster.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Missile Ward",
+      "spell_id": "missile_ward",
+      "level": 3,
+      "magic_type": "arcane",
+      "duration": "12 Turns",
+      "range": "30'",
+      "description": "Places a warding dweomer upon a single subject in range, providing complete protection from normal missiles, which shatter or splinter 1″ away from the subject's flesh. Warding: The subject is completely unharmed by normal-sized, non-magical missiles (e.g. arrows, sling stones, spears). Other missiles: No protection is granted against gargantuan missiles (e.g. hurled boulders) or enchanted missiles.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Paralysation",
+      "spell_id": "paralysation",
+      "level": 3,
+      "magic_type": "arcane",
+      "duration": "6 Turns",
+      "range": "60'",
+      "description": "A number of creatures within a 20′ cube are afflicted with the terrifying phantasm of being paralysed (aware but unable to move or act). Number of creatures affected: Creatures whose Levels total up to twice the caster's Level. Creatures of the lowest Level are affected first. For example, if a Level 4 caster targets a group of four Level 1 and five Level 2 creatures, all four Level 1 creatures and two of the Level 2 creatures are affected (a total of 8 Levels). Resisting: Each target may Save Versus Hold to resist the phantasm. Restrictions: Mindless creatures are unaffected. Cancelling: The caster may cancel the spell at will.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Serpent Glyph",
+      "spell_id": "serpent_glyph",
+      "level": 3,
+      "magic_type": "arcane",
+      "duration": "Permanent until triggered",
+      "range": "Touch",
+      "description": "The caster traces a magical, serpent-shaped warding glyph upon a page of text or a surface, followed by a sprinkling of powdered amber (100gp value). Cast on a text: The glyph quickly mingles into the script. It can only be detected by magic. Reading the page triggers the warding magic. Cast on a surface: The glyph remains visible, glowing pale yellow. Touching the surface triggers the warding magic. When triggered: A glowing, serpent-like form leaps from the glyph and makes a single attack against the nearest creature. Its Attack is equal to the caster's Level. If the attack hits: The victim is frozen in a glittering amber bubble of time distortion for 1d4 days (or until dispelled or released by the caster). While trapped, the victim is in temporal stasis and cannot move, perceive, think, or act. Likewise, the bubble cannot be moved or penetrated. If the attack misses: The serpent dissipates with a flash, a bang, and a puff of smoke.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Water Breathing",
+      "spell_id": "water_breathing",
+      "level": 3,
+      "magic_type": "arcane",
+      "duration": "1 day",
+      "range": "30'",
+      "description": "Bestows the ability to breathe water upon a single subject. Breathing air: The spell does not affect the subject's ability to breathe air. Underwater movement: Swimming is not enhanced or affected.",
+      "reversible": false,
+      "reversed_name": null
+    }
+  ]
+}

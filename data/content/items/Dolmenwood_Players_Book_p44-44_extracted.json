@@ -1,0 +1,604 @@
+{
+  "_metadata": {
+    "source_file": "../data/pdfs/core/Dolmenwood_Players_Book.pdf",
+    "pages": [
+      44
+    ],
+    "content_type": "items",
+    "item_count": 50,
+    "errors": [],
+    "note": "Review and correct this data before importing"
+  },
+  "items": [
+    {
+      "name": "Bicorne hat that is a foot deeper on the inside than it appears",
+      "item_id": "bicorne_hat_that_is_a_foot_deeper_on_the_inside_than_it_appears",
+      "type": "clothing",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A bicorne hat that is a foot deeper on the inside than it appears.",
+      "properties": [
+        "magical"
+      ]
+    },
+    {
+      "name": "Book of long-forgotten laws, written in Old Woldish",
+      "item_id": "book_of_long_forgotten_laws_written_in_old_woldish",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A book of long-forgotten laws, written in Old Woldish.",
+      "properties": []
+    },
+    {
+      "name": "Brass thimble that turns water into milk",
+      "item_id": "brass_thimble_that_turns_water_into_milk",
+      "type": "tool",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A brass thimble that turns water into milk.",
+      "properties": [
+        "magical"
+      ]
+    },
+    {
+      "name": "Breggle tongue, still moist",
+      "item_id": "breggle_tongue_still_moist",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A breggle tongue, still moist.",
+      "properties": []
+    },
+    {
+      "name": "Cherry tart pilfered from the kitchen of a fairy noble",
+      "item_id": "cherry_tart_pilfered_from_the_kitchen_of_a_fairy_noble",
+      "type": "food",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A cherry tart pilfered from the kitchen of a fairy noble.",
+      "properties": []
+    },
+    {
+      "name": "Cloak fashioned from a hundred voles",
+      "item_id": "cloak_fashioned_from_a_hundred_voles",
+      "type": "clothing",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A cloak fashioned from a hundred voles.",
+      "properties": []
+    },
+    {
+      "name": "Copper coin that always lands on the same side when deliberately flipped",
+      "item_id": "copper_coin_that_always_lands_on_the_same_side_when_deliberately_flipped",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A copper coin that always lands on the same side when deliberately flipped.",
+      "properties": [
+        "magical"
+      ]
+    },
+    {
+      "name": "Crimson feather from an enormous bird",
+      "item_id": "crimson_feather_from_an_enormous_bird",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A crimson feather from an enormous bird.",
+      "properties": []
+    },
+    {
+      "name": "Dead crow that never rots",
+      "item_id": "dead_crow_that_never_rots",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A dead crow that never rots.",
+      "properties": [
+        "magical"
+      ]
+    },
+    {
+      "name": "Deck of playing cards that shuffles itself when left unattended",
+      "item_id": "deck_of_playing_cards_that_shuffles_itself_when_left_unattended",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A deck of playing cards that shuffles itself when left unattended.",
+      "properties": [
+        "magical"
+      ]
+    },
+    {
+      "name": "Dried heart the size of an acorn",
+      "item_id": "dried_heart_the_size_of_an_acorn",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A dried heart the size of an acorn.",
+      "properties": []
+    },
+    {
+      "name": "Hairball coughed up by a famous grimalkin",
+      "item_id": "hairball_coughed_up_by_a_famous_grimalkin",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A hairball coughed up by a famous grimalkin.",
+      "properties": []
+    },
+    {
+      "name": "Handkerchief stained with the kiss of Queen Abyssinia",
+      "item_id": "handkerchief_stained_with_the_kiss_of_queen_abyssinia",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A handkerchief stained with the kiss of Queen Abyssinia.",
+      "properties": []
+    },
+    {
+      "name": "Heart-shaped locket",
+      "item_id": "heart_shaped_locket",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A heart-shaped locket. Each time it's opened, it contains a portrait of a different cat.",
+      "properties": [
+        "magical"
+      ]
+    },
+    {
+      "name": "Human eye that dilates just before it rains",
+      "item_id": "human_eye_that_dilates_just_before_it_rains",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A human eye that dilates just before it rains.",
+      "properties": [
+        "magical"
+      ]
+    },
+    {
+      "name": "Hundred-year-old note offering a favour",
+      "item_id": "hundred_year_old_note_offering_a_favour",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A hundred-year-old note offering a favour in return for services rendered to a witch. Her descendants might be obligated to fulfil it.",
+      "properties": []
+    },
+    {
+      "name": "Leaf from the tallest tree in Dolmenwood",
+      "item_id": "leaf_from_the_tallest_tree_in_dolmenwood",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A leaf from the tallest tree in Dolmenwood.",
+      "properties": []
+    },
+    {
+      "name": "Letter begging you to aid a miller's youngest child",
+      "item_id": "letter_begging_you_to_aid_a_millers_youngest_child",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A letter begging you to aid a miller's youngest child.",
+      "properties": []
+    },
+    {
+      "name": "Live cockroach tied to a thin gold string",
+      "item_id": "live_cockroach_tied_to_a_thin_gold_string",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A live cockroach tied to a thin gold string. If the cockroach is removed or killed, a new one appears in its place when the sun rises.",
+      "properties": [
+        "magical"
+      ]
+    },
+    {
+      "name": "Lucky tortoise shell",
+      "item_id": "lucky_tortoise_shell",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A lucky tortoise shell.",
+      "properties": []
+    },
+    {
+      "name": "Lute that is always out of tune in the morning and in tune in the evening",
+      "item_id": "lute_that_is_always_out_of_tune_in_the_morning_and_in_tune_in_the_evening",
+      "type": "tool",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A lute that is always out of tune in the morning and in tune in the evening.",
+      "properties": [
+        "magical"
+      ]
+    },
+    {
+      "name": "Luxurious, gold-embroidered cushion",
+      "item_id": "luxurious_gold_embroidered_cushion",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A luxurious, gold-embroidered cushion.",
+      "properties": []
+    },
+    {
+      "name": "Mouse skull on a string",
+      "item_id": "mouse_skull_on_a_string",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A mouse skull on a string. (Allegedly, a mouse from the moon.)",
+      "properties": []
+    },
+    {
+      "name": "Mushroom stolen from the head of a mossling",
+      "item_id": "mushroom_stolen_from_the_head_of_a_mossling",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A mushroom stolen from the head of a mossling.",
+      "properties": []
+    },
+    {
+      "name": "Nightingale's song, trapped in a locket",
+      "item_id": "nightingales_song_trapped_in_a_locket",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A nightingale's song, trapped in a locket.",
+      "properties": [
+        "magical"
+      ]
+    },
+    {
+      "name": "Pair of boots that will never go out of fashion",
+      "item_id": "pair_of_boots_that_will_never_go_out_of_fashion",
+      "type": "clothing",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A pair of boots that will never go out of fashion.",
+      "properties": [
+        "magical"
+      ]
+    },
+    {
+      "name": "Pair of dice that always total to nine",
+      "item_id": "pair_of_dice_that_always_total_to_nine",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A pair of dice that, when rolled together, always total to nine.",
+      "properties": [
+        "magical"
+      ]
+    },
+    {
+      "name": "Pink bow that cannot turn invisible",
+      "item_id": "pink_bow_that_cannot_turn_invisible",
+      "type": "clothing",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A pink bow that cannot turn invisible under any circumstances.",
+      "properties": [
+        "magical"
+      ]
+    },
+    {
+      "name": "Pocket watch that tells you the correct time an hour ago",
+      "item_id": "pocket_watch_that_tells_you_the_correct_time_an_hour_ago",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A pocket watch that always tells you the correct time an hour ago.",
+      "properties": [
+        "magical"
+      ]
+    },
+    {
+      "name": "Porcelain teacup with a salamander painted on the side",
+      "item_id": "porcelain_teacup_with_a_salamander_painted_on_the_side",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A porcelain teacup with a salamander painted on the side. Warm liquids it holds never cool down.",
+      "properties": [
+        "magical"
+      ]
+    },
+    {
+      "name": "Rabbit's foot that sporadically twitches",
+      "item_id": "rabbits_foot_that_sporadically_twitches",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A rabbit's foot that sporadically twitches.",
+      "properties": [
+        "magical"
+      ]
+    },
+    {
+      "name": "Rat king in a sack",
+      "item_id": "rat_king_in_a_sack",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A rat king in a sack. Each rat inside claims to be the \"King of All Rats.\"",
+      "properties": []
+    },
+    {
+      "name": "Realistic mask of a human child",
+      "item_id": "realistic_mask_of_a_human_child",
+      "type": "clothing",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A realistic mask of a human child.",
+      "properties": []
+    },
+    {
+      "name": "Scroll depicting your royal lineage",
+      "item_id": "scroll_depicting_your_royal_lineage",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A scroll depicting your royal lineage. Of dubious authenticity.",
+      "properties": []
+    },
+    {
+      "name": "Set of keys on a golden ring, purloined from a noble",
+      "item_id": "set_of_keys_on_a_golden_ring_purloined_from_a_noble",
+      "type": "tool",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A set of keys on a golden ring, purloined from a noble.",
+      "properties": []
+    },
+    {
+      "name": "Severed head of a sprite, dried and preserved",
+      "item_id": "severed_head_of_a_sprite_dried_and_preserved",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A severed head of a sprite, dried and preserved.",
+      "properties": []
+    },
+    {
+      "name": "Sewing needle, sized for a giant",
+      "item_id": "sewing_needle_sized_for_a_giant",
+      "type": "weapon",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": "1d4",
+      "ac_bonus": null,
+      "description": "A sewing needle, sized for a giant. (Treat as a dagger.)",
+      "properties": []
+    },
+    {
+      "name": "Shard of cold iron, trapped in a glass sphere",
+      "item_id": "shard_of_cold_iron_trapped_in_a_glass_sphere",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A shard of cold iron, trapped in a glass sphere.",
+      "properties": []
+    },
+    {
+      "name": "Single cat whisker, given as a sign of commitment",
+      "item_id": "single_cat_whisker_given_as_a_sign_of_commitment",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A single cat whisker, given to you as a sign of commitment.",
+      "properties": []
+    },
+    {
+      "name": "Singular pipe, taken from a woodgrue's pan flute",
+      "item_id": "singular_pipe_taken_from_a_woodgrues_pan_flute",
+      "type": "tool",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A singular pipe, taken from a woodgrue's pan flute.",
+      "properties": []
+    },
+    {
+      "name": "Small vial containing a legendarily potent strain of catnip",
+      "item_id": "small_vial_containing_a_legendarily_potent_strain_of_catnip",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A small vial containing a legendarily potent strain of catnip.",
+      "properties": []
+    },
+    {
+      "name": "Tiny bell that makes no sound",
+      "item_id": "tiny_bell_that_makes_no_sound",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A tiny bell that makes no sound.",
+      "properties": [
+        "magical"
+      ]
+    },
+    {
+      "name": "Trained, but not particularly smart, weasel",
+      "item_id": "trained_but_not_particularly_smart_weasel",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A trained, but not particularly smart, weasel.",
+      "properties": []
+    },
+    {
+      "name": "Whistle that only dogs can't hear",
+      "item_id": "whistle_that_only_dogs_cant_hear",
+      "type": "tool",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A whistle that only dogs can't hear.",
+      "properties": [
+        "magical"
+      ]
+    },
+    {
+      "name": "Wolf's paw that bleeds when the wolf is thinking of you",
+      "item_id": "wolfs_paw_that_bleeds_when_the_wolf_is_thinking_of_you",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A wolf's paw that bleeds when the wolf is thinking of you.",
+      "properties": [
+        "magical"
+      ]
+    },
+    {
+      "name": "Wooden door the shape and size of a mouse",
+      "item_id": "wooden_door_the_shape_and_size_of_a_mouse",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "A wooden door the shape and size of a mouse.",
+      "properties": []
+    },
+    {
+      "name": "Eyepatch, stained with old blood",
+      "item_id": "eyepatch_stained_with_old_blood",
+      "type": "clothing",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "An eyepatch, stained with old blood.",
+      "properties": []
+    },
+    {
+      "name": "Ogre's toenail, tough as steel",
+      "item_id": "ogres_toenail_tough_as_steel",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "An ogre's toenail, tough as steel. Its owner still lives.",
+      "properties": []
+    },
+    {
+      "name": "Eyeglasses haunted by benign ghosts",
+      "item_id": "eyeglasses_haunted_by_benign_ghosts",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Eyeglasses haunted by benign ghosts. Wearing the glasses allows you to see them.",
+      "properties": [
+        "magical"
+      ]
+    },
+    {
+      "name": "One of a pair of bracelets made from braided mouse tails",
+      "item_id": "one_of_a_pair_of_bracelets_made_from_braided_mouse_tails",
+      "type": "adventuring_gear",
+      "cost_sp": null,
+      "weight_coins": 10,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "One of a pair of bracelets made from braided mouse tails.",
+      "properties": []
+    }
+  ]
+}

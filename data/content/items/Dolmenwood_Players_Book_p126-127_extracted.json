@@ -1,0 +1,268 @@
+{
+  "_metadata": {
+    "source_file": "../data/pdfs/core/Dolmenwood_Players_Book.pdf",
+    "pages": [
+      126,
+      127
+    ],
+    "content_type": "items",
+    "item_count": 23,
+    "errors": [],
+    "note": "Review and correct this data before importing"
+  },
+  "items": [
+    {
+      "name": "Food: main dish (poor)",
+      "item_id": "food_main_dish_poor",
+      "type": "food",
+      "cost_sp": 1,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Main dish at poor lodgings. 1. Battered pizzle: The generative organs of a slaughtered bull, sliced up, battered, and fried. Rich and gristly stuff. 2. Blood porridge: Oat porridge with a healthy portion of bloodworms mixed in. Some folk like their worms still wriggling. 3. Bubble and squeak: Fried up leftovers from yesterday’s supper. Commonly a mix of cabbage, root vegetables and meat scraps. 4. Dregger’s pie: Acorns and sloppy mixed innards baked in a tough pastry shell. The stench when the crust is cracked open is said to recall the back alleys of Dreg. 5. Fisher’s gruel: Grain slop cooked in a fish-bone stock. 6. Roast wellington: Layers of leftover mash, cabbage leaves, and chicken skin, rolled up and roasted. 7. Special pasty: Butter and sheep fat pastry encasing meaty chunks of unknown origin. Best not to ask. 8. Woad in the hole: Crispy chicken or sparrow feet poking out of a spongy baked batter. No actual woads’ legs are anywhere to be seen—they are far too expensive!",
+      "properties": []
+    },
+    {
+      "name": "Food: side dish (poor)",
+      "item_id": "food_side_dish_poor",
+      "type": "food",
+      "cost_sp": 0.5,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Side dish at poor lodgings. 1. Codswallop: A putrid, off-white slop. No one is quite sure what’s in it. 2. Pig’s ear: Crispy fried hog’s ear. Nice and hairy. 3. Sourcroute: Fermented cabbage, often accompanied by an unwanted edge of mould. 4. Wormskin: The skins of any worms that wriggle in the region (earthworms, bloodworms, nightworms, etc.), fermented in strong vinegar.",
+      "properties": []
+    },
+    {
+      "name": "Lodging: common room floor, 1 night (poor)",
+      "item_id": "lodging_common_room_floor_poor",
+      "type": "service",
+      "cost_sp": 0.2,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "One night sleeping on common room floor at poor lodgings",
+      "properties": []
+    },
+    {
+      "name": "Lodging: shared room (8 beds), 1 night",
+      "item_id": "lodging_shared_room_8_beds",
+      "type": "service",
+      "cost_sp": 1,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "One night in shared room with 8 beds at poor lodgings",
+      "properties": []
+    },
+    {
+      "name": "Lodging: shared room (4 beds), 1 night",
+      "item_id": "lodging_shared_room_4_beds",
+      "type": "service",
+      "cost_sp": 2,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "One night in shared room with 4 beds at poor lodgings",
+      "properties": []
+    },
+    {
+      "name": "Stabling and fodder, 1 night (poor)",
+      "item_id": "stabling_and_fodder_poor",
+      "type": "service",
+      "cost_sp": 2,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "One night of stabling and fodder at poor lodgings",
+      "properties": []
+    },
+    {
+      "name": "Bath in private room (common)",
+      "item_id": "bath_private_room_common",
+      "type": "service",
+      "cost_sp": 5,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Bath in private room at common lodgings",
+      "properties": []
+    },
+    {
+      "name": "Food: main dish (common)",
+      "item_id": "food_main_dish_common",
+      "type": "food",
+      "cost_sp": 3,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Main dish at common lodgings. 1. Mutton roast: Slices of smoky roast mutton, slathered in garlic gravy. 2. Onion sandwich: White bread, butter, raw onion slices, and lashings of congealed whey. 3. Pook’s pudding: A suety pudding of mallow and locally foraged mushrooms. 4. Puggle pie: Puggle-flesh and mushroom gravy in flaky pastry. (Puggles are miniature fungivorous dogs that live in Dolmenwood.) 5. Sausage and mash: Fried bog-swine sausages from Dreg on a bed of mashed swede, potato, or carrot. 6. Shanky: A pair of chicken or quail legs wrapped in vinegared oak leaves and bitter mugwort. 7. Snail skewers: Forest snails skewered on metal spikes and roast over a wood fire, served with a dipping custard. 8. Trottel mash: Mashed root vegetables (commonly turnip and burdock) laced with trotteling bacon. (Trottelings are tiny forest pigs.)",
+      "properties": []
+    },
+    {
+      "name": "Food: side dish (common)",
+      "item_id": "food_side_dish_common",
+      "type": "food",
+      "cost_sp": 2,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Side dish at common lodgings. 1. Pickled eggs: Hard-boiled eggs preserved in vinegar. 2. Coldlanks: Raw, grated onion in a mustard and beer marinade. 3. Hameth sprats: Little fish, crispy fried in batter. 4. Ruddy chad: A hunk of mature, red-veined cheese.",
+      "properties": []
+    },
+    {
+      "name": "Lodging: common room floor, 1 night (common)",
+      "item_id": "lodging_common_room_floor_common",
+      "type": "service",
+      "cost_sp": 0.5,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "One night sleeping on common room floor at common lodgings",
+      "properties": []
+    },
+    {
+      "name": "Lodging: shared room (2 beds), 1 night",
+      "item_id": "lodging_shared_room_2_beds",
+      "type": "service",
+      "cost_sp": 4,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "One night in shared room with 2 beds at common lodgings",
+      "properties": []
+    },
+    {
+      "name": "Lodging: private room, 1 night (common)",
+      "item_id": "lodging_private_room_common",
+      "type": "service",
+      "cost_sp": 8,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "One night in private room at common lodgings",
+      "properties": []
+    },
+    {
+      "name": "Stabling and fodder, 1 night (common)",
+      "item_id": "stabling_and_fodder_common",
+      "type": "service",
+      "cost_sp": 4,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "One night of stabling and fodder at common lodgings",
+      "properties": []
+    },
+    {
+      "name": "Bath in private room (fancy)",
+      "item_id": "bath_private_room_fancy",
+      "type": "service",
+      "cost_sp": 4,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Bath in private room at fancy lodgings",
+      "properties": []
+    },
+    {
+      "name": "Food: main dish (fancy)",
+      "item_id": "food_main_dish_fancy",
+      "type": "food",
+      "cost_sp": 20,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Main dish at fancy lodgings. 1. Blackbird pie: A feast of blackbirds (traditionally two dozen whole birds!) baked in a pie crust with cream. 2. Brathering: A famed Prigwort speciality: pancakes layered with sliced apple, cured sausage, and gooseberries. 3. Jellied lamprey: Thick-sliced lamprey in an exquisite, spiced jelly. 4. Longmere pike: A whole pike, stuffed with leek and sage, served with fresh forest greens. 5. Maids-o’-the-lake: A Dolmenwood delicacy: thigh-sized, translucent pink squid fried in garlic butter. Many inns refuse to serve this dish on nights of the full moon, as it is said to attract the attention of witches. 6. Roast lurkey: Juicy flesh of the notoriously elusive Dolmenwood game bird. 7. Unicorn rump: Tender venison of the deer-like beasts known as false unicorns. The flesh of true unicorns may only be served at the duke’s table. 8. Whole suckling pig: A whole piglet, spit-roast, complete with an apple in its mouth. A true hero’s feast!",
+      "properties": []
+    },
+    {
+      "name": "Food: side dish (fancy)",
+      "item_id": "food_side_dish_fancy",
+      "type": "food",
+      "cost_sp": 15,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Side dish at fancy lodgings. 1. Larks’ tongues in aspic: Delicate songbirds’ tongues preserved in sweet jelly. 2. Old Shuck: Rigid slices of stinking, ultra-mature cheese of mossling manufacture. 3. Sparrey: A melt-in-the-mouth confection of crispy, sugared moth wings. 4. Vinegared troll moss: Sweet and sour moss, pilfered from the moss-gardens of Dolmenwood trolls.",
+      "properties": []
+    },
+    {
+      "name": "Food: dessert",
+      "item_id": "food_dessert",
+      "type": "food",
+      "cost_sp": 20,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Dessert at fancy lodgings. 1. Fondant pastries: Freshly baked, dusted with sugar. 2. Sugared plums: A taste of summer, all year round. 3. Trifle: Layered berries, sponge, custard, and cream. 4. Walnut tarts: Topped with whipped cream.",
+      "properties": []
+    },
+    {
+      "name": "Lodging: private room, 1 night (fancy)",
+      "item_id": "lodging_private_room_fancy",
+      "type": "service",
+      "cost_sp": 10,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "One night in private room at fancy lodgings",
+      "properties": []
+    },
+    {
+      "name": "Lodging: double room, 1 night",
+      "item_id": "lodging_double_room",
+      "type": "service",
+      "cost_sp": 20,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "One night in double room at fancy lodgings",
+      "properties": []
+    },
+    {
+      "name": "Lodging: private suite, 1 night",
+      "item_id": "lodging_private_suite",
+      "type": "service",
+      "cost_sp": 50,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "One night in private suite at fancy lodgings",
+      "properties": []
+    },
+    {
+      "name": "Personal services (coiffure, laundry, etc.)",
+      "item_id": "personal_services",
+      "type": "service",
+      "cost_sp": 10,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Personal services such as coiffure, laundry, etc. at fancy lodgings",
+      "properties": []
+    },
+    {
+      "name": "Private dining room",
+      "item_id": "private_dining_room",
+      "type": "service",
+      "cost_sp": 10,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "Private dining room at fancy lodgings, cost per person",
+      "properties": []
+    },
+    {
+      "name": "Stabling and fodder, 1 night (fancy)",
+      "item_id": "stabling_and_fodder_fancy",
+      "type": "service",
+      "cost_sp": 6,
+      "weight_coins": null,
+      "damage": null,
+      "ac_bonus": null,
+      "description": "One night of stabling and fodder at fancy lodgings",
+      "properties": []
+    }
+  ]
+}

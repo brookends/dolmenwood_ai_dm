@@ -1,0 +1,17 @@
+{
+  "_comment": "Example spell format - delete this file or move out of spells/ before importing",
+  "name": "Fairy Fire",
+  "spell_id": "spell_fairy_fire",
+  "level": 1,
+  "magic_type": "arcane",
+  "duration": "1 turn per level",
+  "range": "60'",
+  "description": "Outlines creatures in a 15' radius with flickering faerie light. Affected creatures are visible even if invisible and cannot hide in shadows. Attackers gain +1 to hit outlined targets.",
+  "reversible": false,
+  "reversed_name": null,
+  "source": {
+    "source_id": "players_book",
+    "book_code": "DPB",
+    "page_reference": "p. 87"
+  }
+}

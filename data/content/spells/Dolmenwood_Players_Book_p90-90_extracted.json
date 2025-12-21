@@ -1,0 +1,69 @@
+{
+  "_metadata": {
+    "source_file": "../data/pdfs/core/Dolmenwood_Players_Book.pdf",
+    "pages": [
+      90
+    ],
+    "content_type": "spells",
+    "item_count": 5,
+    "errors": [],
+    "note": "Review and correct this data before importing"
+  },
+  "items": [
+    {
+      "name": "Air Sphere",
+      "spell_id": "air_sphere",
+      "level": 5,
+      "magic_type": "arcane",
+      "duration": "1 Turn per Level",
+      "range": "10′ around the caster",
+      "description": "When immersed in water, the caster is surrounded by a 10′ radius sphere of breathable air. Mobile area: The 10′ radius sphere of the spell's effect moves with the caster. Underwater movement: Swimming is not enhanced or affected.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Animate Dead",
+      "spell_id": "animate_dead",
+      "level": 5,
+      "magic_type": "arcane",
+      "duration": "Permanent until slain",
+      "range": "60′",
+      "description": "Medium humanoid corpses or skeletons of the caster's choosing rise as undead under the caster's command. Number: 1 corpse or skeleton per Level of the caster. Stats: Whatever their capabilities during life, all created undead use the stats below. They are unable to use any special traits or powers (including spell casting) possessed in life. Duration: The reanimating magic remains active until dispelled or until the undead are slain.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Cloudkill",
+      "spell_id": "cloudkill",
+      "level": 5,
+      "magic_type": "arcane",
+      "duration": "6 Turns",
+      "range": "30′",
+      "description": "A poisonous fog streams from the caster's fingertips, filling a 30′ diameter area in front of the caster. Movement: The fog moves at Speed 10, driven by the wind or, in still conditions, away from the caster. Sinking: Because the fog is denser than air, it sinks to the lowest point, flowing down hills, into holes, and so forth. Damage: All creatures in contact with the fog suffer 1 damage per Round. Creatures of Level 4 or lower: Must also Save Versus Doom (once per Round of contact) or die.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Conjure Elemental",
+      "spell_id": "conjure_elemental",
+      "level": 5,
+      "magic_type": "arcane",
+      "duration": "Permanent until dismissed or slain",
+      "range": "240′",
+      "description": "Conjures a giant being formed of pure elemental matter (air, earth, fire, or water) to do the caster's bidding. Materials: The spell requires a large volume of the appropriate element. Concentration: If the caster is harmed, moves at greater than half Speed, or takes any other action, their command over the elemental ends. An elemental unchained from a caster's control immediately attempts to murder its creator and any who get in its way. Dismissing: While control over the elemental is maintained, the caster may dismiss it at any time, returning it to inert matter.",
+      "reversible": false,
+      "reversed_name": null
+    },
+    {
+      "name": "Fabricate",
+      "spell_id": "fabricate",
+      "level": 5,
+      "magic_type": "arcane",
+      "duration": "Permanent",
+      "range": "60′",
+      "description": "Disassembles raw, inanimate materials within range and weaves them into objects of the caster's choosing. Objects: Any simple object typically constructed from the raw materials may be fabricated. For example, a door could be made from trees, clothing from wool, etc. Size of objects: Up to 1 cubic yard per Level of the caster. For objects fabricated from minerals: up to 1 cubic foot per Level of the caster.",
+      "reversible": false,
+      "reversed_name": null
+    }
+  ]
+}
