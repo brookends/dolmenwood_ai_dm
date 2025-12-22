@@ -245,19 +245,96 @@ Output as a JSON array of hex objects.''',
 
 Output as a JSON array of NPC objects.''',
 
-    "rules": '''Extract game rules and mechanics from this text. For each distinct rule, output a JSON object:
+    "rules": '''Extract game rules and mechanics from this text, preserving FULL CONTEXT and original presentation.
+
+IMPORTANT: Do NOT break rules into small discrete pieces. Extract complete sections/pages that preserve:
+- All explanatory text and context
+- All examples and clarifications
+- All tables, lists, and procedures
+- The natural flow of the original text
+
+For each logical section (page, major topic, or cohesive rule area), output a JSON object:
 
 {
-  "title": "Rule Title",
-  "rule_id": "rule_title_lowercase",
+  "title": "Section Title or Topic",  // e.g., "Combat Sequence", "Morale Checks", "Time and Movement"
+  "rule_id": "section_title_lowercase",  // lowercase, underscores for spaces
   "category": "combat",  // combat, exploration, magic, character, equipment, monsters, setting, procedures
-  "content": "Full rule text...",
-  "examples": ["Example of rule in play"],
-  "page_reference": "p. 42"
+  "subcategory": "melee",  // Optional finer categorization (e.g., "melee", "initiative", "damage")
+  "content": "COMPLETE section text with ALL context...",  // PRESERVE EVERYTHING - do not summarize!
+  "section_type": "major_section",  // Options: "full_page", "major_section", "subsection", "discrete_rule", "table", "procedure"
+  "page_reference": "p. 42",  // Page number from source
+  "tags": ["combat", "initiative", "surprise", "d6"],  // Keywords for searchability
+  "examples": [],  // Leave empty if examples are already in content (preferred)
+  "related_rules": []  // IDs of related sections (if obvious)
 }
 
-Output as a JSON array of rule objects.
-Focus on mechanical rules, not flavor text or examples.'''
+EXTRACTION GUIDELINES:
+
+1. **Preserve Full Context**: Include ALL explanatory text, not just mechanics
+   - Keep introductory paragraphs
+   - Keep transitional text between rules
+   - Keep clarifying statements
+   - Keep designer notes and rationale
+
+2. **Section Boundaries**: Identify logical breaking points:
+   - Full page if it covers one cohesive topic
+   - Major section if page has multiple distinct topics
+   - Subsection for detailed breakdowns within a topic
+   - Discrete rule only for standalone, self-contained rules
+
+3. **Content Field**: This is the primary field - make it comprehensive!
+   - Copy the text EXACTLY as written
+   - Preserve formatting indicators (bullets, numbers, headers)
+   - Include ALL examples inline
+   - Include ALL tables and lists
+   - Do NOT summarize or condense
+
+4. **Section Types**:
+   - "full_page": Entire page is one cohesive topic
+   - "major_section": Significant topic that may span pages
+   - "subsection": Detailed part of a larger section
+   - "discrete_rule": Single, self-contained rule
+   - "table": Reference table or chart
+   - "procedure": Step-by-step process
+
+5. **Tags**: Add relevant keywords for searchability
+   - Game mechanics mentioned (initiative, morale, damage, etc.)
+   - Dice referenced (d6, d20, 2d6, etc.)
+   - Related concepts
+   - Page elements (table, example, procedure, etc.)
+
+6. **What to Extract**:
+   - Core rules and mechanics
+   - Procedures and sequences
+   - Tables and charts (preserve structure in text)
+   - Examples and clarifications
+   - Optional rules and variants
+   - Designer notes and explanations
+
+7. **What to Skip**:
+   - Table of contents
+   - Page headers/footers
+   - Purely decorative elements
+   - Cross-reference lists (unless they contain actual rules)
+
+EXAMPLE OUTPUT:
+
+For a page about "Combat Sequence", extract as ONE section preserving all text:
+{
+  "title": "Combat Sequence",
+  "rule_id": "combat_sequence",
+  "category": "combat",
+  "subcategory": "procedures",
+  "content": "When combat begins, follow these steps in order:\n\n1. Determine Surprise\nEach side rolls 1d6. A result of 1-2 indicates surprise...\n\n2. Declare Actions\nPlayers declare what their characters will do. The DM declares monster actions...\n\n[Include ALL remaining text verbatim, including examples, special cases, etc.]",
+  "section_type": "major_section",
+  "page_reference": "p. 42",
+  "tags": ["combat", "sequence", "initiative", "surprise", "d6", "procedure"],
+  "examples": [],
+  "related_rules": []
+}
+
+Output as a JSON array of rule section objects.
+Remember: PRESERVE CONTEXT - do not fragment the rules!'''
 }
 
 
