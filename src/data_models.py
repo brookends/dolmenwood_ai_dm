@@ -749,42 +749,111 @@ class Settlement(BaseModel):
     foundry_scene_id: Optional[str] = None
 
 
+@dataclass
+class HexFeature:
+    """A single feature within a hex (inn, tomb, lair, etc.)."""
+    name: str
+    description: str
+    is_hidden: bool = False  # Requires searching to discover
+    feature_type: str = ""  # island, tomb, inn, lair, pool, settlement, castle, etc.
+    npcs: list[str] = field(default_factory=list)
+    monsters: list[str] = field(default_factory=list)
+    treasure: str = ""
+    hooks: list[str] = field(default_factory=list)
+
+
 class HexLocation(BaseModel):
-    """Hex location from Dolmenwood campaign book."""
-    
+    """
+    Hex location from Dolmenwood campaign book.
+
+    Captures all information from the standardized hex format including
+    header, geographical info, and features for exploration mechanics.
+    """
+
     hex_id: HexId
     coordinates: tuple[int, int]
-    
+
+    # HEADER INFORMATION
+    name: str = Field(description="Hex name giving indication of what might be discovered")
+    flavour_text: str = Field(default="", description="Brief description of sights, sounds, smells - read to players when entering")
+
+    # GEOGRAPHICAL INFO
     terrain_type: TerrainType
     terrain_description: str = ""
-    
-    location_name: Optional[str] = None
+    region: Optional[str] = Field(default=None, description="Region (Aldweald, Mulchgrove, etc.) determines encounter tables")
+    travel_point_cost: int = Field(default=1, ge=1, description="Travel Point cost to enter or search the hex")
+
+    # Lost / Encounters
+    lost_chance: int = Field(default=2, ge=1, le=6, description="X-in-6 chance of getting lost (based on terrain)")
+    encounter_chance: int = Field(default=2, ge=1, le=6, description="X-in-6 chance of random encounter")
+    special_encounter_chance: Optional[int] = Field(default=None, ge=1, le=6, description="X-in-6 chance for special encounter (if encounter occurs)")
+    special_encounters: list[str] = Field(default_factory=list, description="Specific creatures resident in hex for special encounters")
+    encounter_table: Optional[str] = Field(default=None, description="Which regional encounter table to use")
+
+    # Ley Lines
+    ley_lines: list[str] = Field(default_factory=list, description="Ley line effects if present in hex")
+
+    # Foraging
+    foraging_yields: list[str] = Field(default_factory=list, description="Unusual/magical species found when foraging (beyond standard)")
+
+    # FEATURES (converted from dataclass to dict for Pydantic)
+    features: list[dict[str, Any]] = Field(default_factory=list, description="Features in hex (islands, tombs, inns, lairs, etc.)")
+
+    # Legacy fields (maintain compatibility)
+    location_name: Optional[str] = None  # Deprecated: use 'name' instead
     location_type: Optional[str] = None
-    description: str
-    
-    encounter_table: Optional[str] = None
-    special_encounters: list[str] = Field(default_factory=list)
-    
+    description: str = Field(default="", description="Full hex description (use flavour_text for player-facing)")
+
     npcs: list[str] = Field(default_factory=list)
     items: list[str] = Field(default_factory=list)
-    
+
     secrets: list[str] = Field(default_factory=list)
     dm_notes: str = ""
-    
+
     adjacent_hexes: list[str] = Field(default_factory=list)
-    
+
+    # Game state tracking
     discovered: bool = False
     visited_count: int = Field(default=0, ge=0)
-    
+    searched_count: int = Field(default=0, ge=0, description="Number of times hex has been searched")
+    revealed_features: list[str] = Field(default_factory=list, description="IDs of hidden features that have been revealed")
+
     source: Optional[SourceReference] = None
     foundry_scene_id: Optional[str] = None
     foundry_journal_id: Optional[str] = None
-    
+
     def visit(self) -> bool:
+        """Mark hex as visited. Returns True if first visit."""
         first_visit = not self.discovered
         self.discovered = True
         self.visited_count += 1
         return first_visit
+
+    def search(self) -> bool:
+        """Mark hex as searched. Returns True if new hidden features might be found."""
+        self.searched_count += 1
+        # Check if there are still unrevealed hidden features
+        hidden_feature_count = sum(1 for f in self.features if f.get("is_hidden", False))
+        return len(self.revealed_features) < hidden_feature_count
+
+    def reveal_feature(self, feature_name: str) -> None:
+        """Mark a hidden feature as revealed."""
+        if feature_name not in self.revealed_features:
+            self.revealed_features.append(feature_name)
+
+    def get_hidden_features(self) -> list[dict]:
+        """Get all hidden features that haven't been revealed yet."""
+        return [
+            f for f in self.features
+            if f.get("is_hidden", False) and f.get("name", "") not in self.revealed_features
+        ]
+
+    def get_visible_features(self) -> list[dict]:
+        """Get all non-hidden features plus revealed hidden features."""
+        return [
+            f for f in self.features
+            if not f.get("is_hidden", False) or f.get("name", "") in self.revealed_features
+        ]
 
 
 # =============================================================================
