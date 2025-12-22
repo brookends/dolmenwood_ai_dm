@@ -1,0 +1,344 @@
+{
+  "_metadata": {
+    "note": "The Witch - Base monster with three variants (Eye of Ertta, Eye of Hasturiel, Eye of Limwdd)",
+    "content_type": "monsters",
+    "extracted_by": "manual",
+    "date": "2025-12-22"
+  },
+  "items": [
+    {
+      "name": "Witch",
+      "monster_id": "witch",
+
+      "armor_class": 14,
+      "hit_dice": "4d8",
+      "hp": 18,
+      "level": 4,
+      "movement": "40'",
+      "speed": 40,
+      "burrow_speed": null,
+      "fly_speed": null,
+      "swim_speed": null,
+
+      "attacks": ["Silver dagger (+3, 1d4)", "Spell", "Granted power"],
+      "damage": ["1d4"],
+
+      "save_doom": 10,
+      "save_ray": 11,
+      "save_hold": 12,
+      "save_blast": 13,
+      "save_spell": 14,
+      "saves_as": null,
+
+      "morale": 9,
+
+      "treasure_type": null,
+      "hoard": "C2 + R1 + M5",
+      "possessions": "3d6sp + arcane and herbal trade goods (DCB, 2-in-6 chance)",
+
+      "size": "Medium",
+      "monster_type": "Mortal",
+      "sentience": "Sentient",
+      "alignment": "Any Alignment",
+      "intelligence": "High",
+
+      "special_abilities": [
+        "Spells: The typical witch has the following arcane spells memorised: Rank 1 Ingratiate, Rank 2 Perceive the Invisible, Rank 3 Paralysation, Rank 4 Hex Weaving",
+        "Granted powers: Each witch has entered into a spiritual union with a particular Gwyrigon (DCB), granting them magical powers. When witches are encountered, roll 1d3 to determine their type—see variants (Eye of Ertta, Eye of Hasturiel, Eye of Limwdd)",
+        "Potion brewing: Witches can brew potions, costing the potion's standard value and taking 1d6 days per 500gp value. There is a 1-in-6 chance of failure",
+        "Eternal youth: A witch's union with a Gwyrigon brings about the extension of her mortal life and delays the ravages of ageing"
+      ],
+      "immunities": [],
+      "resistances": [],
+      "vulnerabilities": [],
+
+      "description": "Women who have sworn themselves to the service of a Gwyrigon in return for arcane secrets. Witches gather beneath the moon to conduct their esoteric worship and to work magic.",
+      "behavior": "Perceptive, enigmatic",
+      "speech": "Formidable, cryptic. Woldish, Witches' Cant, Drunic (2-in-6 chance)",
+      "traits": [
+        "Arms tattooed with winding brambles and knives",
+        "Emaciated and bloodstained",
+        "Enchanting beauty. Face shifts between different forms",
+        "Small bird sits on shoulder, twittering quietly in ear",
+        "Eyes of pure black; otherworldly gaze",
+        "Skin slick with iridescent oil"
+      ],
+
+      "number_appearing": "1d6",
+      "lair_percentage": 20,
+      "encounter_scenarios": [
+        "Foraging for roots and fungi, carrying pouches already containing 1d3 portions of Devil's Grease, Knobbled Mandrake, or Velvet Flounder (DCB)",
+        "Sweeping a tranquil glade with a broom of crow feathers, preparing the site for a ritual. 13 slender silver daggers are stabbed into the earth around the glade's perimeter",
+        "Collecting the water of a trickling spring into copper vessels decorated with eyes that seem to move",
+        "Leading a blindfolded young woman (everyday mortal—p110) to a secret pool. Bathing in the violet waters cures the woman of a common pox, removing red boils from her skin"
+      ],
+      "lair_descriptions": [
+        "A simple mud hut in a shadowy glade. Dozens of rough faces carved in the mud walls peer at visitors. Inside, tallow candles burn with multi-coloured flames",
+        "A homely cottage with smoke drifting from its chimney. The place appears completely empty, apart from a cheery fire in the grate. Passing a bare hand through the fire dispels the illusion, revealing the real, inhabited cottage",
+        "A magical air bubble in a peat bog. Furnishings woven from reeds rest on the muddy bottom. Clay masks allow the witches to breathe underwater when leaving",
+        "The disinterred chambers of a barrow mound, now a cosy home where the witches brew potions, bake pies, and fire pots, aided by 2d6 barrowbogeys (p14)"
+      ],
+
+      "xp_value": 280,
+      "habitat": ["forest", "swamp", "wilderness"],
+
+      "source": null,
+      "is_variant": false,
+      "base_monster_id": null,
+      "foundry_actor_id": null
+    },
+
+    {
+      "name": "Witch—Eye of Ertta",
+      "monster_id": "witch_eye_of_ertta",
+
+      "armor_class": 14,
+      "hit_dice": "4d8",
+      "hp": 18,
+      "level": 4,
+      "movement": "40'",
+      "speed": 40,
+      "burrow_speed": null,
+      "fly_speed": null,
+      "swim_speed": null,
+
+      "attacks": ["Frost touch (1d3)", "Silver dagger (+3, 1d4)", "Spell", "Granted power"],
+      "damage": ["1d3", "1d4"],
+
+      "save_doom": 10,
+      "save_ray": 11,
+      "save_hold": 12,
+      "save_blast": 13,
+      "save_spell": 14,
+      "saves_as": null,
+
+      "morale": 9,
+
+      "treasure_type": null,
+      "hoard": "C2 + R1 + M5",
+      "possessions": "3d6sp + arcane and herbal trade goods (DCB, 2-in-6 chance)",
+
+      "size": "Medium",
+      "monster_type": "Mortal",
+      "sentience": "Sentient",
+      "alignment": "Any Alignment",
+      "intelligence": "High",
+
+      "special_abilities": [
+        "Spells: Rank 1 Ingratiate, Rank 2 Perceive the Invisible, Rank 3 Paralysation, Rank 4 Hex Weaving",
+        "Potion brewing: Witches can brew potions, costing the potion's standard value and taking 1d6 days per 500gp value. There is a 1-in-6 chance of failure",
+        "Eternal youth: A witch's union with a Gwyrigon brings about the extension of her mortal life and delays the ravages of ageing",
+        "Frost touch: The witch may attack in melee with her icy touch instead of a dagger, inflicting 1d3 damage. The victim must also Save Versus Hold or begin to freeze, suffering 1 damage per Round in the subsequent 1d4 Rounds. If this damage brings the victim to 0 HP, they are frozen solid",
+        "Wind riding: On windy nights, an Eye of Ertta may drift into the sky and travel through the air. By riding the currents, she can travel anywhere within Dolmenwood in 1d6 hours",
+        "Curse of the open sky (once a week): An Eye of Ertta may bring down the curse of Ertta upon a single target, who must Save Versus Spell. If the save fails, the next time the victim is beneath the open sky, there is a 4-in-6 chance of them being struck by lightning (6d6 damage, Save Versus Ray for half)"
+      ],
+      "immunities": [],
+      "resistances": [],
+      "vulnerabilities": [],
+
+      "description": "A witch who has sworn service to Ertta, Gwyrigon of frost, wind, and the open sky. Women who have sworn themselves to the service of a Gwyrigon in return for arcane secrets. Witches gather beneath the moon to conduct their esoteric worship and to work magic.",
+      "behavior": "Perceptive, enigmatic, associated with cold and storms",
+      "speech": "Formidable, cryptic. Woldish, Witches' Cant, Drunic (2-in-6 chance)",
+      "traits": [
+        "Arms tattooed with winding brambles and knives",
+        "Emaciated and bloodstained",
+        "Enchanting beauty. Face shifts between different forms",
+        "Small bird sits on shoulder, twittering quietly in ear",
+        "Eyes of pure black; otherworldly gaze",
+        "Skin slick with iridescent oil"
+      ],
+
+      "number_appearing": "1d6",
+      "lair_percentage": 20,
+      "encounter_scenarios": [
+        "Foraging for roots and fungi, carrying pouches already containing 1d3 portions of Devil's Grease, Knobbled Mandrake, or Velvet Flounder (DCB)",
+        "Sweeping a tranquil glade with a broom of crow feathers, preparing the site for a ritual. 13 slender silver daggers are stabbed into the earth around the glade's perimeter",
+        "Collecting the water of a trickling spring into copper vessels decorated with eyes that seem to move",
+        "Leading a blindfolded young woman (everyday mortal—p110) to a secret pool. Bathing in the violet waters cures the woman of a common pox, removing red boils from her skin"
+      ],
+      "lair_descriptions": [
+        "A simple mud hut in a shadowy glade. Dozens of rough faces carved in the mud walls peer at visitors. Inside, tallow candles burn with multi-coloured flames",
+        "A homely cottage with smoke drifting from its chimney. The place appears completely empty, apart from a cheery fire in the grate. Passing a bare hand through the fire dispels the illusion, revealing the real, inhabited cottage",
+        "A magical air bubble in a peat bog. Furnishings woven from reeds rest on the muddy bottom. Clay masks allow the witches to breathe underwater when leaving",
+        "The disinterred chambers of a barrow mound, now a cosy home where the witches brew potions, bake pies, and fire pots, aided by 2d6 barrowbogeys (p14)"
+      ],
+
+      "xp_value": 280,
+      "habitat": ["forest", "swamp", "wilderness", "mountains"],
+
+      "source": null,
+      "is_variant": true,
+      "base_monster_id": "witch",
+      "foundry_actor_id": null
+    },
+
+    {
+      "name": "Witch—Eye of Hasturiel",
+      "monster_id": "witch_eye_of_hasturiel",
+
+      "armor_class": 14,
+      "hit_dice": "4d8",
+      "hp": 18,
+      "level": 4,
+      "movement": "40'",
+      "speed": 40,
+      "burrow_speed": null,
+      "fly_speed": null,
+      "swim_speed": null,
+
+      "attacks": ["Silver dagger (+3, 1d4)", "Spell", "Evil eye", "Granted power"],
+      "damage": ["1d4"],
+
+      "save_doom": 10,
+      "save_ray": 11,
+      "save_hold": 12,
+      "save_blast": 13,
+      "save_spell": 14,
+      "saves_as": null,
+
+      "morale": 9,
+
+      "treasure_type": null,
+      "hoard": "C2 + R1 + M5",
+      "possessions": "3d6sp + arcane and herbal trade goods (DCB, 2-in-6 chance)",
+
+      "size": "Medium",
+      "monster_type": "Mortal",
+      "sentience": "Sentient",
+      "alignment": "Any Alignment",
+      "intelligence": "High",
+
+      "special_abilities": [
+        "Spells: Rank 1 Ingratiate, Rank 2 Perceive the Invisible, Rank 3 Paralysation, Rank 4 Hex Weaving",
+        "Potion brewing: Witches can brew potions, costing the potion's standard value and taking 1d6 days per 500gp value. There is a 1-in-6 chance of failure",
+        "Eternal youth: A witch's union with a Gwyrigon brings about the extension of her mortal life and delays the ravages of ageing",
+        "Secret name of Hasturiel (once a day): Spoken by a witch in her service, the secret name of Hasturiel causes beings of Level 6 or less within 20' to flee in terror for 2 Turns (Save Versus Hold to resist)",
+        "Evil eye (once a day): An Eye of Hasturiel may place a curse (per the arcane spell Hex Weaving) by gazing at a target",
+        "Cloak true form (once a day): An Eye of Hasturiel can take on any outward appearance she wishes (limited to female humanoids of roughly the same size)",
+        "Metamorphosis (once a week): An Eye of Hasturiel may change into any creature, per the arcane spell Polymorph. The metamorphosis lasts until dawn or until the witch chooses to shed her new form"
+      ],
+      "immunities": [],
+      "resistances": [],
+      "vulnerabilities": [],
+
+      "description": "A witch who has sworn service to Hasturiel, Gwyrigon of transformation, illusion, and hidden truths. Women who have sworn themselves to the service of a Gwyrigon in return for arcane secrets. Witches gather beneath the moon to conduct their esoteric worship and to work magic.",
+      "behavior": "Perceptive, enigmatic, deceptive and shape-shifting",
+      "speech": "Formidable, cryptic. Woldish, Witches' Cant, Drunic (2-in-6 chance)",
+      "traits": [
+        "Arms tattooed with winding brambles and knives",
+        "Emaciated and bloodstained",
+        "Enchanting beauty. Face shifts between different forms",
+        "Small bird sits on shoulder, twittering quietly in ear",
+        "Eyes of pure black; otherworldly gaze",
+        "Skin slick with iridescent oil"
+      ],
+
+      "number_appearing": "1d6",
+      "lair_percentage": 20,
+      "encounter_scenarios": [
+        "Foraging for roots and fungi, carrying pouches already containing 1d3 portions of Devil's Grease, Knobbled Mandrake, or Velvet Flounder (DCB)",
+        "Sweeping a tranquil glade with a broom of crow feathers, preparing the site for a ritual. 13 slender silver daggers are stabbed into the earth around the glade's perimeter",
+        "Collecting the water of a trickling spring into copper vessels decorated with eyes that seem to move",
+        "Leading a blindfolded young woman (everyday mortal—p110) to a secret pool. Bathing in the violet waters cures the woman of a common pox, removing red boils from her skin"
+      ],
+      "lair_descriptions": [
+        "A simple mud hut in a shadowy glade. Dozens of rough faces carved in the mud walls peer at visitors. Inside, tallow candles burn with multi-coloured flames",
+        "A homely cottage with smoke drifting from its chimney. The place appears completely empty, apart from a cheery fire in the grate. Passing a bare hand through the fire dispels the illusion, revealing the real, inhabited cottage",
+        "A magical air bubble in a peat bog. Furnishings woven from reeds rest on the muddy bottom. Clay masks allow the witches to breathe underwater when leaving",
+        "The disinterred chambers of a barrow mound, now a cosy home where the witches brew potions, bake pies, and fire pots, aided by 2d6 barrowbogeys (p14)"
+      ],
+
+      "xp_value": 280,
+      "habitat": ["forest", "swamp", "wilderness", "settlement"],
+
+      "source": null,
+      "is_variant": true,
+      "base_monster_id": "witch",
+      "foundry_actor_id": null
+    },
+
+    {
+      "name": "Witch—Eye of Limwdd",
+      "monster_id": "witch_eye_of_limwdd",
+
+      "armor_class": 14,
+      "hit_dice": "4d8",
+      "hp": 18,
+      "level": 4,
+      "movement": "40'",
+      "speed": 40,
+      "burrow_speed": null,
+      "fly_speed": null,
+      "swim_speed": null,
+
+      "attacks": ["Silver dagger (+3, 1d4)", "Spell", "Granted power"],
+      "damage": ["1d4"],
+
+      "save_doom": 10,
+      "save_ray": 11,
+      "save_hold": 12,
+      "save_blast": 13,
+      "save_spell": 14,
+      "saves_as": null,
+
+      "morale": 9,
+
+      "treasure_type": null,
+      "hoard": "C2 + R1 + M5",
+      "possessions": "3d6sp + arcane and herbal trade goods (DCB, 2-in-6 chance)",
+
+      "size": "Medium",
+      "monster_type": "Mortal",
+      "sentience": "Sentient",
+      "alignment": "Any Alignment",
+      "intelligence": "High",
+
+      "special_abilities": [
+        "Spells: Rank 1 Ingratiate, Rank 2 Perceive the Invisible, Rank 3 Paralysation, Rank 4 Hex Weaving",
+        "Potion brewing: Witches can brew potions, costing the potion's standard value and taking 1d6 days per 500gp value. There is a 1-in-6 chance of failure",
+        "Eternal youth: A witch's union with a Gwyrigon brings about the extension of her mortal life and delays the ravages of ageing",
+        "Meld into earth (once a day): An Eye of Limwdd may curl into a ball and descend seed-like into the earth, over the course of 1 Turn. She may remain in this state for up to 1 month, taking physical sustenance from the soil. She retains an awareness of events on the ground above her",
+        "Clay doppelgänger (once a month): An Eye of Limwdd can craft a clay double of any mortal whom she has set eyes upon. The crafting takes one full day, with work commencing at dawn. At dusk, the doppelgänger comes to life as a Level 1 construct (1d8 HP), and takes on the outward appearance of the person it mimics. It lives until the following dawn. The witch may clothe the construct and entrust it whatever task she wishes. To a casual observer, it looks exactly like the person copied. Close contact reveals a slick wetness to its skin. The double cannot speak but may moan and shout",
+        "Pyre of rebirth (once a week): An Eye of Limwdd may build a pyre and ritually immolate herself. When the fire dies down, the witch rises from the embers, healed of all damage, disease, and poison. Her skin is charred and ashen, but returns to its normal state the following morn"
+      ],
+      "immunities": [],
+      "resistances": [],
+      "vulnerabilities": [],
+
+      "description": "A witch who has sworn service to Limwdd, Gwyrigon of earth, rebirth, and clay. Women who have sworn themselves to the service of a Gwyrigon in return for arcane secrets. Witches gather beneath the moon to conduct their esoteric worship and to work magic.",
+      "behavior": "Perceptive, enigmatic, connected to earth and cycles of death/rebirth",
+      "speech": "Formidable, cryptic. Woldish, Witches' Cant, Drunic (2-in-6 chance)",
+      "traits": [
+        "Arms tattooed with winding brambles and knives",
+        "Emaciated and bloodstained",
+        "Enchanting beauty. Face shifts between different forms",
+        "Small bird sits on shoulder, twittering quietly in ear",
+        "Eyes of pure black; otherworldly gaze",
+        "Skin slick with iridescent oil"
+      ],
+
+      "number_appearing": "1d6",
+      "lair_percentage": 20,
+      "encounter_scenarios": [
+        "Foraging for roots and fungi, carrying pouches already containing 1d3 portions of Devil's Grease, Knobbled Mandrake, or Velvet Flounder (DCB)",
+        "Sweeping a tranquil glade with a broom of crow feathers, preparing the site for a ritual. 13 slender silver daggers are stabbed into the earth around the glade's perimeter",
+        "Collecting the water of a trickling spring into copper vessels decorated with eyes that seem to move",
+        "Leading a blindfolded young woman (everyday mortal—p110) to a secret pool. Bathing in the violet waters cures the woman of a common pox, removing red boils from her skin"
+      ],
+      "lair_descriptions": [
+        "A simple mud hut in a shadowy glade. Dozens of rough faces carved in the mud walls peer at visitors. Inside, tallow candles burn with multi-coloured flames",
+        "A homely cottage with smoke drifting from its chimney. The place appears completely empty, apart from a cheery fire in the grate. Passing a bare hand through the fire dispels the illusion, revealing the real, inhabited cottage",
+        "A magical air bubble in a peat bog. Furnishings woven from reeds rest on the muddy bottom. Clay masks allow the witches to breathe underwater when leaving",
+        "The disinterred chambers of a barrow mound, now a cosy home where the witches brew potions, bake pies, and fire pots, aided by 2d6 barrowbogeys (p14)"
+      ],
+
+      "xp_value": 280,
+      "habitat": ["forest", "swamp", "wilderness"],
+
+      "source": null,
+      "is_variant": true,
+      "base_monster_id": "witch",
+      "foundry_actor_id": null
+    }
+  ]
+}
