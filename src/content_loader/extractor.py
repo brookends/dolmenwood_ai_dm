@@ -336,7 +336,7 @@ EXAMPLE MINIMAL OUTPUT (if hex is sparse):
 }
 
 Output as a JSON array of hex objects.
-Extract ALL information present - this is critical for exploration and encounter mechanics!'''
+Extract ALL information present - this is critical for exploration and encounter mechanics!''',
 
     "npcs": '''Extract all NPCs from this text. For each NPC, output a JSON object:
 
