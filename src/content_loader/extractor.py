@@ -210,22 +210,133 @@ Only extract actual definitions, not tables of contents or spell lists.''',
 
 Output as a JSON array of item objects.''',
 
-    "hexes": '''Extract all hex location descriptions from this text. For each hex, output a JSON object:
+    "hexes": '''Extract hex locations from Dolmenwood campaign book pages using the standardized format.
+
+Each hex page contains: HEADER (hex number, name, flavour text), GEOGRAPHICAL INFO (terrain, region, travel cost, encounters, ley lines, foraging), and FEATURES.
+
+For each hex, output a JSON object with ALL available information:
 
 {
-  "hex_id": "0102",  // 4-digit hex ID (XXYY format)
-  "coordinates": [1, 2],  // [x, y] parsed from hex_id
-  "location_name": "Name of Location",
-  "terrain_type": "forest",  // forest, swamp, hills, mountains, plains, river, lake, settlement, ruins, dungeon
-  "description": "Full description of the hex...",
-  "special_encounters": ["Encounter 1", "Encounter 2"],
-  "settlements": ["Village Name"],
-  "npcs": ["NPC Name"],
-  "points_of_interest": ["Interesting feature"],
-  "hooks": ["Adventure hook or rumor"]
+  // HEADER INFORMATION
+  "hex_id": "0102",  // 4-digit hex ID (XXYY format from top of page)
+  "coordinates": [1, 2],  // [x, y] parsed from hex_id (01 = x:1, 02 = y:2)
+  "name": "The Whispering Pines",  // Hex name from header
+  "flavour_text": "Ancient pine trees tower overhead, their needles rustling in an eerie whisper. The air is thick with the scent of moss and decay.",  // Player-facing description from header
+
+  // GEOGRAPHICAL INFO (from left box)
+  "terrain_type": "forest",  // fungal_forest, forest, swamp, meadow, hills, mountains, plains, moor, etc.
+  "terrain_description": "Fungal forest, Aldweald",  // Full terrain line (includes region)
+  "region": "Aldweald",  // Extract region name (Aldweald, Mulchgrove, High Wold, Prigwort, etc.)
+  "travel_point_cost": 2,  // TP cost from parentheses after terrain (e.g., "Fungal forest (2 TP)")
+
+  // Lost / Encounters section
+  "lost_chance": 3,  // X-in-6 chance from "Lost X-in-6" line
+  "encounter_chance": 2,  // X-in-6 chance from "Encounters X-in-6" line
+  "special_encounter_chance": 3,  // X-in-6 if "Special encounter: X-in-6" listed, otherwise null
+  "special_encounters": ["2d6 Goatmen"],  // Creatures for special encounter if listed
+  "encounter_table": "Aldweald",  // Which regional encounter table (usually same as region)
+
+  // Ley Lines (if present)
+  "ley_lines": ["Spells cast within the hex have their duration doubled"],  // List ley line effects if mentioned
+
+  // Foraging (if special yields beyond standard)
+  "foraging_yields": ["Devil's Grease", "Knobbled Mandrake", "Velvet Flounder"],  // Unusual/magical species found
+
+  // FEATURES (main content - multiple features per hex)
+  "features": [
+    {
+      "name": "The Crooked Oak Inn",  // Feature name/title
+      "description": "A weathered two-story inn built around a massive oak tree. The innkeeper, a gruff woodgrue named Bramblethwick, serves mushroom stew and beetle ale to weary travelers. Three rooms available for 5sp/night.",  // Full feature description
+      "is_hidden": false,  // true if marked "Hidden", false otherwise
+      "feature_type": "inn",  // inn, lair, tomb, settlement, pool, castle, ruins, shrine, standing_stone, etc.
+      "npcs": ["Bramblethwick the Innkeeper"],  // NPCs in this feature
+      "monsters": [],  // Monsters in this feature (if lair)
+      "treasure": "",  // Treasure if mentioned
+      "hooks": ["Bramblethwick mentions travelers going missing on the north road"]  // Adventure hooks
+    },
+    {
+      "name": "Barrow of the Green King",
+      "description": "An ancient burial mound covered in luminescent moss. The entrance is sealed with a stone carved with warding runes. Inside lies the tomb of a forgotten fairy king. 2d6 Barrowbogeys guard the entrance.",
+      "is_hidden": true,  // MARKED AS HIDDEN - requires searching
+      "feature_type": "tomb",
+      "npcs": [],
+      "monsters": ["2d6 Barrowbogeys"],
+      "treasure": "Hoard: C + R3 + M2",
+      "hooks": ["Local legends speak of a crown that grants command over the woodland dead"]
+    }
+  ],
+
+  // Additional extracted content (legacy/supplemental)
+  "description": "Full referee-facing hex description",  // Complete DM description (if different from flavour_text)
+  "npcs": ["Bramblethwick", "Old Meg the Herbalist"],  // All NPCs in hex (extracted from all features)
+  "items": [],  // Notable items if listed separately
+  "secrets": ["The Green King can be awakened with a specific ritual"],  // Secret information
+  "dm_notes": "Consider adding a random encounter with the Cold Prince's scouts",  // Referee notes/suggestions
+
+  // Page layout info
+  "adjacent_hexes": ["0101", "0103", "0201", "0202"],  // Neighboring hex IDs if visible on local map
+
+  "page_reference": "p. 42"  // Source page number
 }
 
-Output as a JSON array of hex objects.''',
+CRITICAL EXTRACTION GUIDELINES:
+
+1. **Header Information**:
+   - hex_id: 4-digit code from page header (e.g., "0102")
+   - name: Hex name/title
+   - flavour_text: The evocative description meant to be read to players
+
+2. **Geographical Info Box (left side)**:
+   - Parse "Terrain: Fungal forest (2 TP), Aldweald"
+     → terrain_type: "fungal_forest"
+     → travel_point_cost: 2
+     → region: "Aldweald"
+   - Parse "Lost 3-in-6 / Encounters 2-in-6"
+     → lost_chance: 3
+     → encounter_chance: 2
+   - Look for "Special encounter: X-in-6 with [creatures]"
+   - Extract ley line effects if mentioned
+   - Note unusual foraging yields beyond "Edible fungi and plants"
+
+3. **Features Section** (main hex content):
+   - Each distinct location/thing is a feature
+   - Check for "Hidden" marker → is_hidden: true
+   - Extract COMPLETE feature descriptions
+   - Categorize by type: inn, lair, tomb, settlement, pool, castle, ruins, shrine, standing_stone, bridge, ford, monastery, tower, cave, grove, etc.
+   - Extract NPCs, monsters, treasure, hooks from each feature
+
+4. **Hidden vs Non-Hidden**:
+   - "Hidden" features require searching to discover
+   - Non-hidden features are encountered by passing through
+   - Mark is_hidden correctly for exploration mechanics
+
+5. **What NOT to Extract**:
+   - Page numbers/headers/footers
+   - "See p. XXX" cross-references (note them in dm_notes instead)
+   - Map legend information
+
+6. **Terrain Types** (standardize):
+   - fungal_forest, forest, dark_forest, swamp, bog, meadow, farmland, hills, mountains, moor, heath, scrubland, plains, river, lake, marsh, settlement, ruins, castle, dungeon
+
+7. **Regions** (common in Dolmenwood):
+   - Aldweald, Mulchgrove, High Wold, Prigwort, Brackenwold, Hag's Addle, Dreg, etc.
+
+EXAMPLE MINIMAL OUTPUT (if hex is sparse):
+{
+  "hex_id": "0515",
+  "coordinates": [5, 15],
+  "name": "Empty Moorland",
+  "flavour_text": "Windswept moors stretch to the horizon.",
+  "terrain_type": "moor",
+  "region": "High Wold",
+  "travel_point_cost": 1,
+  "lost_chance": 2,
+  "encounter_chance": 2,
+  "features": []
+}
+
+Output as a JSON array of hex objects.
+Extract ALL information present - this is critical for exploration and encounter mechanics!'''
 
     "npcs": '''Extract all NPCs from this text. For each NPC, output a JSON object:
 
@@ -346,7 +457,7 @@ PROJECT_ROOT = Path(__file__).parent.parent.parent
 class ExtractionConfig:
     """Configuration for LLM extraction."""
     model: str = "claude-sonnet-4-20250514"
-    max_tokens: int = 8192  # Increased for longer extractions
+    max_tokens: int = 16384  # Maximum output tokens (increased for full-context rule extraction)
     temperature: float = 0.0  # Deterministic for extraction
     content_type: str = "monsters"
     output_dir: str = ""  # Will be set to PROJECT_ROOT/data/content in __post_init__
@@ -863,13 +974,20 @@ def main():
         default="claude-sonnet-4-20250514",
         help="Claude model to use"
     )
-    
+
+    parser.add_argument(
+        "--max-tokens",
+        type=int,
+        default=16384,
+        help="Maximum output tokens (default: 16384). Use higher values for lengthy rule sections. Claude max: ~16384 for most models"
+    )
+
     parser.add_argument(
         "--context",
         default="",
         help="Additional context/instructions for Claude"
     )
-    
+
     parser.add_argument(
         "--api-key",
         metavar="KEY",
@@ -904,6 +1022,7 @@ def main():
     try:
         config = ExtractionConfig(
             model=args.model,
+            max_tokens=args.max_tokens,
             output_dir=args.output_dir or "",  # Empty string triggers default in __post_init__
             content_type=args.type
         )
