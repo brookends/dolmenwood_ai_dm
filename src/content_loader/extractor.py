@@ -28,7 +28,7 @@ logger = logging.getLogger(__name__)
 
 # Content type definitions with extraction prompts
 EXTRACTION_PROMPTS = {
-    "monsters": '''Extract all monster stat blocks from this text. For each monster, output a JSON object with these fields:
+    "monsters": '''Extract all monster stat blocks from this text. For each monster, NPC, or other creature with a stat block, output a JSON object with these fields:
 
 {
   "name": "Monster Name",
