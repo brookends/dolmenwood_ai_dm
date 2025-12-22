@@ -844,29 +844,40 @@ class NPC(BaseModel):
 # =============================================================================
 
 class GameRule(BaseModel):
-    """Individual game rule for vector search."""
-    
+    """
+    Game rule or rule section for vector search.
+
+    Can represent either a discrete rule or a full-context section/page
+    that preserves the original presentation and all explanatory text.
+    """
+
     rule_id: str = Field(default_factory=lambda: generate_id("rule"))
-    category: str
-    subcategory: Optional[str] = None
-    title: str
-    content: str
-    
+    category: str = Field(description="Major category: combat, exploration, magic, character, equipment, monsters, setting, procedures")
+    subcategory: Optional[str] = Field(default=None, description="Subcategory for finer organization")
+    title: str = Field(description="Section title or rule name")
+    content: str = Field(description="Full rule text with all context, examples, and explanatory content preserved")
+
+    # Section organization
+    section_type: Optional[str] = Field(
+        default=None,
+        description="Type of content: 'full_page', 'major_section', 'subsection', 'discrete_rule', 'table', 'procedure'"
+    )
+
     # v1.1: Source attribution
     source: Optional[SourceReference] = None
     content_type: ContentType = Field(default=ContentType.CORE_RULE)
-    
+
     # v1.1: Versioning
     version: str = Field(default="1.0")
     supersedes: Optional[str] = Field(default=None)
-    
+
     page_reference: Optional[str] = None
-    examples: list[str] = Field(default_factory=list)
-    related_rules: list[str] = Field(default_factory=list)
+    examples: list[str] = Field(default_factory=list, description="Extracted examples (optional if already in content)")
+    related_rules: list[str] = Field(default_factory=list, description="IDs of related rules/sections")
     source_book: str = "Dolmenwood"
-    
+
     # v1.1: Metadata
-    tags: list[str] = Field(default_factory=list)
+    tags: list[str] = Field(default_factory=list, description="Keywords for searchability")
     created_at: datetime = Field(default_factory=datetime.now)
 
 
