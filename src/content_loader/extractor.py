@@ -346,7 +346,7 @@ PROJECT_ROOT = Path(__file__).parent.parent.parent
 class ExtractionConfig:
     """Configuration for LLM extraction."""
     model: str = "claude-sonnet-4-20250514"
-    max_tokens: int = 8192  # Increased for longer extractions
+    max_tokens: int = 16384  # Maximum output tokens (increased for full-context rule extraction)
     temperature: float = 0.0  # Deterministic for extraction
     content_type: str = "monsters"
     output_dir: str = ""  # Will be set to PROJECT_ROOT/data/content in __post_init__
@@ -863,13 +863,20 @@ def main():
         default="claude-sonnet-4-20250514",
         help="Claude model to use"
     )
-    
+
+    parser.add_argument(
+        "--max-tokens",
+        type=int,
+        default=16384,
+        help="Maximum output tokens (default: 16384). Use higher values for lengthy rule sections. Claude max: ~16384 for most models"
+    )
+
     parser.add_argument(
         "--context",
         default="",
         help="Additional context/instructions for Claude"
     )
-    
+
     parser.add_argument(
         "--api-key",
         metavar="KEY",
@@ -904,6 +911,7 @@ def main():
     try:
         config = ExtractionConfig(
             model=args.model,
+            max_tokens=args.max_tokens,
             output_dir=args.output_dir or "",  # Empty string triggers default in __post_init__
             content_type=args.type
         )
