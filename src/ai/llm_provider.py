@@ -9,10 +9,10 @@ Supports multiple LLM backends:
 Usage:
     # Claude (default)
     provider = create_llm_provider("claude", api_key="sk-ant-...")
-    
+
     # Ollama (local)
     provider = create_llm_provider("ollama", model="llama3.2")
-    
+
     # OpenAI-compatible (local server)
     provider = create_llm_provider("openai", base_url="http://localhost:1234/v1")
 """
@@ -23,6 +23,7 @@ import json
 import logging
 import os
 import re
+import time
 from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
 from typing import Any, Callable, Optional, Union
@@ -150,19 +151,28 @@ class LLMProvider(ABC):
 
 
 class ClaudeProvider(LLMProvider):
-    """Anthropic Claude API provider."""
-    
+    """Anthropic Claude API provider with rate limiting support."""
+
+    # Rate limiting settings
+    MIN_REQUEST_INTERVAL = 0.5  # Minimum seconds between requests
+    MAX_RETRIES = 5  # Maximum retry attempts for rate limit errors
+    INITIAL_BACKOFF = 2.0  # Initial backoff in seconds
+    MAX_BACKOFF = 60.0  # Maximum backoff in seconds
+    BACKOFF_MULTIPLIER = 2.0  # Backoff multiplier for exponential backoff
+
     def __init__(
         self,
         api_key: Optional[str] = None,
         model: str = "claude-sonnet-4-20250514",
+        min_request_interval: float = 0.5,
     ):
         """
         Initialize Claude provider.
-        
+
         Args:
             api_key: Anthropic API key (defaults to ANTHROPIC_API_KEY env var).
             model: Model to use.
+            min_request_interval: Minimum seconds between API requests (rate limiting).
         """
         self.api_key = api_key or os.environ.get("ANTHROPIC_API_KEY")
         if not self.api_key:
@@ -172,14 +182,29 @@ class ClaudeProvider(LLMProvider):
             )
         self.model = model
         self._client = None
-    
+        self._last_request_time = 0.0
+        self._min_request_interval = min_request_interval
+
+    def _throttle_request(self) -> None:
+        """Ensure minimum interval between requests to avoid rate limiting."""
+        elapsed = time.time() - self._last_request_time
+        if elapsed < self._min_request_interval:
+            sleep_time = self._min_request_interval - elapsed
+            logger.debug(f"Rate limiting: sleeping {sleep_time:.2f}s")
+            time.sleep(sleep_time)
+        self._last_request_time = time.time()
+
     @property
     def client(self):
-        """Lazy-load Anthropic client."""
+        """Lazy-load Anthropic client with custom retry settings."""
         if self._client is None:
             try:
                 import anthropic
-                self._client = anthropic.Anthropic(api_key=self.api_key)
+                # Create client with custom retry settings for rate limits
+                self._client = anthropic.Anthropic(
+                    api_key=self.api_key,
+                    max_retries=self.MAX_RETRIES,
+                )
             except ImportError:
                 raise ImportError(
                     "anthropic package required. Install with: pip install anthropic"
@@ -202,40 +227,71 @@ class ClaudeProvider(LLMProvider):
         max_tokens: int = 1024,
         temperature: float = 0.7,
     ) -> LLMResponse:
-        """Generate response using Claude API."""
-        
+        """Generate response using Claude API with rate limiting."""
+
         # Convert messages to Anthropic format
         anthropic_messages = []
         for msg in messages:
             if msg.role == "system":
                 continue  # System handled separately
-            
+
             anthropic_msg = {"role": msg.role, "content": msg.content}
             anthropic_messages.append(anthropic_msg)
-        
+
         # Build request
         request_kwargs = {
             "model": self.model,
             "max_tokens": max_tokens,
             "messages": anthropic_messages,
         }
-        
+
         if system_prompt:
             request_kwargs["system"] = system_prompt
-        
+
         if temperature != 0.7:
             request_kwargs["temperature"] = temperature
-        
+
         if tools:
             request_kwargs["tools"] = tools
-        
-        # Make request
-        response = self.client.messages.create(**request_kwargs)
-        
+
+        # Throttle request to avoid rate limiting
+        self._throttle_request()
+
+        # Make request with retry handling
+        backoff = self.INITIAL_BACKOFF
+        last_error = None
+
+        for attempt in range(self.MAX_RETRIES + 1):
+            try:
+                response = self.client.messages.create(**request_kwargs)
+                break
+            except Exception as e:
+                error_str = str(e).lower()
+                # Check if it's a rate limit error
+                if "429" in str(e) or "rate" in error_str or "too many" in error_str:
+                    last_error = e
+                    if attempt < self.MAX_RETRIES:
+                        logger.warning(
+                            f"Rate limited (attempt {attempt + 1}/{self.MAX_RETRIES + 1}), "
+                            f"retrying in {backoff:.1f}s..."
+                        )
+                        time.sleep(backoff)
+                        backoff = min(backoff * self.BACKOFF_MULTIPLIER, self.MAX_BACKOFF)
+                        continue
+                    else:
+                        logger.error(f"Rate limit exceeded after {self.MAX_RETRIES + 1} attempts")
+                        raise
+                else:
+                    # Non-rate-limit error, re-raise immediately
+                    raise
+        else:
+            # All retries exhausted
+            raise last_error if last_error else RuntimeError("Request failed after all retries")
+
         # Parse response
         content = ""
         tool_calls = []
-        
+
         for block in response.content:
             if hasattr(block, "text"):
                 content += block.text
@@ -245,7 +301,7 @@ class ClaudeProvider(LLMProvider):
                     name=block.name,
                     arguments=block.input
                 ))
-        
+
         return LLMResponse(
             content=content,
             tool_calls=tool_calls,
