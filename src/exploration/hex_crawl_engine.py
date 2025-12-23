@@ -1,5 +1,5 @@
 """
-Dolmenwood AI DM - Hex Crawl Engine
+Dolmenwood AI DM - Hex Crawl Engine (v2.0)
 
 This module provides automated hex crawl management that tracks:
 - Current position and movement
@@ -12,8 +12,16 @@ This module provides automated hex crawl management that tracks:
 The engine handles all mechanical bookkeeping so Claude can focus
 on narration and player interaction.
 
+v2.0 Changes:
+- Integration with StateMachine for state transitions
+- Integration with GlobalController for time/resources
+- Integration with TriggerHandler for procedure triggers
+- Formal watch-based exploration loop
+- Dolmenwood-specific regions and encounter tables
+- Proper encounter handling with state transitions
+
 Author: AI Dungeon Master Project
-Version: 1.0
+Version: 2.0
 """
 
 from __future__ import annotations
@@ -23,9 +31,30 @@ import logging
 from dataclasses import dataclass, field
 from datetime import datetime
 from enum import Enum
-from typing import Any, Optional
+from typing import Any, Optional, Dict, List, Tuple, TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from ..game_state.state_machine import StateMachine
+    from ..game_state.global_controller import GlobalController
+    from ..resolution.procedure_triggers import TriggerHandler
 
 logger = logging.getLogger(__name__)
+
+
+# =============================================================================
+# DOLMENWOOD REGIONS
+# =============================================================================
+
+class DolmenwoodRegion(str, Enum):
+    """Dolmenwood forest regions with distinct character."""
+    HIGH_WOLD = "high_wold"           # Northern highlands
+    ALDWEALD = "aldweald"             # Ancient central woods
+    MULCHGROVE = "mulchgrove"         # Southeastern swamps
+    NAGWOOD = "nagwood"               # Dark northeastern forest
+    HAGS_ADDLE = "hags_addle"         # Cursed southern region
+    LAKE_LONGMERE = "lake_longmere"   # Central lake
+    TITHELANDS = "tithelands"         # Settled western farmlands
+    DWELMFURGH = "dwelmfurgh"         # Northern mountain foothills
 
 
 # =============================================================================
@@ -270,7 +299,9 @@ class HexCrawlStatus:
     discovered_hexes: int
     current_hex_explored: bool
     settlement_nearby: Optional[str]
-    
+    region: Optional[DolmenwoodRegion] = None
+    fairy_influence: int = 0
+
     @property
     def brief(self) -> str:
         """Concise status."""
@@ -280,7 +311,7 @@ class HexCrawlStatus:
             f"Weather: {self.weather.value} | "
             f"Rations: {self.resources.get('rations', 0)}"
         )
-    
+
     @property
     def full_status(self) -> str:
         """Detailed status."""
@@ -300,11 +331,108 @@ class HexCrawlStatus:
             f"Party Size: {self.party_size}",
             f"Hexes Discovered: {self.discovered_hexes}",
         ]
-        
+
         if self.settlement_nearby:
             lines.append(f"Nearby Settlement: {self.settlement_nearby}")
-        
+
+        if self.region:
+            lines.append(f"Region: {self.region.value.replace('_', ' ').title()}")
+
+        if self.fairy_influence > 0:
+            lines.append(f"Fairy Influence: {'🧚' * min(5, self.fairy_influence)}")
+
         return "\n".join(lines)
+
+
+class WildernessPhase(str, Enum):
+    """Phases of the wilderness exploration loop."""
+    WATCH_START = "watch_start"
+    CHOOSE_ACTIVITY = "choose_activity"
+    EXECUTE_ACTIVITY = "execute_activity"
+    ENCOUNTER_CHECK = "encounter_check"
+    ENCOUNTER_ACTIVE = "encounter_active"
+    RESOURCE_CHECK = "resource_check"
+    WATCH_END = "watch_end"
+
+
+@dataclass
+class WatchResult:
+    """Result of a single watch of wilderness exploration."""
+    watch_number: int
+    day_number: int
+    phase: WildernessPhase
+    activity: WatchActivity
+    hex_id: str
+    terrain: Terrain
+    weather: Weather
+    time_of_day: TimeOfDay
+
+    # Activity results
+    activity_success: bool = True
+    movement_result: Optional[TravelResult] = None
+    exploration_result: Optional[ExplorationResult] = None
+
+    # Encounter
+    encounter_check_roll: Optional[int] = None
+    encounter_chance: int = 0
+    encounter_triggered: bool = False
+    encounter_type: Optional[str] = None
+    encounter_distance: Optional[int] = None  # In tens of yards
+    encounter_surprised: bool = False
+    party_surprised: bool = False
+
+    # Resources
+    resources_consumed: Dict[str, int] = field(default_factory=dict)
+    resource_warnings: List[str] = field(default_factory=list)
+
+    # State transitions
+    state_transition: Optional[str] = None
+    requires_combat: bool = False
+
+    # Events and notes
+    events: List[str] = field(default_factory=list)
+    fairy_signs: List[str] = field(default_factory=list)
+
+    @property
+    def brief(self) -> str:
+        """One-sentence summary."""
+        parts = [f"Watch {self.watch_number} ({self.time_of_day.value}):"]
+
+        if self.activity == WatchActivity.TRAVEL and self.movement_result:
+            if self.movement_result.got_lost:
+                parts.append(f"Lost! Ended up in {self.movement_result.actual_destination}")
+            else:
+                parts.append(f"Traveled to {self.movement_result.destination_hex}")
+        elif self.activity == WatchActivity.FORAGE and self.exploration_result:
+            if self.exploration_result.foraging_success:
+                parts.append(f"Foraged {self.exploration_result.foraging_amount} rations")
+            else:
+                parts.append("Foraging failed")
+        elif self.activity == WatchActivity.EXPLORE:
+            parts.append("Explored the hex")
+        elif self.activity == WatchActivity.REST:
+            parts.append("Rested")
+        elif self.activity == WatchActivity.CAMP:
+            parts.append("Made camp")
+
+        if self.encounter_triggered:
+            parts.append("⚠️ ENCOUNTER!")
+
+        return " ".join(parts)
+
+
+@dataclass
+class WildernessDayResult:
+    """Complete result of a wilderness day."""
+    day_number: int
+    watches: List[WatchResult] = field(default_factory=list)
+    starting_hex: str = ""
+    ending_hex: str = ""
+    weather: Weather = Weather.CLEAR
+    encounters_occurred: int = 0
+    total_resources_consumed: Dict[str, int] = field(default_factory=dict)
+    hexes_traveled: List[str] = field(default_factory=list)
+    discoveries: List[str] = field(default_factory=list)
 
 
 # =============================================================================
@@ -544,50 +672,109 @@ def roll_weather(season: Season = Season.AUTUMN) -> Weather:
 
 class HexCrawlEngine:
     """
-    Automated hex crawl state machine.
-    
+    Automated hex crawl state machine (v2.0).
+
     Handles movement, time, encounters, resources, and exploration.
     Provides clear status summaries for the AI DM.
-    
+
+    v2.0 Integration Points:
+    - StateMachine: Operates in WILDERNESS_TRAVEL and WILDERNESS_ENCOUNTER states
+    - GlobalController: Time tracking, resource management, party state
+    - TriggerHandler: Fires TRAVEL_SEGMENT triggers each watch
+    - DolmenwoodTables: Uses Dolmenwood-specific encounter tables
+
     Example:
         >>> engine = HexCrawlEngine()
         >>> engine.set_party_size(4)
         >>> engine.set_starting_position("0808", Terrain.SETTLEMENT)
-        >>> result = engine.travel_to_hex("0809")
+        >>> result = engine.execute_watch(WatchActivity.TRAVEL, destination="0809")
         >>> print(result.brief)
     """
-    
-    def __init__(self):
-        """Initialize the hex crawl engine."""
+
+    # Encounter distance by terrain (in tens of yards)
+    ENCOUNTER_DISTANCE = {
+        Terrain.CLEAR: (4, 24),      # 4d6 x 10 yards
+        Terrain.ROAD: (4, 24),
+        Terrain.FOREST: (2, 12),     # 2d6 x 10 yards
+        Terrain.DENSE_FOREST: (1, 6),  # 1d6 x 10 yards
+        Terrain.HILLS: (3, 18),
+        Terrain.MOUNTAINS: (3, 18),
+        Terrain.SWAMP: (2, 12),
+        Terrain.RIVER: (3, 18),
+        Terrain.LAKE: (4, 24),
+        Terrain.SETTLEMENT: (2, 12),
+        Terrain.RUINS: (1, 6),
+    }
+
+    # Region mapping for Dolmenwood hexes
+    REGION_MAP = {
+        # High Wold (northern highlands) - rows 01-04
+        # Aldweald (central) - rows 05-08
+        # Nagwood (northeast) - cols 11+, rows 03-07
+        # Mulchgrove (southeast) - cols 09+, rows 08-11
+        # Hag's Addle (south) - rows 10-12
+        # Tithelands (west) - cols 01-04
+        # Lake Longmere - specific hexes around 0707
+    }
+
+    def __init__(
+        self,
+        state_machine: Optional["StateMachine"] = None,
+        global_controller: Optional["GlobalController"] = None,
+        trigger_handler: Optional["TriggerHandler"] = None,
+    ):
+        """
+        Initialize the hex crawl engine.
+
+        Args:
+            state_machine: Reference to StateMachine for state transitions
+            global_controller: Reference to GlobalController for time/resources
+            trigger_handler: Reference to TriggerHandler for procedure triggers
+        """
+        # v2.0 Integration references
+        self.state_machine = state_machine
+        self.global_controller = global_controller
+        self.trigger_handler = trigger_handler
+
         # Current position
         self.current_hex: str = "0808"
         self.current_terrain: Terrain = Terrain.SETTLEMENT
-        
-        # Time tracking
+        self.current_region: Optional[DolmenwoodRegion] = None
+
+        # Time tracking (legacy - prefer global_controller)
         self.day_number: int = 1
         self.watch_number: int = 2  # Start at morning
         self.season: Season = Season.AUTUMN
-        
+
         # Weather
         self.current_weather: Weather = Weather.CLEAR
-        
+
         # Party info
         self.party_size: int = 4
         self.base_movement: int = 3  # Hexes per day in clear terrain
-        
+
         # Resources
         self.resources: ResourceStatus = ResourceStatus()
-        
+
         # Discovered hexes
         self.discovered_hexes: dict[str, HexInfo] = {}
-        
+
         # Current hex info
         self._mark_hex_discovered(self.current_hex, self.current_terrain)
-        
+
+        # Wilderness exploration state
+        self.current_phase: WildernessPhase = WildernessPhase.WATCH_START
+        self.current_day_result: Optional[WildernessDayResult] = None
+        self.active_encounter: Optional[Dict[str, Any]] = None
+
+        # Fairy influence tracking (Dolmenwood specific)
+        self.fairy_influence_level: int = 0
+        self.last_fairy_sign_day: int = 0
+
         # Log
         self.travel_log: list[str] = []
-        
-        logger.info("HexCrawlEngine initialized")
+
+        logger.info("HexCrawlEngine v2.0 initialized")
     
     # =========================================================================
     # SETUP
@@ -920,7 +1107,437 @@ class HexCrawlEngine:
             resources_consumed=resources_consumed,
             weather=self.current_weather
         )
-    
+
+    # =========================================================================
+    # v2.0 FORMAL WILDERNESS EXPLORATION LOOP
+    # =========================================================================
+
+    def execute_watch(
+        self,
+        activity: WatchActivity,
+        destination: Optional[str] = None,
+        terrain: Optional[Terrain] = None,
+        **kwargs
+    ) -> WatchResult:
+        """
+        Execute a single watch of wilderness exploration.
+
+        This is the formal wilderness loop entry point for v2.0.
+        Each watch follows the sequence:
+        1. Watch starts
+        2. Choose and execute activity
+        3. Check for encounters
+        4. Check resources
+        5. Watch ends (or encounter occurs)
+
+        Args:
+            activity: The activity to perform this watch
+            destination: Target hex for travel activity
+            terrain: Known terrain of destination
+            **kwargs: Additional activity parameters
+
+        Returns:
+            WatchResult with all outcomes
+        """
+        # Initialize day tracking if needed
+        if self.current_day_result is None:
+            self.current_day_result = WildernessDayResult(
+                day_number=self.day_number,
+                starting_hex=self.current_hex,
+                weather=self.current_weather,
+            )
+
+        # Fire TRAVEL_SEGMENT trigger if handler available
+        if self.trigger_handler:
+            self.trigger_handler.fire_trigger("TRAVEL_SEGMENT", {
+                "hex_id": self.current_hex,
+                "watch": self.watch_number,
+                "day": self.day_number,
+                "activity": activity.value,
+            })
+
+        # Initialize result
+        result = WatchResult(
+            watch_number=self.watch_number,
+            day_number=self.day_number,
+            phase=WildernessPhase.EXECUTE_ACTIVITY,
+            activity=activity,
+            hex_id=self.current_hex,
+            terrain=self.current_terrain,
+            weather=self.current_weather,
+            time_of_day=self._get_time_of_day(),
+        )
+
+        # Execute the activity
+        if activity == WatchActivity.TRAVEL:
+            if not destination:
+                result.activity_success = False
+                result.events.append("No destination specified for travel")
+            else:
+                travel_result = self.travel_to_hex(
+                    destination=destination,
+                    terrain=terrain,
+                    has_guide=kwargs.get("has_guide", False),
+                    forced_march=kwargs.get("forced_march", False),
+                    on_road=kwargs.get("on_road", False),
+                )
+                result.movement_result = travel_result
+                result.activity_success = travel_result.success
+
+                if travel_result.encounter_occurred:
+                    result.encounter_triggered = True
+                    result.encounter_check_roll = travel_result.encounter_roll
+
+                # Track hex traveled
+                if travel_result.success:
+                    actual_dest = travel_result.actual_destination or destination
+                    self.current_day_result.hexes_traveled.append(actual_dest)
+
+        elif activity == WatchActivity.FORAGE:
+            forage_result = self.forage()
+            result.exploration_result = forage_result
+            result.activity_success = forage_result.foraging_success
+
+            if forage_result.encounter_occurred:
+                result.encounter_triggered = True
+                result.encounter_check_roll = forage_result.encounter_roll
+
+        elif activity == WatchActivity.EXPLORE:
+            explore_result = self.explore_hex(detailed=kwargs.get("detailed", False))
+            result.exploration_result = explore_result
+
+            if explore_result.discoveries:
+                self.current_day_result.discoveries.extend(explore_result.discoveries)
+
+            if explore_result.encounter_occurred:
+                result.encounter_triggered = True
+                result.encounter_check_roll = explore_result.encounter_roll
+
+        elif activity == WatchActivity.REST:
+            rest_result = self.rest(full_rest=False)
+            result.exploration_result = rest_result
+
+            if rest_result.encounter_occurred:
+                result.encounter_triggered = True
+                result.encounter_check_roll = rest_result.encounter_roll
+
+        elif activity == WatchActivity.CAMP:
+            rest_result = self.rest(full_rest=True)
+            result.exploration_result = rest_result
+
+            if rest_result.encounter_occurred:
+                result.encounter_triggered = True
+                result.encounter_check_roll = rest_result.encounter_roll
+
+        elif activity == WatchActivity.SEARCH:
+            explore_result = self.explore_hex(detailed=True)
+            result.exploration_result = explore_result
+
+            if explore_result.encounter_occurred:
+                result.encounter_triggered = True
+                result.encounter_check_roll = explore_result.encounter_roll
+
+        elif activity == WatchActivity.HIDE:
+            # Hiding reduces encounter chance but takes a watch
+            self._advance_time(1)
+            result.activity_success = True
+            result.events.append("Party concealed themselves")
+            # No encounter check while hiding
+
+        # Handle encounter if triggered
+        if result.encounter_triggered:
+            result = self._process_encounter(result)
+
+        # Check resources
+        result.resource_warnings = self.get_resource_warnings()
+
+        # Check for fairy signs (Dolmenwood specific)
+        fairy_signs = self._check_fairy_signs()
+        if fairy_signs:
+            result.fairy_signs = fairy_signs
+
+        # Update day result
+        self.current_day_result.watches.append(result)
+        if result.encounter_triggered:
+            self.current_day_result.encounters_occurred += 1
+
+        # Check for new day
+        if self.watch_number == 1:
+            # Day has rolled over, finalize the previous day
+            self.current_day_result.ending_hex = self.current_hex
+            self.current_day_result = WildernessDayResult(
+                day_number=self.day_number,
+                starting_hex=self.current_hex,
+                weather=self.current_weather,
+            )
+
+        result.phase = WildernessPhase.WATCH_END
+        return result
+
+    def _process_encounter(self, result: WatchResult) -> WatchResult:
+        """
+        Process an encounter, determining distance, surprise, and type.
+
+        Args:
+            result: The current WatchResult to update
+
+        Returns:
+            Updated WatchResult with encounter details
+        """
+        # Determine encounter distance
+        distance_range = self.ENCOUNTER_DISTANCE.get(self.current_terrain, (2, 12))
+        num_dice = distance_range[0] // 6 + 1
+        result.encounter_distance = sum(random.randint(1, 6) for _ in range(num_dice)) * 10
+
+        # Check for surprise (2-in-6 for each side)
+        party_surprise_roll = random.randint(1, 6)
+        encounter_surprise_roll = random.randint(1, 6)
+
+        result.party_surprised = party_surprise_roll <= 2
+        result.encounter_surprised = encounter_surprise_roll <= 2
+
+        # Determine encounter type based on region
+        region = self._get_region_for_hex(self.current_hex)
+        result.encounter_type = self._roll_encounter_type(region)
+
+        # State transition if we have a state machine
+        if self.state_machine:
+            try:
+                self.state_machine.transition_to(
+                    "WILDERNESS_ENCOUNTER",
+                    trigger="ENCOUNTER_TRIGGERED",
+                    metadata={
+                        "hex_id": self.current_hex,
+                        "encounter_type": result.encounter_type,
+                        "distance": result.encounter_distance,
+                    }
+                )
+                result.state_transition = "WILDERNESS_ENCOUNTER"
+            except Exception as e:
+                result.events.append(f"State transition failed: {e}")
+
+        result.events.append(
+            f"Encounter: {result.encounter_type} at {result.encounter_distance} yards"
+        )
+
+        return result
+
+    def _roll_encounter_type(self, region: Optional[DolmenwoodRegion]) -> str:
+        """
+        Roll for encounter type based on region.
+
+        Args:
+            region: The Dolmenwood region
+
+        Returns:
+            String describing the encounter type
+        """
+        # This would integrate with DolmenwoodTables in a full implementation
+        # For now, return a placeholder based on region
+        if region == DolmenwoodRegion.ALDWEALD:
+            encounters = [
+                "Wood Elves (patrol)",
+                "Fairy Creatures",
+                "Bandits",
+                "Wild Animals",
+                "Lost Traveler",
+                "Drune Cultists",
+            ]
+        elif region == DolmenwoodRegion.NAGWOOD:
+            encounters = [
+                "Undead",
+                "Dark Fairy",
+                "Giant Spiders",
+                "Wolves",
+                "Witch",
+                "Lost Soul",
+            ]
+        elif region == DolmenwoodRegion.MULCHGROVE:
+            encounters = [
+                "Bog Creatures",
+                "Swamp Trolls",
+                "Giant Toads",
+                "Fungi Folk",
+                "Will-o-Wisps",
+                "Hermit",
+            ]
+        else:
+            encounters = [
+                "Travelers",
+                "Wild Animals",
+                "Bandits",
+                "Fairy Creatures",
+                "Monster",
+                "Unusual Sight",
+            ]
+
+        return random.choice(encounters)
+
+    def _get_region_for_hex(self, hex_id: str) -> Optional[DolmenwoodRegion]:
+        """
+        Determine the Dolmenwood region for a hex.
+
+        Args:
+            hex_id: The hex ID (e.g., "0808")
+
+        Returns:
+            The DolmenwoodRegion or None if unknown
+        """
+        try:
+            col, row = parse_hex_id(hex_id)
+        except ValueError:
+            return None
+
+        # Simplified region determination based on hex coordinates
+        # Dolmenwood is roughly a 12x12 hex grid
+        if row <= 4:
+            if col >= 11:
+                return DolmenwoodRegion.NAGWOOD
+            return DolmenwoodRegion.HIGH_WOLD
+        elif row <= 8:
+            if col <= 4:
+                return DolmenwoodRegion.TITHELANDS
+            elif col >= 11:
+                return DolmenwoodRegion.NAGWOOD
+            else:
+                return DolmenwoodRegion.ALDWEALD
+        else:
+            if col >= 9:
+                return DolmenwoodRegion.MULCHGROVE
+            else:
+                return DolmenwoodRegion.HAGS_ADDLE
+
+        return None
+
+    def _check_fairy_signs(self) -> List[str]:
+        """
+        Check for fairy influence signs (Dolmenwood specific).
+
+        Fairy signs may appear when traveling through areas with high
+        fairy influence, especially at dawn/dusk or in ancient parts
+        of the wood.
+
+        Returns:
+            List of fairy sign descriptions
+        """
+        signs = []
+
+        # Only check once per day
+        if self.day_number == self.last_fairy_sign_day:
+            return signs
+
+        # Higher chance at liminal times
+        base_chance = 1  # 1-in-6
+        if self._get_time_of_day() in (TimeOfDay.DAWN, TimeOfDay.EVENING):
+            base_chance += 1
+
+        # Higher in certain regions
+        region = self._get_region_for_hex(self.current_hex)
+        if region in (DolmenwoodRegion.ALDWEALD, DolmenwoodRegion.NAGWOOD):
+            base_chance += 1
+
+        # Roll for fairy sign
+        if random.randint(1, 6) <= base_chance:
+            fairy_signs_table = [
+                "A ring of mushrooms appears where there was none before",
+                "Distant, unearthly music drifts through the trees",
+                "A will-o-wisp flickers in the distance",
+                "Strange laughter echoes from nowhere",
+                "The party finds a small gift left on a stump",
+                "Time seems to pass differently - the sun moves strangely",
+                "A talking animal delivers a cryptic message",
+                "Footprints appear in the mud that weren't there before",
+                "The trees seem to whisper secrets",
+                "A door appears in an ancient tree",
+            ]
+            signs.append(random.choice(fairy_signs_table))
+            self.last_fairy_sign_day = self.day_number
+            self.fairy_influence_level += 1
+
+        return signs
+
+    def resolve_encounter(
+        self,
+        reaction: str = "neutral",
+        party_action: str = "parley",
+    ) -> Dict[str, Any]:
+        """
+        Resolve an active encounter based on reaction and party action.
+
+        Args:
+            reaction: Result of reaction roll ("hostile", "unfriendly", "neutral", "friendly")
+            party_action: What the party does ("fight", "flee", "parley", "hide")
+
+        Returns:
+            Dict with resolution result
+        """
+        if not self.active_encounter:
+            return {"error": "No active encounter to resolve"}
+
+        result = {
+            "encounter_type": self.active_encounter.get("type"),
+            "reaction": reaction,
+            "party_action": party_action,
+            "resolved": True,
+        }
+
+        if party_action == "fight" or reaction == "hostile":
+            result["combat_initiated"] = True
+            result["state_transition"] = "COMBAT"
+
+            if self.state_machine:
+                try:
+                    self.state_machine.transition_to(
+                        "COMBAT",
+                        trigger="COMBAT_INITIATED",
+                        metadata=self.active_encounter,
+                    )
+                except Exception as e:
+                    result["error"] = str(e)
+
+        elif party_action == "flee":
+            # Flee check - each character needs to make it
+            flee_success = random.randint(1, 6) >= 3  # 4-in-6 chance
+            result["fled_successfully"] = flee_success
+            if flee_success:
+                result["state_transition"] = "WILDERNESS_TRAVEL"
+            else:
+                result["combat_initiated"] = True
+                result["state_transition"] = "COMBAT"
+
+        elif party_action == "parley":
+            if reaction in ("friendly", "neutral"):
+                result["social_interaction"] = True
+                result["state_transition"] = "SOCIAL_INTERACTION"
+
+                if self.state_machine:
+                    try:
+                        self.state_machine.transition_to(
+                            "SOCIAL_INTERACTION",
+                            trigger="SOCIAL_INITIATED",
+                            metadata=self.active_encounter,
+                        )
+                    except Exception as e:
+                        result["error"] = str(e)
+            else:
+                result["parley_failed"] = True
+                result["combat_initiated"] = True
+
+        elif party_action == "hide":
+            # Hide check - 2-in-6 base, modified by terrain
+            hide_chance = 2
+            if self.current_terrain in (Terrain.DENSE_FOREST, Terrain.RUINS):
+                hide_chance += 1
+            hide_success = random.randint(1, 6) <= hide_chance
+            result["hidden_successfully"] = hide_success
+            if not hide_success:
+                result["combat_initiated"] = True
+
+        # Clear active encounter
+        self.active_encounter = None
+
+        return result
+
     # =========================================================================
     # RANDOM ENCOUNTERS
     # =========================================================================
@@ -1168,7 +1785,8 @@ class HexCrawlEngine:
     def get_status(self) -> HexCrawlStatus:
         """Get current hex crawl status."""
         current_info = self.discovered_hexes.get(self.current_hex)
-        
+        region = self._get_region_for_hex(self.current_hex)
+
         return HexCrawlStatus(
             current_hex=self.current_hex,
             current_terrain=self.current_terrain,
@@ -1180,6 +1798,8 @@ class HexCrawlEngine:
             resources=self.resources.to_dict(),
             party_size=self.party_size,
             discovered_hexes=len(self.discovered_hexes),
+            region=region,
+            fairy_influence=self.fairy_influence_level,
             current_hex_explored=current_info.is_explored if current_info else False,
             settlement_nearby=current_info.settlement if current_info else None
         )

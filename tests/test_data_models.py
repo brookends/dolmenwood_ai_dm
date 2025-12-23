@@ -521,11 +521,12 @@ class TestLocationModels:
             hex_id="0808",
             coordinates=(8, 8),
             terrain_type=TerrainType.FOREST,
-            description="Dense woodland with ancient oaks.",
-            location_name="The Whispering Woods",
+            name="The Whispering Woods",
+            terrain_description="Dense woodland with ancient oaks.",
         )
         assert hex_loc.hex_id == "0808"
         assert hex_loc.terrain_type == TerrainType.FOREST
+        assert hex_loc.name == "The Whispering Woods"
     
     def test_hex_visit(self):
         """Test visiting a hex."""
@@ -533,7 +534,8 @@ class TestLocationModels:
             hex_id="0909",
             coordinates=(9, 9),
             terrain_type=TerrainType.HILLS,
-            description="Rolling hills",
+            name="The Rolling Hills",
+            terrain_description="Rolling hills",
         )
         first = hex_loc.visit()
         assert first is True

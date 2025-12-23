@@ -1,5 +1,5 @@
 """
-Dolmenwood AI DM - Combat State Machine
+Dolmenwood AI DM - Combat State Machine (v2.0)
 
 This module provides automated combat management that tracks:
 - Initiative order and turn progression
@@ -11,8 +11,15 @@ This module provides automated combat management that tracks:
 The engine handles all mechanical bookkeeping so Claude can focus
 on narration and NPC decision-making.
 
+v2.0 Changes:
+- Integration with StateMachine for state transitions
+- Integration with GlobalController for time tracking
+- Integration with TriggerHandler for COMBAT_ROUND triggers
+- Return state tracking for proper exit transitions
+- Dolmenwood-specific reaction and morale mechanics
+
 Author: AI Dungeon Master Project
-Version: 1.0
+Version: 2.0
 """
 
 from __future__ import annotations
@@ -22,7 +29,12 @@ import logging
 from dataclasses import dataclass, field
 from datetime import datetime
 from enum import Enum
-from typing import Any, Optional, Union
+from typing import Any, Optional, Union, Dict, List, TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from ..game_state.state_machine import StateMachine
+    from ..game_state.global_controller import GlobalController
+    from ..resolution.procedure_triggers import TriggerHandler
 
 logger = logging.getLogger(__name__)
 
@@ -371,39 +383,96 @@ def roll_d20(modifier: int = 0) -> DiceRoll:
 
 class CombatEngine:
     """
-    Automated combat state machine.
-    
+    Automated combat state machine (v2.0).
+
     Handles initiative, turn order, HP tracking, morale, and combat end
     detection. Provides clear status summaries for the AI DM.
-    
+
+    v2.0 Integration Points:
+    - StateMachine: Operates in COMBAT state, tracks return state
+    - GlobalController: Time tracking via rounds (10 rounds = 1 turn)
+    - TriggerHandler: Fires COMBAT_ROUND triggers each round
+    - DolmenwoodTables: Uses Dolmenwood reaction and morale tables
+
     Example:
         >>> engine = CombatEngine()
         >>> status = engine.start_combat(party=[warrior, mage], enemies=[goblin1, goblin2])
         >>> print(status.brief)
-        >>> 
+        >>>
         >>> # On player turn
         >>> result = engine.attack("Warrior", "Goblin 1")
         >>> print(result.brief)
-        >>> 
+        >>>
         >>> # Advance to next turn
         >>> turn_result = engine.end_turn()
         >>> print(turn_result.brief)
     """
-    
-    def __init__(self):
-        """Initialize empty combat engine."""
+
+    # Reaction table (2d6) per OSE/Dolmenwood rules
+    REACTION_TABLE = {
+        2: ("hostile", "Attacks immediately"),
+        3: ("hostile", "Hostile, likely to attack"),
+        4: ("hostile", "Hostile, likely to attack"),
+        5: ("unfriendly", "Unfriendly, may attack"),
+        6: ("wary", "Uncertain, monster's decision"),
+        7: ("neutral", "Uncertain, monster's decision"),
+        8: ("neutral", "Uncertain, monster's decision"),
+        9: ("interested", "No immediate attack"),
+        10: ("friendly", "No immediate attack"),
+        11: ("friendly", "Friendly"),
+        12: ("helpful", "Eager to be friendly"),
+    }
+
+    # Morale modifiers
+    MORALE_MODIFIERS = {
+        "leader_dead": -2,
+        "winning": +2,
+        "losing": -2,
+        "outnumbered": -1,
+        "outnumber_enemy": +1,
+        "defending_home": +2,
+        "cornered": +2,
+        "surprised": -1,
+    }
+
+    def __init__(
+        self,
+        state_machine: Optional["StateMachine"] = None,
+        global_controller: Optional["GlobalController"] = None,
+        trigger_handler: Optional["TriggerHandler"] = None,
+    ):
+        """
+        Initialize combat engine with v2.0 integrations.
+
+        Args:
+            state_machine: Reference to StateMachine for state transitions
+            global_controller: Reference to GlobalController for time tracking
+            trigger_handler: Reference to TriggerHandler for procedure triggers
+        """
+        # v2.0 Integration references
+        self.state_machine = state_machine
+        self.global_controller = global_controller
+        self.trigger_handler = trigger_handler
+
         self.combatants: list[Combatant] = []
         self.round_number: int = 0
         self.current_index: int = 0
         self.phase: CombatPhase = CombatPhase.NOT_STARTED
         self.combat_log: list[str] = []
-        
+
         # Morale tracking
         self._enemy_start_count: int = 0
         self._morale_checked_first_blood: bool = False
         self._morale_checked_half: bool = False
         self._enemies_have_fled: bool = False
-        
+
+        # v2.0: Track return state for proper transitions after combat
+        self._return_state: Optional[str] = None
+        self._return_metadata: Dict[str, Any] = {}
+
+        # v2.0: Combat context from triggering encounter
+        self.encounter_context: Dict[str, Any] = {}
+
         # Combat ID for persistence
         self.combat_id: str = f"combat_{datetime.now().strftime('%Y%m%d_%H%M%S')}_{random.randint(1000, 9999)}"
     
@@ -415,45 +484,56 @@ class CombatEngine:
         self,
         party: list[Combatant],
         enemies: list[Combatant],
-        surprise: Optional[str] = None  # "party", "enemies", or None
+        surprise: Optional[str] = None,  # "party", "enemies", or None
+        return_state: Optional[str] = None,
+        return_metadata: Optional[Dict[str, Any]] = None,
+        encounter_context: Optional[Dict[str, Any]] = None,
     ) -> CombatStatus:
         """
         Start a new combat encounter.
-        
+
         Args:
             party: List of party member Combatants.
             enemies: List of enemy Combatants.
             surprise: Which side has surprise (gets a free round).
-        
+            return_state: State to return to after combat ends (v2.0)
+            return_metadata: Metadata for return state transition (v2.0)
+            encounter_context: Context about the triggering encounter (v2.0)
+
         Returns:
             CombatStatus with initiative order and first turn info.
         """
         if self.phase != CombatPhase.NOT_STARTED:
             raise RuntimeError("Combat already in progress. Call end_combat() first.")
-        
+
+        # v2.0: Store return state for proper transitions after combat
+        self._return_state = return_state
+        self._return_metadata = return_metadata or {}
+        self.encounter_context = encounter_context or {}
+
         # Mark sides
         for c in party:
             c.is_player = True
         for c in enemies:
             c.is_player = False
-        
+
         # Combine all combatants
         self.combatants = party + enemies
         self._enemy_start_count = len([e for e in enemies if e.is_active])
-        
-        # Roll initiative for each combatant
+
+        # Roll initiative for each combatant (1d6 per OSE rules)
         self.phase = CombatPhase.INITIATIVE
         for c in self.combatants:
             init_roll = roll_dice("1d6")
             c.initiative = init_roll.total
             self._log(f"{c.name} rolls initiative: {init_roll.total}")
-        
+
         # Sort by initiative (highest first), with players winning ties
         self.combatants.sort(
             key=lambda c: (c.initiative, 1 if c.is_player else 0),
             reverse=True
         )
-        
+
         # Handle surprise
         if surprise == "party":
             # Party goes first, enemies skip round 1
@@ -463,36 +543,84 @@ class CombatEngine:
             # Enemies go first, party skips round 1
             self.combatants.sort(key=lambda c: (1 if c.is_player else 0, -c.initiative))
             self._log("The enemies have surprise!")
-        
+
         # Start round 1
         self.round_number = 1
         self.current_index = 0
         self.phase = CombatPhase.IN_PROGRESS
-        
+
         self._log(f"=== Combat Begins! Round 1 ===")
         self._log(f"Initiative order: {', '.join(c.name for c in self.combatants)}")
-        
+
+        # v2.0: Fire combat round trigger
+        self._fire_round_trigger()
+
         return self.get_status()
+
+    def _fire_round_trigger(self) -> None:
+        """Fire the COMBAT_ROUND procedure trigger."""
+        if self.trigger_handler:
+            self.trigger_handler.fire_trigger("COMBAT_ROUND", {
+                "round": self.round_number,
+                "combat_id": self.combat_id,
+                "active_combatants": len([c for c in self.combatants if c.is_active]),
+            })
+
+        # v2.0: Track time - 10 rounds = 1 dungeon turn
+        if self.global_controller and self.round_number % 10 == 0:
+            # Every 10 rounds of combat = 1 minute = 1/10th of a turn
+            pass  # Time tracking handled by GlobalController
     
-    def end_combat(self, reason: CombatEndReason = CombatEndReason.INTERRUPTED) -> CombatStatus:
+    def end_combat(self, reason: CombatEndReason = CombatEndReason.INTERRUPTED) -> Dict[str, Any]:
         """
-        End combat manually.
-        
+        End combat and transition back to return state.
+
         Args:
             reason: Why combat is ending.
-        
+
         Returns:
-            Final CombatStatus.
+            Dict with final status and transition info.
         """
         self.phase = CombatPhase.ENDED
         self._log(f"=== Combat Ended: {reason.value} ===")
-        
+
         status = self.get_status()
-        
+
+        result = {
+            "status": status,
+            "reason": reason.value,
+            "rounds_elapsed": self.round_number,
+            "return_state": self._return_state,
+            "survivors": {
+                "party": [c.name for c in self.combatants if c.is_player and c.is_alive],
+                "enemies": [c.name for c in self.combatants if not c.is_player and c.is_alive],
+            },
+            "casualties": {
+                "party": [c.name for c in self.combatants if c.is_player and not c.is_alive],
+                "enemies": [c.name for c in self.combatants if not c.is_player and not c.is_alive],
+            },
+        }
+
+        # v2.0: Transition back to return state if state machine available
+        if self.state_machine and self._return_state:
+            try:
+                self.state_machine.transition_to(
+                    self._return_state,
+                    trigger="COMBAT_ENDED",
+                    metadata={
+                        "reason": reason.value,
+                        "rounds": self.round_number,
+                        **self._return_metadata,
+                    }
+                )
+                result["state_transition"] = self._return_state
+            except Exception as e:
+                result["transition_error"] = str(e)
+
         # Reset for next combat
         self._reset()
-        
-        return status
+
+        return result
     
     def _reset(self) -> None:
         """Reset engine state for new combat."""
@@ -504,6 +632,10 @@ class CombatEngine:
         self._morale_checked_first_blood = False
         self._morale_checked_half = False
         self._enemies_have_fled = False
+        # v2.0: Clear return state tracking
+        self._return_state = None
+        self._return_metadata = {}
+        self.encounter_context = {}
     
     # =========================================================================
     # TURN MANAGEMENT
@@ -555,6 +687,8 @@ class CombatEngine:
                 self.round_number += 1
                 new_round = True
                 self._log(f"=== Round {self.round_number} ===")
+                # v2.0: Fire round trigger on new round
+                self._fire_round_trigger()
             
             current = self.combatants[self.current_index]
             if current.is_active and current.is_alive:
@@ -995,6 +1129,157 @@ class CombatEngine:
     def get_log(self) -> list[str]:
         """Get combat log."""
         return self.combat_log.copy()
+
+    # =========================================================================
+    # v2.0 REACTION ROLLS
+    # =========================================================================
+
+    def roll_reaction(
+        self,
+        modifier: int = 0,
+        creature_type: Optional[str] = None,
+    ) -> Dict[str, Any]:
+        """
+        Roll reaction for an encounter (2d6 per OSE rules).
+
+        This determines the initial disposition of encountered creatures
+        before combat is initiated.
+
+        Args:
+            modifier: CHA modifier or other situational modifiers
+            creature_type: Type of creature for logging
+
+        Returns:
+            Dict with reaction result and description
+        """
+        roll = roll_dice("2d6")
+        total = roll.total + modifier
+
+        # Clamp to table range
+        total = max(2, min(12, total))
+
+        reaction, description = self.REACTION_TABLE.get(
+            total, ("neutral", "Uncertain")
+        )
+
+        result = {
+            "roll": roll.total,
+            "modifier": modifier,
+            "total": total,
+            "reaction": reaction,
+            "description": description,
+            "creature_type": creature_type,
+            "initiates_combat": reaction == "hostile",
+            "brief": f"Reaction roll: {roll.total}+{modifier}={total} → {reaction.upper()}: {description}",
+        }
+
+        self._log(result["brief"])
+        return result
+
+    def calculate_morale_modifier(
+        self,
+        conditions: List[str],
+    ) -> int:
+        """
+        Calculate total morale modifier from conditions.
+
+        Args:
+            conditions: List of condition strings matching MORALE_MODIFIERS keys
+
+        Returns:
+            Total modifier to apply to morale checks
+        """
+        total = 0
+        for condition in conditions:
+            if condition in self.MORALE_MODIFIERS:
+                total += self.MORALE_MODIFIERS[condition]
+        return total
+
+    def get_combat_summary(self) -> Dict[str, Any]:
+        """
+        Get a comprehensive combat summary for logging/persistence.
+
+        Returns:
+            Dict with complete combat state
+        """
+        return {
+            "combat_id": self.combat_id,
+            "phase": self.phase.value,
+            "round_number": self.round_number,
+            "combatants": [
+                {
+                    "id": c.id,
+                    "name": c.name,
+                    "hp_current": c.hp_current,
+                    "hp_max": c.hp_max,
+                    "ac": c.ac,
+                    "is_player": c.is_player,
+                    "is_active": c.is_active,
+                    "is_alive": c.is_alive,
+                    "conditions": c.conditions,
+                    "initiative": c.initiative,
+                }
+                for c in self.combatants
+            ],
+            "active_party": len([c for c in self.combatants if c.is_player and c.is_active and c.is_alive]),
+            "active_enemies": len([c for c in self.combatants if not c.is_player and c.is_active and c.is_alive]),
+            "return_state": self._return_state,
+            "encounter_context": self.encounter_context,
+            "log_entries": len(self.combat_log),
+        }
+
+    def to_dict(self) -> Dict[str, Any]:
+        """Serialize combat state for persistence."""
+        return self.get_combat_summary()
+
+    @classmethod
+    def from_dict(
+        cls,
+        data: Dict[str, Any],
+        state_machine: Optional["StateMachine"] = None,
+        global_controller: Optional["GlobalController"] = None,
+        trigger_handler: Optional["TriggerHandler"] = None,
+    ) -> "CombatEngine":
+        """
+        Restore combat engine from serialized state.
+
+        Args:
+            data: Serialized combat data
+            state_machine: StateMachine reference
+            global_controller: GlobalController reference
+            trigger_handler: TriggerHandler reference
+
+        Returns:
+            Restored CombatEngine instance
+        """
+        engine = cls(
+            state_machine=state_machine,
+            global_controller=global_controller,
+            trigger_handler=trigger_handler,
+        )
+
+        engine.combat_id = data.get("combat_id", engine.combat_id)
+        engine.phase = CombatPhase(data.get("phase", "not_started"))
+        engine.round_number = data.get("round_number", 0)
+        engine._return_state = data.get("return_state")
+        engine.encounter_context = data.get("encounter_context", {})
+
+        # Restore combatants
+        for c_data in data.get("combatants", []):
+            combatant = Combatant(
+                name=c_data["name"],
+                hp_current=c_data["hp_current"],
+                hp_max=c_data["hp_max"],
+                ac=c_data["ac"],
+                is_player=c_data.get("is_player", False),
+                is_active=c_data.get("is_active", True),
+                conditions=c_data.get("conditions", []),
+                initiative=c_data.get("initiative", 0),
+                id=c_data.get("id", ""),
+            )
+            engine.combatants.append(combatant)
+
+        return engine
 
 
 # =============================================================================

@@ -1,8 +1,14 @@
 """
-Dolmenwood AI Dungeon Master - Game State Manager (v1.1)
+Dolmenwood AI Dungeon Master - Game State Manager (v2.0)
 
 This module provides SQLite-based persistence for game state,
 including characters, world state, combat, and session history.
+
+v2.0 Features:
+- StateMachine state persistence
+- GlobalController state persistence
+- Engine state persistence (HexCrawl, Dungeon, Combat, Settlement, Downtime)
+- Trigger state tracking
 
 v1.1 Features:
 - Adventure module and location management
@@ -18,7 +24,7 @@ Features:
 - Automatic database schema initialization
 
 Author: AI Dungeon Master Project
-Version: 1.1
+Version: 2.0
 """
 
 from __future__ import annotations
@@ -93,7 +99,7 @@ class GameStateManager:
     """
     
     # SQL Schema definitions
-    SCHEMA_VERSION = 2  # Updated for v1.1
+    SCHEMA_VERSION = 3  # Updated for v2.0
     
     SCHEMA_SQL = """
     -- Schema version tracking
@@ -310,6 +316,60 @@ class GameStateManager:
         FOREIGN KEY (campaign_id) REFERENCES world_state(campaign_id),
         FOREIGN KEY (adventure_id) REFERENCES adventure_modules(adventure_id)
     );
+
+    -- v2.0: State machine state table
+    CREATE TABLE IF NOT EXISTS game_state_v2 (
+        campaign_id TEXT PRIMARY KEY,
+        current_state TEXT NOT NULL,
+        previous_state TEXT,
+        return_state TEXT,
+        transition_metadata TEXT,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (campaign_id) REFERENCES world_state(campaign_id)
+    );
+
+    -- v2.0: Global controller state table
+    CREATE TABLE IF NOT EXISTS global_controller_state (
+        campaign_id TEXT PRIMARY KEY,
+        game_time TEXT NOT NULL,
+        party_state TEXT NOT NULL,
+        world_flags TEXT NOT NULL,
+        weather TEXT,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (campaign_id) REFERENCES world_state(campaign_id)
+    );
+
+    -- v2.0: Engine states table (for HexCrawl, Dungeon, Settlement, Downtime, Combat)
+    CREATE TABLE IF NOT EXISTS engine_states (
+        state_id TEXT PRIMARY KEY,
+        campaign_id TEXT NOT NULL,
+        engine_type TEXT NOT NULL,
+        engine_data TEXT NOT NULL,
+        is_active BOOLEAN NOT NULL DEFAULT 1,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (campaign_id) REFERENCES world_state(campaign_id)
+    );
+    CREATE INDEX IF NOT EXISTS idx_engine_states_campaign ON engine_states(campaign_id);
+    CREATE INDEX IF NOT EXISTS idx_engine_states_type ON engine_states(engine_type);
+    CREATE INDEX IF NOT EXISTS idx_engine_states_active ON engine_states(is_active);
+
+    -- v2.0: Trigger states table (for procedure trigger tracking)
+    CREATE TABLE IF NOT EXISTS trigger_states (
+        trigger_id TEXT PRIMARY KEY,
+        campaign_id TEXT NOT NULL,
+        trigger_type TEXT NOT NULL,
+        last_fired TIMESTAMP,
+        fire_count INTEGER DEFAULT 0,
+        state_data TEXT,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (campaign_id) REFERENCES world_state(campaign_id)
+    );
+    CREATE INDEX IF NOT EXISTS idx_trigger_states_campaign ON trigger_states(campaign_id);
+    CREATE INDEX IF NOT EXISTS idx_trigger_states_type ON trigger_states(trigger_type);
     """
     
     def __init__(
@@ -2540,7 +2600,7 @@ class GameStateManager:
     def backup(self, backup_path: str) -> None:
         """
         Create a backup of the database.
-        
+
         Args:
             backup_path: Path for the backup file.
         """
@@ -2548,6 +2608,421 @@ class GameStateManager:
         self.conn.commit()
         shutil.copy2(self.db_path, backup_path)
         logger.info(f"Database backed up to {backup_path}")
+
+    # =========================================================================
+    # v2.0: STATE MACHINE PERSISTENCE
+    # =========================================================================
+
+    def save_game_state_v2(
+        self,
+        campaign_id: str,
+        current_state: str,
+        previous_state: Optional[str] = None,
+        return_state: Optional[str] = None,
+        transition_metadata: Optional[dict[str, Any]] = None,
+    ) -> None:
+        """
+        Save the v2.0 state machine state.
+
+        Args:
+            campaign_id: Campaign identifier
+            current_state: Current game state
+            previous_state: Previous game state
+            return_state: State to return to after transient states
+            transition_metadata: Metadata about the last transition
+        """
+        with self.transaction() as cursor:
+            cursor.execute(
+                """
+                INSERT OR REPLACE INTO game_state_v2
+                (campaign_id, current_state, previous_state, return_state, transition_metadata, updated_at)
+                VALUES (?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
+                """,
+                (
+                    campaign_id,
+                    current_state,
+                    previous_state,
+                    return_state,
+                    json.dumps(transition_metadata) if transition_metadata else None,
+                )
+            )
+
+    def load_game_state_v2(self, campaign_id: str) -> Optional[dict[str, Any]]:
+        """
+        Load the v2.0 state machine state.
+
+        Args:
+            campaign_id: Campaign identifier
+
+        Returns:
+            Dict with state info or None if not found
+        """
+        cursor = self.conn.cursor()
+        cursor.execute(
+            "SELECT * FROM game_state_v2 WHERE campaign_id = ?",
+            (campaign_id,)
+        )
+        row = cursor.fetchone()
+
+        if not row:
+            return None
+
+        return {
+            "campaign_id": row["campaign_id"],
+            "current_state": row["current_state"],
+            "previous_state": row["previous_state"],
+            "return_state": row["return_state"],
+            "transition_metadata": json.loads(row["transition_metadata"]) if row["transition_metadata"] else None,
+        }
+
+    # =========================================================================
+    # v2.0: GLOBAL CONTROLLER PERSISTENCE
+    # =========================================================================
+
+    def save_global_controller_state(
+        self,
+        campaign_id: str,
+        game_time: dict[str, Any],
+        party_state: dict[str, Any],
+        world_flags: dict[str, Any],
+        weather: Optional[str] = None,
+    ) -> None:
+        """
+        Save the GlobalController state.
+
+        Args:
+            campaign_id: Campaign identifier
+            game_time: Time tracking data
+            party_state: Party state data
+            world_flags: World flags data
+            weather: Current weather
+        """
+        with self.transaction() as cursor:
+            cursor.execute(
+                """
+                INSERT OR REPLACE INTO global_controller_state
+                (campaign_id, game_time, party_state, world_flags, weather, updated_at)
+                VALUES (?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
+                """,
+                (
+                    campaign_id,
+                    json.dumps(game_time),
+                    json.dumps(party_state),
+                    json.dumps(world_flags),
+                    weather,
+                )
+            )
+
+    def load_global_controller_state(self, campaign_id: str) -> Optional[dict[str, Any]]:
+        """
+        Load the GlobalController state.
+
+        Args:
+            campaign_id: Campaign identifier
+
+        Returns:
+            Dict with controller state or None if not found
+        """
+        cursor = self.conn.cursor()
+        cursor.execute(
+            "SELECT * FROM global_controller_state WHERE campaign_id = ?",
+            (campaign_id,)
+        )
+        row = cursor.fetchone()
+
+        if not row:
+            return None
+
+        return {
+            "campaign_id": row["campaign_id"],
+            "game_time": json.loads(row["game_time"]),
+            "party_state": json.loads(row["party_state"]),
+            "world_flags": json.loads(row["world_flags"]),
+            "weather": row["weather"],
+        }
+
+    # =========================================================================
+    # v2.0: ENGINE STATE PERSISTENCE
+    # =========================================================================
+
+    def save_engine_state(
+        self,
+        campaign_id: str,
+        engine_type: str,
+        engine_data: dict[str, Any],
+        state_id: Optional[str] = None,
+    ) -> str:
+        """
+        Save an engine state (HexCrawl, Dungeon, Combat, etc.).
+
+        Args:
+            campaign_id: Campaign identifier
+            engine_type: Type of engine (hexcrawl, dungeon, combat, settlement, downtime)
+            engine_data: Engine state data
+            state_id: Optional state ID (generated if not provided)
+
+        Returns:
+            The state ID
+        """
+        if not state_id:
+            state_id = f"{engine_type}_{uuid.uuid4().hex[:8]}"
+
+        with self.transaction() as cursor:
+            cursor.execute(
+                """
+                INSERT OR REPLACE INTO engine_states
+                (state_id, campaign_id, engine_type, engine_data, is_active, updated_at)
+                VALUES (?, ?, ?, ?, 1, CURRENT_TIMESTAMP)
+                """,
+                (
+                    state_id,
+                    campaign_id,
+                    engine_type,
+                    json.dumps(engine_data),
+                )
+            )
+
+        return state_id
+
+    def load_engine_state(self, state_id: str) -> Optional[dict[str, Any]]:
+        """
+        Load an engine state by ID.
+
+        Args:
+            state_id: State identifier
+
+        Returns:
+            Dict with engine state or None if not found
+        """
+        cursor = self.conn.cursor()
+        cursor.execute(
+            "SELECT * FROM engine_states WHERE state_id = ?",
+            (state_id,)
+        )
+        row = cursor.fetchone()
+
+        if not row:
+            return None
+
+        return {
+            "state_id": row["state_id"],
+            "campaign_id": row["campaign_id"],
+            "engine_type": row["engine_type"],
+            "engine_data": json.loads(row["engine_data"]),
+            "is_active": bool(row["is_active"]),
+        }
+
+    def load_active_engine_state(
+        self,
+        campaign_id: str,
+        engine_type: str,
+    ) -> Optional[dict[str, Any]]:
+        """
+        Load the active engine state for a campaign and engine type.
+
+        Args:
+            campaign_id: Campaign identifier
+            engine_type: Type of engine
+
+        Returns:
+            Dict with engine state or None if not found
+        """
+        cursor = self.conn.cursor()
+        cursor.execute(
+            """
+            SELECT * FROM engine_states
+            WHERE campaign_id = ? AND engine_type = ? AND is_active = 1
+            ORDER BY updated_at DESC LIMIT 1
+            """,
+            (campaign_id, engine_type)
+        )
+        row = cursor.fetchone()
+
+        if not row:
+            return None
+
+        return {
+            "state_id": row["state_id"],
+            "campaign_id": row["campaign_id"],
+            "engine_type": row["engine_type"],
+            "engine_data": json.loads(row["engine_data"]),
+            "is_active": bool(row["is_active"]),
+        }
+
+    def deactivate_engine_state(self, state_id: str) -> None:
+        """
+        Mark an engine state as inactive.
+
+        Args:
+            state_id: State identifier
+        """
+        with self.transaction() as cursor:
+            cursor.execute(
+                "UPDATE engine_states SET is_active = 0, updated_at = CURRENT_TIMESTAMP WHERE state_id = ?",
+                (state_id,)
+            )
+
+    def list_engine_states(
+        self,
+        campaign_id: str,
+        engine_type: Optional[str] = None,
+        active_only: bool = True,
+    ) -> list[dict[str, Any]]:
+        """
+        List engine states for a campaign.
+
+        Args:
+            campaign_id: Campaign identifier
+            engine_type: Optional filter by engine type
+            active_only: Only return active states
+
+        Returns:
+            List of engine state dicts
+        """
+        cursor = self.conn.cursor()
+
+        query = "SELECT * FROM engine_states WHERE campaign_id = ?"
+        params = [campaign_id]
+
+        if engine_type:
+            query += " AND engine_type = ?"
+            params.append(engine_type)
+
+        if active_only:
+            query += " AND is_active = 1"
+
+        query += " ORDER BY updated_at DESC"
+
+        cursor.execute(query, params)
+
+        return [
+            {
+                "state_id": row["state_id"],
+                "campaign_id": row["campaign_id"],
+                "engine_type": row["engine_type"],
+                "engine_data": json.loads(row["engine_data"]),
+                "is_active": bool(row["is_active"]),
+            }
+            for row in cursor.fetchall()
+        ]
+
+    # =========================================================================
+    # v2.0: TRIGGER STATE PERSISTENCE
+    # =========================================================================
+
+    def save_trigger_state(
+        self,
+        campaign_id: str,
+        trigger_type: str,
+        state_data: Optional[dict[str, Any]] = None,
+        trigger_id: Optional[str] = None,
+    ) -> str:
+        """
+        Save a trigger state.
+
+        Args:
+            campaign_id: Campaign identifier
+            trigger_type: Type of trigger
+            state_data: Optional state data
+            trigger_id: Optional trigger ID
+
+        Returns:
+            The trigger ID
+        """
+        if not trigger_id:
+            trigger_id = f"{trigger_type}_{campaign_id}"
+
+        with self.transaction() as cursor:
+            cursor.execute(
+                """
+                INSERT INTO trigger_states
+                (trigger_id, campaign_id, trigger_type, last_fired, fire_count, state_data, updated_at)
+                VALUES (?, ?, ?, CURRENT_TIMESTAMP, 1, ?, CURRENT_TIMESTAMP)
+                ON CONFLICT(trigger_id) DO UPDATE SET
+                    last_fired = CURRENT_TIMESTAMP,
+                    fire_count = fire_count + 1,
+                    state_data = ?,
+                    updated_at = CURRENT_TIMESTAMP
+                """,
+                (
+                    trigger_id,
+                    campaign_id,
+                    trigger_type,
+                    json.dumps(state_data) if state_data else None,
+                    json.dumps(state_data) if state_data else None,
+                )
+            )
+
+        return trigger_id
+
+    def load_trigger_state(self, trigger_id: str) -> Optional[dict[str, Any]]:
+        """
+        Load a trigger state.
+
+        Args:
+            trigger_id: Trigger identifier
+
+        Returns:
+            Dict with trigger state or None if not found
+        """
+        cursor = self.conn.cursor()
+        cursor.execute(
+            "SELECT * FROM trigger_states WHERE trigger_id = ?",
+            (trigger_id,)
+        )
+        row = cursor.fetchone()
+
+        if not row:
+            return None
+
+        return {
+            "trigger_id": row["trigger_id"],
+            "campaign_id": row["campaign_id"],
+            "trigger_type": row["trigger_type"],
+            "last_fired": row["last_fired"],
+            "fire_count": row["fire_count"],
+            "state_data": json.loads(row["state_data"]) if row["state_data"] else None,
+        }
+
+    def list_trigger_states(
+        self,
+        campaign_id: str,
+        trigger_type: Optional[str] = None,
+    ) -> list[dict[str, Any]]:
+        """
+        List trigger states for a campaign.
+
+        Args:
+            campaign_id: Campaign identifier
+            trigger_type: Optional filter by trigger type
+
+        Returns:
+            List of trigger state dicts
+        """
+        cursor = self.conn.cursor()
+
+        query = "SELECT * FROM trigger_states WHERE campaign_id = ?"
+        params = [campaign_id]
+
+        if trigger_type:
+            query += " AND trigger_type = ?"
+            params.append(trigger_type)
+
+        query += " ORDER BY last_fired DESC"
+
+        cursor.execute(query, params)
+
+        return [
+            {
+                "trigger_id": row["trigger_id"],
+                "campaign_id": row["campaign_id"],
+                "trigger_type": row["trigger_type"],
+                "last_fired": row["last_fired"],
+                "fire_count": row["fire_count"],
+                "state_data": json.loads(row["state_data"]) if row["state_data"] else None,
+            }
+            for row in cursor.fetchall()
+        ]
 
 
 # Module-level convenience function
