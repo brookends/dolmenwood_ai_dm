@@ -13,8 +13,8 @@ from .settlement_engine import (
     SettlementService,
     SettlementNPC,
     Rumor,
-    Settlement,
-    SettlementVisit,
+    SettlementStatus,
+    SettlementActionResult,
 )
 
 __all__ = [
@@ -26,6 +26,6 @@ __all__ = [
     "SettlementService",
     "SettlementNPC",
     "Rumor",
-    "Settlement",
-    "SettlementVisit",
+    "SettlementStatus",
+    "SettlementActionResult",
 ]

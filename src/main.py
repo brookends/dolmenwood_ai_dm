@@ -1,11 +1,17 @@
 """
-Dolmenwood AI Dungeon Master - Main Game Loop
+Dolmenwood AI Dungeon Master - Main Game Loop (v2.0)
 
 This module provides the main game orchestrator that integrates all
 components: PDF processing, vector database, game state management,
 and the AI DM agent.
 
-Features:
+v2.0 Features:
+- Formal state machine with 8 mutually exclusive game states
+- Hierarchical action architecture with always-active GlobalController
+- Mode-specific deterministic execution loops
+- Non-negotiable procedure triggers
+- Failure-first action resolution
+- LLM integration with strict authority boundaries
 - Complete game session management
 - CLI interface for gameplay
 - PDF content ingestion
@@ -14,7 +20,7 @@ Features:
 - Campaign configuration
 
 Author: AI Dungeon Master Project
-Version: 1.0
+Version: 2.0
 """
 
 from __future__ import annotations
@@ -52,6 +58,77 @@ from data_models import (
 from game_state.state_manager import GameStateManager
 from vector_db.rules_retriever import RulesRetriever, create_retriever
 from ai.dm_agent import DolmenwoodDM, DMConfig, DMResponse, DiceRoller
+
+# v2.0 Core Architecture
+from game_state.state_machine import GameState, StateMachine, StateTransition
+from game_state.global_controller import (
+    GlobalController,
+    GameTime,
+    PartyResources,
+    WorldFlags,
+)
+from resolution.procedure_triggers import (
+    ProcedureTrigger,
+    TriggerHandler,
+    TriggerResult,
+)
+from resolution.action_resolver import (
+    ActionResolver,
+    ActionResult,
+)
+
+# v2.0 Data Models
+from data_models_v2 import (
+    TimeTrackerV2,
+    LocationState,
+    EncounterState,
+    FactionState,
+    PartyStateV2,
+    WorldStateV2,
+)
+
+# v2.0 Tables
+from tables.dolmenwood_tables import (
+    DolmenwoodTables,
+    DolmenwoodRegion,
+)
+
+# v2.0 Mode Engines
+try:
+    from dungeon.dungeon_engine import DungeonEngine, TurnResult as DungeonTurnResult
+    DUNGEON_ENGINE_AVAILABLE = True
+except ImportError:
+    DUNGEON_ENGINE_AVAILABLE = False
+    DungeonEngine = None
+    DungeonTurnResult = None
+    logger.warning("Dungeon engine not available")
+
+try:
+    from settlement.settlement_engine import SettlementEngine
+    SETTLEMENT_ENGINE_AVAILABLE = True
+except ImportError:
+    SETTLEMENT_ENGINE_AVAILABLE = False
+    SettlementEngine = None
+    logger.warning("Settlement engine not available")
+
+try:
+    from downtime.downtime_engine import DowntimeEngine
+    DOWNTIME_ENGINE_AVAILABLE = True
+except ImportError:
+    DOWNTIME_ENGINE_AVAILABLE = False
+    DowntimeEngine = None
+    logger.warning("Downtime engine not available")
+
+# v2.0 AI Integration
+from ai.prompt_schemas import (
+    LLMAuthority,
+    PromptCategory,
+    PromptBuilder,
+    ResponseParser,
+    create_prompt_builder,
+    create_response_parser,
+    AUTHORITY_RULES,
+)
 
 # Combat engine
 try:
@@ -160,26 +237,43 @@ class DolmenwoodGame:
     def __init__(self, config: Optional[GameConfig] = None):
         """
         Initialize the game.
-        
+
         Args:
             config: Game configuration. Uses defaults if not provided.
         """
         self.config = config or GameConfig()
-        
+
         # Initialize components
         self._state_manager: Optional[GameStateManager] = None
         self._rules_retriever: Optional[RulesRetriever] = None
         self._dm: Optional[DolmenwoodDM] = None
         self._combat_handler: Optional[CombatToolHandler] = None
         self._hex_crawl_handler: Optional[HexCrawlToolHandler] = None
-        
+
+        # v2.0 Core Architecture Components
+        self._state_machine: Optional[StateMachine] = None
+        self._global_controller: Optional[GlobalController] = None
+        self._trigger_handler: Optional[TriggerHandler] = None
+        self._action_resolver: Optional[ActionResolver] = None
+        self._prompt_builder: Optional[PromptBuilder] = None
+        self._response_parser: Optional[ResponseParser] = None
+
+        # v2.0 Mode Engines
+        self._dungeon_engine: Optional[DungeonEngine] = None
+        self._settlement_engine: Optional[SettlementEngine] = None
+        self._downtime_engine: Optional[DowntimeEngine] = None
+
+        # v2.0 Tables
+        self._dolmenwood_tables: Optional[DolmenwoodTables] = None
+
         # Current session state
         self._campaign_id: Optional[str] = None
         self._world_state: Optional[WorldState] = None
+        self._world_state_v2: Optional[WorldStateV2] = None  # v2.0 extended state
         self._turn_number: int = 0
         self._session_start: Optional[datetime] = None
-        
-        logger.info("DolmenwoodGame initialized")
+
+        logger.info("DolmenwoodGame v2.0 initialized")
     
     # =========================================================================
     # INITIALIZATION
@@ -245,9 +339,115 @@ class DolmenwoodGame:
                 hex_crawl_handler=self._hex_crawl_handler
             )
             logger.info("DM agent initialized")
-        
+
         return self._dm
-    
+
+    # =========================================================================
+    # v2.0 INITIALIZATION
+    # =========================================================================
+
+    def _init_state_machine(self) -> StateMachine:
+        """Initialize the v2.0 state machine."""
+        if self._state_machine is None:
+            self._state_machine = StateMachine()
+            logger.info("v2.0 State machine initialized")
+        return self._state_machine
+
+    def _init_global_controller(self) -> GlobalController:
+        """Initialize the v2.0 global controller."""
+        if self._global_controller is None:
+            self._global_controller = GlobalController()
+            logger.info("v2.0 Global controller initialized")
+        return self._global_controller
+
+    def _init_trigger_handler(self) -> TriggerHandler:
+        """Initialize the v2.0 procedure trigger handler."""
+        if self._trigger_handler is None:
+            self._trigger_handler = TriggerHandler()
+            logger.info("v2.0 Trigger handler initialized")
+        return self._trigger_handler
+
+    def _init_action_resolver(self) -> ActionResolver:
+        """Initialize the v2.0 action resolver."""
+        if self._action_resolver is None:
+            self._action_resolver = ActionResolver()
+            logger.info("v2.0 Action resolver initialized")
+        return self._action_resolver
+
+    def _init_prompt_builder(self) -> PromptBuilder:
+        """Initialize the v2.0 prompt builder for LLM integration."""
+        if self._prompt_builder is None:
+            self._prompt_builder = create_prompt_builder()
+            logger.info("v2.0 Prompt builder initialized")
+        return self._prompt_builder
+
+    def _init_response_parser(self) -> ResponseParser:
+        """Initialize the v2.0 response parser for LLM integration."""
+        if self._response_parser is None:
+            self._response_parser = create_response_parser()
+            logger.info("v2.0 Response parser initialized")
+        return self._response_parser
+
+    def _init_dolmenwood_tables(self) -> DolmenwoodTables:
+        """Initialize Dolmenwood-specific random tables."""
+        if self._dolmenwood_tables is None:
+            self._dolmenwood_tables = DolmenwoodTables()
+            logger.info("Dolmenwood tables initialized")
+        return self._dolmenwood_tables
+
+    def _init_dungeon_engine(self) -> Optional[DungeonEngine]:
+        """Initialize the v2.0 dungeon exploration engine."""
+        if DUNGEON_ENGINE_AVAILABLE and self._dungeon_engine is None:
+            state_machine = self._init_state_machine()
+            global_controller = self._init_global_controller()
+            self._dungeon_engine = DungeonEngine(
+                state_machine=state_machine,
+                global_controller=global_controller
+            )
+            logger.info("v2.0 Dungeon engine initialized")
+        return self._dungeon_engine
+
+    def _init_settlement_engine(self) -> Optional[SettlementEngine]:
+        """Initialize the v2.0 settlement exploration engine."""
+        if SETTLEMENT_ENGINE_AVAILABLE and self._settlement_engine is None:
+            state_machine = self._init_state_machine()
+            global_controller = self._init_global_controller()
+            self._settlement_engine = SettlementEngine(
+                state_machine=state_machine,
+                global_controller=global_controller
+            )
+            logger.info("v2.0 Settlement engine initialized")
+        return self._settlement_engine
+
+    def _init_downtime_engine(self) -> Optional[DowntimeEngine]:
+        """Initialize the v2.0 downtime activities engine."""
+        if DOWNTIME_ENGINE_AVAILABLE and self._downtime_engine is None:
+            state_machine = self._init_state_machine()
+            global_controller = self._init_global_controller()
+            self._downtime_engine = DowntimeEngine(
+                state_machine=state_machine,
+                global_controller=global_controller
+            )
+            logger.info("v2.0 Downtime engine initialized")
+        return self._downtime_engine
+
+    def _init_v2_components(self) -> None:
+        """Initialize all v2.0 architecture components."""
+        self._init_state_machine()
+        self._init_global_controller()
+        self._init_trigger_handler()
+        self._init_action_resolver()
+        self._init_prompt_builder()
+        self._init_response_parser()
+        self._init_dolmenwood_tables()
+
+        # Initialize mode engines
+        self._init_dungeon_engine()
+        self._init_settlement_engine()
+        self._init_downtime_engine()
+
+        logger.info("All v2.0 components initialized")
+
     @property
     def is_combat_active(self) -> bool:
         """Check if combat is currently active."""
@@ -259,13 +459,62 @@ class DolmenwoodGame:
     def hex_crawl_handler(self) -> Optional[HexCrawlToolHandler]:
         """Get the hex crawl handler."""
         return self._hex_crawl_handler
-    
+
+    # v2.0 Property Accessors
+    @property
+    def state_machine(self) -> Optional[StateMachine]:
+        """Get the v2.0 state machine."""
+        return self._state_machine
+
+    @property
+    def current_game_state(self) -> Optional[GameState]:
+        """Get the current game state from the state machine."""
+        if self._state_machine:
+            return self._state_machine.current_state
+        return None
+
+    @property
+    def global_controller(self) -> Optional[GlobalController]:
+        """Get the v2.0 global controller."""
+        return self._global_controller
+
+    @property
+    def trigger_handler(self) -> Optional[TriggerHandler]:
+        """Get the v2.0 trigger handler."""
+        return self._trigger_handler
+
+    @property
+    def action_resolver(self) -> Optional[ActionResolver]:
+        """Get the v2.0 action resolver."""
+        return self._action_resolver
+
+    @property
+    def dolmenwood_tables(self) -> Optional[DolmenwoodTables]:
+        """Get the Dolmenwood random tables."""
+        return self._dolmenwood_tables
+
+    @property
+    def dungeon_engine(self) -> Optional[DungeonEngine]:
+        """Get the v2.0 dungeon engine."""
+        return self._dungeon_engine
+
+    @property
+    def settlement_engine(self) -> Optional[SettlementEngine]:
+        """Get the v2.0 settlement engine."""
+        return self._settlement_engine
+
+    @property
+    def downtime_engine(self) -> Optional[DowntimeEngine]:
+        """Get the v2.0 downtime engine."""
+        return self._downtime_engine
+
     def initialize(self) -> None:
-        """Initialize all components."""
+        """Initialize all components including v2.0 architecture."""
         self._init_state_manager()
         self._init_rules_retriever()
         self._init_dm()
-        logger.info("All game components initialized")
+        self._init_v2_components()
+        logger.info("All game components initialized (v2.0)")
     
     # =========================================================================
     # CAMPAIGN MANAGEMENT
@@ -736,6 +985,12 @@ class DolmenwoodCLI:
         "/load": "Load an existing campaign",
         "/list": "List available campaigns",
         "/character": "Create a new character",
+        # v2.0 Commands
+        "/state": "Show current game state (v2.0)",
+        "/time": "Show in-game time and date (v2.0)",
+        "/tables": "Roll on Dolmenwood tables (v2.0)",
+        "/reaction": "Roll reaction (e.g., /reaction +1)",
+        "/morale": "Roll morale check (e.g., /morale -2)",
     }
     
     def __init__(self, game: Optional[DolmenwoodGame] = None):
@@ -864,11 +1119,27 @@ class DolmenwoodCLI:
         
         elif cmd == "/character":
             self._create_character_wizard()
-        
+
+        # v2.0 Commands
+        elif cmd == "/state":
+            self._show_game_state()
+
+        elif cmd == "/time":
+            self._show_game_time()
+
+        elif cmd == "/tables":
+            self._roll_tables(args)
+
+        elif cmd == "/reaction":
+            self._roll_reaction(args)
+
+        elif cmd == "/morale":
+            self._roll_morale(args)
+
         else:
             print(f"\n❓ Unknown command: {cmd}")
             print("  Type /help for available commands.")
-        
+
         return True
     
     def _create_character_wizard(self) -> None:
@@ -929,7 +1200,159 @@ class DolmenwoodCLI:
         )
         
         print(f"\n✅ Character '{name}' created and added to party!")
-    
+
+    # =========================================================================
+    # v2.0 CLI HELPER METHODS
+    # =========================================================================
+
+    def _show_game_state(self) -> None:
+        """Show the current v2.0 game state."""
+        if not self.game._campaign_id:
+            print("\n  No active campaign.")
+            return
+
+        state = self.game.current_game_state
+        if state:
+            print(f"\n🎮 Current Game State: {state.value.upper()}")
+
+            # Show state-specific info
+            if state == GameState.WILDERNESS_TRAVEL:
+                print("  Mode: Wilderness exploration (4-hour watches)")
+            elif state == GameState.DUNGEON_EXPLORATION:
+                print("  Mode: Dungeon crawl (10-minute turns)")
+            elif state == GameState.COMBAT:
+                print("  Mode: Active combat (combat rounds)")
+            elif state == GameState.SETTLEMENT_EXPLORATION:
+                print("  Mode: Town/settlement exploration")
+            elif state == GameState.DOWNTIME:
+                print("  Mode: Downtime activities")
+            elif state == GameState.SOCIAL_INTERACTION:
+                print("  Mode: Social/NPC interaction")
+        else:
+            print("\n  Game state not initialized.")
+
+    def _show_game_time(self) -> None:
+        """Show the current in-game time."""
+        if not self.game._campaign_id:
+            print("\n  No active campaign.")
+            return
+
+        gc = self.game.global_controller
+        if gc and gc.game_time:
+            time = gc.game_time
+            print(f"\n⏰ In-Game Time")
+            print("-" * 30)
+            print(f"  Turn: {time.turn}")
+            print(f"  Watch: {time.watch}")
+            print(f"  Day: {time.day}")
+            print(f"  Phase: {time.phase}")
+            print(f"  Total Minutes: {time.total_minutes}")
+        else:
+            print("\n  Time tracker not initialized.")
+
+    def _roll_tables(self, args: str) -> None:
+        """Roll on Dolmenwood random tables."""
+        tables = self.game.dolmenwood_tables
+        if not tables:
+            print("\n  Dolmenwood tables not initialized.")
+            return
+
+        if not args:
+            print("\n📊 Available Tables:")
+            print("  - encounter <region>  : Roll wilderness encounter")
+            print("  - fairy              : Roll fairy manifestation")
+            print("  - regions            : List available regions")
+            return
+
+        parts = args.split()
+        table_type = parts[0].lower()
+
+        if table_type == "regions":
+            print("\n🌲 Dolmenwood Regions:")
+            for region in DolmenwoodRegion:
+                print(f"  - {region.value}")
+
+        elif table_type == "encounter":
+            region_name = parts[1] if len(parts) > 1 else "the_fog_moors"
+            try:
+                region = DolmenwoodRegion(region_name)
+                encounter = tables.roll_encounter(region)
+                print(f"\n⚔️  Encounter ({region.value}):")
+                print(f"  {encounter}")
+            except ValueError:
+                print(f"\n❌ Unknown region: {region_name}")
+                print("  Use '/tables regions' to see available regions.")
+
+        elif table_type == "fairy":
+            manifestation = tables.roll_fairy_manifestation()
+            print(f"\n✨ Fairy Manifestation:")
+            print(f"  {manifestation}")
+
+        else:
+            print(f"\n❌ Unknown table: {table_type}")
+
+    def _roll_reaction(self, args: str) -> None:
+        """Roll a reaction check."""
+        modifier = 0
+        if args:
+            try:
+                modifier = int(args.replace("+", ""))
+            except ValueError:
+                print("\n❌ Invalid modifier. Use format: /reaction +2 or /reaction -1")
+                return
+
+        tables = self.game.dolmenwood_tables
+        if tables:
+            result = tables.roll_reaction(modifier)
+            print(f"\n🎭 Reaction Roll (2d6{modifier:+d}):")
+            print(f"  {result}")
+        else:
+            # Fallback using DiceRoller
+            roll = DiceRoller.roll("2d6")
+            total = roll.total + modifier
+            if total <= 2:
+                reaction = "Hostile, attacks"
+            elif total <= 5:
+                reaction = "Unfriendly, may attack"
+            elif total <= 8:
+                reaction = "Neutral, uncertain"
+            elif total <= 11:
+                reaction = "Indifferent, uninterested"
+            else:
+                reaction = "Friendly, helpful"
+            print(f"\n🎭 Reaction Roll: {roll.total}{modifier:+d} = {total}")
+            print(f"  Result: {reaction}")
+
+    def _roll_morale(self, args: str) -> None:
+        """Roll a morale check."""
+        modifier = 0
+        if args:
+            try:
+                modifier = int(args.replace("+", ""))
+            except ValueError:
+                print("\n❌ Invalid modifier. Use format: /morale +2 or /morale -1")
+                return
+
+        tables = self.game.dolmenwood_tables
+        if tables:
+            result = tables.roll_morale(modifier)
+            print(f"\n💀 Morale Check (2d6{modifier:+d}):")
+            print(f"  {result}")
+        else:
+            # Fallback using DiceRoller
+            roll = DiceRoller.roll("2d6")
+            total = roll.total + modifier
+            if total <= 2:
+                morale = "Flee in panic!"
+            elif total <= 5:
+                morale = "Fighting retreat"
+            elif total <= 8:
+                morale = "Hold, but shaken"
+            else:
+                morale = "Stand firm"
+            print(f"\n💀 Morale Check: {roll.total}{modifier:+d} = {total}")
+            print(f"  Result: {morale}")
+
     def run(self) -> None:
         """Run the main game loop."""
         self.print_banner()
