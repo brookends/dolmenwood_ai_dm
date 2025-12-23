@@ -129,7 +129,7 @@ class ActionPattern:
 
 # Patterns for detecting player intent from natural language
 ACTION_PATTERNS: list[ActionPattern] = [
-    # Combat initiation patterns
+    # Combat initiation patterns - from encounter states
     ActionPattern(
         pattern=re.compile(r"\b(attack|strike|hit|fight|charge|assault)\b", re.I),
         trigger=TransitionTrigger.REACTION_HOSTILE,
@@ -140,6 +140,25 @@ ACTION_PATTERNS: list[ActionPattern] = [
         pattern=re.compile(r"\b(attack|strike|hit|fight|charge|assault)\b", re.I),
         trigger=TransitionTrigger.REACTION_HOSTILE,
         required_state=GameState.DUNGEON_ENCOUNTER,
+        priority=10,
+    ),
+    # Combat initiation patterns - from exploration states (direct attack)
+    ActionPattern(
+        pattern=re.compile(r"\b(attack|strike|hit|fight|charge|assault)\b", re.I),
+        trigger=TransitionTrigger.REACTION_HOSTILE,
+        required_state=GameState.WILDERNESS_TRAVEL,
+        priority=10,
+    ),
+    ActionPattern(
+        pattern=re.compile(r"\b(attack|strike|hit|fight|charge|assault)\b", re.I),
+        trigger=TransitionTrigger.REACTION_HOSTILE,
+        required_state=GameState.DUNGEON_EXPLORATION,
+        priority=10,
+    ),
+    ActionPattern(
+        pattern=re.compile(r"\b(attack|strike|hit|fight|charge|assault)\b", re.I),
+        trigger=TransitionTrigger.REACTION_HOSTILE,
+        required_state=GameState.SETTLEMENT_EXPLORATION,
         priority=10,
     ),
 

@@ -122,6 +122,7 @@ VALID_TRANSITIONS: dict[tuple[GameState, TransitionTrigger], GameState] = {
     (GameState.WILDERNESS_TRAVEL, TransitionTrigger.ENTER_DUNGEON): GameState.DUNGEON_EXPLORATION,
     (GameState.WILDERNESS_TRAVEL, TransitionTrigger.ENTER_SETTLEMENT): GameState.SETTLEMENT_EXPLORATION,
     (GameState.WILDERNESS_TRAVEL, TransitionTrigger.REST_INITIATED): GameState.DOWNTIME,
+    (GameState.WILDERNESS_TRAVEL, TransitionTrigger.REACTION_HOSTILE): GameState.COMBAT,  # Direct attack while traveling
 
     # From WILDERNESS_ENCOUNTER
     (GameState.WILDERNESS_ENCOUNTER, TransitionTrigger.REACTION_HOSTILE): GameState.COMBAT,
@@ -132,6 +133,7 @@ VALID_TRANSITIONS: dict[tuple[GameState, TransitionTrigger], GameState] = {
     (GameState.DUNGEON_EXPLORATION, TransitionTrigger.WANDERING_MONSTER): GameState.DUNGEON_ENCOUNTER,
     (GameState.DUNGEON_EXPLORATION, TransitionTrigger.LEAVE_SETTLEMENT): GameState.WILDERNESS_TRAVEL,  # Exit dungeon
     (GameState.DUNGEON_EXPLORATION, TransitionTrigger.REST_INITIATED): GameState.DOWNTIME,
+    (GameState.DUNGEON_EXPLORATION, TransitionTrigger.REACTION_HOSTILE): GameState.COMBAT,  # Direct attack in dungeon
 
     # From DUNGEON_ENCOUNTER
     (GameState.DUNGEON_ENCOUNTER, TransitionTrigger.REACTION_HOSTILE): GameState.COMBAT,
@@ -148,6 +150,7 @@ VALID_TRANSITIONS: dict[tuple[GameState, TransitionTrigger], GameState] = {
     (GameState.SETTLEMENT_EXPLORATION, TransitionTrigger.LEAVE_SETTLEMENT): GameState.WILDERNESS_TRAVEL,
     (GameState.SETTLEMENT_EXPLORATION, TransitionTrigger.ENTER_DUNGEON): GameState.DUNGEON_EXPLORATION,  # Dungeon under settlement
     (GameState.SETTLEMENT_EXPLORATION, TransitionTrigger.REST_INITIATED): GameState.DOWNTIME,
+    (GameState.SETTLEMENT_EXPLORATION, TransitionTrigger.REACTION_HOSTILE): GameState.COMBAT,  # Attack NPC in settlement
 
     # From SOCIAL_INTERACTION - returns to calling state (handled specially)
     (GameState.SOCIAL_INTERACTION, TransitionTrigger.SOCIAL_CONCLUDE): GameState.WILDERNESS_TRAVEL,  # Default
