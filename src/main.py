@@ -800,7 +800,7 @@ class DolmenwoodGame:
             player_input=player_input,
             dm_response=response.narrative,
             state_changes=response.state_changes,
-            dice_rolls=[r.to_dict() for r in response.dice_rolls],
+            dice_rolls=[str(r) for r in response.dice_rolls],
         )
         state_manager.log_history(history_entry, self._campaign_id)
         
