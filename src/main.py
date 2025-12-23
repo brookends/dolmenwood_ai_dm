@@ -399,10 +399,12 @@ class DolmenwoodGame:
         """Initialize the v2.0 dungeon exploration engine."""
         if DUNGEON_ENGINE_AVAILABLE and self._dungeon_engine is None:
             state_machine = self._init_state_machine()
-            global_controller = self._init_global_controller()
+            controller = self._init_global_controller()
+            trigger_handler = self._init_trigger_handler()
             self._dungeon_engine = DungeonEngine(
                 state_machine=state_machine,
-                global_controller=global_controller
+                controller=controller,
+                trigger_handler=trigger_handler
             )
             logger.info("v2.0 Dungeon engine initialized")
         return self._dungeon_engine
@@ -411,10 +413,10 @@ class DolmenwoodGame:
         """Initialize the v2.0 settlement exploration engine."""
         if SETTLEMENT_ENGINE_AVAILABLE and self._settlement_engine is None:
             state_machine = self._init_state_machine()
-            global_controller = self._init_global_controller()
+            controller = self._init_global_controller()
             self._settlement_engine = SettlementEngine(
                 state_machine=state_machine,
-                global_controller=global_controller
+                controller=controller
             )
             logger.info("v2.0 Settlement engine initialized")
         return self._settlement_engine
@@ -424,9 +426,11 @@ class DolmenwoodGame:
         if DOWNTIME_ENGINE_AVAILABLE and self._downtime_engine is None:
             state_machine = self._init_state_machine()
             global_controller = self._init_global_controller()
+            trigger_handler = self._init_trigger_handler()
             self._downtime_engine = DowntimeEngine(
                 state_machine=state_machine,
-                global_controller=global_controller
+                global_controller=global_controller,
+                trigger_handler=trigger_handler
             )
             logger.info("v2.0 Downtime engine initialized")
         return self._downtime_engine
