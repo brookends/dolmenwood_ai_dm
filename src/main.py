@@ -1272,15 +1272,18 @@ class DolmenwoodCLI:
             return
 
         gc = self.game.global_controller
-        if gc and gc.game_time:
-            time = gc.game_time
+        if gc:
+            time = gc.get_current_time()
             print(f"\n⏰ In-Game Time")
             print("-" * 30)
-            print(f"  Turn: {time.turn}")
-            print(f"  Watch: {time.watch}")
-            print(f"  Day: {time.day}")
-            print(f"  Phase: {time.phase}")
-            print(f"  Total Minutes: {time.total_minutes}")
+            print(f"  Day: {time.day}, Month: {time.month}, Year: {time.year}")
+            print(f"  Watch: {time.watch}/6 ({time.time_of_day.value})")
+            print(f"  Dungeon Turns: {time.total_turns}")
+            print(f"  Combat Rounds: {time.total_rounds}")
+            if time.is_daylight:
+                print(f"  Lighting: Daylight")
+            else:
+                print(f"  Lighting: Darkness (light source needed)")
         else:
             print("\n  Time tracker not initialized.")
 
