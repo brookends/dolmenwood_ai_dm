@@ -1303,14 +1303,15 @@ class HexCrawlEngine:
         # State transition if we have a state machine
         if self.state_machine:
             try:
-                self.state_machine.transition_to(
-                    "WILDERNESS_ENCOUNTER",
-                    trigger="ENCOUNTER_TRIGGERED",
-                    metadata={
+                from game_state.state_machine import TransitionTrigger
+                self.state_machine.transition(
+                    trigger=TransitionTrigger.ENCOUNTER_ROLL_SUCCESS,
+                    context={
                         "hex_id": self.current_hex,
                         "encounter_type": result.encounter_type,
                         "distance": result.encounter_distance,
-                    }
+                    },
+                    reason="Wilderness encounter triggered"
                 )
                 result.state_transition = "WILDERNESS_ENCOUNTER"
             except Exception as e:
@@ -1487,10 +1488,11 @@ class HexCrawlEngine:
 
             if self.state_machine:
                 try:
-                    self.state_machine.transition_to(
-                        "COMBAT",
-                        trigger="COMBAT_INITIATED",
-                        metadata=self.active_encounter,
+                    from game_state.state_machine import TransitionTrigger
+                    self.state_machine.transition(
+                        trigger=TransitionTrigger.REACTION_HOSTILE,
+                        context=self.active_encounter or {},
+                        reason="Combat initiated from encounter"
                     )
                 except Exception as e:
                     result["error"] = str(e)
@@ -1501,6 +1503,16 @@ class HexCrawlEngine:
             result["fled_successfully"] = flee_success
             if flee_success:
                 result["state_transition"] = "WILDERNESS_TRAVEL"
+                if self.state_machine:
+                    try:
+                        from game_state.state_machine import TransitionTrigger
+                        self.state_machine.transition(
+                            trigger=TransitionTrigger.ENCOUNTER_AVOIDED,
+                            context={"fled": True},
+                            reason="Party fled encounter successfully"
+                        )
+                    except Exception as e:
+                        result["error"] = str(e)
             else:
                 result["combat_initiated"] = True
                 result["state_transition"] = "COMBAT"
@@ -1512,10 +1524,11 @@ class HexCrawlEngine:
 
                 if self.state_machine:
                     try:
-                        self.state_machine.transition_to(
-                            "SOCIAL_INTERACTION",
-                            trigger="SOCIAL_INITIATED",
-                            metadata=self.active_encounter,
+                        from game_state.state_machine import TransitionTrigger
+                        self.state_machine.transition(
+                            trigger=TransitionTrigger.REACTION_PARLEY,
+                            context=self.active_encounter or {},
+                            reason="Parley initiated with encounter"
                         )
                     except Exception as e:
                         result["error"] = str(e)

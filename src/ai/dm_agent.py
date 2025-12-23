@@ -1408,11 +1408,13 @@ class DolmenwoodDM:
         state_manager: Optional[Any] = None,  # GameStateManager
         campaign_id: Optional[str] = None,
         combat_handler: Optional[Any] = None,  # CombatToolHandler
-        hex_crawl_handler: Optional[Any] = None  # HexCrawlToolHandler
+        hex_crawl_handler: Optional[Any] = None,  # HexCrawlToolHandler
+        state_machine: Optional[Any] = None,  # v2.0: StateMachine
+        transition_detector: Optional[Any] = None,  # v2.0: StateTransitionDetector
     ):
         """
         Initialize the DM agent.
-        
+
         Args:
             config: DM configuration.
             rules_retriever: Vector database for rules lookup.
@@ -1420,12 +1422,18 @@ class DolmenwoodDM:
             campaign_id: Current campaign ID.
             combat_handler: Combat tool handler for stateful combat.
             hex_crawl_handler: Hex crawl handler for exploration.
+            state_machine: v2.0 state machine for game state tracking.
+            transition_detector: v2.0 transition detector for auto state changes.
         """
         self.config = config or DMConfig()
         self.rules_retriever = rules_retriever
         self.state_manager = state_manager
         self.campaign_id = campaign_id
-        
+
+        # v2.0: State machine integration
+        self._state_machine = state_machine
+        self._transition_detector = transition_detector
+
         # Initialize combat handler
         if combat_handler is not None:
             self._combat_handler = combat_handler
@@ -1433,7 +1441,7 @@ class DolmenwoodDM:
             self._combat_handler = create_combat_handler()
         else:
             self._combat_handler = None
-        
+
         # Initialize hex crawl handler
         if hex_crawl_handler is not None:
             self._hex_crawl_handler = hex_crawl_handler
@@ -1441,20 +1449,20 @@ class DolmenwoodDM:
             self._hex_crawl_handler = create_hex_crawl_handler()
         else:
             self._hex_crawl_handler = None
-        
+
         # Initialize LLM provider
         self._provider = self._create_provider()
-        
+
         # Legacy client (for backward compatibility)
         self._client: Optional[Any] = None
-        
+
         # Current game context
         self._game_context: dict[str, Any] = {}
-        
+
         # Conversation history for context
         self._conversation_history: list[dict[str, Any]] = []
         self._max_history_length = 20
-        
+
         # Tool handlers
         self._tool_handlers = self._init_tool_handlers()
         
@@ -1524,6 +1532,128 @@ class DolmenwoodDM:
         if self._combat_handler:
             return self._combat_handler.is_combat_active
         return False
+
+    # =========================================================================
+    # v2.0 STATE MACHINE INTEGRATION
+    # =========================================================================
+
+    @property
+    def state_machine(self):
+        """Get the v2.0 state machine."""
+        return self._state_machine
+
+    @property
+    def transition_detector(self):
+        """Get the v2.0 transition detector."""
+        return self._transition_detector
+
+    @property
+    def current_game_state(self) -> Optional[str]:
+        """Get the current game state name."""
+        if self._state_machine:
+            return self._state_machine.current_state.value
+        return None
+
+    def _process_tool_transition(
+        self,
+        tool_name: str,
+        tool_args: dict,
+        tool_result: Optional[str] = None
+    ) -> Optional[dict]:
+        """
+        Check if a tool call should trigger a state transition.
+
+        Args:
+            tool_name: Name of the tool that was executed.
+            tool_args: Arguments passed to the tool.
+            tool_result: Optional result string from the tool.
+
+        Returns:
+            Dict with transition info if one occurred, None otherwise.
+        """
+        if not self._transition_detector:
+            return None
+
+        transition = self._transition_detector.process_tool_call(
+            tool_name=tool_name,
+            tool_args=tool_args,
+            tool_result=tool_result
+        )
+
+        if transition:
+            logger.info(
+                f"Tool '{tool_name}' triggered state transition: "
+                f"{transition.from_state.value} -> {transition.to_state.value}"
+            )
+            return {
+                "from_state": transition.from_state.value,
+                "to_state": transition.to_state.value,
+                "trigger": transition.trigger.value,
+            }
+
+        return None
+
+    def get_state_context_for_prompt(self) -> str:
+        """
+        Get state-aware context for the system prompt.
+
+        Returns context about the current game state to help the LLM
+        understand what mode the game is in and what actions are appropriate.
+        """
+        if not self._state_machine:
+            return ""
+
+        state = self._state_machine.current_state
+        valid_triggers = self._state_machine.get_valid_triggers()
+
+        state_descriptions = {
+            "wilderness_travel": (
+                "The party is traveling through the wilderness. "
+                "Time passes in 4-hour watches. Check for encounters each watch. "
+                "Party can: travel, forage, make camp, enter locations."
+            ),
+            "wilderness_encounter": (
+                "The party has encountered something in the wilderness! "
+                "Determine distance and surprise. Roll reaction if applicable. "
+                "Party can: fight, flee, parley, hide."
+            ),
+            "dungeon_exploration": (
+                "The party is exploring a dungeon. Time passes in 10-minute turns. "
+                "Track light sources and noise. Check for wandering monsters. "
+                "Party can: move, search, interact with objects, rest."
+            ),
+            "dungeon_encounter": (
+                "The party has encountered something in the dungeon! "
+                "Determine surprise and reaction. Combat may ensue. "
+                "Party can: fight, flee, parley."
+            ),
+            "combat": (
+                "Combat is active! Use combat rounds and initiative order. "
+                "Track HP, apply damage, check morale. "
+                "Combat ends when enemies defeated, flee, or party retreats."
+            ),
+            "settlement_exploration": (
+                "The party is in a settlement. They can visit services, "
+                "talk to NPCs, gather rumors, buy supplies, or rest. "
+                "Time passes more freely here."
+            ),
+            "social_interaction": (
+                "The party is engaged in social interaction with NPCs. "
+                "Use reaction rolls and NPC motivations. "
+                "Negotiate, gather info, or attempt persuasion."
+            ),
+            "downtime": (
+                "The party is resting or engaged in downtime activities. "
+                "Healing occurs, spells are recovered, activities can be pursued. "
+                "Time passes in days or weeks."
+            ),
+        }
+
+        context = f"\n[GAME STATE: {state.value.upper()}]\n"
+        context += state_descriptions.get(state.value, "")
+        context += f"\nValid actions that can change state: {[t.value for t in valid_triggers]}\n"
+
+        return context
     
     @property
     def client(self):
@@ -2070,12 +2200,17 @@ class DolmenwoodDM:
         
         # Build system prompt
         system_prompt = generate_system_prompt(
-            self.config, 
+            self.config,
             self._game_context,
             combat_status=combat_status,
             hex_crawl_status=hex_crawl_status
         )
-        
+
+        # v2.0: Add state machine context to prompt
+        state_context = self.get_state_context_for_prompt()
+        if state_context:
+            system_prompt += state_context
+
         # Add context from rules database if available
         context_used = []
         if self.rules_retriever and self.config.include_rules_context:
@@ -2125,13 +2260,22 @@ class DolmenwoodDM:
             while response.tool_calls and iterations < max_tool_iterations:
                 iterations += 1
                 tool_results_text = []
-                
+
                 for tool_call in response.tool_calls:
                     tool_result = self._execute_tool(tool_call.name, tool_call.arguments)
                     all_tool_results.append(tool_result)
                     all_dice_rolls.extend(tool_result.dice_rolls)
                     all_state_changes.update(tool_result.state_changes)
-                    
+
+                    # v2.0: Check for state transitions triggered by this tool
+                    transition_info = self._process_tool_transition(
+                        tool_name=tool_call.name,
+                        tool_args=tool_call.arguments,
+                        tool_result=tool_result.message
+                    )
+                    if transition_info:
+                        all_state_changes["state_transition"] = transition_info
+
                     # Format result for next message
                     tool_results_text.append(
                         f"[Tool: {tool_call.name}] Result: {json.dumps(tool_result.to_dict())}"

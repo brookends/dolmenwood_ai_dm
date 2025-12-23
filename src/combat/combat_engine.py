@@ -602,18 +602,30 @@ class CombatEngine:
         }
 
         # v2.0: Transition back to return state if state machine available
-        if self.state_machine and self._return_state:
+        if self.state_machine:
             try:
-                self.state_machine.transition_to(
-                    self._return_state,
-                    trigger="COMBAT_ENDED",
-                    metadata={
+                from game_state.state_machine import TransitionTrigger
+                # Determine trigger based on combat outcome
+                if reason == CombatEndReason.VICTORY:
+                    trigger = TransitionTrigger.ENEMIES_DEFEATED
+                elif reason == CombatEndReason.ENEMIES_FLED:
+                    trigger = TransitionTrigger.ENEMIES_FLEE
+                elif reason == CombatEndReason.PARTY_FLED:
+                    trigger = TransitionTrigger.PARTY_RETREAT
+                else:
+                    trigger = TransitionTrigger.ENEMIES_DEFEATED  # Default
+
+                self.state_machine.transition(
+                    trigger=trigger,
+                    context={
                         "reason": reason.value,
                         "rounds": self.round_number,
+                        "return_state": self._return_state,
                         **self._return_metadata,
-                    }
+                    },
+                    reason=f"Combat ended: {reason.value}"
                 )
-                result["state_transition"] = self._return_state
+                result["state_transition"] = self.state_machine.current_state.value
             except Exception as e:
                 result["transition_error"] = str(e)
 

@@ -60,12 +60,16 @@ from vector_db.rules_retriever import RulesRetriever, create_retriever
 from ai.dm_agent import DolmenwoodDM, DMConfig, DMResponse, DiceRoller
 
 # v2.0 Core Architecture
-from game_state.state_machine import GameState, StateMachine, StateTransition
+from game_state.state_machine import GameState, StateMachine, StateTransition, TransitionTrigger
 from game_state.global_controller import (
     GlobalController,
     GameTime,
     PartyResources,
     WorldFlags,
+)
+from game_state.transition_detector import (
+    StateTransitionDetector,
+    create_transition_detector,
 )
 from resolution.procedure_triggers import (
     ProcedureTrigger,
@@ -257,6 +261,7 @@ class DolmenwoodGame:
         self._action_resolver: Optional[ActionResolver] = None
         self._prompt_builder: Optional[PromptBuilder] = None
         self._response_parser: Optional[ResponseParser] = None
+        self._transition_detector: Optional[StateTransitionDetector] = None
 
         # v2.0 Mode Engines
         self._dungeon_engine: Optional[DungeonEngine] = None
@@ -314,12 +319,17 @@ class DolmenwoodGame:
             if COMBAT_ENGINE_AVAILABLE and self._combat_handler is None:
                 self._combat_handler = create_combat_handler()
                 logger.info("Combat handler initialized")
-            
+
             # Create hex crawl handler if available
             if HEX_CRAWL_ENGINE_AVAILABLE and self._hex_crawl_handler is None:
                 self._hex_crawl_handler = create_hex_crawl_handler()
                 logger.info("Hex crawl handler initialized")
-            
+
+            # v2.0: Initialize state machine and transition detector before DM
+            # This ensures they're available for the DM's state-aware processing
+            self._init_state_machine()
+            self._init_transition_detector()
+
             dm_config = DMConfig(
                 provider=self.config.llm_provider,
                 api_key=self.config.anthropic_api_key,
@@ -336,9 +346,12 @@ class DolmenwoodGame:
                 state_manager=self._state_manager,
                 campaign_id=self._campaign_id,
                 combat_handler=self._combat_handler,
-                hex_crawl_handler=self._hex_crawl_handler
+                hex_crawl_handler=self._hex_crawl_handler,
+                # v2.0: State machine integration
+                state_machine=self._state_machine,
+                transition_detector=self._transition_detector,
             )
-            logger.info("DM agent initialized")
+            logger.info("DM agent initialized (v2.0 state-aware)")
 
         return self._dm
 
@@ -435,6 +448,17 @@ class DolmenwoodGame:
             logger.info("v2.0 Downtime engine initialized")
         return self._downtime_engine
 
+    def _init_transition_detector(self) -> StateTransitionDetector:
+        """Initialize the v2.0 state transition detector."""
+        if self._transition_detector is None:
+            state_machine = self._init_state_machine()
+            self._transition_detector = create_transition_detector(
+                state_machine=state_machine,
+                auto_execute=False  # We handle execution manually
+            )
+            logger.info("v2.0 Transition detector initialized")
+        return self._transition_detector
+
     def _init_v2_components(self) -> None:
         """Initialize all v2.0 architecture components."""
         self._init_state_machine()
@@ -444,6 +468,7 @@ class DolmenwoodGame:
         self._init_prompt_builder()
         self._init_response_parser()
         self._init_dolmenwood_tables()
+        self._init_transition_detector()
 
         # Initialize mode engines
         self._init_dungeon_engine()
@@ -511,6 +536,11 @@ class DolmenwoodGame:
     def downtime_engine(self) -> Optional[DowntimeEngine]:
         """Get the v2.0 downtime engine."""
         return self._downtime_engine
+
+    @property
+    def transition_detector(self) -> Optional[StateTransitionDetector]:
+        """Get the v2.0 state transition detector."""
+        return self._transition_detector
 
     def initialize(self) -> None:
         """Initialize all components including v2.0 architecture."""
